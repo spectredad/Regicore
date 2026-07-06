@@ -15,10 +15,12 @@ export default function TrustExtras() {
 
   return (
     <div ref={sectionRef}>
-      {/* ── Client logo strip ── */}
-      <section className="py-10 border-y border-ink/10">
-        <div className="max-w-6xl mx-auto px-5 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 opacity-60 reveal text-xl font-display text-ink">
-          <span>Kynthellos</span>
+      {/* Client reference strip */}
+      <section className="py-12 border-y border-line mt-16 md:mt-20">
+        <div className="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4 reveal">
+          <p className="section-label">In production with</p>
+          <span className="font-display text-2xl text-ink">Kynthellos</span>
+          <p className="section-label hidden sm:block">and teams shipping quietly</p>
         </div>
       </section>
     </div>

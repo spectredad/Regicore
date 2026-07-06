@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, Caveat } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -15,22 +15,15 @@ const inter = Inter({
   display: "swap",
 });
 
-const caveat = Caveat({
-  subsets: ["latin"],
-  variable: "--font-caveat",
-  weight: ["600"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://regicore.com"),
-  title: "Regicore — Your unfair advantage in AI",
+  title: "Regicore | Your unfair advantage in AI",
   description:
     "Regicore is a boutique AI agentic studio. Custom AI agents, voice callers and growth automation, built fast with transparent ROI.",
   keywords: ["AI agents", "AI automation", "custom AI systems", "agentic studio", "AI voice callers", "lead generation AI"],
   authors: [{ name: "Regicore" }],
   openGraph: {
-    title: "Regicore — Your unfair advantage in AI",
+    title: "Regicore | Your unfair advantage in AI",
     description: "Custom AI agents, voice callers and growth automation, built fast with transparent ROI.",
     url: "https://regicore.com",
     siteName: "Regicore",
@@ -39,7 +32,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Regicore — Boutique AI Agentic Studio",
+        alt: "Regicore, a boutique AI agentic studio",
       },
     ],
     locale: "en_US",
@@ -47,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Regicore — Your unfair advantage in AI",
+    title: "Regicore | Your unfair advantage in AI",
     description: "Custom AI agents, voice callers and growth automation, built fast with transparent ROI.",
     images: ["/og-image.png"],
   },
@@ -79,7 +72,11 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable} ${caveat.variable} scroll-smooth`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${inter.variable} bg-paper scroll-smooth`}
+      suppressHydrationWarning
+    >
       <head>
         <script
           type="application/ld+json"

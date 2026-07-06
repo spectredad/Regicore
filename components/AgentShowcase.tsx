@@ -63,65 +63,30 @@ export default function AgentShowcase() {
   };
 
   return (
-    <section id="results" className="py-24 px-5" ref={sectionRef}>
+    <section id="agents" className="py-24 md:py-32 px-5" ref={sectionRef}>
       <div className="max-w-6xl mx-auto">
-        <div className="mb-10 max-w-2xl reveal">
-          <h2 className="font-display text-4xl sm:text-6xl font-semibold text-ink leading-[1.05]">
-            AI workforce tailored to your business
+        {/* Section header */}
+        <div className="reveal flex items-baseline gap-4 border-b border-line pb-4 mb-12 md:mb-16">
+          <span className="index-num text-[15px]">01</span>
+          <p className="section-label">The agents</p>
+        </div>
+
+        <div className="mb-12 max-w-3xl reveal">
+          <h2 className="font-display text-[36px] sm:text-[52px] font-medium text-ink leading-[1.05] tracking-[-0.02em] text-balance">
+            An AI workforce tailored to your business
           </h2>
-          <p className="text-muted mt-5 text-lg">
-            Battle-tested, enterprise-grade agents with built-in safeguards and complete workflow control.
+          <p className="text-muted mt-5 text-[17px] leading-relaxed max-w-xl text-pretty">
+            Battle-tested, enterprise-grade agents with built-in safeguards and complete
+            workflow control.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10 items-center reveal">
-          {/* Live mockup card */}
-          <div
-            className="relative bg-peach rounded-[28px] p-8 min-h-[420px] flex items-center justify-center overflow-hidden"
-            onMouseEnter={stopTimer}
-            onMouseLeave={startTimer}
-          >
-            {/* Background rings */}
-            <div className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
-              <div className="w-64 h-64 rounded-full border border-lav/60" />
-              <div className="absolute w-44 h-44 rounded-full border border-lav/60" />
-            </div>
-
-            {/* Agent card */}
-            <div
-              className="relative bg-white rounded-2xl shadow-lg p-5 w-72"
-              style={{ opacity: cardVisible ? 1 : 0, transition: "opacity 0.15s ease" }}
-              role="status"
-              aria-live="polite"
-              aria-label={`${agent.name} status card`}
-            >
-              <div className="flex justify-between items-center mb-5">
-                <span className="font-semibold text-sm flex items-center gap-2">{agent.cardTitle}</span>
-                <span className="bg-lav/60 text-ink text-xs px-3 py-1 rounded-full">{agent.tag}</span>
-              </div>
-              <div className="font-display text-4xl font-semibold mb-5">{agent.big}</div>
-              <div className="text-xs space-y-2 text-muted">
-                <div className="flex justify-between">
-                  <span>{agent.rowKey}</span>
-                  <span className="text-ink">{agent.rowVal}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Status</span>
-                  <span className="text-purple-600 font-semibold">Active ✓</span>
-                </div>
-              </div>
-            </div>
-
-            <p className="absolute bottom-5 left-0 right-0 text-center text-sm text-muted" aria-live="polite">
-              {agent.name} is thinking…
-            </p>
-          </div>
-
+        <div className="grid lg:grid-cols-2 gap-12 items-center reveal">
           {/* Agent selector */}
           <div
             role="tablist"
             aria-label="AI Agents"
-            className="space-y-1"
+            className="order-2 lg:order-1"
             ref={containerRef}
             onMouseEnter={stopTimer}
             onMouseLeave={startTimer}
@@ -132,15 +97,75 @@ export default function AgentShowcase() {
                 role="tab"
                 aria-selected={i === active}
                 tabIndex={i === active ? 0 : -1}
-                className="agent-btn w-full text-left font-display text-2xl sm:text-3xl font-semibold py-2 transition-colors cursor-pointer bg-transparent border-none"
+                className="agent-btn w-full text-left font-display text-[26px] sm:text-[32px] font-medium py-3.5 cursor-pointer bg-transparent border-0 border-b border-line flex items-baseline gap-4"
                 onClick={() => { stopTimer(); switchAgent(i); }}
                 onKeyDown={(e) => handleKey(e, i)}
               >
+                <span
+                  className={`text-[13px] font-body font-semibold transition-colors duration-300 ${
+                    i === active ? "text-rust" : "text-line"
+                  }`}
+                  aria-hidden="true"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 {a.name}
               </button>
             ))}
-            <p className="text-muted text-sm mt-4 max-w-md leading-relaxed" aria-live="polite">
+            <p className="text-muted text-[15px] mt-6 max-w-md leading-relaxed" aria-live="polite">
               {agent.desc}
+            </p>
+          </div>
+
+          {/* Live mockup card */}
+          <div
+            className="order-1 lg:order-2 relative bg-ink min-h-[420px] flex items-center justify-center overflow-hidden p-8"
+            onMouseEnter={stopTimer}
+            onMouseLeave={startTimer}
+          >
+            {/* Hairline grid backdrop */}
+            <div
+              className="absolute inset-0 opacity-[0.08]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(#f6f3ec 1px, transparent 1px), linear-gradient(90deg, #f6f3ec 1px, transparent 1px)",
+                backgroundSize: "56px 56px",
+              }}
+              aria-hidden="true"
+            />
+
+            {/* Agent card */}
+            <div
+              className="relative bg-surface border border-line p-6 w-72"
+              style={{ opacity: cardVisible ? 1 : 0, transition: "opacity 0.15s ease" }}
+              role="status"
+              aria-live="polite"
+              aria-label={`${agent.name} status card`}
+            >
+              <div className="flex justify-between items-center mb-5">
+                <span className="font-semibold text-sm text-ink">{agent.cardTitle}</span>
+                <span className="border border-line text-muted text-[11px] uppercase tracking-[0.08em] px-2.5 py-1">
+                  {agent.tag}
+                </span>
+              </div>
+              <div className="font-display text-4xl font-medium text-ink mb-5">{agent.big}</div>
+              <div className="text-xs space-y-2.5 text-muted border-t border-line pt-4">
+                <div className="flex justify-between">
+                  <span>{agent.rowKey}</span>
+                  <span className="text-ink font-medium">{agent.rowVal}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Status</span>
+                  <span className="text-rust font-semibold">Active</span>
+                </div>
+              </div>
+            </div>
+
+            <p
+              className="absolute bottom-5 left-0 right-0 text-center text-[12px] uppercase tracking-[0.12em] text-paper/50"
+              aria-live="polite"
+            >
+              {agent.name} is working
             </p>
           </div>
         </div>

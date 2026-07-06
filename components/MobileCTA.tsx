@@ -28,9 +28,9 @@ export default function MobileCTA() {
       </p>
       <a
         href="#book"
-        className="bg-ink text-white text-sm font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity shrink-0"
+        className="bg-ink text-paper text-[12px] font-semibold uppercase tracking-[0.08em] px-5 py-3 hover:bg-rust transition-colors shrink-0"
       >
-        Book a call →
+        Book a call
       </a>
     </div>
   );

@@ -1,8 +1,15 @@
 "use client";
 import { useEffect, useRef } from "react";
 
+const process = [
+  { num: "01", label: "Discover", desc: "Map your workflows and find the highest-ROI automation." },
+  { num: "02", label: "Build", desc: "Senior engineers ship a custom system in focused sprints." },
+  { num: "03", label: "Deploy", desc: "Live in your stack in weeks, with guardrails built in." },
+  { num: "04", label: "Optimise", desc: "Agents learn from outcomes and sharpen ROI over time." },
+];
+
 export default function Hero() {
-  const revealRef = useRef<HTMLDivElement>(null);
+  const revealRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -14,91 +21,65 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="pt-40 pb-8 text-center px-5 relative overflow-hidden" ref={revealRef}>
-      {/* Levitating Hero Orb */}
-      <div 
-        className="hero-orb absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" 
-        aria-hidden="true" 
-      />
+    <section className="pt-36 md:pt-44 pb-0 px-5" ref={revealRef}>
+      <div className="max-w-6xl mx-auto">
+        {/* Masthead */}
+        <div className="reveal">
+          <div className="flex items-center justify-between border-b border-line pb-4 mb-10 md:mb-14">
+            <p className="section-label">Boutique AI Agentic Studio</p>
+            <p className="section-label hidden sm:block">Est. results, not experiments</p>
+          </div>
 
-      <div className="max-w-3xl mx-auto reveal relative z-10">
-        {/* Pill Badge */}
-        <div className="inline-flex items-center gap-2 rounded-full px-[14px] py-[6px] text-[12px] font-semibold uppercase tracking-[0.08em] mb-6 bg-[rgba(107,70,193,0.06)] border border-[rgba(107,70,193,0.12)] text-[#7C3AED]">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#7C3AED] animate-pulse" aria-hidden="true" />
-          Boutique AI Agentic Studio
+          <h1 className="font-display font-medium text-ink text-balance leading-[1.02] tracking-[-0.025em] text-[44px] sm:text-[64px] md:text-[84px] max-w-5xl">
+            AI agents that do{" "}
+            <br className="hidden sm:block" />
+            <span className="italic font-light">real work</span>, built by{" "}
+            <br className="hidden sm:block" />a studio that{" "}
+            <span className="text-rust">owns the outcome</span>.
+          </h1>
         </div>
 
-        {/* H1 Title */}
-        <h1 
-          className="font-display text-[36px] md:text-[52px] font-medium text-ink mb-6 leading-[1.05] tracking-[-0.02em]"
-          style={{ textShadow: "0 2px 40px rgba(107, 70, 193, 0.08)" }}
-        >
-          AI is hard to win
-        </h1>
+        {/* Sub + CTAs */}
+        <div className="reveal grid md:grid-cols-2 gap-8 items-end mt-10 md:mt-14">
+          <p className="text-[17px] leading-relaxed text-muted max-w-[480px] text-pretty">
+            Regicore designs, ships and optimises custom AI systems: voice callers, outreach
+            engines and agentic workflows. Senior engineers only, success metrics agreed
+            before a line of code is written.
+          </p>
 
-        {/* Subtitle */}
-        <p className="text-[17px] leading-relaxed text-[#6B6B7B] max-w-[520px] mx-auto mb-8 font-normal">
-          Regicore delivers an unfair advantage with custom AI systems — combining a proven build method with autonomous agents and senior engineers.
-        </p>
-
-        <div className="flex flex-wrap gap-3 justify-center">
-          <a
-            href="#services"
-            className="bg-[#2A3234] text-[#EBECE7] font-semibold text-[13px] uppercase tracking-[0.04em] px-6 py-3.5 rounded-xl flex items-center gap-2 hover:bg-[#1A2224] transition-all hover:shadow-[0_4px_15px_rgba(42,50,52,0.2)]"
-          >
-            Explore Full-Service <span aria-hidden="true">↓</span>
-          </a>
-          <a
-            href="#book"
-            className="bg-[rgba(107,70,193,0.08)] text-[#7C3AED] border border-[rgba(107,70,193,0.15)] font-semibold text-[13px] uppercase tracking-[0.04em] px-6 py-3.5 rounded-xl hover:bg-[rgba(107,70,193,0.15)] transition-all"
-          >
-            Book a call
-          </a>
+          <div className="flex flex-wrap gap-3 md:justify-end">
+            <a
+              href="#book"
+              className="bg-ink text-paper font-semibold text-[13px] uppercase tracking-[0.08em] px-7 py-4 hover:bg-rust transition-colors duration-300"
+            >
+              Book a call
+            </a>
+            <a
+              href="#services"
+              className="border border-ink text-ink font-semibold text-[13px] uppercase tracking-[0.08em] px-7 py-4 hover:bg-ink hover:text-paper transition-colors duration-300"
+            >
+              Explore services
+            </a>
+          </div>
         </div>
-      </div>
 
-      {/* Hand-drawn SVG flow */}
-      <div className="max-w-5xl mx-auto mt-14 reveal relative z-10">
-        <svg viewBox="0 0 900 200" className="w-full" aria-label="Discover → Build → Deploy → Optimise workflow" role="img">
-          <defs>
-            <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-              <polygon points="0 0, 10 3.5, 0 7" fill="#7C3AED" opacity="0.6" />
-            </marker>
-          </defs>
-          <g className="doodle">
-            {/* Input box */}
-            <rect x="30" y="60" width="120" height="80" rx="14" />
-            <circle cx="60" cy="90" r="5" />
-            <circle cx="80" cy="90" r="5" />
-            <circle cx="100" cy="90" r="5" />
-            <line x1="50" y1="115" x2="130" y2="115" />
-            {/* Arrow 1 */}
-            <path d="M170 100 H228" markerEnd="url(#arrow)" />
-            {/* Data chart box */}
-            <rect x="240" y="50" width="120" height="100" rx="14" fill="#e4d8ff" stroke="#7C3AED" />
-            <path d="M260 130 L290 95 L315 115 L340 80" />
-            {/* Arrow 2 */}
-            <path d="M380 100 H438" markerEnd="url(#arrow)" />
-            {/* Agent circle */}
-            <circle cx="500" cy="100" r="44" fill="#d8c7ff" stroke="#7C3AED" />
-            <text x="500" y="106" textAnchor="middle" fontFamily="Caveat, cursive" fontSize="22" fill="#26203a">AGENT</text>
-            {/* Arrow 3 */}
-            <path d="M560 100 H618" markerEnd="url(#arrow)" />
-            {/* Output box */}
-            <rect x="630" y="55" width="120" height="90" rx="14" fill="#efe6ff" stroke="#7C3AED" />
-            <line x1="650" y1="80" x2="730" y2="80" />
-            <line x1="650" y1="100" x2="730" y2="100" />
-            <line x1="650" y1="120" x2="700" y2="120" />
-            {/* Arrow 4 */}
-            <path d="M780 100 H840" markerEnd="url(#arrow)" />
-            {/* Done circle */}
-            <circle cx="868" cy="100" r="24" fill="#ece4ff" stroke="#7C3AED" />
-            <path d="M858 100 l8 8 l14 -16" />
-          </g>
-        </svg>
-        <p className="font-script text-2xl text-[#6B6B7B] mt-2 animate-pulse" aria-hidden="true">
-          discover → build → deploy → optimise
-        </p>
+        {/* Numbered process strip */}
+        <div className="reveal mt-16 md:mt-24 border-t border-line">
+          <ol className="grid grid-cols-2 lg:grid-cols-4">
+            {process.map((p, i) => (
+              <li
+                key={p.num}
+                className={`py-8 pr-6 ${i > 0 ? "lg:border-l lg:border-line lg:pl-6" : ""} ${
+                  i % 2 === 1 ? "border-l border-line pl-6 lg:pl-6" : ""
+                }`}
+              >
+                <span className="index-num text-[15px] block mb-3">{p.num}</span>
+                <h2 className="font-display text-[20px] font-medium text-ink mb-1.5">{p.label}</h2>
+                <p className="text-[13.5px] leading-relaxed text-muted">{p.desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   );

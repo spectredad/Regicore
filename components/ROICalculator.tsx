@@ -32,32 +32,32 @@ export default function ROICalculator() {
   const isCapped = rawSavings > MAX_DISPLAY;
 
   return (
-    <section className="py-20 px-5 bg-[#FAFAFB]" ref={sectionRef} id="roi">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12 reveal">
-          {/* Overline */}
-          <span className="text-[12px] uppercase tracking-[0.12em] font-semibold text-[#8B8B9B] block mb-2 font-sans">
-            estimate your upside
-          </span>
-          {/* H2: 40px */}
-          <h2 className="font-display text-[30px] md:text-[40px] font-medium leading-[1.1] tracking-[-0.01em] text-ink">
-            ROI Calculator
-          </h2>
-          <p className="text-[16px] leading-[1.6] text-muted mt-3 max-w-lg mx-auto">
-            Drag the sliders to estimate what automating manual work could save your team per year.
-          </p>
+    <section className="py-24 md:py-32 px-5 border-t border-line" ref={sectionRef} id="roi">
+      <div className="max-w-6xl mx-auto">
+        {/* Section header */}
+        <div className="reveal flex items-baseline gap-4 border-b border-line pb-4 mb-12 md:mb-16">
+          <span className="index-num text-[15px]">05</span>
+          <p className="section-label">Estimate your upside</p>
         </div>
 
-        <div className="premium-card p-8 sm:p-10 reveal">
-          <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-[1fr_1.15fr] gap-14 items-start">
+          <div className="reveal">
+            <h2 className="font-display text-[36px] sm:text-[52px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance mb-5">
+              What is manual work costing you?
+            </h2>
+            <p className="text-[17px] leading-relaxed text-muted max-w-md text-pretty mb-12">
+              Drag the sliders to estimate what automating manual work could save your team
+              per year. Then let us pressure-test the number.
+            </p>
+
             {/* Sliders */}
-            <div className="space-y-8">
+            <div className="space-y-10">
               <div>
-                <div className="flex justify-between items-center mb-3">
-                  <label className="text-[15px] font-semibold text-ink" htmlFor="slider-team">
+                <div className="flex justify-between items-baseline mb-4">
+                  <label className="text-[15px] font-medium text-ink" htmlFor="slider-team">
                     Team members affected
                   </label>
-                  <span className="font-display text-[20px] font-semibold text-[#7C3AED]">{team}</span>
+                  <span className="font-display text-[24px] font-medium text-rust">{team}</span>
                 </div>
                 <input
                   id="slider-team"
@@ -70,15 +70,15 @@ export default function ROICalculator() {
                   aria-valuemax={MAX_TEAM}
                   aria-valuenow={team}
                 />
-                <div className="flex justify-between text-xs text-muted mt-1"><span>1</span><span>{MAX_TEAM}</span></div>
+                <div className="flex justify-between text-xs text-muted mt-2"><span>1</span><span>{MAX_TEAM}</span></div>
               </div>
 
               <div>
-                <div className="flex justify-between items-center mb-3">
-                  <label className="text-[15px] font-semibold text-ink" htmlFor="slider-hours">
+                <div className="flex justify-between items-baseline mb-4">
+                  <label className="text-[15px] font-medium text-ink" htmlFor="slider-hours">
                     Hours saved per person / week
                   </label>
-                  <span className="font-display text-[20px] font-semibold text-[#7C3AED]">{hours}h</span>
+                  <span className="font-display text-[24px] font-medium text-rust">{hours}h</span>
                 </div>
                 <input
                   id="slider-hours"
@@ -91,15 +91,15 @@ export default function ROICalculator() {
                   aria-valuemax={MAX_HOURS}
                   aria-valuenow={hours}
                 />
-                <div className="flex justify-between text-xs text-muted mt-1"><span>1h</span><span>{MAX_HOURS}h</span></div>
+                <div className="flex justify-between text-xs text-muted mt-2"><span>1h</span><span>{MAX_HOURS}h</span></div>
               </div>
 
               <div>
-                <div className="flex justify-between items-center mb-3">
-                  <label className="text-[15px] font-semibold text-ink" htmlFor="slider-rate">
+                <div className="flex justify-between items-baseline mb-4">
+                  <label className="text-[15px] font-medium text-ink" htmlFor="slider-rate">
                     Average fully-loaded hourly rate
                   </label>
-                  <span className="font-display text-[20px] font-semibold text-[#7C3AED]">${rate}</span>
+                  <span className="font-display text-[24px] font-medium text-rust">${rate}</span>
                 </div>
                 <input
                   id="slider-rate"
@@ -112,50 +112,52 @@ export default function ROICalculator() {
                   aria-valuemax={MAX_RATE}
                   aria-valuenow={rate}
                 />
-                <div className="flex justify-between text-xs text-muted mt-1"><span>$15</span><span>${MAX_RATE}</span></div>
+                <div className="flex justify-between text-xs text-muted mt-2"><span>$15</span><span>${MAX_RATE}</span></div>
               </div>
             </div>
+          </div>
 
-            {/* Result panel */}
-            <div className="flex flex-col items-center justify-center bg-[#111827] rounded-[24px] p-8 text-center gap-4">
-              <p className="text-white/60 text-[12px] uppercase tracking-[0.08em] font-semibold">
-                Estimated annual savings
-              </p>
-              {/* Stats Numbers: 42px (2.625rem), weight 500, letter-spacing -0.02em */}
+          {/* Result panel */}
+          <div className="reveal bg-ink p-10 md:p-14 flex flex-col justify-between min-h-[480px] lg:sticky lg:top-24">
+            <div>
+              <p className="section-label text-paper/60 mb-8">Estimated annual savings</p>
               <div
-                className="font-display text-[42px] font-medium text-white leading-none tracking-[-0.02em] transition-all duration-300"
+                className="font-display text-[64px] md:text-[88px] font-medium text-paper leading-none tracking-[-0.03em] transition-all duration-300"
                 aria-live="polite"
                 aria-label={`Estimated annual savings: ${formatMoney(savings)}${isCapped ? " or more" : ""}`}
               >
                 {formatMoney(savings)}
-                {isCapped && <span className="text-lav text-[24px]">+</span>}
+                {isCapped && <span className="text-rust">+</span>}
               </div>
-              <p className="text-white/40 text-xs max-w-[180px]">
+              <p className="text-paper/40 text-[13px] mt-6 max-w-[260px] leading-relaxed">
                 {isCapped
-                  ? "Capped display — actual savings may be higher"
-                  : "Estimated. Based on hours × rate × 52 weeks"}
+                  ? "Capped display. Actual savings may be higher."
+                  : "Estimated, based on hours saved multiplied by rate over 52 weeks."}
               </p>
+            </div>
 
-              <div className="relative tooltip-trigger">
+            <div className="mt-10">
+              <div className="relative tooltip-trigger inline-block mb-6">
                 <button
-                  className="text-white/50 hover:text-white/80 text-xs underline underline-offset-2 transition-colors"
+                  className="text-paper/50 hover:text-paper/80 text-xs underline underline-offset-4 transition-colors"
                   tabIndex={0}
                   aria-label="How we calculate this estimate"
                 >
-                  How we calculate this ?
+                  How we calculate this
                 </button>
                 <div className="tooltip-box" role="tooltip">
                   <strong className="block mb-1">Formula</strong>
-                  Team × Hours/week × Hourly rate × 52 weeks = Annual labour cost freed.
-                  Assumes 100% of freed time is redeployable. Your actual ROI may include revenue impact and quality gains not captured here.
+                  Team x Hours/week x Hourly rate x 52 weeks = Annual labour cost freed.
+                  Assumes 100% of freed time is redeployable. Your actual ROI may include revenue
+                  impact and quality gains not captured here.
                 </div>
               </div>
 
               <a
                 href="#book"
-                className="mt-2 w-full bg-[#7C3AED] text-white font-semibold py-3 rounded-xl hover:bg-[#6D28D9] hover:shadow-[0_4px_15px_rgba(124,58,237,0.3)] transition-all text-sm group"
+                className="block w-full text-center bg-paper text-ink font-semibold text-[13px] uppercase tracking-[0.08em] py-4 hover:bg-rust hover:text-paper transition-colors duration-300"
               >
-                Get a precise audit <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
+                Get a precise audit
               </a>
             </div>
           </div>
