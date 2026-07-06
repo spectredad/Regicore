@@ -80,16 +80,7 @@ export default function Services() {
         </div>
 
         {/* Content grid */}
-        <div className="grid lg:grid-cols-[360px_1fr] gap-12 items-end reveal">
-          
-          {/* Decorative graphic left side */}
-          <div className="hidden lg:flex min-h-[360px] items-center justify-center group perspective-1000">
-            <div className="relative w-[300px] h-[220px] transition-transform duration-700 group-hover:rotate-y-12 group-hover:rotate-x-12">
-              <div className="absolute left-5 bottom-6 w-[250px] h-[70px] rounded-[50%] bg-white border border-ink/10 shadow-[0_22px_45px_rgba(38,32,58,0.14)] rotate-[-7deg] transition-all duration-500 group-hover:shadow-[0_30px_60px_rgba(38,32,58,0.2)]"></div>
-              <div className="absolute left-[84px] bottom-[70px] w-[140px] h-[140px] rounded-full bg-[radial-gradient(circle_at_35%_35%,#ffffff_0%,#d8c7ff_23%,#a855f7_53%,#581c87_100%)] shadow-[0_28px_70px_rgba(126,34,206,0.32)] transition-transform duration-500 group-hover:-translate-y-4 group-hover:scale-105"></div>
-              <div className="absolute left-[104px] bottom-[116px] w-[62px] h-[44px] rounded-full bg-white/40 blur-xl rotate-[-22deg] transition-opacity duration-500 group-hover:opacity-80"></div>
-            </div>
-          </div>
+        <div className="grid lg:grid-cols-[1fr] gap-12 items-end reveal">
 
           {/* Horizontal Scroller */}
           <div
