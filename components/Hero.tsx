@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const process = [
   { num: "01", label: "Discover", desc: "Map your workflows and find the highest-ROI automation." },
@@ -10,6 +11,8 @@ const process = [
 
 export default function Hero() {
   const revealRef = useRef<HTMLElement>(null);
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 400], [0, 100]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,7 +24,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="pt-36 md:pt-44 pb-0 px-5" ref={revealRef}>
+    <motion.section style={{ y }} className="pt-36 md:pt-44 pb-0 px-5" ref={revealRef}>
       <div className="max-w-6xl mx-auto">
         {/* Masthead */}
         <div className="reveal">
@@ -81,6 +84,6 @@ export default function Hero() {
           </ol>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
