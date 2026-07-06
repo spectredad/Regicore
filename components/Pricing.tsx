@@ -2,18 +2,19 @@
 import { useEffect, useRef } from "react";
 import { plans } from "@/lib/content";
 
-function PriceDisplay({ price }: { price: string }) {
+function PriceDisplay({ price, dark }: { price: string; dark?: boolean }) {
+  const inkClass = dark ? "text-paper" : "text-ink";
   if (price.startsWith("From ")) {
     const value = price.replace("From ", "");
     return (
-      <div className="flex items-baseline gap-1.5">
-        <span className="text-[16px] font-normal text-muted">From</span>
-        <span className="font-display text-[36px] font-medium text-ink leading-[1.1] tracking-[-0.01em]">{value}</span>
+      <div className="flex items-baseline gap-2">
+        <span className={`text-[15px] font-normal ${dark ? "text-paper/50" : "text-muted"}`}>From</span>
+        <span className={`font-display text-[40px] font-medium ${inkClass} leading-none tracking-[-0.02em]`}>{value}</span>
       </div>
     );
   }
   return (
-    <div className="font-display text-[36px] font-medium text-ink leading-[1.1] tracking-[-0.01em]">
+    <div className={`font-display text-[40px] font-medium ${inkClass} leading-none tracking-[-0.02em]`}>
       {price}
     </div>
   );
@@ -32,74 +33,92 @@ export default function Pricing() {
   }, []);
 
   return (
-    <section id="pricing" className="py-20 px-5" ref={sectionRef}>
+    <section id="pricing" className="py-24 md:py-32 px-5 border-t border-line" ref={sectionRef}>
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14 reveal">
-          <span className="text-[12px] uppercase tracking-[0.12em] font-semibold text-[#8B8B9B] block mb-2 font-sans">
-            engagement models
-          </span>
-          <h2 className="font-display text-[30px] md:text-[40px] font-medium leading-[1.1] tracking-[-0.01em] text-ink">
+        {/* Section header */}
+        <div className="reveal flex items-baseline gap-4 border-b border-line pb-4 mb-12 md:mb-16">
+          <span className="index-num text-[15px]">06</span>
+          <p className="section-label">Engagements</p>
+        </div>
+
+        <div className="max-w-2xl mb-14 reveal">
+          <h2 className="font-display text-[36px] sm:text-[52px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance">
             Choose how we work together
           </h2>
-          <p className="text-muted mt-3 max-w-lg mx-auto text-[16px] leading-[1.6]">
-            Project-based or ongoing — no lock-in, success metrics agreed up front.
+          <p className="text-muted mt-5 text-[17px] leading-relaxed text-pretty">
+            Project-based or ongoing. No lock-in, success metrics agreed up front.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5 items-start">
-          {plans.map((plan, i) => (
-            <div
-              key={plan.name}
-              className={`premium-card p-[28px] reveal flex flex-col gap-6 relative ${
-                plan.featured ? "pricing-featured" : ""
-              }`}
-              style={{ transitionDelay: `${i * 80}ms` }}
-            >
-              {plan.badge && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="bg-[#7C3AED] text-white text-[11px] uppercase tracking-[0.08em] font-semibold px-4 py-1.5 rounded-full shadow-md">
-                    {plan.badge}
-                  </span>
-                </div>
-              )}
-
-              <div>
-                {/* Card titles: 28px (1.75rem), weight 500 */}
-                <h3 className="font-display text-[28px] font-medium text-ink">{plan.name}</h3>
-                <p className="text-muted text-sm mt-2">{plan.desc}</p>
-              </div>
-
-              <div>
-                <PriceDisplay price={plan.price} />
-                <div className="text-muted text-xs mt-1 uppercase tracking-wider">{plan.period}</div>
-              </div>
-
-              {/* Feature list: 15px, line-height 1.7. Tighten bullet spacing. */}
-              <ul className="space-y-1.5 flex-1">
-                {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-[15px] leading-[1.7] text-ink/80">
-                    <span className="text-[#7C3AED] mt-1 shrink-0" aria-hidden="true">✦</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="#book"
-                className={`block text-center font-semibold py-3.5 rounded-xl transition-all text-sm ${
-                  plan.featured
-                    ? "bg-[#7C3AED] text-white hover:bg-[#6D28D9] hover:shadow-[0_4px_15px_rgba(124,58,237,0.2)]"
-                    : "bg-ink/5 text-ink hover:bg-ink/10"
+        <div className="grid md:grid-cols-3 gap-px bg-line border border-line items-stretch">
+          {plans.map((plan, i) => {
+            const dark = plan.featured;
+            return (
+              <div
+                key={plan.name}
+                className={`p-8 md:p-10 reveal flex flex-col gap-8 relative ${
+                  dark ? "bg-ink" : "bg-surface"
                 }`}
+                style={{ transitionDelay: `${i * 80}ms` }}
               >
-                {plan.cta} →
-              </a>
-            </div>
-          ))}
+                <div className="flex items-start justify-between gap-3">
+                  <span className={`index-num text-[13px] ${dark ? "" : ""}`} aria-hidden="true">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {plan.badge && (
+                    <span className="bg-rust text-paper text-[10px] uppercase tracking-[0.12em] font-semibold px-3 py-1.5">
+                      {plan.badge}
+                    </span>
+                  )}
+                </div>
+
+                <div>
+                  <h3 className={`font-display text-[28px] font-medium ${dark ? "text-paper" : "text-ink"}`}>
+                    {plan.name}
+                  </h3>
+                  <p className={`text-sm mt-2 leading-relaxed ${dark ? "text-paper/60" : "text-muted"}`}>
+                    {plan.desc}
+                  </p>
+                </div>
+
+                <div>
+                  <PriceDisplay price={plan.price} dark={dark} />
+                  <div className={`text-xs mt-2 uppercase tracking-[0.1em] ${dark ? "text-paper/40" : "text-muted"}`}>
+                    {plan.period}
+                  </div>
+                </div>
+
+                <ul className={`flex-1 border-t ${dark ? "border-paper/15" : "border-line"}`}>
+                  {plan.features.map((f) => (
+                    <li
+                      key={f}
+                      className={`flex items-baseline gap-3 text-[14.5px] leading-relaxed py-2.5 border-b ${
+                        dark ? "text-paper/80 border-paper/15" : "text-ink/80 border-line"
+                      }`}
+                    >
+                      <span className="text-rust shrink-0 text-[11px]" aria-hidden="true">&#9632;</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href="#book"
+                  className={`block text-center font-semibold py-4 transition-colors duration-300 text-[13px] uppercase tracking-[0.08em] ${
+                    dark
+                      ? "bg-paper text-ink hover:bg-rust hover:text-paper"
+                      : "border border-ink text-ink hover:bg-ink hover:text-paper"
+                  }`}
+                >
+                  {plan.cta}
+                </a>
+              </div>
+            );
+          })}
         </div>
 
         <p className="text-center text-muted text-sm mt-8 reveal">
-          All plans include full code ownership · no vendor lock-in · you keep everything
+          All plans include full code ownership &middot; no vendor lock-in &middot; you keep everything
         </p>
       </div>
     </section>

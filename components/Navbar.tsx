@@ -10,7 +10,7 @@ export default function Navbar() {
   useEffect(() => {
     const onScroll = () => {
       const currentY = window.scrollY;
-      
+
       // Hide on scroll down after 120px, show on scroll up
       if (currentY > 120 && currentY > lastScrollY) {
         setHidden(true);
@@ -21,7 +21,7 @@ export default function Navbar() {
       setIsScrolled(currentY > 20);
       setLastScrollY(currentY);
     };
-    
+
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [lastScrollY]);
@@ -31,43 +31,50 @@ export default function Navbar() {
       <a href="#main" className="skip-link">Skip to main content</a>
 
       <header
-        className={`fixed top-4 inset-x-0 z-50 transition-transform duration-300 ${
-          hidden ? "-translate-y-[140%]" : "translate-y-0"
-        }`}
+        className={`nav-bar fixed top-0 inset-x-0 z-50 transition-transform duration-300 ${
+          hidden ? "-translate-y-full" : "translate-y-0"
+        } ${isScrolled ? "scrolled" : ""}`}
       >
-        <div className="max-w-[95%] mx-auto h-[72px] flex items-center justify-between group">
-          <a href="/" className="font-display text-[22px] font-semibold text-ink hover:scale-105 hover:opacity-80 transition-all duration-300 ml-4 tracking-[-0.01em]" aria-label="Regicore home">
+        <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+          <a
+            href="/"
+            className="font-display text-[20px] font-semibold text-ink tracking-[-0.01em] hover:text-rust transition-colors duration-300"
+            aria-label="Regicore home"
+          >
             Regicore
+            <span className="text-rust">.</span>
           </a>
 
-          {/* Desktop nav floating pill with glassmorphism */}
-          <div 
-            className={`hidden md:flex items-center rounded-xl p-1.5 mr-4 font-body glass-nav-pill ${
-              isScrolled ? "scrolled" : ""
-            }`}
-            aria-label="Main navigation"
-          >
-            <div className="flex items-center gap-7 px-6 py-2 text-[14px] font-medium tracking-[0.02em] text-[#4A4F50] uppercase">
-              {nav.map((item) => (
-                <a key={item.href} href={item.href} className="relative hover:text-black transition-colors overflow-hidden group/link">
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+            {nav.map((item, i) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="group/link flex items-baseline gap-1.5 text-[13px] font-medium tracking-[0.02em] text-muted hover:text-ink transition-colors"
+              >
+                <span className="index-num text-[11px]" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="relative">
                   {item.label}
-                  <span className="absolute bottom-0 left-0 w-full h-[1px] bg-ink scale-x-0 group-hover/link:scale-x-100 transition-transform origin-left duration-300"></span>
-                </a>
-              ))}
-            </div>
+                  <span className="absolute -bottom-0.5 left-0 w-full h-px bg-ink scale-x-0 group-hover/link:scale-x-100 transition-transform origin-left duration-300" />
+                </span>
+              </a>
+            ))}
             <a
               href="/#book"
-              className="bg-[#2A3234] text-[#EBECE7] text-[13px] font-semibold tracking-[0.04em] uppercase rounded-lg px-5 py-2.5 hover:bg-[#1A2224] hover:shadow-[0_0_15px_rgba(42,50,52,0.4)] hover:-translate-y-0.5 transition-all duration-300 ml-2 shadow-sm"
+              className="bg-ink text-paper text-[12px] font-semibold tracking-[0.08em] uppercase px-5 py-2.5 hover:bg-rust transition-colors duration-300"
             >
               Work with us
             </a>
-          </div>
-          
-          {/* Mobile hamburger (placeholder for the mobile view which wasn't fully styled in the new HTML, keeping it simple) */}
-          <div className="md:hidden flex items-center mr-4">
-             <a
+          </nav>
+
+          {/* Mobile CTA */}
+          <div className="md:hidden flex items-center">
+            <a
               href="/#book"
-              className="bg-[#2A3234] text-[#EBECE7] text-[13px] font-semibold tracking-[0.04em] uppercase rounded-lg px-4 py-2"
+              className="bg-ink text-paper text-[12px] font-semibold tracking-[0.08em] uppercase px-4 py-2 hover:bg-rust transition-colors duration-300"
             >
               Contact
             </a>
