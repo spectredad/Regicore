@@ -39,17 +39,27 @@ function ArtifactAgents() {
       "draft_reminder(tone: firm)",
       "send + log_to_crm()",
     ];
-    let index = 0;
-    const typeInterval = setInterval(() => {
-      if (index < commands.length) {
-        setCommandLines((prev) => [...prev, commands[index]]);
-        index++;
-      } else {
-        setShowCompletion(true);
-        clearInterval(typeInterval);
-      }
-    }, 500);
-    return () => clearInterval(typeInterval);
+    let typeInterval: NodeJS.Timeout;
+    const runAnimation = () => {
+      setCommandLines([]);
+      setShowCompletion(false);
+      let index = 0;
+      typeInterval = setInterval(() => {
+        if (index < commands.length) {
+          setCommandLines((prev) => [...prev, commands[index]]);
+          index++;
+        } else {
+          setShowCompletion(true);
+          clearInterval(typeInterval);
+        }
+      }, 500);
+    };
+    runAnimation();
+    const loopInterval = setInterval(runAnimation, 4500);
+    return () => {
+      clearInterval(typeInterval);
+      clearInterval(loopInterval);
+    };
   }, [isVisible]);
 
   return (
@@ -100,16 +110,26 @@ function ArtifactEmail() {
 
   useEffect(() => {
     if (!isVisible) return;
-    setHighlightPill(true);
-    const numInterval = setInterval(() => {
-      setDisplayNum((prev) => (prev < 842 ? prev + 25 : 842));
-    }, 30);
-    const pctInterval = setInterval(() => {
-      setDisplayPct((prev) => (prev < 62 ? prev + 2 : 62));
-    }, 40);
+    let numInterval: NodeJS.Timeout;
+    let pctInterval: NodeJS.Timeout;
+    const runAnimation = () => {
+      setDisplayNum(0);
+      setDisplayPct(0);
+      setHighlightPill(false);
+      setTimeout(() => setHighlightPill(true), 500);
+      numInterval = setInterval(() => {
+        setDisplayNum((prev) => (prev < 842 ? prev + 25 : 842));
+      }, 30);
+      pctInterval = setInterval(() => {
+        setDisplayPct((prev) => (prev < 62 ? prev + 2 : 62));
+      }, 40);
+    };
+    runAnimation();
+    const loopInterval = setInterval(runAnimation, 4500);
     return () => {
       clearInterval(numInterval);
       clearInterval(pctInterval);
+      clearInterval(loopInterval);
     };
   }, [isVisible]);
 
@@ -161,11 +181,20 @@ function ArtifactVoice() {
 
   useEffect(() => {
     if (!isVisible) return;
-    const quoteTimer = setTimeout(() => setShowQuote(true), 300);
-    const outcomeTimer = setTimeout(() => setShowOutcome(true), 1200);
+    let quoteTimer: NodeJS.Timeout;
+    let outcomeTimer: NodeJS.Timeout;
+    const runAnimation = () => {
+      setShowQuote(false);
+      setShowOutcome(false);
+      quoteTimer = setTimeout(() => setShowQuote(true), 300);
+      outcomeTimer = setTimeout(() => setShowOutcome(true), 1200);
+    };
+    runAnimation();
+    const loopInterval = setInterval(runAnimation, 4500);
     return () => {
       clearTimeout(quoteTimer);
       clearTimeout(outcomeTimer);
+      clearInterval(loopInterval);
     };
   }, [isVisible]);
 
@@ -212,13 +241,24 @@ function ArtifactVoice() {
 function ArtifactWebsite() {
   const { ref, isVisible } = useScrollReveal();
   const [cvrNum, setCvrNum] = useState(0);
+  const [playCount, setPlayCount] = useState(0);
 
   useEffect(() => {
     if (!isVisible) return;
-    const cvrInterval = setInterval(() => {
-      setCvrNum((prev) => (prev < 4.8 ? prev + 0.2 : 4.8));
-    }, 50);
-    return () => clearInterval(cvrInterval);
+    let cvrInterval: NodeJS.Timeout;
+    const runAnimation = () => {
+      setCvrNum(0);
+      setPlayCount(p => p + 1);
+      cvrInterval = setInterval(() => {
+        setCvrNum((prev) => (prev < 4.8 ? prev + 0.2 : 4.8));
+      }, 50);
+    };
+    runAnimation();
+    const loopInterval = setInterval(runAnimation, 4500);
+    return () => {
+      clearInterval(cvrInterval);
+      clearInterval(loopInterval);
+    };
   }, [isVisible]);
 
   const skeletonVariants = {
@@ -255,7 +295,7 @@ function ArtifactWebsite() {
       </div>
       <div className="px-4 py-3">
         {isVisible && (
-          <>
+          <div key={playCount}>
             <motion.div
               custom={0}
               variants={skeletonVariants}
@@ -294,7 +334,7 @@ function ArtifactWebsite() {
               </div>
               <span className="ml-3 font-mono text-[10px] text-muted">CVR +{cvrNum.toFixed(1)}%</span>
             </motion.div>
-          </>
+          </div>
         )}
       </div>
     </div>
@@ -305,16 +345,31 @@ function ArtifactSoftware() {
   const { ref, isVisible } = useScrollReveal();
   const [codeLines, setCodeLines] = useState<number[]>([]);
   const [showComment, setShowComment] = useState(false);
+  const [playCount, setPlayCount] = useState(0);
 
   useEffect(() => {
     if (!isVisible) return;
-    [0, 1, 2].forEach((i) => {
-      setTimeout(
-        () => setCodeLines((prev) => [...prev, i]),
-        i * 300
-      );
-    });
-    setTimeout(() => setShowComment(true), 1200);
+    let timers: NodeJS.Timeout[] = [];
+    const runAnimation = () => {
+      setCodeLines([]);
+      setShowComment(false);
+      setPlayCount(p => p + 1);
+      [0, 1, 2].forEach((i) => {
+        timers.push(
+          setTimeout(
+            () => setCodeLines((prev) => [...prev, i]),
+            i * 300
+          )
+        );
+      });
+      timers.push(setTimeout(() => setShowComment(true), 1200));
+    };
+    runAnimation();
+    const loopInterval = setInterval(runAnimation, 4500);
+    return () => {
+      timers.forEach(clearTimeout);
+      clearInterval(loopInterval);
+    };
   }, [isVisible]);
 
   return (
@@ -338,7 +393,7 @@ function ArtifactSoftware() {
         )}
       </div>
       <pre className="px-4 py-3 font-mono text-[11px] leading-[1.9] text-muted overflow-hidden min-h-[100px]">
-        <code>
+        <code key={playCount}>
           {codeLines.includes(0) && (
             <motion.div
               initial={{ opacity: 0, x: -8 }}
@@ -391,6 +446,13 @@ function ArtifactCRM() {
     { label: "Qualified", items: 3 },
     { label: "Won", items: 1 },
   ];
+  const [playCount, setPlayCount] = useState(0);
+  
+  useEffect(() => {
+    if (!isVisible) return;
+    const loopInterval = setInterval(() => setPlayCount(p => p + 1), 4500);
+    return () => clearInterval(loopInterval);
+  }, [isVisible]);
 
   return (
     <div ref={ref} className="artifact-frame">
@@ -412,7 +474,7 @@ function ArtifactCRM() {
           </div>
         )}
       </div>
-      <div className="grid grid-cols-3 gap-px bg-line">
+      <div key={playCount} className="grid grid-cols-3 gap-px bg-line">
         {cols.map((c, colIdx) => (
           <div key={c.label} className="bg-surface px-2.5 py-2.5">
             <p className="font-mono text-[9px] uppercase tracking-widest text-muted mb-2">{c.label}</p>
@@ -447,12 +509,24 @@ function ArtifactMarketing() {
 
   useEffect(() => {
     if (!isVisible) return;
-    steps.forEach((_, i) => {
-      setTimeout(() => {
-        setActiveSteps((prev) => [...prev, i]);
-      }, i * 100);
-    });
-  }, [isVisible, steps]);
+    let timers: NodeJS.Timeout[] = [];
+    const runAnimation = () => {
+      setActiveSteps([]);
+      steps.forEach((_, i) => {
+        timers.push(
+          setTimeout(() => {
+            setActiveSteps((prev) => [...prev, i]);
+          }, i * 100)
+        );
+      });
+    };
+    runAnimation();
+    const loopInterval = setInterval(runAnimation, 4500);
+    return () => {
+      timers.forEach(clearTimeout);
+      clearInterval(loopInterval);
+    };
+  }, [isVisible]);
 
   return (
     <div ref={ref} className="artifact-frame">
@@ -516,31 +590,51 @@ function ArtifactLeadGen() {
     { name: "Northline Co.", score: 87 },
     { name: "Bolt Supply", score: 74 },
   ];
-  const [scores, setScores] = useState(leads.map(() => 0));
+  const [scores, setScores] = useState<number[]>([0,0,0]);
   const [totalLeads, setTotalLeads] = useState(0);
+  const [playCount, setPlayCount] = useState(0);
 
   useEffect(() => {
     if (!isVisible) return;
 
-    leads.forEach((l, i) => {
-      setTimeout(() => {
-        const scoreInterval = setInterval(() => {
-          setScores((prev) => {
-            const next = [...prev];
-            next[i] = Math.min(next[i] + 2, l.score);
-            return next;
-          });
-        }, 30);
-        return () => clearInterval(scoreInterval);
-      }, i * 80);
-    });
+    let timers: NodeJS.Timeout[] = [];
+    let intervals: NodeJS.Timeout[] = [];
 
-    const leadInterval = setInterval(() => {
-      setTotalLeads((prev) => (prev < 31 ? prev + 1 : 31));
-    }, 30);
+    const runAnimation = () => {
+      setScores([0,0,0]);
+      setTotalLeads(0);
+      setPlayCount(p => p + 1);
 
-    return () => clearInterval(leadInterval);
-  }, [isVisible, leads]);
+      leads.forEach((l, i) => {
+        timers.push(
+          setTimeout(() => {
+            const scoreInterval = setInterval(() => {
+              setScores((prev) => {
+                const next = [...prev];
+                next[i] = Math.min(next[i] + 2, l.score);
+                return next;
+              });
+            }, 30);
+            intervals.push(scoreInterval);
+          }, i * 80)
+        );
+      });
+
+      const leadInterval = setInterval(() => {
+        setTotalLeads((prev) => (prev < 31 ? prev + 1 : 31));
+      }, 30);
+      intervals.push(leadInterval);
+    };
+
+    runAnimation();
+    const loopInterval = setInterval(runAnimation, 4500);
+
+    return () => {
+      timers.forEach(clearTimeout);
+      intervals.forEach(clearInterval);
+      clearInterval(loopInterval);
+    };
+  }, [isVisible]);
 
   return (
     <div ref={ref} className="artifact-frame">
@@ -565,7 +659,7 @@ function ArtifactLeadGen() {
           <span className="font-mono text-[10px] text-rust">+{totalLeads}</span>
         </div>
       </div>
-      <div>
+      <div key={playCount}>
         {leads.map((l, idx) => (
           <motion.div
             key={l.name}
