@@ -31,10 +31,11 @@ export default function Hero() {
           </div>
 
           <h1 className="font-display font-medium text-ink text-balance leading-[1.02] tracking-[-0.025em] text-[44px] sm:text-[64px] md:text-[84px] max-w-5xl">
-            AI agents that do
-            <br />
-            <span className="italic font-light">real work</span>, built by
-            <br />a studio that <span className="text-rust">owns the outcome</span>.
+            AI agents that do{" "}
+            <br className="hidden sm:block" />
+            <span className="italic font-light">real work</span>, built by{" "}
+            <br className="hidden sm:block" />a studio that{" "}
+            <span className="text-rust">owns the outcome</span>.
           </h1>
         </div>
 

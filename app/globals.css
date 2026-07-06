@@ -246,6 +246,12 @@ input[type="range"]::-moz-range-thumb {
     gap: 0.75rem;
     align-items: center;
   }
+
+  @media (min-width: 768px) {
+    .mobile-cta {
+      display: none;
+    }
+  }
 }
 
 /* ─── Agent tab active ──────────────────────────────────── */
