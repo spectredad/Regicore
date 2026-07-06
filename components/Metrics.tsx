@@ -37,10 +37,10 @@ function MetricCard({ metric, active }: { metric: (typeof metrics)[0]; active: b
   return (
     <div className="metric-card p-[28px] text-center">
       {/* Numbers: 42px (2.625rem), weight 500, line-height 1, letter-spacing -0.02em */}
-      <div className="font-display text-[32px] md:text-[42px] font-medium text-ink leading-none tracking-[-0.02em] metric-value">
+      <div className="font-display text-[24px] md:text-[36px] font-medium text-ink leading-none tracking-[-0.02em] metric-value">
         {display}{metric.suffix}
       </div>
-      <p className="text-sm text-muted mt-2">{metric.label}</p>
+      <p className="text-xs md:text-sm text-muted mt-2">{metric.label}</p>
     </div>
   );
 }
@@ -62,10 +62,10 @@ export default function Metrics() {
     <section className="py-20 px-5" ref={sectionRef}>
       <div className="max-w-6xl mx-auto">
         <div className="mb-10 text-center reveal">
-          <span className="text-[12px] uppercase tracking-[0.12em] font-semibold text-[#8B8B9B] block mb-2 font-sans">
+          <span className="text-[11px] uppercase tracking-[0.12em] font-semibold text-[#8B8B9B] block mb-2 font-sans">
             by the numbers
           </span>
-          <h2 className="font-display text-[30px] md:text-[40px] font-medium leading-[1.1] tracking-[-0.01em] text-ink">
+          <h2 className="font-display text-[24px] md:text-[36px] font-medium leading-[1.1] tracking-[-0.01em] text-ink">
             Results that compound
           </h2>
         </div>

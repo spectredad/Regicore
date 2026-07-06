@@ -73,22 +73,7 @@ h1, h2, h3, h4, .display {
   box-shadow: 0 16px 40px rgba(107, 70, 193, 0.1);
 }
 
-/* ─── Hero Floating Orb ─────────────────────────────────── */
-.hero-orb {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, rgba(168,85,247,0.02) 70%, transparent 100%);
-  filter: blur(60px);
-  z-index: 0;
-  pointer-events: none;
-  animation: floatOrb 8s ease-in-out infinite alternate;
-}
 
-@keyframes floatOrb {
-  0% { transform: translateY(-15px) translateX(-10px) scale(0.95); }
-  100% { transform: translateY(15px) translateX(10px) scale(1.05); }
-}
 
 /* ─── Glassmorphism Navbar ──────────────────────────────── */
 .glass-nav-pill {
@@ -164,7 +149,6 @@ h1, h2, h3, h4, .display {
   }
   .premium-card, .metric-card { transition: none; }
   .premium-card:hover, .metric-card:hover { transform: none; }
-  .hero-orb { animation: none; }
   * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 

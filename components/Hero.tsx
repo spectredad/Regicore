@@ -14,30 +14,18 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="pt-40 pb-8 text-center px-5 relative overflow-hidden" ref={revealRef}>
-      {/* Levitating Hero Orb */}
-      <div 
-        className="hero-orb absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" 
-        aria-hidden="true" 
-      />
-
+    <section className="pt-32 pb-8 text-center px-5 relative overflow-hidden" ref={revealRef}>
       <div className="max-w-3xl mx-auto reveal relative z-10">
-        {/* Pill Badge */}
-        <div className="inline-flex items-center gap-2 rounded-full px-[14px] py-[6px] text-[12px] font-semibold uppercase tracking-[0.08em] mb-6 bg-[rgba(107,70,193,0.06)] border border-[rgba(107,70,193,0.12)] text-[#7C3AED]">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#7C3AED] animate-pulse" aria-hidden="true" />
-          Boutique AI Agentic Studio
-        </div>
-
         {/* H1 Title */}
         <h1 
-          className="font-display text-[36px] md:text-[52px] font-medium text-ink mb-6 leading-[1.05] tracking-[-0.02em]"
+          className="font-display text-[32px] md:text-[44px] font-medium text-ink mb-6 leading-[1.05] tracking-[-0.02em]"
           style={{ textShadow: "0 2px 40px rgba(107, 70, 193, 0.08)" }}
         >
           AI is hard to win
         </h1>
 
         {/* Subtitle */}
-        <p className="text-[17px] leading-relaxed text-[#6B6B7B] max-w-[520px] mx-auto mb-8 font-normal">
+        <p className="text-[15px] md:text-[16px] leading-relaxed text-[#6B6B7B] max-w-[520px] mx-auto mb-8 font-normal">
           Regicore delivers an unfair advantage with custom AI systems — combining a proven build method with autonomous agents and senior engineers.
         </p>
 

@@ -7,13 +7,13 @@ function PriceDisplay({ price }: { price: string }) {
     const value = price.replace("From ", "");
     return (
       <div className="flex items-baseline gap-1.5">
-        <span className="text-[16px] font-normal text-muted">From</span>
-        <span className="font-display text-[36px] font-medium text-ink leading-[1.1] tracking-[-0.01em]">{value}</span>
+        <span className="text-[14px] md:text-[16px] font-normal text-muted">From</span>
+        <span className="font-display text-[28px] md:text-[36px] font-medium text-ink leading-[1.1] tracking-[-0.01em]">{value}</span>
       </div>
     );
   }
   return (
-    <div className="font-display text-[36px] font-medium text-ink leading-[1.1] tracking-[-0.01em]">
+    <div className="font-display text-[28px] md:text-[36px] font-medium text-ink leading-[1.1] tracking-[-0.01em]">
       {price}
     </div>
   );
@@ -35,13 +35,13 @@ export default function Pricing() {
     <section id="pricing" className="py-20 px-5" ref={sectionRef}>
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14 reveal">
-          <span className="text-[12px] uppercase tracking-[0.12em] font-semibold text-[#8B8B9B] block mb-2 font-sans">
+          <span className="text-[11px] uppercase tracking-[0.12em] font-semibold text-[#8B8B9B] block mb-2 font-sans">
             engagement models
           </span>
-          <h2 className="font-display text-[30px] md:text-[40px] font-medium leading-[1.1] tracking-[-0.01em] text-ink">
+          <h2 className="font-display text-[24px] md:text-[36px] font-medium leading-[1.1] tracking-[-0.01em] text-ink">
             Choose how we work together
           </h2>
-          <p className="text-muted mt-3 max-w-lg mx-auto text-[16px] leading-[1.6]">
+          <p className="text-muted mt-3 max-w-lg mx-auto text-[14px] md:text-[16px] leading-[1.6]">
             Project-based or ongoing — no lock-in, success metrics agreed up front.
           </p>
         </div>

@@ -17,14 +17,6 @@ export default function CaseStudies() {
   return (
     <section className="py-20 px-5" ref={sectionRef}>
       <div className="max-w-6xl mx-auto">
-        <div className="mb-12 reveal">
-          <span className="text-[12px] uppercase tracking-[0.12em] font-semibold text-[#8B8B9B] block mb-2 font-sans">
-            real results
-          </span>
-          <h2 className="font-display text-[30px] md:text-[40px] font-medium leading-[1.1] tracking-[-0.01em] text-ink">
-            What we actually ship
-          </h2>
-        </div>
 
         <div className="grid md:grid-cols-3 gap-5">
           {cases.map((c, i) => (

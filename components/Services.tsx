@@ -53,10 +53,10 @@ export default function Services() {
 
           <div>
             {/* Delicate overline in 12px uppercase sans-serif */}
-            <span className="text-[12px] font-semibold tracking-[0.1em] text-[#8B8B9B] uppercase block mb-2">
+            <span className="text-[11px] font-semibold tracking-[0.1em] text-[#8B8B9B] uppercase block mb-2">
               explore our model
             </span>
-            <h2 className="font-display text-[30px] md:text-[40px] font-medium leading-[1.1] tracking-[-0.01em] text-ink">
+            <h2 className="font-display text-[24px] md:text-[36px] font-medium leading-[1.1] tracking-[-0.01em] text-ink">
               One studio, your whole AI stack
             </h2>
           </div>
@@ -108,10 +108,10 @@ export default function Services() {
                       {s.icon}
                     </div>
                     {/* H3 for service titles: 28px (1.75rem), weight 500 */}
-                    <h3 className="font-display text-[24px] md:text-[28px] font-medium leading-tight mb-4 text-ink transition-colors duration-300">
+                    <h3 className="font-display text-[20px] md:text-[24px] font-medium leading-tight mb-4 text-ink transition-colors duration-300">
                       {s.title}
                     </h3>
-                    <p className="text-[15px] text-muted leading-relaxed max-w-[280px]">
+                    <p className="text-[13px] md:text-[15px] text-muted leading-relaxed max-w-[280px]">
                       {s.desc}
                     </p>
                   </div>
