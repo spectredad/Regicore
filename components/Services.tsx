@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { services } from "@/lib/content";
 
 /* ── Animation hook for scroll-triggered reveal ──────────────── */
@@ -178,27 +179,24 @@ function ArtifactVoice() {
 
 function ArtifactWebsite() {
   const { ref, isVisible } = useScrollReveal();
-  const [skeletonFill, setSkeletonFill] = useState([false, false, false, false]);
-  const [showButton, setShowButton] = useState(false);
   const [cvrNum, setCvrNum] = useState(0);
 
   useEffect(() => {
     if (!isVisible) return;
-    skeletonFill.forEach((_, i) => {
-      setTimeout(() => {
-        setSkeletonFill((prev) => {
-          const next = [...prev];
-          next[i] = true;
-          return next;
-        });
-      }, i * 120);
-    });
-    setTimeout(() => setShowButton(true), 500);
     const cvrInterval = setInterval(() => {
       setCvrNum((prev) => (prev < 4.8 ? prev + 0.2 : 4.8));
     }, 50);
     return () => clearInterval(cvrInterval);
-  }, [isVisible, skeletonFill]);
+  }, [isVisible]);
+
+  const skeletonVariants = {
+    hidden: { opacity: 0.4, width: 0 },
+    visible: (i: number) => ({
+      opacity: 1,
+      width: ["75%", "50%", "100%", "83%"][i],
+      transition: { delay: i * 0.12, duration: 0.5, ease: "easeOut" },
+    }),
+  };
 
   return (
     <div ref={ref} className="artifact-frame">
@@ -209,37 +207,47 @@ function ArtifactWebsite() {
         <span className="ml-2 font-mono text-[10px] text-muted truncate">yourbrand.com</span>
       </div>
       <div className="px-4 py-3">
-        <div
-          className={`h-2.5 w-3/4 bg-ink/80 mb-1.5 transition-all ${skeletonFill[0] ? "opacity-100" : "opacity-40"}`}
-          style={{
-            animation: skeletonFill[0] ? "slideIn 0.4s ease-out forwards" : "none",
-          }}
-        />
-        <div
-          className={`h-2.5 w-1/2 bg-ink/80 mb-3 transition-all ${skeletonFill[1] ? "opacity-100" : "opacity-40"}`}
-          style={{
-            animation: skeletonFill[1] ? "slideIn 0.4s ease-out forwards" : "none",
-          }}
-        />
-        <div
-          className={`h-1.5 w-full bg-line mb-1 transition-all ${skeletonFill[2] ? "opacity-100" : "opacity-40"}`}
-          style={{
-            animation: skeletonFill[2] ? "slideIn 0.4s ease-out forwards" : "none",
-          }}
-        />
-        <div
-          className={`h-1.5 w-5/6 bg-line mb-3 transition-all ${skeletonFill[3] ? "opacity-100" : "opacity-40"}`}
-          style={{
-            animation: skeletonFill[3] ? "slideIn 0.4s ease-out forwards" : "none",
-          }}
-        />
-        {showButton && (
-          <div style={{ animation: "popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards" }}>
-            <div className="inline-block bg-rust px-4 py-1.5">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-paper">Book a call</span>
-            </div>
-            <span className="ml-3 font-mono text-[10px] text-muted">CVR +{cvrNum.toFixed(1)}%</span>
-          </div>
+        {isVisible && (
+          <>
+            <motion.div
+              custom={0}
+              variants={skeletonVariants}
+              initial="hidden"
+              animate="visible"
+              className="h-2.5 bg-ink/80 mb-1.5"
+            />
+            <motion.div
+              custom={1}
+              variants={skeletonVariants}
+              initial="hidden"
+              animate="visible"
+              className="h-2.5 bg-ink/80 mb-3"
+            />
+            <motion.div
+              custom={2}
+              variants={skeletonVariants}
+              initial="hidden"
+              animate="visible"
+              className="h-1.5 bg-line mb-1"
+            />
+            <motion.div
+              custom={3}
+              variants={skeletonVariants}
+              initial="hidden"
+              animate="visible"
+              className="h-1.5 bg-line mb-3"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.4, type: "spring", stiffness: 200, damping: 20 }}
+            >
+              <div className="inline-block bg-rust px-4 py-1.5">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-paper">Book a call</span>
+              </div>
+              <span className="ml-3 font-mono text-[10px] text-muted">CVR +{cvrNum.toFixed(1)}%</span>
+            </motion.div>
+          </>
         )}
       </div>
     </div>
@@ -256,10 +264,10 @@ function ArtifactSoftware() {
     [0, 1, 2].forEach((i) => {
       setTimeout(
         () => setCodeLines((prev) => [...prev, i]),
-        i * 150
+        i * 120
       );
     });
-    setTimeout(() => setShowComment(true), 600);
+    setTimeout(() => setShowComment(true), 500);
   }, [isVisible]);
 
   return (
@@ -270,26 +278,42 @@ function ArtifactSoftware() {
       <pre className="px-4 py-3 font-mono text-[11px] leading-[1.9] text-muted overflow-hidden min-h-[100px]">
         <code>
           {codeLines.includes(0) && (
-            <div style={{ animation: "slideIn 0.3s ease-out forwards" }}>
+            <motion.div
+              initial={{ opacity: 0, x: -8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+            >
               <span className="text-rust">const</span> quote = <span className="text-rust">await</span> pricing
-            </div>
+            </motion.div>
           )}
           {codeLines.includes(1) && (
-            <div style={{ animation: "slideIn 0.3s ease-out forwards" }}>
+            <motion.div
+              initial={{ opacity: 0, x: -8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+            >
               {"  "}.fromSpec(upload)
-            </div>
+            </motion.div>
           )}
           {codeLines.includes(2) && (
-            <div style={{ animation: "slideIn 0.3s ease-out forwards" }}>
+            <motion.div
+              initial={{ opacity: 0, x: -8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+            >
               {"  "}.applyRules(client.tier)
-            </div>
+            </motion.div>
           )}
           {showComment && (
             <>
               <div>{"\n"}</div>
-              <div style={{ animation: "slideIn 0.3s ease-out 0.1s forwards", opacity: 0 }}>
+              <motion.div
+                initial={{ opacity: 0, x: -8 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+              >
                 <span className="text-ink">// 4 days of quoting → 40 sec</span>
-              </div>
+              </motion.div>
             </>
           )}
         </code>
@@ -305,20 +329,6 @@ function ArtifactCRM() {
     { label: "Qualified", items: 3 },
     { label: "Won", items: 1 },
   ];
-  const [animatedCols, setAnimatedCols] = useState<boolean[]>([false, false, false]);
-
-  useEffect(() => {
-    if (!isVisible) return;
-    cols.forEach((_, i) => {
-      setTimeout(() => {
-        setAnimatedCols((prev) => {
-          const next = [...prev];
-          next[i] = true;
-          return next;
-        });
-      }, i * 150);
-    });
-  }, [isVisible]);
 
   return (
     <div ref={ref} className="artifact-frame">
@@ -331,14 +341,17 @@ function ArtifactCRM() {
             <p className="font-mono text-[9px] uppercase tracking-widest text-muted mb-2">{c.label}</p>
             <div className="flex flex-col gap-1.5">
               {Array.from({ length: c.items }).map((_, i) => (
-                <div
+                <motion.div
                   key={i}
                   className={`h-4 ${c.label === "Won" ? "bg-rust/70" : "bg-line"}`}
-                  style={{
-                    animation: animatedCols[colIdx]
-                      ? `slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${i * 80}ms forwards`
-                      : "none",
-                    opacity: 0,
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+                  transition={{
+                    delay: colIdx * 0.15 + i * 0.08,
+                    duration: 0.4,
+                    type: "spring",
+                    stiffness: 220,
+                    damping: 25,
                   }}
                 />
               ))}
@@ -413,26 +426,21 @@ function ArtifactLeadGen() {
   ];
   const [scores, setScores] = useState(leads.map(() => 0));
   const [totalLeads, setTotalLeads] = useState(0);
-  const [revealedLeads, setRevealedLeads] = useState<number[]>([]);
 
   useEffect(() => {
     if (!isVisible) return;
 
-    leads.forEach((_, i) => {
-      setTimeout(() => {
-        setRevealedLeads((prev) => [...prev, i]);
-      }, i * 100);
-    });
-
     leads.forEach((l, i) => {
-      const scoreInterval = setInterval(() => {
-        setScores((prev) => {
-          const next = [...prev];
-          next[i] = Math.min(next[i] + 3, l.score);
-          return next;
-        });
-      }, 40);
-      return () => clearInterval(scoreInterval);
+      setTimeout(() => {
+        const scoreInterval = setInterval(() => {
+          setScores((prev) => {
+            const next = [...prev];
+            next[i] = Math.min(next[i] + 2, l.score);
+            return next;
+          });
+        }, 30);
+        return () => clearInterval(scoreInterval);
+      }, i * 80);
     });
 
     const leadInterval = setInterval(() => {
@@ -450,20 +458,24 @@ function ArtifactLeadGen() {
       </div>
       <div>
         {leads.map((l, idx) => (
-          revealedLeads.includes(idx) && (
-            <div
-              key={l.name}
-              className="flex items-center justify-between px-4 py-2 border-b border-line last:border-b-0"
-              style={{
-                animation: "slideIn 0.3s ease-out forwards",
-              }}
-            >
-              <span className="text-[12px] text-ink">{l.name}</span>
-              <span className="font-mono text-[10px] text-muted">
-                score <span className="text-rust">{scores[idx]}</span>
-              </span>
-            </div>
-          )
+          <motion.div
+            key={l.name}
+            className="flex items-center justify-between px-4 py-2 border-b border-line last:border-b-0"
+            initial={{ opacity: 0, x: -12 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -12 }}
+            transition={{
+              delay: idx * 0.12,
+              duration: 0.4,
+              type: "spring",
+              stiffness: 200,
+              damping: 22,
+            }}
+          >
+            <span className="text-[12px] text-ink">{l.name}</span>
+            <span className="font-mono text-[10px] text-muted">
+              score <span className="text-rust">{scores[idx]}</span>
+            </span>
+          </motion.div>
         ))}
       </div>
     </div>
