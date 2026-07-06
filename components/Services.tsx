@@ -194,7 +194,7 @@ function ArtifactWebsite() {
     visible: (i: number) => ({
       opacity: 1,
       width: ["75%", "50%", "100%", "83%"][i],
-      transition: { delay: i * 0.12, duration: 0.5, ease: "easeOut" },
+      transition: { delay: i * 0.12, duration: 0.5, ease: "easeOut" as const },
     }),
   };
 
