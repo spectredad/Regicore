@@ -48,7 +48,7 @@ function ArtifactAgents() {
         setShowCompletion(true);
         clearInterval(typeInterval);
       }
-    }, 200);
+    }, 500);
     return () => clearInterval(typeInterval);
   }, [isVisible]);
 
@@ -64,6 +64,21 @@ function ArtifactAgents() {
             <span className="text-rust">→</span> {cmd}
           </p>
         ))}
+        {!showCompletion && commandLines.length > 0 && commandLines.length < 3 && (
+          <div className="flex items-end gap-[2px] h-3 mt-1.5 ml-4" aria-hidden="true">
+            {[3, 8, 5, 10, 6, 9, 4, 7].map((h, i) => (
+              <span
+                key={i}
+                className="w-[2px] bg-rust/50"
+                style={{
+                  height: `${h * 10}%`,
+                  transformOrigin: "bottom",
+                  animation: `waveform 0.5s ease-in-out ${i * 0.05}s infinite`,
+                }}
+              />
+            ))}
+          </div>
+        )}
         {showCompletion && (
           <p
             className="text-ink"
@@ -264,16 +279,31 @@ function ArtifactSoftware() {
     [0, 1, 2].forEach((i) => {
       setTimeout(
         () => setCodeLines((prev) => [...prev, i]),
-        i * 120
+        i * 300
       );
     });
-    setTimeout(() => setShowComment(true), 500);
+    setTimeout(() => setShowComment(true), 1200);
   }, [isVisible]);
 
   return (
     <div ref={ref} className="artifact-frame">
-      <div className="border-b border-line px-4 py-2">
+      <div className="border-b border-line px-4 py-2 flex justify-between items-center">
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">workflow.ts</span>
+        {isVisible && !showComment && (
+          <div className="flex items-end gap-[1.5px] h-3" aria-hidden="true">
+            {[4, 9, 3, 10, 6, 8, 4].map((h, i) => (
+              <span
+                key={i}
+                className="w-[1.5px] bg-rust/70"
+                style={{
+                  height: `${h * 10}%`,
+                  transformOrigin: "bottom",
+                  animation: `waveform 0.5s ease-in-out ${i * 0.06}s infinite`,
+                }}
+              />
+            ))}
+          </div>
+        )}
       </div>
       <pre className="px-4 py-3 font-mono text-[11px] leading-[1.9] text-muted overflow-hidden min-h-[100px]">
         <code>
