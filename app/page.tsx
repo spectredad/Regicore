@@ -10,7 +10,6 @@ import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import BookCTA from "@/components/BookCTA";
 import Footer from "@/components/Footer";
-import MobileCTA from "@/components/MobileCTA";
 
 export default function Home() {
   return (
@@ -27,7 +26,6 @@ export default function Home() {
       <FAQ />
       <BookCTA />
       <Footer />
-      <MobileCTA />
     </main>
   );
 }

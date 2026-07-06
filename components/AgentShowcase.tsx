@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { agents } from "@/lib/content";
 
 const ROTATE_MS = 3500;
@@ -135,9 +136,11 @@ export default function AgentShowcase() {
             />
 
             {/* Agent card */}
-            <div
+            <motion.div
               className="relative bg-surface border border-line p-6 w-72"
-              style={{ opacity: cardVisible ? 1 : 0, transition: "opacity 0.15s ease" }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: cardVisible ? 1 : 0.3, scale: 1 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               role="status"
               aria-live="polite"
               aria-label={`${agent.name} status card`}
@@ -159,7 +162,7 @@ export default function AgentShowcase() {
                   <span className="text-rust font-semibold">Active</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             <p
               className="absolute bottom-5 left-0 right-0 text-center text-[12px] uppercase tracking-[0.12em] text-paper/50"

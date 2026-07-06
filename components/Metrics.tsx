@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { metrics } from "@/lib/content";
 
 function useCountUp(target: number, duration = 1200, active: boolean) {
@@ -69,22 +70,26 @@ export default function Metrics() {
           <p className="section-label text-paper/60 hidden sm:block">Measured, not promised</p>
         </div>
 
-        <div className="metric-wrapper grid grid-cols-2 lg:grid-cols-4">
+        <motion.div className="metric-wrapper grid grid-cols-2 lg:grid-cols-4">
           {metrics.map((m, i) => (
-            <div
+            <motion.div
               key={m.label}
               className={`py-8 pr-6 ${i > 0 ? "lg:border-l lg:border-paper/15 lg:pl-8" : ""} ${
                 i % 2 === 1 ? "border-l border-paper/15 pl-6 lg:pl-8" : ""
               }`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-100px" }}
             >
               <div className="font-display text-[44px] md:text-[56px] font-medium text-paper leading-none tracking-[-0.02em] metric-value">
                 <MetricValue value={m.value} active={active} />
                 <span className="text-rust text-[0.55em] align-baseline">{m.suffix}</span>
               </div>
               <p className="text-[14px] text-paper/50 mt-3 leading-relaxed">{m.label}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

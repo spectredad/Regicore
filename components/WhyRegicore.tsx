@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { whyPoints } from "@/lib/content";
 
 export default function WhyRegicore() {
@@ -30,7 +31,14 @@ export default function WhyRegicore() {
             </h2>
             <ol className="border-t border-line">
               {whyPoints.map((w, i) => (
-                <li key={w.title} className="flex gap-5 items-baseline py-5 border-b border-line group">
+                <motion.li
+                  key={w.title}
+                  className="flex gap-5 items-baseline py-5 border-b border-line group"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.08, duration: 0.5, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                   <span className="index-num text-[13px] shrink-0" aria-hidden="true">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -40,7 +48,7 @@ export default function WhyRegicore() {
                     </p>
                     <p className="text-[15px] leading-relaxed text-muted mt-1">{w.desc}</p>
                   </div>
-                </li>
+                </motion.li>
               ))}
             </ol>
           </div>

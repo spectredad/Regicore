@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { plans } from "@/lib/content";
 
 function PriceDisplay({ price, dark }: { price: string; dark?: boolean }) {
@@ -50,16 +51,19 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-line border border-line items-stretch">
+        <motion.div className="grid md:grid-cols-3 gap-px bg-line border border-line items-stretch">
           {plans.map((plan, i) => {
             const dark = plan.featured;
             return (
-              <div
+              <motion.div
                 key={plan.name}
                 className={`p-8 md:p-10 reveal flex flex-col gap-8 relative ${
                   dark ? "bg-ink" : "bg-surface"
                 }`}
-                style={{ transitionDelay: `${i * 80}ms` }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.12, duration: 0.6, ease: "easeOut" }}
+                viewport={{ once: true, margin: "-100px" }}
               >
                 <div className="flex items-start justify-between gap-3">
                   <span className={`index-num text-[13px] ${dark ? "" : ""}`} aria-hidden="true">
@@ -112,10 +116,10 @@ export default function Pricing() {
                 >
                   {plan.cta}
                 </a>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         <p className="text-center text-muted text-sm mt-8 reveal">
           All plans include full code ownership &middot; no vendor lock-in &middot; you keep everything
