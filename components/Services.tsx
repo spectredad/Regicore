@@ -117,7 +117,24 @@ function ArtifactEmail() {
     <div ref={ref} className="artifact-frame">
       <div className="border-b border-line px-4 py-2 flex items-center justify-between">
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">New message</span>
-        <span className="font-mono text-[10px] text-rust">personalised</span>
+        <div className="flex items-center gap-2">
+          {isVisible && (
+            <div className="flex items-end gap-[1.5px] h-2.5" aria-hidden="true">
+              {[3, 6, 4, 8, 5].map((h, i) => (
+                <span
+                  key={i}
+                  className="w-[1.5px] bg-rust/70"
+                  style={{
+                    height: `${h * 10}%`,
+                    transformOrigin: "bottom",
+                    animation: `waveform 0.5s ease-in-out ${i * 0.05}s infinite`,
+                  }}
+                />
+              ))}
+            </div>
+          )}
+          <span className="font-mono text-[10px] text-rust">personalised</span>
+        </div>
       </div>
       <div className="px-4 py-3 text-[12px] leading-relaxed">
         <p className="text-muted">To: <span className="text-ink">sarah@acmefreight.com</span></p>
@@ -220,6 +237,21 @@ function ArtifactWebsite() {
         <span className="w-2 h-2 rounded-full border border-line" />
         <span className="w-2 h-2 rounded-full border border-line" />
         <span className="ml-2 font-mono text-[10px] text-muted truncate">yourbrand.com</span>
+        {isVisible && (
+          <div className="ml-auto flex items-end gap-[1.5px] h-2.5" aria-hidden="true">
+            {[4, 7, 5, 8, 3].map((h, i) => (
+              <span
+                key={i}
+                className="w-[1.5px] bg-rust/70"
+                style={{
+                  height: `${h * 10}%`,
+                  transformOrigin: "bottom",
+                  animation: `waveform 0.4s ease-in-out ${i * 0.06}s infinite`,
+                }}
+              />
+            ))}
+          </div>
+        )}
       </div>
       <div className="px-4 py-3">
         {isVisible && (
@@ -362,8 +394,23 @@ function ArtifactCRM() {
 
   return (
     <div ref={ref} className="artifact-frame">
-      <div className="border-b border-line px-4 py-2">
+      <div className="border-b border-line px-4 py-2 flex justify-between items-center">
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Pipeline — this week</span>
+        {isVisible && (
+          <div className="flex items-end gap-[1.5px] h-2.5" aria-hidden="true">
+            {[3, 8, 4, 9, 5, 7].map((h, i) => (
+              <span
+                key={i}
+                className="w-[1.5px] bg-rust/70"
+                style={{
+                  height: `${h * 10}%`,
+                  transformOrigin: "bottom",
+                  animation: `waveform 0.5s ease-in-out ${i * 0.05}s infinite`,
+                }}
+              />
+            ))}
+          </div>
+        )}
       </div>
       <div className="grid grid-cols-3 gap-px bg-line">
         {cols.map((c, colIdx) => (
@@ -409,8 +456,23 @@ function ArtifactMarketing() {
 
   return (
     <div ref={ref} className="artifact-frame">
-      <div className="border-b border-line px-4 py-2">
+      <div className="border-b border-line px-4 py-2 flex justify-between items-center">
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Lifecycle flow</span>
+        {isVisible && activeSteps.length < steps.length && (
+          <div className="flex items-end gap-[1.5px] h-2.5" aria-hidden="true">
+            {[4, 7, 3, 8, 5].map((h, i) => (
+              <span
+                key={i}
+                className="w-[1.5px] bg-rust/70"
+                style={{
+                  height: `${h * 10}%`,
+                  transformOrigin: "bottom",
+                  animation: `waveform 0.5s ease-in-out ${i * 0.06}s infinite`,
+                }}
+              />
+            ))}
+          </div>
+        )}
       </div>
       <div className="px-4 py-3 flex flex-col gap-0">
         {steps.map((s, i) => {
@@ -484,7 +546,24 @@ function ArtifactLeadGen() {
     <div ref={ref} className="artifact-frame">
       <div className="border-b border-line px-4 py-2 flex items-center justify-between">
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Leads sourced today</span>
-        <span className="font-mono text-[10px] text-rust">+{totalLeads}</span>
+        <div className="flex items-center gap-2">
+          {isVisible && (
+            <div className="flex items-end gap-[1.5px] h-2.5" aria-hidden="true">
+              {[5, 9, 4, 8, 6, 10, 5].map((h, i) => (
+                <span
+                  key={i}
+                  className="w-[1.5px] bg-rust/70"
+                  style={{
+                    height: `${h * 10}%`,
+                    transformOrigin: "bottom",
+                    animation: `waveform 0.5s ease-in-out ${i * 0.05}s infinite`,
+                  }}
+                />
+              ))}
+            </div>
+          )}
+          <span className="font-mono text-[10px] text-rust">+{totalLeads}</span>
+        </div>
       </div>
       <div>
         {leads.map((l, idx) => (
