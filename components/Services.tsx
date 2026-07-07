@@ -474,7 +474,7 @@ function ArtifactCRM() {
           </div>
         )}
       </div>
-      <div key={playCount} className="grid grid-cols-3 gap-px bg-line relative overflow-hidden" style={{ contain: "layout style paint" }}>
+      <div className="grid grid-cols-3 gap-px bg-line relative overflow-hidden h-24" style={{ contain: "layout style paint" }}>
         {/* Subtle grid pulse overlay */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -490,10 +490,10 @@ function ArtifactCRM() {
             <div className="flex flex-col gap-1.5">
               {Array.from({ length: c.items }).map((_, i) => (
                 <motion.div
-                  key={i}
+                  key={`${playCount}-${i}`}
                   className={`h-4 ${c.label === "Won" ? "bg-rust/70" : "bg-line"}`}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+                  initial={{ opacity: 0 }}
+                  animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
                   transition={{
                     delay: colIdx * 0.15 + i * 0.08,
                     duration: 0.4,
