@@ -8,19 +8,27 @@ export default function Navbar() {
 
   useEffect(() => {
     let lastScrollY = 0;
+    let ticking = false;
     
     const onScroll = () => {
-      const currentY = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentY = window.scrollY;
+          const scrollDelta = Math.abs(currentY - lastScrollY);
 
-      // Hide on scroll down after 120px, show on scroll up
-      if (currentY > 120 && currentY > lastScrollY) {
-        setHidden(true);
-      } else {
-        setHidden(false);
+          // Only hide if scrolling down significantly (>5px) to avoid touch jitter
+          if (currentY > 120 && currentY > lastScrollY && scrollDelta > 5) {
+            setHidden(true);
+          } else if (currentY < lastScrollY || currentY < 120) {
+            setHidden(false);
+          }
+
+          setIsScrolled(currentY > 20);
+          lastScrollY = currentY;
+          ticking = false;
+        });
+        ticking = true;
       }
-
-      setIsScrolled(currentY > 20);
-      lastScrollY = currentY;
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
