@@ -47,7 +47,7 @@ export default function Pricing() {
             Choose how we work together
           </h2>
           <p className="text-muted mt-5 text-[17px] leading-relaxed text-pretty">
-            Project-based or ongoing. No lock-in, success metrics agreed up front.
+            Retainer-based engagements with first deployment in week 2 and measurable results within 30 days.
           </p>
         </div>
 
@@ -122,7 +122,7 @@ export default function Pricing() {
         </motion.div>
 
         <p className="text-center text-muted text-sm mt-8 reveal">
-          All plans include full code ownership &middot; no vendor lock-in &middot; you keep everything
+          Ownership and licensing terms are defined in the service agreement. Client data remains client-owned; proprietary systems and internal frameworks are licensed during the engagement.
         </p>
       </div>
     </section>
