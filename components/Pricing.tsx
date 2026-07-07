@@ -66,7 +66,7 @@ export default function Pricing() {
                 viewport={{ once: true, margin: "-100px" }}
               >
                 <div className="flex items-start justify-between gap-3">
-                  <span className={`index-num text-[13px] ${dark ? "" : ""}`} aria-hidden="true">
+                  <span className={`index-num text-[13px] ${dark ? "text-rust" : ""}`} aria-hidden="true">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   {plan.badge && (

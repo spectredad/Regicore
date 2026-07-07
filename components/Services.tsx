@@ -68,7 +68,7 @@ function ArtifactAgents() {
         <span className={`w-2 h-2 rounded-full bg-rust ${isVisible ? "animate-pulse" : ""}`} />
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">agent.run — live</span>
       </div>
-      <div className="px-4 py-3 font-mono text-[11px] leading-[1.9] text-muted min-h-[100px]">
+      <div className="px-4 py-3 font-mono text-[11px] leading-[1.9] text-muted min-h-[100px]" style={{ contain: "layout style paint" }}>
         {commandLines.map((cmd, i) => (
           <p key={i} style={{ animation: "slideIn 0.3s ease-out forwards" }}>
             <span className="text-rust">→</span> {cmd}
@@ -156,7 +156,7 @@ function ArtifactEmail() {
           <span className="font-mono text-[10px] text-rust">personalised</span>
         </div>
       </div>
-      <div className="px-4 py-3 text-[12px] leading-relaxed">
+      <div className="px-4 py-3 text-[12px] leading-relaxed min-h-[76px]" style={{ contain: "layout style paint" }}>
         <p className="text-muted">To: <span className="text-ink">sarah@acmefreight.com</span></p>
         <p className="text-ink mt-1.5">
           Hi Sarah — saw{" "}
@@ -204,7 +204,7 @@ function ArtifactVoice() {
         <span className={`w-2 h-2 rounded-full bg-rust ${isVisible ? "animate-pulse" : ""}`} />
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Outbound call — 3m 12s</span>
       </div>
-      <div className="px-4 py-3">
+      <div className="px-4 py-3 min-h-[92px]" style={{ contain: "layout style paint" }}>
         <div className="flex items-end gap-[3px] h-10" aria-hidden="true">
           {bars.map((h, i) => (
             <span
@@ -474,17 +474,26 @@ function ArtifactCRM() {
           </div>
         )}
       </div>
-      <div key={playCount} className="grid grid-cols-3 gap-px bg-line">
+      <div className="grid grid-cols-3 gap-px bg-line relative overflow-hidden h-24" style={{ contain: "layout style paint" }}>
+        {/* Subtle grid pulse overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: `linear-gradient(90deg, transparent 0%, rgba(168, 67, 31, 0.03) 50%, transparent 100%)`,
+            animation: `gridPulse 6s ease-in-out infinite`,
+          }}
+          aria-hidden="true"
+        />
         {cols.map((c, colIdx) => (
           <div key={c.label} className="bg-surface px-2.5 py-2.5">
             <p className="font-mono text-[9px] uppercase tracking-widest text-muted mb-2">{c.label}</p>
             <div className="flex flex-col gap-1.5">
               {Array.from({ length: c.items }).map((_, i) => (
                 <motion.div
-                  key={i}
+                  key={`${playCount}-${i}`}
                   className={`h-4 ${c.label === "Won" ? "bg-rust/70" : "bg-line"}`}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+                  initial={{ opacity: 0 }}
+                  animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
                   transition={{
                     delay: colIdx * 0.15 + i * 0.08,
                     duration: 0.4,
