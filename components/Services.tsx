@@ -34,32 +34,13 @@ function ArtifactAgents() {
 
   useEffect(() => {
     if (!isVisible) return;
-    const commands = [
+    // Show final state without looping animation
+    setCommandLines([
       "fetch_invoices(status: overdue)",
       "draft_reminder(tone: firm)",
       "send + log_to_crm()",
-    ];
-    let typeInterval: NodeJS.Timeout;
-    const runAnimation = () => {
-      setCommandLines([]);
-      setShowCompletion(false);
-      let index = 0;
-      typeInterval = setInterval(() => {
-        if (index < commands.length) {
-          setCommandLines((prev) => [...prev, commands[index]]);
-          index++;
-        } else {
-          setShowCompletion(true);
-          clearInterval(typeInterval);
-        }
-      }, 500);
-    };
-    runAnimation();
-    const loopInterval = setInterval(runAnimation, 4500);
-    return () => {
-      clearInterval(typeInterval);
-      clearInterval(loopInterval);
-    };
+    ]);
+    setShowCompletion(true);
   }, [isVisible]);
 
   return (
@@ -70,7 +51,7 @@ function ArtifactAgents() {
       </div>
       <div className="px-4 py-3 font-mono text-[11px] leading-[1.9] text-muted min-h-[100px]" style={{ contain: "layout style paint" }}>
         {commandLines.map((cmd, i) => (
-          <p key={i} style={{ animation: "slideIn 0.3s ease-out forwards" }}>
+          <p key={i}>
             <span className="text-rust">→</span> {cmd}
           </p>
         ))}
@@ -83,17 +64,13 @@ function ArtifactAgents() {
                 style={{
                   height: `${h * 10}%`,
                   transformOrigin: "bottom",
-                  animation: `waveform 0.5s ease-in-out ${i * 0.05}s infinite`,
                 }}
               />
             ))}
           </div>
         )}
         {showCompletion && (
-          <p
-            className="text-ink"
-            style={{ animation: "slideIn 0.4s ease-out 0.3s forwards", opacity: 0 }}
-          >
+          <p className="text-ink">
             ✓ 14 tasks completed, 0 escalations
           </p>
         )}
@@ -110,27 +87,10 @@ function ArtifactEmail() {
 
   useEffect(() => {
     if (!isVisible) return;
-    let numInterval: NodeJS.Timeout;
-    let pctInterval: NodeJS.Timeout;
-    const runAnimation = () => {
-      setDisplayNum(0);
-      setDisplayPct(0);
-      setHighlightPill(false);
-      setTimeout(() => setHighlightPill(true), 500);
-      numInterval = setInterval(() => {
-        setDisplayNum((prev) => (prev < 842 ? prev + 25 : 842));
-      }, 30);
-      pctInterval = setInterval(() => {
-        setDisplayPct((prev) => (prev < 62 ? prev + 2 : 62));
-      }, 40);
-    };
-    runAnimation();
-    const loopInterval = setInterval(runAnimation, 4500);
-    return () => {
-      clearInterval(numInterval);
-      clearInterval(pctInterval);
-      clearInterval(loopInterval);
-    };
+    // Show final values without looping animation
+    setDisplayNum(842);
+    setDisplayPct(62);
+    setHighlightPill(false);
   }, [isVisible]);
 
   return (
@@ -138,21 +98,7 @@ function ArtifactEmail() {
       <div className="border-b border-line px-4 py-2 flex items-center justify-between">
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">New message</span>
         <div className="flex items-center gap-2">
-          {isVisible && (
-            <div className="flex items-end gap-[1.5px] h-2.5" aria-hidden="true">
-              {[3, 6, 4, 8, 5].map((h, i) => (
-                <span
-                  key={i}
-                  className="w-[1.5px] bg-rust/70"
-                  style={{
-                    height: `${h * 10}%`,
-                    transformOrigin: "bottom",
-                    animation: `waveform 0.5s ease-in-out ${i * 0.05}s infinite`,
-                  }}
-                />
-              ))}
-            </div>
-          )}
+
           <span className="font-mono text-[10px] text-rust">personalised</span>
         </div>
       </div>
@@ -181,21 +127,9 @@ function ArtifactVoice() {
 
   useEffect(() => {
     if (!isVisible) return;
-    let quoteTimer: NodeJS.Timeout;
-    let outcomeTimer: NodeJS.Timeout;
-    const runAnimation = () => {
-      setShowQuote(false);
-      setShowOutcome(false);
-      quoteTimer = setTimeout(() => setShowQuote(true), 300);
-      outcomeTimer = setTimeout(() => setShowOutcome(true), 1200);
-    };
-    runAnimation();
-    const loopInterval = setInterval(runAnimation, 4500);
-    return () => {
-      clearTimeout(quoteTimer);
-      clearTimeout(outcomeTimer);
-      clearInterval(loopInterval);
-    };
+    // Show final state without looping animation
+    setShowQuote(true);
+    setShowOutcome(true);
   }, [isVisible]);
 
   return (
@@ -212,24 +146,17 @@ function ArtifactVoice() {
               className="w-[3px] bg-rust/70"
               style={{
                 height: `${h * 3.5}%`,
-                animation: isVisible ? `waveform 0.6s ease-in-out ${i * 0.05}s infinite` : "none",
               }}
             />
           ))}
         </div>
         {showQuote && (
-          <p
-            className="text-[12px] text-ink mt-2.5 leading-relaxed"
-            style={{ animation: "slideIn 0.4s ease-out forwards" }}
-          >
+          <p className="text-[12px] text-ink mt-2.5 leading-relaxed">
             &ldquo;Great — I&apos;ve booked you in for Thursday at 2pm. You&apos;ll get a confirmation shortly.&rdquo;
           </p>
         )}
         {showOutcome && (
-          <p
-            className="font-mono text-[10px] uppercase tracking-widest text-muted mt-2"
-            style={{ animation: "popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards" }}
-          >
+          <p className="font-mono text-[10px] uppercase tracking-widest text-muted mt-2">
             Outcome: booked ✓
           </p>
         )}
@@ -245,20 +172,8 @@ function ArtifactWebsite() {
 
   useEffect(() => {
     if (!isVisible) return;
-    let cvrInterval: NodeJS.Timeout;
-    const runAnimation = () => {
-      setCvrNum(0);
-      setPlayCount(p => p + 1);
-      cvrInterval = setInterval(() => {
-        setCvrNum((prev) => (prev < 4.8 ? prev + 0.2 : 4.8));
-      }, 50);
-    };
-    runAnimation();
-    const loopInterval = setInterval(runAnimation, 4500);
-    return () => {
-      clearInterval(cvrInterval);
-      clearInterval(loopInterval);
-    };
+    // Show final state without looping animation
+    setCvrNum(4.8);
   }, [isVisible]);
 
   const skeletonVariants = {
@@ -277,21 +192,6 @@ function ArtifactWebsite() {
         <span className="w-2 h-2 rounded-full border border-line" />
         <span className="w-2 h-2 rounded-full border border-line" />
         <span className="ml-2 font-mono text-[10px] text-muted truncate">yourbrand.com</span>
-        {isVisible && (
-          <div className="ml-auto flex items-end gap-[1.5px] h-2.5" aria-hidden="true">
-            {[4, 7, 5, 8, 3].map((h, i) => (
-              <span
-                key={i}
-                className="w-[1.5px] bg-rust/70"
-                style={{
-                  height: `${h * 10}%`,
-                  transformOrigin: "bottom",
-                  animation: `waveform 0.4s ease-in-out ${i * 0.06}s infinite`,
-                }}
-              />
-            ))}
-          </div>
-        )}
       </div>
       <div className="px-4 py-3">
         {isVisible && (
@@ -349,48 +249,15 @@ function ArtifactSoftware() {
 
   useEffect(() => {
     if (!isVisible) return;
-    let timers: NodeJS.Timeout[] = [];
-    const runAnimation = () => {
-      setCodeLines([]);
-      setShowComment(false);
-      setPlayCount(p => p + 1);
-      [0, 1, 2].forEach((i) => {
-        timers.push(
-          setTimeout(
-            () => setCodeLines((prev) => [...prev, i]),
-            i * 300
-          )
-        );
-      });
-      timers.push(setTimeout(() => setShowComment(true), 1200));
-    };
-    runAnimation();
-    const loopInterval = setInterval(runAnimation, 4500);
-    return () => {
-      timers.forEach(clearTimeout);
-      clearInterval(loopInterval);
-    };
+    // Show final state without looping animation
+    setCodeLines([0, 1, 2]);
+    setShowComment(true);
   }, [isVisible]);
 
   return (
     <div ref={ref} className="artifact-frame">
       <div className="border-b border-line px-4 py-2 flex justify-between items-center">
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">workflow.ts</span>
-        {isVisible && !showComment && (
-          <div className="flex items-end gap-[1.5px] h-3" aria-hidden="true">
-            {[4, 9, 3, 10, 6, 8, 4].map((h, i) => (
-              <span
-                key={i}
-                className="w-[1.5px] bg-rust/70"
-                style={{
-                  height: `${h * 10}%`,
-                  transformOrigin: "bottom",
-                  animation: `waveform 0.5s ease-in-out ${i * 0.06}s infinite`,
-                }}
-              />
-            ))}
-          </div>
-        )}
       </div>
       <pre className="px-4 py-3 font-mono text-[11px] leading-[1.9] text-muted overflow-hidden min-h-[100px]">
         <code key={playCount}>
@@ -458,32 +325,10 @@ function ArtifactCRM() {
     <div ref={ref} className="artifact-frame">
       <div className="border-b border-line px-4 py-2 flex justify-between items-center">
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Pipeline — this week</span>
-        {isVisible && (
-          <div className="flex items-end gap-[1.5px] h-2.5" aria-hidden="true">
-            {[3, 8, 4, 9, 5, 7].map((h, i) => (
-              <span
-                key={i}
-                className="w-[1.5px] bg-rust/70"
-                style={{
-                  height: `${h * 10}%`,
-                  transformOrigin: "bottom",
-                  animation: `waveform 0.5s ease-in-out ${i * 0.05}s infinite`,
-                }}
-              />
-            ))}
-          </div>
-        )}
       </div>
       <div className="grid grid-cols-3 gap-px bg-line relative overflow-hidden h-24" style={{ contain: "layout style paint" }}>
         {/* Subtle grid pulse overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: `linear-gradient(90deg, transparent 0%, rgba(168, 67, 31, 0.03) 50%, transparent 100%)`,
-            animation: `gridPulse 6s ease-in-out infinite`,
-          }}
-          aria-hidden="true"
-        />
+
         {cols.map((c, colIdx) => (
           <div key={c.label} className="bg-surface px-2.5 py-2.5">
             <p className="font-mono text-[9px] uppercase tracking-widest text-muted mb-2">{c.label}</p>
@@ -518,44 +363,14 @@ function ArtifactMarketing() {
 
   useEffect(() => {
     if (!isVisible) return;
-    let timers: NodeJS.Timeout[] = [];
-    const runAnimation = () => {
-      setActiveSteps([]);
-      steps.forEach((_, i) => {
-        timers.push(
-          setTimeout(() => {
-            setActiveSteps((prev) => [...prev, i]);
-          }, i * 100)
-        );
-      });
-    };
-    runAnimation();
-    const loopInterval = setInterval(runAnimation, 4500);
-    return () => {
-      timers.forEach(clearTimeout);
-      clearInterval(loopInterval);
-    };
+    // Show all steps without looping animation
+    setActiveSteps([0, 1, 2, 3]);
   }, [isVisible]);
 
   return (
     <div ref={ref} className="artifact-frame">
       <div className="border-b border-line px-4 py-2 flex justify-between items-center">
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Lifecycle flow</span>
-        {isVisible && activeSteps.length < steps.length && (
-          <div className="flex items-end gap-[1.5px] h-2.5" aria-hidden="true">
-            {[4, 7, 3, 8, 5].map((h, i) => (
-              <span
-                key={i}
-                className="w-[1.5px] bg-rust/70"
-                style={{
-                  height: `${h * 10}%`,
-                  transformOrigin: "bottom",
-                  animation: `waveform 0.5s ease-in-out ${i * 0.06}s infinite`,
-                }}
-              />
-            ))}
-          </div>
-        )}
       </div>
       <div className="px-4 py-3 flex flex-col gap-0">
         {steps.map((s, i) => {
@@ -605,68 +420,16 @@ function ArtifactLeadGen() {
 
   useEffect(() => {
     if (!isVisible) return;
-
-    let timers: NodeJS.Timeout[] = [];
-    let intervals: NodeJS.Timeout[] = [];
-
-    const runAnimation = () => {
-      setScores([0,0,0]);
-      setTotalLeads(0);
-      setPlayCount(p => p + 1);
-
-      leads.forEach((l, i) => {
-        timers.push(
-          setTimeout(() => {
-            const scoreInterval = setInterval(() => {
-              setScores((prev) => {
-                const next = [...prev];
-                next[i] = Math.min(next[i] + 2, l.score);
-                return next;
-              });
-            }, 30);
-            intervals.push(scoreInterval);
-          }, i * 80)
-        );
-      });
-
-      const leadInterval = setInterval(() => {
-        setTotalLeads((prev) => (prev < 31 ? prev + 1 : 31));
-      }, 30);
-      intervals.push(leadInterval);
-    };
-
-    runAnimation();
-    const loopInterval = setInterval(runAnimation, 4500);
-
-    return () => {
-      timers.forEach(clearTimeout);
-      intervals.forEach(clearInterval);
-      clearInterval(loopInterval);
-    };
+    // Show final state without looping animation
+    setScores([92, 87, 74]);
+    setTotalLeads(31);
   }, [isVisible]);
 
   return (
     <div ref={ref} className="artifact-frame">
       <div className="border-b border-line px-4 py-2 flex items-center justify-between">
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Leads sourced today</span>
-        <div className="flex items-center gap-2">
-          {isVisible && (
-            <div className="flex items-end gap-[1.5px] h-2.5" aria-hidden="true">
-              {[5, 9, 4, 8, 6, 10, 5].map((h, i) => (
-                <span
-                  key={i}
-                  className="w-[1.5px] bg-rust/70"
-                  style={{
-                    height: `${h * 10}%`,
-                    transformOrigin: "bottom",
-                    animation: `waveform 0.5s ease-in-out ${i * 0.05}s infinite`,
-                  }}
-                />
-              ))}
-            </div>
-          )}
-          <span className="font-mono text-[10px] text-rust">+{totalLeads}</span>
-        </div>
+        <span className="font-mono text-[10px] text-rust">+{totalLeads}</span>
       </div>
       <div key={playCount}>
         {leads.map((l, idx) => (
