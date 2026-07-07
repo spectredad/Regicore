@@ -9,18 +9,35 @@ export default function Navbar() {
   useEffect(() => {
     let lastScrollY = 0;
     let ticking = false;
+    let hideTimeout: NodeJS.Timeout | null = null;
+    let lastHiddenState = false;
     
     const onScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const currentY = window.scrollY;
           const scrollDelta = Math.abs(currentY - lastScrollY);
+          
+          // Use larger threshold on mobile (>15px) to avoid touch jitter and momentum scroll false positives
+          const threshold = window.innerWidth < 768 ? 15 : 5;
 
-          // Only hide if scrolling down significantly (>5px) to avoid touch jitter
-          if (currentY > 120 && currentY > lastScrollY && scrollDelta > 5) {
-            setHidden(true);
+          // Clear any pending hide timeout
+          if (hideTimeout) {
+            clearTimeout(hideTimeout);
+            hideTimeout = null;
+          }
+
+          // Only hide if scrolling down significantly to avoid rapid flickering
+          if (currentY > 120 && currentY > lastScrollY && scrollDelta > threshold) {
+            if (!lastHiddenState) {
+              lastHiddenState = true;
+              setHidden(true);
+            }
           } else if (currentY < lastScrollY || currentY < 120) {
-            setHidden(false);
+            if (lastHiddenState) {
+              lastHiddenState = false;
+              setHidden(false);
+            }
           }
 
           setIsScrolled(currentY > 20);
@@ -32,7 +49,10 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (hideTimeout) clearTimeout(hideTimeout);
+    };
   }, []);
 
   return (
@@ -40,7 +60,7 @@ export default function Navbar() {
       <a href="#main" className="skip-link">Skip to main content</a>
 
       <header
-        className={`nav-bar fixed top-0 inset-x-0 z-50 transition-transform duration-300 ${
+        className={`nav-bar fixed top-0 inset-x-0 z-50 md:transition-transform md:duration-300 ${
           hidden ? "-translate-y-full" : "translate-y-0"
         } ${isScrolled ? "scrolled" : ""}`}
       >
