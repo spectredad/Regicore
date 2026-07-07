@@ -68,7 +68,7 @@ function ArtifactAgents() {
         <span className={`w-2 h-2 rounded-full bg-rust ${isVisible ? "animate-pulse" : ""}`} />
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">agent.run — live</span>
       </div>
-      <div className="px-4 py-3 font-mono text-[11px] leading-[1.9] text-muted min-h-[100px]">
+      <div className="px-4 py-3 font-mono text-[11px] leading-[1.9] text-muted min-h-[100px]" style={{ contain: "layout style paint" }}>
         {commandLines.map((cmd, i) => (
           <p key={i} style={{ animation: "slideIn 0.3s ease-out forwards" }}>
             <span className="text-rust">→</span> {cmd}
@@ -156,7 +156,7 @@ function ArtifactEmail() {
           <span className="font-mono text-[10px] text-rust">personalised</span>
         </div>
       </div>
-      <div className="px-4 py-3 text-[12px] leading-relaxed">
+      <div className="px-4 py-3 text-[12px] leading-relaxed min-h-[76px]" style={{ contain: "layout style paint" }}>
         <p className="text-muted">To: <span className="text-ink">sarah@acmefreight.com</span></p>
         <p className="text-ink mt-1.5">
           Hi Sarah — saw{" "}
@@ -204,7 +204,7 @@ function ArtifactVoice() {
         <span className={`w-2 h-2 rounded-full bg-rust ${isVisible ? "animate-pulse" : ""}`} />
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Outbound call — 3m 12s</span>
       </div>
-      <div className="px-4 py-3">
+      <div className="px-4 py-3 min-h-[92px]" style={{ contain: "layout style paint" }}>
         <div className="flex items-end gap-[3px] h-10" aria-hidden="true">
           {bars.map((h, i) => (
             <span
