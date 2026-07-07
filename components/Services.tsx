@@ -474,7 +474,16 @@ function ArtifactCRM() {
           </div>
         )}
       </div>
-      <div key={playCount} className="grid grid-cols-3 gap-px bg-line">
+      <div key={playCount} className="grid grid-cols-3 gap-px bg-line relative overflow-hidden" style={{ contain: "layout style paint" }}>
+        {/* Subtle grid pulse overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: `linear-gradient(90deg, transparent 0%, rgba(168, 67, 31, 0.03) 50%, transparent 100%)`,
+            animation: `gridPulse 6s ease-in-out infinite`,
+          }}
+          aria-hidden="true"
+        />
         {cols.map((c, colIdx) => (
           <div key={c.label} className="bg-surface px-2.5 py-2.5">
             <p className="font-mono text-[9px] uppercase tracking-widest text-muted mb-2">{c.label}</p>
