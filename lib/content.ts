@@ -93,7 +93,7 @@ export const metrics = [
 
 export const plans = [
   {
-    name: "Starter Retainer",
+    name: "Starter",
     price: "From $2.5k",
     period: "/month · 90-day minimum",
     featured: false,
@@ -111,7 +111,7 @@ export const plans = [
     cta: "Start with Starter",
   },
   {
-    name: "Growth Retainer",
+    name: "Growth",
     price: "From $5.5k",
     period: "/month · 90-day minimum",
     featured: true,
