@@ -77,10 +77,10 @@ export default function Pricing() {
                 </div>
 
                 <div>
-                  <h3 className={`font-display text-[28px] font-medium ${dark ? "text-white" : "text-ink"}`}>
+                  <h3 className={`font-display text-[28px] font-medium tracking-tight ${dark ? "text-white" : "text-ink"}`}>
                     {plan.name}
                   </h3>
-                  <p className={`text-sm mt-2 leading-relaxed ${dark ? "text-paper/60" : "text-muted"}`}>
+                  <p className={`text-sm mt-3 leading-relaxed ${dark ? "text-paper/70" : "text-muted"}`}>
                     {plan.desc}
                   </p>
                 </div>

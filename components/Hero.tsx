@@ -46,8 +46,7 @@ export default function Hero() {
         <div className="reveal grid md:grid-cols-2 gap-8 items-end mt-10 md:mt-14">
           <p className="text-[17px] leading-relaxed text-muted max-w-[480px] text-pretty">
             Regicore designs, ships and optimises custom AI systems: voice callers, outreach
-            engines and agentic workflows. Senior engineers only, success metrics agreed
-            before a line of code is written.
+            engines and agentic workflows.
           </p>
 
           <div className="flex flex-wrap gap-3 md:justify-end">
