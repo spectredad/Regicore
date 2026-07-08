@@ -77,7 +77,7 @@ export default function Pricing() {
                 </div>
 
                 <div>
-                  <h3 className={`font-display text-[28px] font-medium tracking-tight ${dark ? "text-rust" : "text-ink"}`}>
+                  <h3 className={`font-display text-[28px] font-medium tracking-tight bg-rust text-paper px-2 py-1 inline-block ${dark ? "" : "text-ink"}`}>
                     {plan.name}
                   </h3>
                   <p className={`text-sm mt-3 leading-relaxed ${dark ? "text-paper/70" : "text-muted"}`}>
