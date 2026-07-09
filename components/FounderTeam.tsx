@@ -33,61 +33,14 @@ export default function FounderTeam() {
         </div>
 
         {/* Founder card */}
-        <div className="bg-ink text-paper p-8 sm:p-12 grid md:grid-cols-2 gap-10 items-center mb-px reveal">
-          <div className="flex flex-col gap-5">
-            <div
-              className="w-20 h-20 border border-paper/25 flex items-center justify-center font-display font-medium text-paper text-2xl"
-              aria-hidden="true"
-            >
-              {founder.initials}
-            </div>
+        <div className="bg-ink text-paper p-8 sm:p-12 reveal">
+          <div className="flex flex-col gap-5 max-w-2xl">
             <div>
-              <h3 className="font-display text-[26px] font-medium text-paper">{founder.name}</h3>
+              <h3 className="font-display text-[26px] font-medium text-rust">{founder.name}</h3>
               <p className="text-paper/60 text-sm mt-1">{founder.role}</p>
             </div>
             <p className="text-paper/80 text-[15px] leading-relaxed">{founder.bio}</p>
           </div>
-          <div className="flex flex-wrap gap-3 content-start">
-            {founder.credentials.map((c) => (
-              <span
-                key={c}
-                className="border border-paper/25 text-paper/80 text-[13px] px-4 py-2 font-medium"
-              >
-                {c}
-              </span>
-            ))}
-            <div className="w-full mt-4 border-t border-paper/15 pt-4">
-              <p className="text-paper/50 text-xs leading-relaxed">
-                Every engagement is personally overseen. You&apos;ll always have a senior
-                engineer in the room, not a junior handed your project on day 3.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Team grid */}
-        <div className="grid sm:grid-cols-2 gap-px bg-line border border-line">
-          {rest.map((member, i) => (
-            <div
-              key={member.name}
-              className="bg-surface p-8 reveal flex flex-col gap-5"
-              style={{ transitionDelay: `${i * 80}ms` }}
-            >
-              <div
-                className="w-12 h-12 border border-line flex items-center justify-center font-display font-medium text-ink"
-                aria-hidden="true"
-              >
-                {member.initials}
-              </div>
-              <div>
-                <h4 className="font-display text-[20px] font-medium text-ink">{member.name}</h4>
-                <p className="text-rust text-[11px] uppercase tracking-[0.12em] font-semibold mt-1">
-                  {member.role}
-                </p>
-              </div>
-              <p className="text-[15px] text-muted leading-relaxed">{member.bio}</p>
-            </div>
-          ))}
         </div>
       </div>
     </section>
