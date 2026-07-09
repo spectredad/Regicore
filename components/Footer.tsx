@@ -20,7 +20,7 @@ const footerColumns = [
     heading: "Connect",
     links: [
       { label: "LinkedIn", href: "https://linkedin.com/company/regicore", external: true },
-      { label: "X", href: "https://twitter.com/regicore", external: true },
+      { label: "Instagram", href: "https://www.instagram.com/regicorex/", external: true },
       { label: "hello@regicore.com", href: "mailto:hello@regicore.com" },
     ],
   },
