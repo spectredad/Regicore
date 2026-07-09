@@ -26,12 +26,6 @@ export default function FounderTeam() {
           <p className="section-label">The people</p>
         </div>
 
-        <div className="mb-14 max-w-3xl reveal">
-          <h2 className="font-display text-[36px] sm:text-[52px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance">
-            Senior people, real accountability
-          </h2>
-        </div>
-
         {/* Founder card */}
         <div className="bg-ink text-paper p-8 sm:p-12 reveal">
           <div className="flex flex-col gap-5 max-w-2xl">
