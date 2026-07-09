@@ -35,12 +35,6 @@ export default function FounderTeam() {
         {/* Founder card */}
         <div className="bg-ink text-paper p-8 sm:p-12 reveal">
           <div className="flex flex-col gap-5 max-w-2xl">
-            <div
-              className="w-20 h-20 border border-paper/25 flex items-center justify-center font-display font-medium text-paper text-2xl"
-              aria-hidden="true"
-            >
-              {founder.initials}
-            </div>
             <div>
               <h3 className="font-display text-[26px] font-medium text-paper">{founder.name}</h3>
               <p className="text-paper/60 text-sm mt-1">{founder.role}</p>
