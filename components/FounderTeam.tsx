@@ -36,7 +36,7 @@ export default function FounderTeam() {
         <div className="bg-ink text-paper p-8 sm:p-12 reveal">
           <div className="flex flex-col gap-5 max-w-2xl">
             <div>
-              <h3 className="font-display text-[26px] font-medium text-rust">{founder.name}</h3>
+              <h3 className="font-display text-[26px] font-medium bg-rust text-paper px-2 py-1 w-fit">{founder.name}</h3>
               <p className="text-paper/60 text-sm mt-1">{founder.role}</p>
             </div>
             <p className="text-paper/80 text-[15px] leading-relaxed">{founder.bio}</p>
