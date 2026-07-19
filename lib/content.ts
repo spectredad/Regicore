@@ -181,7 +181,7 @@ export const team = [
   {
     name: "Varun",
     role: "Founder & Lead AI Engineer",
-    bio: "Former ML engineer with 8+ years building production AI systems Obsessed with ROI-first automation and client outcomes",
+    bio: "",
     initials: "V",
     color: "bg-rust/10",
     credentials: ["ex-Google Brain", "8+ yrs AI/ML", "50+ agents shipped"],
