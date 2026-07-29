@@ -193,7 +193,7 @@ export default function Hero() {
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-wrap gap-3 justify-center">
+        <div className="flex flex-wrap gap-3 justify-center" style={{ marginBottom: "clamp(32px, 4.5vh, 56px)" }}>
           <a
             href="#book"
             className="bg-soft-white text-midnight font-semibold uppercase tracking-[0.08em] hover:bg-sand transition-colors duration-300"
