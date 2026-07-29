@@ -59,34 +59,34 @@ export default function Metrics() {
   }, []);
 
   return (
-    <section className="py-24 md:py-32 px-5 bg-ink" ref={sectionRef}>
+    <section className="py-24 md:py-32 px-5 bg-surface border-t border-line" ref={sectionRef}>
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
-        <div className="reveal flex items-baseline justify-between gap-4 border-b border-paper/15 pb-4 mb-14">
+        <div className="reveal flex items-baseline justify-between gap-4 border-b border-line pb-4 mb-14">
           <div className="flex items-baseline gap-4">
             <span className="index-num text-[15px]">03</span>
-            <p className="section-label text-paper/60">By the numbers</p>
+            <p className="section-label">By the numbers</p>
           </div>
-          <p className="section-label text-paper/60 hidden sm:block">Measured, not promised</p>
+          <p className="section-label hidden sm:block">Measured, not promised</p>
         </div>
 
         <motion.div className="metric-wrapper grid grid-cols-2 lg:grid-cols-4">
           {metrics.map((m, i) => (
             <motion.div
               key={m.label}
-              className={`py-8 pr-6 ${i > 0 ? "lg:border-l lg:border-paper/15 lg:pl-8" : ""} ${
-                i % 2 === 1 ? "border-l border-paper/15 pl-6 lg:pl-8" : ""
+              className={`py-8 pr-6 ${i > 0 ? "lg:border-l lg:border-line lg:pl-8" : ""} ${
+                i % 2 === 1 ? "border-l border-line pl-6 lg:pl-8" : ""
               }`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <div className="font-display text-[44px] md:text-[56px] font-medium text-paper leading-none tracking-[-0.02em] metric-value">
+              <div className="font-display text-[44px] md:text-[56px] font-medium text-ink leading-none tracking-[-0.02em] metric-value">
                 <MetricValue value={m.value} active={active} />
-                <span className="text-rust text-[0.55em] align-baseline">{m.suffix}</span>
+                <span className="text-coral text-[0.55em] align-baseline ml-1">{m.suffix}</span>
               </div>
-              <p className="text-[14px] text-paper/50 mt-3 leading-relaxed">{m.label}</p>
+              <p className="text-[14px] text-muted mt-3 leading-relaxed">{m.label}</p>
             </motion.div>
           ))}
         </motion.div>

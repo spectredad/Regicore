@@ -38,7 +38,7 @@ export default function Hero() {
             <br className="hidden sm:block" />
             <span className="italic font-light">real work</span>, built by{" "}
             <br className="hidden sm:block" />a studio that{" "}
-            <span className="text-rust">owns the outcome</span>.
+            <span className="text-teal">owns the outcome</span>.
           </h1>
         </div>
 
@@ -52,13 +52,13 @@ export default function Hero() {
           <div className="flex flex-wrap gap-3 md:justify-end">
             <a
               href="#book"
-              className="bg-ink text-paper font-semibold text-[13px] uppercase tracking-[0.08em] px-7 py-4 hover:bg-rust transition-colors duration-300"
+              className="bg-soft-white text-midnight font-semibold text-[13px] uppercase tracking-[0.08em] px-7 py-4 hover:bg-sand transition-colors duration-300"
             >
               Book a call
             </a>
             <a
               href="#services"
-              className="border border-ink text-ink font-semibold text-[13px] uppercase tracking-[0.08em] px-7 py-4 hover:bg-ink hover:text-paper transition-colors duration-300"
+              className="border border-soft-white text-soft-white font-semibold text-[13px] uppercase tracking-[0.08em] px-7 py-4 hover:bg-teal/10 hover:border-teal transition-colors duration-300"
             >
               Explore services
             </a>

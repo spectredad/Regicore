@@ -43,7 +43,7 @@ export default function WhyRegicore() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
-                    <p className="text-[17px] font-medium text-ink group-hover:text-rust transition-colors duration-300">
+                    <p className="text-[17px] font-medium text-ink group-hover:text-teal transition-colors duration-300">
                       {w.title}
                     </p>
                     <p className="text-[15px] leading-relaxed text-muted mt-1">{w.desc}</p>
@@ -68,9 +68,9 @@ export default function WhyRegicore() {
                   <span className="text-muted text-[14px]">{note}</span>
                 </div>
               ))}
-              <div className="flex justify-between items-baseline py-5 bg-ink text-paper px-5 mt-5 font-medium">
+              <div className="flex justify-between items-baseline py-5 bg-navy-elevated border border-line text-ink px-5 mt-5 font-medium">
                 <span className="font-display text-[18px]">Regicore</span>
-                <span className="text-[13px] uppercase tracking-[0.08em] text-paper/80">
+                <span className="text-[13px] uppercase tracking-[0.08em] text-teal">
                   Custom &middot; fast &middot; ROI-owned
                 </span>
               </div>

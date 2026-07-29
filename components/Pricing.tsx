@@ -3,19 +3,18 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { plans } from "@/lib/content";
 
-function PriceDisplay({ price, dark }: { price: string; dark?: boolean }) {
-  const inkClass = dark ? "text-white" : "text-ink";
+function PriceDisplay({ price }: { price: string; dark?: boolean }) {
   if (price.startsWith("From ")) {
     const value = price.replace("From ", "");
     return (
       <div className="flex items-baseline gap-2">
-        <span className={`text-[15px] font-normal ${dark ? "text-paper/50" : "text-muted"}`}>From</span>
-        <span className={`font-display text-[40px] font-medium ${inkClass} leading-none tracking-[-0.02em]`}>{value}</span>
+        <span className="text-[15px] font-normal text-muted">From</span>
+        <span className="font-display text-[40px] font-medium text-ink leading-none tracking-[-0.02em]">{value}</span>
       </div>
     );
   }
   return (
-    <div className={`font-display text-[40px] font-medium ${inkClass} leading-none tracking-[-0.02em]`}>
+    <div className="font-display text-[40px] font-medium text-ink leading-none tracking-[-0.02em]">
       {price}
     </div>
   );
@@ -58,7 +57,7 @@ export default function Pricing() {
               <motion.div
                 key={plan.name}
                 className={`p-8 md:p-10 reveal flex flex-col gap-8 relative ${
-                  dark ? "bg-ink" : "bg-surface"
+                  dark ? "bg-navy-elevated" : "bg-surface"
                 }`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -66,41 +65,39 @@ export default function Pricing() {
                 viewport={{ once: true, margin: "-100px" }}
               >
                 <div className="flex items-start justify-between gap-3">
-                  <span className={`index-num text-[13px] ${dark ? "text-rust" : ""}`} aria-hidden="true">
+                  <span className="index-num text-[13px]" aria-hidden="true">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   {plan.badge && (
-                    <span className="bg-rust text-paper text-[10px] uppercase tracking-[0.12em] font-semibold px-3 py-1.5">
+                    <span className="bg-coral text-midnight text-[10px] uppercase tracking-[0.12em] font-semibold px-3 py-1.5">
                       {plan.badge}
                     </span>
                   )}
                 </div>
 
                 <div>
-                  <h3 className={`font-display text-[28px] font-medium tracking-tight bg-rust text-paper px-2 py-1 inline-block ${dark ? "" : "text-ink"}`}>
+                  <h3 className="font-display text-[28px] font-medium tracking-tight text-ink">
                     {plan.name}
                   </h3>
-                  <p className={`text-sm mt-3 leading-relaxed ${dark ? "text-paper/70" : "text-muted"}`}>
+                  <p className="text-sm mt-3 leading-relaxed text-muted">
                     {plan.desc}
                   </p>
                 </div>
 
                 <div>
                   <PriceDisplay price={plan.price} dark={dark} />
-                  <div className={`text-xs mt-2 uppercase tracking-[0.1em] ${dark ? "text-paper/40" : "text-muted"}`}>
+                  <div className="text-xs mt-2 uppercase tracking-[0.1em] text-muted">
                     {plan.period}
                   </div>
                 </div>
 
-                <ul className={`flex-1 border-t ${dark ? "border-paper/15" : "border-line"}`}>
+                <ul className="flex-1 border-t border-line">
                   {plan.features.map((f) => (
                     <li
                       key={f}
-                      className={`flex items-baseline gap-3 text-[14.5px] leading-relaxed py-2.5 border-b ${
-                        dark ? "text-paper/80 border-paper/15" : "text-ink/80 border-line"
-                      }`}
+                      className="flex items-baseline gap-3 text-[14.5px] leading-relaxed py-2.5 border-b border-line text-muted"
                     >
-                      <span className="text-rust shrink-0 text-[11px]" aria-hidden="true">&#9632;</span>
+                      <span className="text-teal shrink-0 text-[11px]" aria-hidden="true">&#9632;</span>
                       {f}
                     </li>
                   ))}
@@ -110,8 +107,8 @@ export default function Pricing() {
                   href="#book"
                   className={`block text-center font-semibold py-4 transition-colors duration-300 text-[13px] uppercase tracking-[0.08em] ${
                     dark
-                      ? "bg-paper text-ink hover:bg-rust hover:text-paper"
-                      : "border border-ink text-ink hover:bg-ink hover:text-paper"
+                      ? "bg-soft-white text-midnight hover:bg-sand"
+                      : "border border-soft-white text-soft-white hover:bg-teal/10 hover:border-teal"
                   }`}
                 >
                   {plan.cta}

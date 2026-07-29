@@ -46,13 +46,13 @@ function ArtifactAgents() {
   return (
     <div ref={ref} className="artifact-frame">
       <div className="flex items-center gap-2 border-b border-line px-4 py-2">
-        <span className={`w-2 h-2 rounded-full bg-rust ${isVisible ? "animate-pulse" : ""}`} />
+        <span className={`w-2 h-2 rounded-full bg-teal ${isVisible ? "animate-pulse" : ""}`} />
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">agent.run — live</span>
       </div>
       <div className="px-4 py-3 font-mono text-[11px] leading-[1.9] text-muted min-h-[100px]" style={{ contain: "layout style paint" }}>
         {commandLines.map((cmd, i) => (
           <p key={i}>
-            <span className="text-rust">→</span> {cmd}
+            <span className="text-teal">→</span> {cmd}
           </p>
         ))}
         {!showCompletion && commandLines.length > 0 && commandLines.length < 3 && (
@@ -60,7 +60,7 @@ function ArtifactAgents() {
             {[3, 8, 5, 10, 6, 9, 4, 7].map((h, i) => (
               <span
                 key={i}
-                className="w-[2px] bg-rust/50"
+                className="w-[2px] bg-teal/50"
                 style={{
                   height: `${h * 10}%`,
                   transformOrigin: "bottom",
@@ -99,20 +99,20 @@ function ArtifactEmail() {
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">New message</span>
         <div className="flex items-center gap-2">
 
-          <span className="font-mono text-[10px] text-rust">personalised</span>
+          <span className="font-mono text-[10px] text-teal">personalised</span>
         </div>
       </div>
       <div className="px-4 py-3 text-[12px] leading-relaxed min-h-[76px]" style={{ contain: "layout style paint" }}>
         <p className="text-muted">To: <span className="text-ink">sarah@acmefreight.com</span></p>
         <p className="text-ink mt-1.5">
           Hi Sarah — saw{" "}
-          <span className={`bg-rust/10 text-rust px-1 transition-all ${highlightPill ? "ring-2 ring-rust/40" : ""}`}>
+          <span className={`bg-teal/15 text-teal px-1 transition-all ${highlightPill ? "ring-2 ring-teal/40" : ""}`}>
             Acme opened 3 new depots
           </span>{" "}
           last quarter. Most ops teams that scale that fast hit a dispatch bottleneck…
         </p>
         <div className="mt-2.5 inline-flex items-center gap-1.5 border border-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-muted">
-          {displayNum} queued <span className="text-rust">·</span> {displayPct}% reply lift
+          {displayNum} queued <span className="text-teal">·</span> {displayPct}% reply lift
         </div>
       </div>
     </div>
@@ -135,7 +135,7 @@ function ArtifactVoice() {
   return (
     <div ref={ref} className="artifact-frame">
       <div className="flex items-center gap-2 border-b border-line px-4 py-2">
-        <span className={`w-2 h-2 rounded-full bg-rust ${isVisible ? "animate-pulse" : ""}`} />
+        <span className={`w-2 h-2 rounded-full bg-teal ${isVisible ? "animate-pulse" : ""}`} />
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Outbound call — 3m 12s</span>
       </div>
       <div className="px-4 py-3 min-h-[92px]" style={{ contain: "layout style paint" }}>
@@ -143,7 +143,7 @@ function ArtifactVoice() {
           {bars.map((h, i) => (
             <span
               key={i}
-              className="w-[3px] bg-rust/70"
+              className="w-[3px] bg-teal/70"
               style={{
                 height: `${h * 3.5}%`,
               }}
@@ -229,8 +229,8 @@ function ArtifactWebsite() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, duration: 0.4, type: "spring", stiffness: 200, damping: 20 }}
             >
-              <div className="inline-block bg-rust px-4 py-1.5">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-paper">Book a call</span>
+              <div className="inline-block bg-teal px-4 py-1.5">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-midnight font-semibold">Book a call</span>
               </div>
               <span className="ml-3 font-mono text-[10px] text-muted">CVR +{cvrNum.toFixed(1)}%</span>
             </motion.div>
@@ -267,7 +267,7 @@ function ArtifactSoftware() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
             >
-              <span className="text-rust">const</span> quote = <span className="text-rust">await</span> pricing
+              <span className="text-teal">const</span> quote = <span className="text-teal">await</span> pricing
             </motion.div>
           )}
           {codeLines.includes(1) && (
@@ -296,7 +296,7 @@ function ArtifactSoftware() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
               >
-                <span className="text-ink">// 4 days of quoting → 40 sec</span>
+                <span className="text-muted">// 4 days of quoting → 40 sec</span>
               </motion.div>
             </>
           )}
@@ -327,8 +327,6 @@ function ArtifactCRM() {
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Pipeline — this week</span>
       </div>
       <div className="grid grid-cols-3 gap-px bg-line relative overflow-hidden h-24" style={{ contain: "layout style paint" }}>
-        {/* Subtle grid pulse overlay */}
-
         {cols.map((c, colIdx) => (
           <div key={c.label} className="bg-surface px-2.5 py-2.5">
             <p className="font-mono text-[9px] uppercase tracking-widest text-muted mb-2">{c.label}</p>
@@ -336,7 +334,7 @@ function ArtifactCRM() {
               {Array.from({ length: c.items }).map((_, i) => (
                 <motion.div
                   key={`${playCount}-${i}`}
-                  className={`h-4 ${c.label === "Won" ? "bg-rust/70" : "bg-line"}`}
+                  className={`h-4 ${c.label === "Won" ? "bg-coral/80" : "bg-teal/40"}`}
                   initial={{ opacity: 0 }}
                   animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
                   transition={{
@@ -388,7 +386,7 @@ function ArtifactMarketing() {
               <div className="flex flex-col items-center">
                 <span
                   className={`w-2 h-2 rounded-full transition-colors ${
-                    isLast && isActive ? "bg-rust" : "border border-ink/40 bg-surface"
+                    isLast && isActive ? "bg-coral" : "border border-line bg-surface"
                   }`}
                   style={{
                     animation: isLast && isActive ? "pulse 1.5s ease-in-out infinite" : "none",
@@ -396,7 +394,7 @@ function ArtifactMarketing() {
                 />
                 {i < steps.length - 1 && <span className="w-px h-4 bg-line" />}
               </div>
-              <span className={`text-[12px] ${isLast ? "text-rust" : "text-ink"} leading-none pb-4 last:pb-0`}>
+              <span className={`text-[12px] ${isLast ? "text-coral" : "text-ink"} leading-none pb-4 last:pb-0`}>
                 {s}
               </span>
             </div>
@@ -429,7 +427,7 @@ function ArtifactLeadGen() {
     <div ref={ref} className="artifact-frame">
       <div className="border-b border-line px-4 py-2 flex items-center justify-between">
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Leads sourced today</span>
-        <span className="font-mono text-[10px] text-rust">+{totalLeads}</span>
+        <span className="font-mono text-[10px] text-teal">+{totalLeads}</span>
       </div>
       <div key={playCount}>
         {leads.map((l, idx) => (
@@ -448,7 +446,7 @@ function ArtifactLeadGen() {
           >
             <span className="text-[12px] text-ink">{l.name}</span>
             <span className="font-mono text-[10px] text-muted">
-              score <span className="text-rust">{scores[idx]}</span>
+              score <span className="text-teal">{scores[idx]}</span>
             </span>
           </motion.div>
         ))}

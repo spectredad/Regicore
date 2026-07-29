@@ -43,24 +43,24 @@ export default function FAQ() {
               <div key={f.q} className="border-b border-line group">
                 <button
                   onClick={() => toggle(i)}
-                  className="w-full flex items-baseline gap-5 py-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-rust"
+                  className="w-full flex items-baseline gap-5 py-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-teal"
                   aria-expanded={openIndex === i}
                   aria-controls={`faq-answer-${i}`}
                 >
                   <span
                     className={`text-[12px] font-semibold shrink-0 transition-colors duration-300 ${
-                      openIndex === i ? "text-rust" : "text-line"
+                      openIndex === i ? "text-teal" : "text-muted/40"
                     }`}
                     aria-hidden="true"
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="flex-1 font-display text-[19px] md:text-[21px] font-medium text-ink group-hover:text-rust transition-colors duration-300 text-pretty">
+                  <span className="flex-1 font-display text-[19px] md:text-[21px] font-medium text-ink group-hover:text-teal transition-colors duration-300 text-pretty">
                     {f.q}
                   </span>
                   <span
                     className={`text-xl text-muted shrink-0 transition-transform duration-[400ms] ${
-                      openIndex === i ? "rotate-45 text-rust" : "rotate-0"
+                      openIndex === i ? "rotate-45 text-teal" : "rotate-0"
                     }`}
                     aria-hidden="true"
                   >

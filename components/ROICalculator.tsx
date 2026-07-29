@@ -57,7 +57,7 @@ export default function ROICalculator() {
                   <label className="text-[15px] font-medium text-ink" htmlFor="slider-team">
                     Team members affected
                   </label>
-                  <span className="font-display text-[24px] font-medium text-rust">{team}</span>
+                  <span className="font-display text-[24px] font-medium text-teal">{team}</span>
                 </div>
                 <input
                   id="slider-team"
@@ -78,7 +78,7 @@ export default function ROICalculator() {
                   <label className="text-[15px] font-medium text-ink" htmlFor="slider-hours">
                     Hours saved per person / week
                   </label>
-                  <span className="font-display text-[24px] font-medium text-rust">{hours}h</span>
+                  <span className="font-display text-[24px] font-medium text-teal">{hours}h</span>
                 </div>
                 <input
                   id="slider-hours"
@@ -99,7 +99,7 @@ export default function ROICalculator() {
                   <label className="text-[15px] font-medium text-ink" htmlFor="slider-rate">
                     Average fully-loaded hourly rate
                   </label>
-                  <span className="font-display text-[24px] font-medium text-rust">${rate}</span>
+                  <span className="font-display text-[24px] font-medium text-teal">${rate}</span>
                 </div>
                 <input
                   id="slider-rate"
@@ -118,18 +118,18 @@ export default function ROICalculator() {
           </div>
 
           {/* Result panel */}
-          <div className="reveal bg-ink p-10 md:p-14 flex flex-col justify-between min-h-[480px] lg:sticky lg:top-24">
+          <div className="reveal bg-navy-elevated border border-line p-10 md:p-14 flex flex-col justify-between min-h-[480px] lg:sticky lg:top-24">
             <div>
-              <p className="section-label text-paper/60 mb-8">Estimated annual savings</p>
+              <p className="section-label text-muted mb-8">Estimated annual savings</p>
               <div
-                className="font-display text-[64px] md:text-[88px] font-medium text-paper leading-none tracking-[-0.03em] transition-all duration-300"
+                className="font-display text-[64px] md:text-[88px] font-medium text-ink leading-none tracking-[-0.03em] transition-all duration-300"
                 aria-live="polite"
                 aria-label={`Estimated annual savings: ${formatMoney(savings)}${isCapped ? " or more" : ""}`}
               >
                 {formatMoney(savings)}
-                {isCapped && <span className="text-rust">+</span>}
+                {isCapped && <span className="text-coral">+</span>}
               </div>
-              <p className="text-paper/40 text-[13px] mt-6 max-w-[260px] leading-relaxed">
+              <p className="text-muted/80 text-[13px] mt-6 max-w-[260px] leading-relaxed">
                 {isCapped
                   ? "Capped display. Actual savings may be higher."
                   : "Estimated, based on hours saved multiplied by rate over 52 weeks."}
@@ -139,7 +139,7 @@ export default function ROICalculator() {
             <div className="mt-10">
               <div className="relative tooltip-trigger inline-block mb-6">
                 <button
-                  className="text-paper/50 hover:text-paper/80 text-xs underline underline-offset-4 transition-colors"
+                  className="text-muted hover:text-ink text-xs underline underline-offset-4 transition-colors"
                   tabIndex={0}
                   aria-label="How we calculate this estimate"
                 >
@@ -155,7 +155,7 @@ export default function ROICalculator() {
 
               <a
                 href="#book"
-                className="block w-full text-center bg-paper text-ink font-semibold text-[13px] uppercase tracking-[0.08em] py-4 hover:bg-rust hover:text-paper transition-colors duration-300"
+                className="block w-full text-center bg-soft-white text-midnight font-semibold text-[13px] uppercase tracking-[0.08em] py-4 hover:bg-sand transition-colors duration-300"
               >
                 Get a precise audit
               </a>

@@ -15,7 +15,6 @@ export default function FounderTeam() {
   }, []);
 
   const founder = team[0];
-  const rest = team.slice(1);
 
   return (
     <section className="py-20 md:py-28 px-5" ref={sectionRef}>
@@ -27,13 +26,13 @@ export default function FounderTeam() {
         </div>
 
         {/* Founder card */}
-        <div className="bg-ink text-paper p-8 sm:p-12 reveal">
+        <div className="bg-navy-elevated border border-line p-8 sm:p-12 reveal">
           <div className="flex flex-col gap-5 max-w-2xl">
             <div>
-              <h3 className="font-display text-[26px] font-medium bg-rust text-paper px-2 py-1 w-fit">{founder.name}</h3>
-              <p className="text-paper/60 text-sm mt-1">{founder.role}</p>
+              <h3 className="font-display text-[26px] font-medium text-ink">{founder.name}</h3>
+              <p className="text-teal text-xs uppercase tracking-[0.12em] font-semibold mt-1">{founder.role}</p>
             </div>
-            <p className="text-paper/80 text-[15px] leading-relaxed">{founder.bio}</p>
+            {founder.bio && <p className="text-muted text-[15px] leading-relaxed">{founder.bio}</p>}
           </div>
         </div>
       </div>

@@ -15,12 +15,13 @@ export default function HowItWorks() {
   }, []);
 
   return (
-    <section className="py-24 px-5 bg-dark text-white relative" ref={sectionRef}>
+    <section className="py-24 px-5 bg-midnight text-ink relative border-t border-line" ref={sectionRef}>
       {/* Background grid */}
       <div
-        className="absolute inset-0 opacity-[0.07]"
+        className="absolute inset-0 opacity-[0.05]"
         style={{
-          backgroundImage: "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)",
+          backgroundImage:
+            "linear-gradient(rgba(244, 246, 245, 0.16) 1px,transparent 1px),linear-gradient(90deg,rgba(244, 246, 245, 0.16) 1px,transparent 1px)",
           backgroundSize: "48px 48px",
         }}
         aria-hidden="true"
@@ -28,10 +29,10 @@ export default function HowItWorks() {
 
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center mb-14 reveal">
-          <span className="inline-block bg-lav/20 text-lav text-xs tracking-[0.2em] font-semibold px-4 py-2 rounded">
+          <span className="inline-block border border-line text-teal text-xs tracking-[0.2em] font-semibold px-4 py-2 uppercase">
             HOW IT WORKS
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl font-semibold text-white mt-6">
+          <h2 className="font-display text-4xl sm:text-5xl font-medium text-ink mt-6">
             Built to deliver ROI, fast
           </h2>
         </div>
@@ -40,23 +41,28 @@ export default function HowItWorks() {
           {steps.map((s, i) => (
             <div
               key={s.step}
-              className="rounded-xl p-5 border border-dashed border-white/20 bg-white/[0.03] reveal group hover:bg-white/[0.06] transition-colors"
+              className="editorial-card p-6 reveal group"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              {/* Perspective grid visual */}
-              <div className="rounded-lg bg-[#2c2547] h-44 mb-5 relative overflow-hidden flex items-center justify-center">
+              {/* Architectural node visual */}
+              <div className="rounded-lg bg-navy-elevated border border-line h-44 mb-5 relative overflow-hidden flex items-center justify-center">
                 <div
-                  className="absolute inset-0 opacity-30 perspective-grid group-hover:opacity-50 transition-opacity"
+                  className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(rgba(244, 246, 245, 0.16) 1px,transparent 1px),linear-gradient(90deg,rgba(244, 246, 245, 0.16) 1px,transparent 1px)",
+                    backgroundSize: "24px 24px",
+                  }}
                   aria-hidden="true"
                 />
-                <div className="relative w-20 h-20 rounded bg-lav/80 shadow-lg flex items-center justify-center pulse-node">
-                  <div className="w-12 h-12 rounded-full border-2 border-white/70" />
+                <div className="relative w-16 h-16 rounded border border-line bg-surface flex items-center justify-center shadow-lg">
+                  <span className="font-display font-medium text-teal text-xl">{s.step.replace("STEP ", "")}</span>
                 </div>
               </div>
 
-              <p className="text-lav text-xs tracking-widest font-semibold mb-2">{s.step}</p>
-              <h3 className="font-display text-xl font-semibold text-white mb-1.5">{s.title}</h3>
-              <p className="text-sm text-white/60">{s.desc}</p>
+              <p className="text-teal text-xs tracking-widest font-semibold mb-2">{s.step}</p>
+              <h3 className="font-display text-xl font-medium text-ink mb-1.5">{s.title}</h3>
+              <p className="text-sm text-muted leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>

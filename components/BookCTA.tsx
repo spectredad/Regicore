@@ -149,7 +149,7 @@ export default function BookCTA() {
                 </div>
 
                 {status === "error" && (
-                  <p className="sm:col-span-2 text-rust text-sm" role="alert">
+                  <p className="sm:col-span-2 text-coral text-sm" role="alert">
                     Something went wrong. Please try again or email us directly.
                   </p>
                 )}
@@ -157,7 +157,7 @@ export default function BookCTA() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="bg-ink text-paper font-semibold py-4 sm:col-span-2 hover:bg-rust transition-colors duration-300 disabled:opacity-60 text-[13px] uppercase tracking-[0.08em]"
+                  className="bg-soft-white text-midnight font-semibold py-4 sm:col-span-2 hover:bg-sand transition-colors duration-300 disabled:opacity-60 text-[13px] uppercase tracking-[0.08em]"
                 >
                   {status === "loading" ? "Sending..." : "Book my call"}
                 </button>

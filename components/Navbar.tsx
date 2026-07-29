@@ -67,11 +67,11 @@ export default function Navbar() {
         <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
           <a
             href="/"
-            className="font-display text-[20px] font-semibold text-ink tracking-[-0.01em] hover:text-rust transition-colors duration-300"
+            className="font-display text-[20px] font-semibold text-ink tracking-[-0.01em] hover:text-teal transition-colors duration-300"
             aria-label="Regicore home"
           >
             Regicore
-            <span className="text-rust">.</span>
+            <span className="text-teal">.</span>
           </a>
 
           {/* Desktop nav */}
@@ -87,13 +87,13 @@ export default function Navbar() {
                 </span>
                 <span className="relative">
                   {item.label}
-                  <span className="absolute -bottom-0.5 left-0 w-full h-px bg-ink scale-x-0 group-hover/link:scale-x-100 transition-transform origin-left duration-300" />
+                  <span className="absolute -bottom-0.5 left-0 w-full h-px bg-teal scale-x-0 group-hover/link:scale-x-100 transition-transform origin-left duration-300" />
                 </span>
               </a>
             ))}
             <a
               href="/#book"
-              className="bg-ink text-paper text-[12px] font-semibold tracking-[0.08em] uppercase px-5 py-2.5 hover:bg-rust transition-colors duration-300"
+              className="bg-soft-white text-midnight text-[12px] font-semibold tracking-[0.08em] uppercase px-5 py-2.5 hover:bg-sand transition-colors duration-300"
             >
               Work with us
             </a>
@@ -103,7 +103,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <a
               href="/#book"
-              className="bg-ink text-paper text-[12px] font-semibold tracking-[0.08em] uppercase px-4 py-2 hover:bg-rust transition-colors duration-300"
+              className="bg-soft-white text-midnight text-[12px] font-semibold tracking-[0.08em] uppercase px-4 py-2 hover:bg-sand transition-colors duration-300"
             >
               Contact
             </a>

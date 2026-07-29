@@ -104,7 +104,7 @@ export default function AgentShowcase() {
               >
                 <span
                   className={`text-[13px] font-body font-semibold transition-colors duration-300 ${
-                    i === active ? "text-rust" : "text-line"
+                    i === active ? "text-teal" : "text-muted/40"
                   }`}
                   aria-hidden="true"
                 >
@@ -120,7 +120,7 @@ export default function AgentShowcase() {
 
           {/* Live mockup card */}
           <div
-            className="order-1 lg:order-2 relative bg-ink min-h-[420px] flex items-center justify-center overflow-hidden p-8"
+            className="order-1 lg:order-2 relative bg-surface border border-line min-h-[420px] flex items-center justify-center overflow-hidden p-8"
             onMouseEnter={stopTimer}
             onMouseLeave={startTimer}
           >
@@ -129,7 +129,7 @@ export default function AgentShowcase() {
               className="absolute inset-0 opacity-[0.08]"
               style={{
                 backgroundImage:
-                  "linear-gradient(#f6f3ec 1px, transparent 1px), linear-gradient(90deg, #f6f3ec 1px, transparent 1px)",
+                  "linear-gradient(rgba(244, 246, 245, 0.16) 1px, transparent 1px), linear-gradient(90deg, rgba(244, 246, 245, 0.16) 1px, transparent 1px)",
                 backgroundSize: "56px 56px",
               }}
               aria-hidden="true"
@@ -137,7 +137,7 @@ export default function AgentShowcase() {
 
             {/* Agent card */}
             <motion.div
-              className="relative bg-surface border border-line p-6 w-72"
+              className="relative bg-navy-elevated border border-line p-6 w-72"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: cardVisible ? 1 : 0.3, scale: 1 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
@@ -159,13 +159,13 @@ export default function AgentShowcase() {
                 </div>
                 <div className="flex justify-between">
                   <span>Status</span>
-                  <span className="text-rust font-semibold">Active</span>
+                  <span className="text-teal font-semibold">Active</span>
                 </div>
               </div>
             </motion.div>
 
             <p
-              className="absolute bottom-5 left-0 right-0 text-center text-[12px] uppercase tracking-[0.12em] text-paper/50"
+              className="absolute bottom-5 left-0 right-0 text-center text-[12px] uppercase tracking-[0.12em] text-muted/60"
               aria-live="polite"
             >
               {agent.name} is working
