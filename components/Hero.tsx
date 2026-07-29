@@ -97,7 +97,7 @@ function RegicoreIllustration() {
       <ellipse cx="545" cy="130" rx="10" ry="4" fill="#254b68" stroke="#5B9A91" strokeWidth="1" />
       <ellipse cx="545" cy="118" rx="52" ry="11" fill="none" stroke="#5B9A91" strokeWidth="2.5" opacity="0.75" />
       <ellipse cx="545" cy="118" rx="58" ry="13" fill="none" stroke="#5B9A91" strokeWidth="0.8" opacity="0.3" />
-      <text x="545" y="368" textAnchor="middle" fontFamily="serif" fontSize="9" fill="#7098B8" letterSpacing="2" opacity="0.85">AI ORCHESTRATION</text>
+
 
       {[-1, 0, 1].map(i => (
         <path key={i} d={`M ${545 + i*38 - 14} 308 L ${545 + i*38 - 14} 250 Q ${545 + i*38} 234, ${545 + i*38 + 14} 250 L ${545 + i*38 + 14} 308 Z`} fill="#0C1724" opacity="0.7" />
@@ -217,6 +217,7 @@ export default function Hero() {
         style={{
           flex: "1 1 auto",
           minHeight: 0,
+          marginTop: "clamp(12px, 2vh, 28px)",
           paddingLeft: "clamp(8px, 3vw, 40px)",
           paddingRight: "clamp(8px, 3vw, 40px)",
         }}
