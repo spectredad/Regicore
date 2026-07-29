@@ -217,7 +217,7 @@ export default function Hero() {
         style={{
           flex: "1 1 auto",
           minHeight: 0,
-          marginTop: "clamp(12px, 2vh, 28px)",
+          marginTop: "clamp(32px, 5vh, 64px)",
           paddingLeft: "clamp(8px, 3vw, 40px)",
           paddingRight: "clamp(8px, 3vw, 40px)",
         }}
