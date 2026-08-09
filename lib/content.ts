@@ -85,20 +85,20 @@ export const steps = [
 ];
 
 export const metrics = [
-  { value: "3-6", suffix: " wks", label: "to first deployment" },
-  { value: "10k", suffix: "+ hrs", label: "of manual work automated" },
-  { value: "+62", suffix: "%", label: "reply rate lift for clients" },
-  { value: "3.1", suffix: "x", label: "pipeline growth in 90 days" },
+  { value: "2", suffix: " wks", label: "to first deployment" },
+  { value: "100", suffix: "%", label: "private, your environment" },
+  { value: "0", suffix: "", label: "long-term contracts required" },
+  { value: "Fixed", suffix: "", label: "scope agreed before we start" },
 ];
 
 export const plans = [
   {
     name: "Starter",
-    price: "From $2.5k",
+    price: "From $1.5k",
     period: "/month · 90-day minimum",
     featured: false,
     badge: null,
-    desc: "One focused AI workflow for teams that want to launch fast and prove ROI on a single use case.",
+    desc: "One system, done right. Built for firms who want to prove it works on a single bottleneck before going further.",
     features: [
       "First deployment live in week 2",
       "Measurable results within 30 days",
@@ -112,11 +112,11 @@ export const plans = [
   },
   {
     name: "Growth",
-    price: "From $5.5k",
+    price: "From $3.3k",
     period: "/month · 90-day minimum",
     featured: true,
     badge: "Most Popular",
-    desc: "A multi-workflow system for companies that want AI driving revenue, support, or operations across one core department.",
+    desc: "For firms ready to put AI to work across more than one part of the business, not just one workflow, but how leads, intake, and follow up connect.",
     features: [
       "First deployment live in week 2",
       "Measurable results within 30 days",
@@ -135,7 +135,7 @@ export const plans = [
     period: "/from $12k per month",
     featured: false,
     badge: null,
-    desc: "An embedded AI systems partner for firms that want multiple workflows deployed, improved, and expanded every month.",
+    desc: "For firms that want us embedded as an ongoing systems partner, deploying, improving, and expanding automation across the whole practice, every month.",
     features: [
       "First deployment live in week 2",
       "Measurable results within 30 days",

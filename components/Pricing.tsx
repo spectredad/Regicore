@@ -43,10 +43,10 @@ export default function Pricing() {
 
         <div className="max-w-2xl mb-14 reveal">
           <h2 className="font-display text-[36px] sm:text-[52px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance">
-            Choose how we work together
+            Pick The Level Of Help You Actually Need.
           </h2>
           <p className="text-muted mt-5 text-[17px] leading-relaxed text-pretty">
-            Retainer-based engagements with first deployment in week 2 and measurable results within 30 days.
+            Every engagement starts live in week 2. No 6-month build cycles, no &apos;we&apos;ll get to it next quarter.&apos;
           </p>
         </div>
 

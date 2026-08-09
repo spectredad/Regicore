@@ -65,9 +65,9 @@ export default function Metrics() {
         <div className="reveal flex items-baseline justify-between gap-4 border-b border-line pb-4 mb-14">
           <div className="flex items-baseline gap-4">
             <span className="index-num text-[15px]">03</span>
-            <p className="section-label">By the numbers</p>
+            <p className="section-label">How we operate</p>
           </div>
-          <p className="section-label hidden sm:block">Measured, not promised</p>
+          <p className="section-label hidden sm:block">Nothing here is a projection</p>
         </div>
 
         <motion.div className="metric-wrapper grid grid-cols-2 lg:grid-cols-4">
