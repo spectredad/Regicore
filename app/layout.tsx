@@ -77,13 +77,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${fraunces.variable} ${inter.variable} bg-paper scroll-smooth`}
       suppressHydrationWarning
     >
-      <head>
+      <body className="font-body antialiased">
+        {children}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body className="font-body antialiased">{children}</body>
+      </body>
     </html>
   );
 }
