@@ -40,14 +40,13 @@ export default function ROICalculator() {
           <p className="section-label">Estimate your upside</p>
         </div>
 
-        <div className="grid lg:grid-cols-[1fr_1.15fr] gap-14 items-start">
+        <div className="grid xl:grid-cols-[1fr_1.15fr] gap-14 items-start">
           <div className="reveal">
             <h2 className="font-display text-[36px] sm:text-[52px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance mb-5">
-              What is manual work costing you?
+              What Is Manual Work Actually Costing You?
             </h2>
             <p className="text-[17px] leading-relaxed text-muted max-w-md text-pretty mb-12">
-              Drag the sliders to estimate what automating manual work could save your team
-              per year. Then let us pressure-test the number.
+              Drag the sliders below. This is what your firm could save per year by automating the work your team is doing by hand right now.
             </p>
 
             {/* Sliders */}
@@ -118,7 +117,7 @@ export default function ROICalculator() {
           </div>
 
           {/* Result panel */}
-          <div className="reveal bg-navy-elevated border border-line p-10 md:p-14 flex flex-col justify-between min-h-[480px] lg:sticky lg:top-24">
+          <div className="reveal bg-navy-elevated border border-line p-8 md:p-10 flex flex-col justify-between xl:min-h-[480px] xl:sticky xl:top-24">
             <div>
               <p className="section-label text-muted mb-8">Estimated annual savings</p>
               <div
