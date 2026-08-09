@@ -8,14 +8,14 @@ export const nav = [
 ];
 
 export const services = [
-  { icon: "01", title: "Custom AI Systems & Agents", desc: "For firms losing hours to manual case work: Your associates stop manually processing trust documents and probate filings. These agents read them, extract what matters, and route the file to the right person, end to end." },
-  { icon: "02", title: "AI Email Outreach", desc: "For firms losing leads to slow follow up: Most estate planning leads go cold because nobody replies fast enough. These agents draft and send personalized follow ups the moment someone inquires, so a lead never sits untouched for three days." },
-  { icon: "03", title: "AI Voice Callers", desc: "For firms missing calls they can't afford to miss: A missed call from a family member deciding on a trust attorney is a lost client. This answers, qualifies, and books the consult, 24/7, without hiring a receptionist." },
-  { icon: "04", title: "Booking & Conversion Systems", desc: "For firms with traffic that isn't turning into consults: Your website's job isn't to look nice, it's to get prospects on your calendar. We build pages engineered around how someone actually decides to hire a trust attorney." },
-  { icon: "05", title: "Custom Software & Apps", desc: "For firms working around software instead of with it: Off the shelf legal software forces your team to adapt to its limitations. We build tools shaped around how your firm already works." },
-  { icon: "06", title: "Custom CRM", desc: "For firms where cases fall through the cracks: Built around how estate and trust matters actually move, from intake through administration through closing, so nothing gets lost between paralegal and partner." },
-  { icon: "07", title: "Marketing Automation", desc: "For firms losing prospects who aren't ready yet: Most people aren't ready to hire an estate attorney the day they find you. This keeps your firm top of mind until they are, automatically." },
-  { icon: "08", title: "Lead-Gen Systems", desc: "For firms whose calendar isn't full of the right clients: Not just traffic, appointments, and appointments with the exact client profile your firm wants more of." },
+  { icon: "01", title: "Custom AI Systems & Agents", desc: "Trust documents and probate filings get processed automatically. Extracted, reviewed, routed to the right person, without an associate touching them first." },
+  { icon: "02", title: "AI Email Outreach", desc: "Every inquiry gets a personalized reply within minutes, not three days later when the prospect's already called someone else." },
+  { icon: "03", title: "AI Voice Callers", desc: "Every call gets answered, qualified, and booked, 24/7, including the 9pm call from a family that just lost someone." },
+  { icon: "04", title: "Booking & Conversion Systems", desc: "Website visitors turn into booked consults instead of quiet exits, with pages built around how people actually decide to hire a trust attorney." },
+  { icon: "05", title: "Custom Software & Apps", desc: "Software that fits how your firm already works, instead of a team adapting itself to fit the software." },
+  { icon: "06", title: "Custom CRM", desc: "Every case tracked from intake through administration through closing, so nothing gets lost between paralegal and partner." },
+  { icon: "07", title: "Marketing Automation", desc: "Prospects who aren't ready yet stay warm automatically, so your firm's still top of mind whenever they are." },
+  { icon: "08", title: "Lead-Gen Systems", desc: "A calendar full of the exact client profile your firm wants, not just anyone who clicked an ad." },
 ];
 
 export const agents = [
