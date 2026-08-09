@@ -148,7 +148,6 @@ export default function Hero() {
       className="bg-midnight flex flex-col"
       style={{
         minHeight: "100svh",
-        maxHeight: "980px",
         overflow: "hidden",
       }}
     >
@@ -215,21 +214,22 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* Illustration block — fills remaining hero space */}
+      {/* Illustration block — clean 50px+ gap below trust line */}
       <div
         className="flex items-end justify-center w-full"
         style={{
           flex: "1 1 auto",
           minHeight: 0,
-          marginTop: "clamp(16px, 2.5vh, 32px)",
+          marginTop: "clamp(50px, 6.5vh, 80px)",
           paddingLeft: "clamp(8px, 3vw, 40px)",
           paddingRight: "clamp(8px, 3vw, 40px)",
+          paddingBottom: "clamp(12px, 2vh, 28px)",
         }}
       >
         <div
           style={{
-            width: "min(1180px, 92vw)",
-            maxHeight: "clamp(240px, 36vh, 360px)",
+            width: "min(1100px, 90vw)",
+            maxHeight: "clamp(200px, 30vh, 310px)",
             display: "flex",
             alignItems: "flex-end",
           }}
