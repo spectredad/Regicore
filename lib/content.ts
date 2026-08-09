@@ -85,10 +85,10 @@ export const steps = [
 ];
 
 export const metrics = [
-  { value: "3-6", suffix: " wks", label: "to first deployment" },
-  { value: "10k", suffix: "+ hrs", label: "of manual work automated" },
-  { value: "+62", suffix: "%", label: "reply rate lift for clients" },
-  { value: "3.1", suffix: "x", label: "pipeline growth in 90 days" },
+  { value: "2", suffix: " wks", label: "to first deployment" },
+  { value: "100", suffix: "%", label: "private, your environment" },
+  { value: "0", suffix: "", label: "long-term contracts required" },
+  { value: "Fixed", suffix: "", label: "scope agreed before we start" },
 ];
 
 export const plans = [
