@@ -155,14 +155,6 @@ export default function Hero() {
         className="flex flex-col items-center justify-end px-5 text-center"
         style={{ flex: "0 0 auto", paddingTop: "clamp(100px, 13vh, 148px)", paddingBottom: "clamp(12px, 2vh, 20px)" }}
       >
-        {/* Eyebrow badge */}
-        <span
-          className="text-muted border border-line px-4 py-1.5 font-semibold uppercase"
-          style={{ fontSize: "clamp(9px, 0.7vw, 11px)", letterSpacing: "0.2em", marginBottom: "clamp(14px, 1.8vh, 20px)" }}
-        >
-          CUSTOM AI SYSTEMS FOR BUSINESS OPERATIONS
-        </span>
-
         {/* Headline */}
         <h1
           className="font-display font-medium text-ink text-balance leading-[1.02] tracking-[-0.025em] mx-auto"
