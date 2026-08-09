@@ -220,7 +220,7 @@ export default function Hero() {
         style={{
           flex: "1 1 auto",
           minHeight: 0,
-          marginTop: "clamp(50px, 6.5vh, 80px)",
+          marginTop: "clamp(80px, 10vh, 120px)",
           paddingLeft: "clamp(8px, 3vw, 40px)",
           paddingRight: "clamp(8px, 3vw, 40px)",
           paddingBottom: "clamp(12px, 2vh, 28px)",
@@ -229,7 +229,7 @@ export default function Hero() {
         <div
           style={{
             width: "min(1100px, 90vw)",
-            maxHeight: "clamp(200px, 30vh, 310px)",
+            maxHeight: "clamp(180px, 25vh, 280px)",
             display: "flex",
             alignItems: "flex-end",
           }}
