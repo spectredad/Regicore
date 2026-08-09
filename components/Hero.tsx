@@ -148,7 +148,6 @@ export default function Hero() {
       className="bg-midnight flex flex-col"
       style={{
         minHeight: "100svh",
-        overflow: "hidden",
       }}
     >
       {/* Copy block — ~38% of hero */}
@@ -220,7 +219,7 @@ export default function Hero() {
         style={{
           flex: "1 1 auto",
           minHeight: 0,
-          marginTop: "clamp(80px, 10vh, 120px)",
+          marginTop: "clamp(40px, 5vh, 60px)",
           paddingLeft: "clamp(8px, 3vw, 40px)",
           paddingRight: "clamp(8px, 3vw, 40px)",
           paddingBottom: "clamp(12px, 2vh, 28px)",
@@ -228,10 +227,11 @@ export default function Hero() {
       >
         <div
           style={{
-            width: "min(1100px, 90vw)",
-            maxHeight: "clamp(180px, 25vh, 280px)",
+            width: "min(1180px, 92vw)",
+            maxHeight: "clamp(260px, 38vh, 380px)",
             display: "flex",
             alignItems: "flex-end",
+            transform: "translateY(clamp(30px, 4vh, 60px))",
           }}
         >
           <RegicoreIllustration />
