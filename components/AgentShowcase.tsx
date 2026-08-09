@@ -69,16 +69,16 @@ export default function AgentShowcase() {
         {/* Section header */}
         <div className="reveal flex items-baseline gap-4 border-b border-line pb-4 mb-12 md:mb-16">
           <span className="index-num text-[15px]">01</span>
-          <p className="section-label">The agents</p>
+          <p className="section-label">THE AGENTS</p>
         </div>
 
         <div className="mb-12 max-w-3xl reveal">
           <h2 className="font-display text-[36px] sm:text-[52px] font-medium text-ink leading-[1.05] tracking-[-0.02em] text-balance">
-            An AI workforce tailored to your business
+            AI agents that cut cost and risk inside law firms
           </h2>
           <p className="text-muted mt-5 text-[17px] leading-relaxed max-w-xl text-pretty">
-            Battle-tested, enterprise-grade agents with built-in safeguards and complete
-            workflow control.
+            These systems take repetitive work off your lawyers so the firm spends less, bills
+            more, and carries less risk.
           </p>
         </div>
 
