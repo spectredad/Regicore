@@ -213,27 +213,27 @@ export const whyPoints = [
 
 export const faqs = [
   {
-    q: "How fast can you ship a working agent?",
-    a: "Most first deployments land in 3 to 6 weeks. We start with a short discovery, agree on success metrics, then build in focused sprints so you see a working system early, not a slide deck.",
+    q: "How fast do we actually see something working?",
+    a: "First system live in week 2. Not a demo, not a mockup, an actual agent running on your real workflow. We don't believe in 3-month discovery phases before you see anything.",
   },
   {
-    q: "Do we own the code and IP?",
-    a: "Yes, fully. Every engagement ends with you owning the codebase, prompts, infrastructure and documentation. There is no vendor lock-in and no licensing tail.",
+    q: "Who owns the code and the data?",
+    a: "Your client data stays yours, full stop, it never leaves your environment. The underlying systems and frameworks we build with stay ours, the same way a law firm doesn't hand over its internal templates and processes to every client. Full terms are spelled out in the service agreement before anyone signs anything.",
   },
   {
-    q: "How do you measure ROI?",
-    a: "Before we build anything, we agree on the numbers that matter: hours reclaimed, reply rates, recovery rates, pipeline value. We report against them throughout the engagement.",
+    q: "What happens if the agent gets something wrong?",
+    a: "Every system we build has a human checkpoint before anything client-facing goes out, the agent drafts, extracts, or flags, it doesn't have final say on anything that touches your clients' estate or trust matters without your team reviewing it first. This isn't a black box making decisions your firm didn't sign off on.",
   },
   {
-    q: "Will this work with our existing tools?",
-    a: "That's the point. We build around your current stack, whether that's a CRM, help desk, spreadsheets or internal tools, rather than asking your team to adopt something new.",
+    q: "Will this actually work with what we already use?",
+    a: "We build around your existing case management and practice tools, not instead of them. If you're on Clio, PracticePanther, or something else, tell us during the audit and we'll tell you exactly what connects and what doesn't, before you commit to anything.",
   },
   {
-    q: "What if the agent makes mistakes?",
-    a: "Every system ships with guardrails: approval steps for sensitive actions, audit logs, confidence thresholds and human handoff. You decide how much autonomy each agent gets.",
+    q: "How do you measure whether it's working?",
+    a: "We agree on what success looks like before we start, hours saved, response time, whatever the actual bottleneck is you're trying to fix, and report against it the whole way through. You're not left guessing whether it's doing anything.",
   },
   {
-    q: "What does an engagement cost?",
-    a: "Focused sprints start from $8k, full multi-agent builds from $20k, and ongoing partnerships are scoped case by case. Pricing is fixed and agreed before work begins.",
+    q: "What does an engagement actually cost?",
+    a: "Starter begins at $1.5k/month, Growth at $3.3k/month, both on a 90-day minimum so there's enough runway to actually see results, not judge it after two weeks. Enterprise is custom based on scope. Exact pricing depends on what we find in the audit, which is free.",
   },
 ];

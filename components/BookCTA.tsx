@@ -51,11 +51,10 @@ export default function BookCTA() {
         <div className="grid lg:grid-cols-[1fr_1.3fr] gap-12 items-start">
           <div className="reveal">
             <h2 className="font-display text-[36px] sm:text-[52px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance mb-5">
-              Let&apos;s build your unfair advantage
+              Let&apos;s Find Where You&apos;re Bleeding Time.
             </h2>
             <p className="text-[17px] leading-relaxed text-muted max-w-md text-pretty">
-              Tell us the bottleneck. If there&apos;s a fit, we&apos;ll run a free AI
-              opportunity audit and scope a custom build.
+              Tell us the bottleneck. If there&apos;s a fit, we&apos;ll run a free AI opportunity audit and scope exactly what to build, no obligation to move forward after.
             </p>
 
             <div className="mt-10 border-t border-line">
@@ -120,7 +119,7 @@ export default function BookCTA() {
                 </div>
 
                 <div className="flex flex-col gap-2 sm:col-span-2">
-                  <label htmlFor="company" className={labelClass}>Company / website</label>
+                  <label htmlFor="company" className={labelClass}>Firm Name / Website</label>
                   <input
                     id="company"
                     name="company"
@@ -128,7 +127,7 @@ export default function BookCTA() {
                     value={form.company}
                     onChange={handleChange}
                     className={inputClass}
-                    placeholder="Acme Corp / acme.com"
+                    placeholder="Smith & Associates / smithlaw.com"
                     suppressHydrationWarning
                   />
                 </div>
@@ -143,7 +142,7 @@ export default function BookCTA() {
                     value={form.message}
                     onChange={handleChange}
                     className={`${inputClass} resize-none`}
-                    placeholder="e.g. Our SDR team spends 4 hrs/day on manual outreach"
+                    placeholder="e.g. Our associates spend 6 hrs/week manually processing intake forms"
                     suppressHydrationWarning
                   />
                 </div>

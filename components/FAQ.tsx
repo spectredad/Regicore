@@ -31,7 +31,7 @@ export default function FAQ() {
         <div className="grid lg:grid-cols-[1fr_1.6fr] gap-12 items-start">
           <div className="reveal">
             <h2 className="font-display text-[36px] sm:text-[52px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance">
-              Asked before every engagement
+              Asked Before Every Engagement
             </h2>
             <p className="text-muted mt-5 text-[16px] leading-relaxed max-w-sm text-pretty">
               If yours isn&apos;t here, bring it to the call. Straight answers, no pitch deck.

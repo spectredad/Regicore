@@ -191,7 +191,7 @@ export default function Hero() {
             Book a free firm audit
           </a>
           <a
-            href="#services"
+            href="#book"
             className="border border-soft-white/80 text-soft-white font-medium uppercase tracking-[0.08em] hover:bg-teal/10 hover:border-teal transition-colors duration-300"
             style={{ fontSize: "clamp(11px, 0.85vw, 13px)", padding: "14px 28px" }}
           >
