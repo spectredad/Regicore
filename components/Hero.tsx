@@ -1,7 +1,7 @@
 "use client";
 
 /* ─────────────────────────────────────────────
-   Regicore Hero — Midnight Editorial
+   Regicore Hero — Midnight Editorial (Legal Systems)
    Above-the-fold layout: navbar + copy + illustration
 ───────────────────────────────────────────── */
 
@@ -32,7 +32,7 @@ function RegicoreIllustration() {
         fill="none" stroke="#D47763" strokeWidth="4" strokeLinecap="round" opacity="0.45"
       />
 
-      {/* ── LEFT — INPUT GATEWAY ── */}
+      {/* ── LEFT — INPUT GATEWAY (INTAKE & CONTRACTS) ── */}
       <polygon points="120,330 210,330 210,340 120,340" fill="#1a3347" stroke="#2d4f68" strokeWidth="1" />
       <rect x="128" y="200" width="18" height="130" fill="#1e3c56" stroke="#2d5570" strokeWidth="1" rx="1" />
       <rect x="196" y="200" width="18" height="130" fill="#1e3c56" stroke="#2d5570" strokeWidth="1" rx="1" />
@@ -45,7 +45,7 @@ function RegicoreIllustration() {
       <rect x="149" y="324" width="44" height="6" fill="#1e3c56" stroke="#2d4f68" strokeWidth="0.5" />
       <rect x="153" y="318" width="36" height="6" fill="#254b68" stroke="#2d5570" strokeWidth="0.5" />
 
-      {/* Input symbols */}
+      {/* Input symbols (Legal Intake & Documents) */}
       <g transform="translate(38, 222)">
         <rect x="0" y="0" width="36" height="26" rx="2" fill="#122334" stroke="#5B9A91" strokeWidth="1.2" />
         <polyline points="0,0 18,14 36,0" fill="none" stroke="#5B9A91" strokeWidth="1.2" />
@@ -56,10 +56,10 @@ function RegicoreIllustration() {
       </g>
       <g transform="translate(40, 308)">
         <rect x="0" y="0" width="32" height="40" rx="2" fill="#122334" stroke="#B9C4C9" strokeWidth="1" />
-        <line x1="6" y1="10" x2="26" y2="10" stroke="#7098B8" strokeWidth="1" />
-        <line x1="6" y1="17" x2="26" y2="17" stroke="#7098B8" strokeWidth="1" />
-        <line x1="6" y1="24" x2="18" y2="24" stroke="#7098B8" strokeWidth="1" />
-        <circle cx="8" cy="34" r="5" fill="none" stroke="#B9C4C9" strokeWidth="1" />
+        <line x1="6" y1="10" x2="26" y2="10" stroke="#7098B8" strokeWidth="1.5" />
+        <line x1="6" y1="17" x2="22" y2="17" stroke="#D47763" strokeWidth="1.5" />
+        <line x1="6" y1="24" x2="26" y2="24" stroke="#7098B8" strokeWidth="1.5" />
+        <circle cx="8" cy="33" r="4" fill="none" stroke="#5B9A91" strokeWidth="1" />
       </g>
       <g transform="translate(82, 250)">
         <rect x="0" y="0" width="34" height="28" rx="2" fill="#122334" stroke="#5B9A91" strokeWidth="1" />
@@ -97,7 +97,6 @@ function RegicoreIllustration() {
       <ellipse cx="545" cy="130" rx="10" ry="4" fill="#254b68" stroke="#5B9A91" strokeWidth="1" />
       <ellipse cx="545" cy="118" rx="52" ry="11" fill="none" stroke="#5B9A91" strokeWidth="2.5" opacity="0.75" />
       <ellipse cx="545" cy="118" rx="58" ry="13" fill="none" stroke="#5B9A91" strokeWidth="0.8" opacity="0.3" />
-
 
       {[-1, 0, 1].map(i => (
         <path key={i} d={`M ${545 + i*38 - 14} 308 L ${545 + i*38 - 14} 250 Q ${545 + i*38} 234, ${545 + i*38 + 14} 250 L ${545 + i*38 + 14} 308 Z`} fill="#0C1724" opacity="0.7" />
@@ -156,12 +155,12 @@ export default function Hero() {
       {/* Copy block — ~38% of hero */}
       <div
         className="flex flex-col items-center justify-end px-5 text-center"
-        style={{ flex: "0 0 auto", paddingTop: "clamp(100px, 13vh, 148px)", paddingBottom: "clamp(16px, 2.5vh, 28px)" }}
+        style={{ flex: "0 0 auto", paddingTop: "clamp(100px, 13vh, 148px)", paddingBottom: "clamp(12px, 2vh, 20px)" }}
       >
-        {/* Eyebrow */}
+        {/* Eyebrow badge */}
         <span
           className="text-muted border border-line px-4 py-1.5 font-semibold uppercase"
-          style={{ fontSize: "clamp(9px, 0.7vw, 11px)", letterSpacing: "0.2em", marginBottom: "clamp(16px, 2vh, 24px)" }}
+          style={{ fontSize: "clamp(9px, 0.7vw, 11px)", letterSpacing: "0.2em", marginBottom: "clamp(14px, 1.8vh, 20px)" }}
         >
           CUSTOM AI SYSTEMS FOR BUSINESS OPERATIONS
         </span>
@@ -170,45 +169,50 @@ export default function Hero() {
         <h1
           className="font-display font-medium text-ink text-balance leading-[1.02] tracking-[-0.025em] mx-auto"
           style={{
-            fontSize: "clamp(40px, 4.2vw, 76px)",
-            maxWidth: "820px",
-            marginBottom: "clamp(12px, 1.5vh, 18px)",
+            fontSize: "clamp(38px, 4vw, 72px)",
+            maxWidth: "840px",
+            marginBottom: "clamp(10px, 1.4vh, 16px)",
           }}
         >
-          Make complex operations feel{" "}
-          <em className="not-italic italic text-teal">simple.</em>
+          Give your lawyers their{" "}
+          <em className="not-italic italic text-teal">time back.</em>
         </h1>
 
         {/* Supporting copy */}
         <p
           className="text-muted text-pretty mx-auto"
           style={{
-            fontSize: "clamp(14px, 1.2vw, 18px)",
+            fontSize: "clamp(14px, 1.1vw, 17px)",
             lineHeight: "1.45",
-            maxWidth: "620px",
-            marginBottom: "clamp(16px, 2.5vh, 24px)",
+            maxWidth: "680px",
+            marginBottom: "clamp(14px, 2vh, 20px)",
           }}
         >
-          Regicore builds custom AI systems that handle repetitive business tasks, increase capacity and make growth easier to manage.
+          Regicore builds private, custom AI systems that automate intake, document review, research, and admin so your firm scales without hiring more associates.
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-wrap gap-3 justify-center">
+        <div className="flex flex-wrap gap-3 justify-center items-center">
           <a
             href="#book"
-            className="bg-soft-white text-midnight font-semibold uppercase tracking-[0.08em] hover:bg-sand transition-colors duration-300"
+            className="bg-soft-white text-midnight font-semibold uppercase tracking-[0.08em] shadow-md hover:bg-sand transition-colors duration-300"
             style={{ fontSize: "clamp(11px, 0.85vw, 13px)", padding: "14px 28px" }}
           >
-            Talk to an Expert
+            Book a free firm audit
           </a>
           <a
             href="#services"
-            className="border border-soft-white text-soft-white font-semibold uppercase tracking-[0.08em] hover:bg-teal/10 hover:border-teal transition-colors duration-300"
+            className="border border-soft-white/80 text-soft-white font-medium uppercase tracking-[0.08em] hover:bg-teal/10 hover:border-teal transition-colors duration-300"
             style={{ fontSize: "clamp(11px, 0.85vw, 13px)", padding: "14px 28px" }}
           >
-            See Our Systems
+            See legal use cases
           </a>
         </div>
+
+        {/* Trust line */}
+        <p className="text-muted/70 text-[11px] sm:text-[12px] mt-3.5 tracking-wide text-center">
+          Private deployments &middot; Client data stays in your environment &middot; First systems live in weeks.
+        </p>
       </div>
 
       {/* Illustration block — fills remaining hero space */}
@@ -217,7 +221,7 @@ export default function Hero() {
         style={{
           flex: "1 1 auto",
           minHeight: 0,
-          marginTop: "clamp(28px, 3.5vh, 44px)",
+          marginTop: "clamp(16px, 2.5vh, 32px)",
           paddingLeft: "clamp(8px, 3vw, 40px)",
           paddingRight: "clamp(8px, 3vw, 40px)",
         }}
@@ -225,7 +229,7 @@ export default function Hero() {
         <div
           style={{
             width: "min(1180px, 92vw)",
-            maxHeight: "clamp(260px, 38vh, 380px)",
+            maxHeight: "clamp(240px, 36vh, 360px)",
             display: "flex",
             alignItems: "flex-end",
           }}
