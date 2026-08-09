@@ -8,14 +8,14 @@ export const nav = [
 ];
 
 export const services = [
-  { icon: "01", title: "Custom AI Systems & Agents", desc: "Autonomous workflows that run tasks end-to-end." },
-  { icon: "02", title: "AI Email Outreach", desc: "Cold and warm campaigns, personalised at scale." },
-  { icon: "03", title: "AI Voice Callers", desc: "Inbound and outbound voice agents, on call 24/7." },
-  { icon: "04", title: "Conversion Websites", desc: "Pages engineered to attract and convert." },
-  { icon: "05", title: "Custom Software & Apps", desc: "Full-stack products built around your workflow." },
-  { icon: "06", title: "Custom CRM", desc: "A CRM shaped to how you actually sell." },
-  { icon: "07", title: "Marketing Automation", desc: "Lifecycle flows that nurture on autopilot." },
-  { icon: "08", title: "Lead-Gen Systems", desc: "Pipelines that fill your calendar." },
+  { icon: "01", title: "For firms losing hours to manual case work", desc: "Your associates stop manually processing trust documents and probate filings. These agents read them, extract what matters, and route the file to the right person, end to end." },
+  { icon: "02", title: "For firms losing leads to slow follow up", desc: "Most estate planning leads go cold because nobody replies fast enough. These agents draft and send personalized follow ups the moment someone inquires, so a lead never sits untouched for three days." },
+  { icon: "03", title: "For firms missing calls they can't afford to miss", desc: "A missed call from a family member deciding on a trust attorney is a lost client. This answers, qualifies, and books the consult, 24/7, without hiring a receptionist." },
+  { icon: "04", title: "For firms with traffic that isn't turning into consults", desc: "Your website's job isn't to look nice, it's to get prospects on your calendar. We build pages engineered around how someone actually decides to hire a trust attorney." },
+  { icon: "05", title: "For firms working around software instead of with it", desc: "Off the shelf legal software forces your team to adapt to its limitations. We build tools shaped around how your firm already works." },
+  { icon: "06", title: "For firms where cases fall through the cracks", desc: "Built around how estate and trust matters actually move, from intake through administration through closing, so nothing gets lost between paralegal and partner." },
+  { icon: "07", title: "For firms losing prospects who 'aren't ready yet'", desc: "Most people aren't ready to hire an estate attorney the day they find you. This keeps your firm top of mind until they are, automatically." },
+  { icon: "08", title: "For firms whose calendar isn't full of the right clients", desc: "Not just traffic, appointments, and appointments with the exact client profile your firm wants more of." },
 ];
 
 export const agents = [
