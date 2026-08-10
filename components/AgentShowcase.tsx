@@ -64,7 +64,7 @@ export default function AgentShowcase() {
   };
 
   return (
-    <section id="agents" className="py-24 md:py-32 px-5" ref={sectionRef}>
+    <section id="agents" className="py-16 md:py-24 px-5" ref={sectionRef}>
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="reveal flex items-baseline gap-4 border-b border-line pb-4 mb-12 md:mb-16">
@@ -73,10 +73,10 @@ export default function AgentShowcase() {
         </div>
 
         <div className="mb-12 max-w-3xl reveal">
-          <h2 className="font-display text-[36px] sm:text-[52px] font-medium text-ink leading-[1.05] tracking-[-0.02em] text-balance">
+          <h2 className="font-display text-[28px] sm:text-[40px] font-medium text-ink leading-[1.05] tracking-[-0.02em] text-balance">
             AI agents that cut cost and risk inside law firms
           </h2>
-          <p className="text-muted mt-5 text-[17px] leading-relaxed max-w-xl text-pretty">
+          <p className="text-muted mt-5 text-[15px] leading-relaxed max-w-xl text-pretty">
             These systems take repetitive work off your lawyers so the firm spends less, bills
             more, and carries less risk.
           </p>
@@ -98,7 +98,7 @@ export default function AgentShowcase() {
                 role="tab"
                 aria-selected={i === active}
                 tabIndex={i === active ? 0 : -1}
-                className="agent-btn w-full text-left font-display text-[26px] sm:text-[32px] font-medium py-3.5 cursor-pointer bg-transparent border-0 border-b border-line flex items-baseline gap-4"
+                className="agent-btn w-full text-left font-display text-[20px] sm:text-[24px] font-medium py-3.5 cursor-pointer bg-transparent border-0 border-b border-line flex items-baseline gap-4"
                 onClick={() => { stopTimer(); switchAgent(i); }}
                 onKeyDown={(e) => handleKey(e, i)}
               >
@@ -113,7 +113,7 @@ export default function AgentShowcase() {
                 {a.name}
               </button>
             ))}
-            <p className="text-muted text-[15px] mt-6 max-w-md leading-relaxed" aria-live="polite">
+            <p className="text-muted text-[14px] mt-6 max-w-md leading-relaxed" aria-live="polite">
               {agent.desc}
             </p>
           </div>
@@ -129,7 +129,7 @@ export default function AgentShowcase() {
               className="absolute inset-0 opacity-[0.08]"
               style={{
                 backgroundImage:
-                  "linear-gradient(rgba(244, 246, 245, 0.16) 1px, transparent 1px), linear-gradient(90deg, rgba(244, 246, 245, 0.16) 1px, transparent 1px)",
+                  "linear-gradient(rgba(15, 23, 42, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.1) 1px, transparent 1px)",
                 backgroundSize: "56px 56px",
               }}
               aria-hidden="true"
@@ -151,7 +151,7 @@ export default function AgentShowcase() {
                   {agent.tag}
                 </span>
               </div>
-              <div className="font-display text-4xl font-medium text-ink mb-5">{agent.big}</div>
+              <div className="font-display text-3xl font-medium text-ink mb-5">{agent.big}</div>
               <div className="text-xs space-y-2.5 text-muted border-t border-line pt-4">
                 <div className="flex justify-between">
                   <span>{agent.rowKey}</span>

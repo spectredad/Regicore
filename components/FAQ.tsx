@@ -20,7 +20,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-24 md:py-32 px-5 border-t border-line" ref={sectionRef}>
+    <section id="faq" className="py-16 md:py-24 px-5 border-t border-line" ref={sectionRef}>
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="reveal flex items-baseline gap-4 border-b border-line pb-4 mb-12 md:mb-16">
@@ -30,10 +30,10 @@ export default function FAQ() {
 
         <div className="grid lg:grid-cols-[1fr_1.6fr] gap-12 items-start">
           <div className="reveal">
-            <h2 className="font-display text-[36px] sm:text-[52px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance">
+            <h2 className="font-display text-[28px] sm:text-[40px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance">
               Asked Before Every Engagement
             </h2>
-            <p className="text-muted mt-5 text-[16px] leading-relaxed max-w-sm text-pretty">
+            <p className="text-muted mt-5 text-[15px] leading-relaxed max-w-sm text-pretty">
               If yours isn&apos;t here, bring it to the call. Straight answers, no pitch deck.
             </p>
           </div>

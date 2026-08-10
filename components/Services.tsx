@@ -491,7 +491,7 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="services" className="py-24 md:py-32 px-5 border-t border-line" ref={sectionRef}>
+    <section id="services" className="py-16 md:py-24 px-5 border-t border-line" ref={sectionRef}>
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="reveal flex items-baseline gap-4 border-b border-line pb-4 mb-12 md:mb-16">
@@ -500,10 +500,10 @@ export default function Services() {
         </div>
 
         <div className="reveal mb-12 md:mb-16 max-w-2xl">
-          <h2 className="font-display text-[36px] sm:text-[52px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance">
+          <h2 className="font-display text-[28px] sm:text-[40px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance">
             Every Firm's Bottleneck Is Different. So Is Our Fix.
           </h2>
-          <p className="text-muted mt-5 text-[17px] leading-relaxed text-pretty">
+          <p className="text-muted mt-5 text-[15px] leading-relaxed text-pretty">
             Some firms lose hours to intake. Others lose leads to slow follow up. Others lose partners' time to document review that a paralegal shouldn't have to do by hand either. We don't sell a package, we build the specific system that fixes what's actually costing you money. Here's what that can look like.
           </p>
         </div>

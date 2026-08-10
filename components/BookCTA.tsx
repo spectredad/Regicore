@@ -40,7 +40,7 @@ export default function BookCTA() {
   const labelClass = "text-[11px] font-semibold text-muted uppercase tracking-[0.12em]";
 
   return (
-    <section id="book" className="py-24 md:py-32 px-5 border-t border-line" ref={sectionRef}>
+    <section id="book" className="py-16 md:py-24 px-5 border-t border-line" ref={sectionRef}>
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="reveal flex items-baseline gap-4 border-b border-line pb-4 mb-12 md:mb-16">
@@ -50,10 +50,10 @@ export default function BookCTA() {
 
         <div className="grid lg:grid-cols-[1fr_1.3fr] gap-12 items-start">
           <div className="reveal">
-            <h2 className="font-display text-[36px] sm:text-[52px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance mb-5">
+            <h2 className="font-display text-[28px] sm:text-[40px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance mb-5">
               Let&apos;s Find Where You&apos;re Bleeding Time.
             </h2>
-            <p className="text-[17px] leading-relaxed text-muted max-w-md text-pretty">
+            <p className="text-[15px] leading-relaxed text-muted max-w-md text-pretty">
               Tell us the bottleneck. If there&apos;s a fit, we&apos;ll run a free AI opportunity audit and scope exactly what to build, no obligation to move forward after.
             </p>
 

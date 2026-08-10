@@ -30,11 +30,11 @@ export default function Footer() {
   return (
     <footer className="bg-midnight text-ink border-t border-line overflow-hidden">
       {/* Top: CTA line + link columns */}
-      <div className="max-w-6xl mx-auto px-5 pt-20 md:pt-28 pb-16">
+      <div className="max-w-6xl mx-auto px-5 pt-16 md:pt-24 pb-12">
         <div className="grid lg:grid-cols-[1.4fr_1fr] gap-14 items-start">
           <div>
             <p className="section-label text-muted mb-6">One last thing</p>
-            <p className="font-display text-[28px] sm:text-[40px] font-medium leading-[1.15] tracking-[-0.02em] text-ink text-balance max-w-lg">
+            <p className="font-display text-[24px] sm:text-[32px] font-medium leading-[1.15] tracking-[-0.02em] text-ink text-balance max-w-lg">
               The best time to automate was last quarter.
               <span className="text-teal"> The second best is now.</span>
             </p>

@@ -32,7 +32,7 @@ export default function ROICalculator() {
   const isCapped = rawSavings > MAX_DISPLAY;
 
   return (
-    <section className="py-24 md:py-32 px-5 border-t border-line" ref={sectionRef} id="roi">
+    <section className="py-16 md:py-24 px-5 border-t border-line" ref={sectionRef} id="roi">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="reveal flex items-baseline gap-4 border-b border-line pb-4 mb-12 md:mb-16">
@@ -42,10 +42,10 @@ export default function ROICalculator() {
 
         <div className="grid xl:grid-cols-[1fr_1.15fr] gap-14 items-start">
           <div className="reveal">
-            <h2 className="font-display text-[36px] sm:text-[52px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance mb-5">
+            <h2 className="font-display text-[28px] sm:text-[40px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance mb-5">
               What Is Manual Work Actually Costing You?
             </h2>
-            <p className="text-[17px] leading-relaxed text-muted max-w-md text-pretty mb-12">
+            <p className="text-[15px] leading-relaxed text-muted max-w-md text-pretty mb-12">
               Drag the sliders below. This is what your firm could save per year by automating the work your team is doing by hand right now.
             </p>
 
@@ -56,7 +56,7 @@ export default function ROICalculator() {
                   <label className="text-[15px] font-medium text-ink" htmlFor="slider-team">
                     Team members affected
                   </label>
-                  <span className="font-display text-[24px] font-medium text-teal">{team}</span>
+                  <span className="font-display text-[20px] font-medium text-teal">{team}</span>
                 </div>
                 <input
                   id="slider-team"
@@ -77,7 +77,7 @@ export default function ROICalculator() {
                   <label className="text-[15px] font-medium text-ink" htmlFor="slider-hours">
                     Hours saved per person / week
                   </label>
-                  <span className="font-display text-[24px] font-medium text-teal">{hours}h</span>
+                  <span className="font-display text-[20px] font-medium text-teal">{hours}h</span>
                 </div>
                 <input
                   id="slider-hours"
@@ -98,7 +98,7 @@ export default function ROICalculator() {
                   <label className="text-[15px] font-medium text-ink" htmlFor="slider-rate">
                     Average fully-loaded hourly rate
                   </label>
-                  <span className="font-display text-[24px] font-medium text-teal">${rate}</span>
+                  <span className="font-display text-[20px] font-medium text-teal">${rate}</span>
                 </div>
                 <input
                   id="slider-rate"
@@ -121,7 +121,7 @@ export default function ROICalculator() {
             <div>
               <p className="section-label text-muted mb-8">Estimated annual savings</p>
               <div
-                className="font-display text-[64px] md:text-[88px] font-medium text-ink leading-none tracking-[-0.03em] transition-all duration-300"
+                className="font-display text-[48px] md:text-[64px] font-medium text-ink leading-none tracking-[-0.03em] transition-all duration-300"
                 aria-live="polite"
                 aria-label={`Estimated annual savings: ${formatMoney(savings)}${isCapped ? " or more" : ""}`}
               >
