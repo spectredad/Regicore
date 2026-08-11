@@ -460,18 +460,14 @@ const artifacts = [
   ArtifactEmail,
   ArtifactVoice,
   ArtifactWebsite,
-  ArtifactSoftware,
   ArtifactCRM,
-  ArtifactMarketing,
   ArtifactLeadGen,
 ];
 
-/* Bento spans: 2 featured, 4 standard, 2 featured — balanced editorial grid */
+/* Bento spans: two featured rows followed by a balanced final row */
 const spans = [
   "lg:col-span-2",
   "lg:col-span-2",
-  "lg:col-span-1",
-  "lg:col-span-1",
   "lg:col-span-1",
   "lg:col-span-1",
   "lg:col-span-2",
