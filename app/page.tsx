@@ -4,11 +4,11 @@ import TrustExtras from "@/components/TrustExtras";
 import AgentShowcase from "@/components/AgentShowcase";
 import Services from "@/components/Services";
 import Metrics from "@/components/Metrics";
-import ROICalculator from "@/components/ROICalculator";
 import WhoIsThisFor from "@/components/WhoIsThisFor";
+import ROICalculator from "@/components/ROICalculator";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
-import BookCTA from "@/components/BookCTA";
+import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
       <ROICalculator />
       <Pricing />
       <FAQ />
-      <BookCTA />
+      <CTABanner />
       <Footer />
     </main>
   );
