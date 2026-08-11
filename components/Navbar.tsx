@@ -92,7 +92,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="/#book"
+              href="https://regicore.com/start"
               className="bg-soft-white text-midnight text-[12px] font-semibold tracking-[0.08em] uppercase px-5 py-2.5 hover:bg-sand transition-colors duration-300"
             >
               Work with us
@@ -102,7 +102,7 @@ export default function Navbar() {
           {/* Mobile CTA */}
           <div className="md:hidden flex items-center">
             <a
-              href="/#book"
+              href="https://regicore.com/start"
               className="bg-soft-white text-midnight text-[12px] font-semibold tracking-[0.08em] uppercase px-4 py-2 hover:bg-sand transition-colors duration-300"
             >
               Contact

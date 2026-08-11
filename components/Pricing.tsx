@@ -231,7 +231,7 @@ export default function Pricing() {
 
                 {/* Bottom CTA Button */}
                 <a
-                  href="#book"
+                  href="https://regicore.com/start"
                   className={`block w-full text-center font-mono text-[13px] font-semibold uppercase tracking-widest py-4 px-4 transition-all duration-300 border ${
                     isPopular
                       ? "bg-white text-[#1d635e] border-white hover:bg-white/90 shadow-md"

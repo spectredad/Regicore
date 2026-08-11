@@ -167,16 +167,10 @@ export default function Hero() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center items-stretch sm:items-center mb-5">
           <a
-            href="#book"
+            href="https://regicore.com/start"
             className="bg-soft-white text-midnight font-semibold uppercase tracking-[0.08em] shadow-md hover:bg-sand transition-colors duration-300 text-[12px] sm:text-[13px] px-7 py-3.5 sm:py-4 text-center"
           >
             Book a free firm audit
-          </a>
-          <a
-            href="#book"
-            className="border border-soft-white/80 text-soft-white font-medium uppercase tracking-[0.08em] hover:bg-teal/10 hover:border-teal transition-colors duration-300 text-[12px] sm:text-[13px] px-7 py-3.5 sm:py-4 text-center"
-          >
-            See legal use cases
           </a>
         </div>
 

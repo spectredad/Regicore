@@ -12,7 +12,7 @@ const footerColumns = [
     heading: "Company",
     links: [
       { label: "About", href: "/company" },
-      { label: "Book a call", href: "/#book" },
+      { label: "Book a call", href: "https://regicore.com/start" },
       { label: "ROI calculator", href: "/#roi" },
     ],
   },
@@ -39,7 +39,7 @@ export default function Footer() {
               <span className="text-teal"> The second best is now.</span>
             </p>
             <a
-              href="/#book"
+              href="https://regicore.com/start"
               className="inline-block mt-8 bg-soft-white text-midnight font-semibold text-[13px] uppercase tracking-[0.08em] px-7 py-4 hover:bg-sand transition-colors duration-300"
             >
               Book a call

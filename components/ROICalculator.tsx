@@ -155,7 +155,7 @@ export default function ROICalculator() {
               </div>
 
               <a
-                href="#book"
+                href="https://regicore.com/start"
                 className="block w-full text-center bg-soft-white text-midnight font-semibold text-[13px] uppercase tracking-[0.08em] py-3.5 hover:bg-sand transition-colors duration-300 shadow-xs"
               >
                 Get a precise audit
