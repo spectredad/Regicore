@@ -39,39 +39,35 @@ function MetricValue({ value, active }: { value: string; active: boolean }) {
   return <>{display}</>;
 }
 
-// Distinct hover themes for each of the 4 cards:
-// Card 1: Soft cool blue abstract blur
-// Card 2: Soft warm pink/magenta abstract blur
-// Card 3: Soft muted green/teal abstract blur
-// Card 4: Soft neutral / light lavender abstract blur
+// Distinct, eye-catching hover & mobile touch themes:
 const cardHoverStyles = [
   {
     // Card 1: Cool Blue
-    gradientBg: "bg-gradient-to-br from-blue-500/20 via-sky-400/15 to-indigo-500/10",
-    glowBorder: "group-hover:border-blue-400/40 group-hover:shadow-[0_12px_36px_rgba(59,130,246,0.14)]",
+    gradientBg: "bg-gradient-to-br from-blue-500/35 via-sky-400/25 to-indigo-500/15",
+    glowBorder: "group-hover:border-blue-400/50 group-hover:shadow-[0_12px_36px_rgba(59,130,246,0.2)] group-active:border-blue-400/50",
     suffixColor: "text-blue-600",
-    blobColor: "bg-blue-400/35",
+    blobColor: "bg-blue-400/40",
   },
   {
-    // Card 2: Warm Pink / Magenta
-    gradientBg: "bg-gradient-to-br from-pink-500/20 via-rose-400/15 to-fuchsia-400/10",
-    glowBorder: "group-hover:border-pink-400/40 group-hover:shadow-[0_12px_36px_rgba(236,72,153,0.14)]",
+    // Card 2: Vibrant Pink / Magenta (Enhanced for image 2 match)
+    gradientBg: "bg-gradient-to-br from-pink-500/40 via-rose-400/30 to-fuchsia-400/20",
+    glowBorder: "group-hover:border-pink-400/50 group-hover:shadow-[0_12px_36px_rgba(236,72,153,0.22)] group-active:border-pink-400/50",
     suffixColor: "text-pink-600",
-    blobColor: "bg-pink-400/35",
+    blobColor: "bg-pink-400/45",
   },
   {
     // Card 3: Muted Green / Teal
-    gradientBg: "bg-gradient-to-br from-teal-500/20 via-emerald-400/15 to-cyan-400/10",
-    glowBorder: "group-hover:border-teal-400/40 group-hover:shadow-[0_12px_36px_rgba(20,184,166,0.14)]",
+    gradientBg: "bg-gradient-to-br from-teal-500/35 via-emerald-400/25 to-cyan-400/15",
+    glowBorder: "group-hover:border-teal-400/50 group-hover:shadow-[0_12px_36px_rgba(20,184,166,0.2)] group-active:border-teal-400/50",
     suffixColor: "text-teal-600",
-    blobColor: "bg-teal-400/35",
+    blobColor: "bg-teal-400/40",
   },
   {
     // Card 4: Light Lavender / Purple
-    gradientBg: "bg-gradient-to-br from-purple-500/20 via-violet-400/15 to-indigo-300/10",
-    glowBorder: "group-hover:border-purple-400/40 group-hover:shadow-[0_12px_36px_rgba(168,85,247,0.14)]",
+    gradientBg: "bg-gradient-to-br from-purple-500/35 via-violet-400/25 to-indigo-300/15",
+    glowBorder: "group-hover:border-purple-400/50 group-hover:shadow-[0_12px_36px_rgba(168,85,247,0.2)] group-active:border-purple-400/50",
     suffixColor: "text-purple-600",
-    blobColor: "bg-purple-400/35",
+    blobColor: "bg-purple-400/40",
   },
 ];
 
@@ -116,20 +112,20 @@ export default function Metrics() {
               return (
                 <motion.div
                   key={m.label}
-                  className={`group relative overflow-hidden bg-white/95 rounded-2xl p-7 sm:p-8 flex flex-col justify-between min-h-[220px] sm:min-h-[260px] border border-black/5 transition-all duration-500 ease-out hover:-translate-y-1 ${hoverStyle.glowBorder}`}
+                  className={`group relative overflow-hidden bg-white rounded-2xl p-7 sm:p-8 flex flex-col justify-between min-h-[220px] sm:min-h-[260px] border border-black/5 transition-all duration-500 ease-out hover:-translate-y-1 active:translate-y-0 cursor-pointer ${hoverStyle.glowBorder}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  {/* Distinct abstract background blur mesh on hover */}
+                  {/* Eye-catching abstract background blur mesh (Works on Hover + Touch/Mobile) */}
                   <div
-                    className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out pointer-events-none ${hoverStyle.gradientBg}`}
+                    className={`absolute inset-0 opacity-20 sm:opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500 ease-out pointer-events-none ${hoverStyle.gradientBg}`}
                   />
                   
                   {/* Ambient blur orb inside card */}
                   <div
-                    className={`absolute -top-10 -right-10 w-36 h-36 rounded-full blur-2xl opacity-0 group-hover:opacity-80 transition-all duration-700 ease-out pointer-events-none ${hoverStyle.blobColor}`}
+                    className={`absolute -top-10 -right-10 w-36 h-36 rounded-full blur-2xl opacity-25 sm:opacity-0 group-hover:opacity-90 group-active:opacity-90 transition-all duration-500 ease-out pointer-events-none ${hoverStyle.blobColor}`}
                   />
 
                   {/* Stat Number */}
@@ -143,7 +139,7 @@ export default function Metrics() {
                   </div>
 
                   {/* Descriptive Label */}
-                  <p className="relative z-10 text-[14px] sm:text-[15px] text-muted group-hover:text-ink leading-relaxed font-body transition-colors duration-300">
+                  <p className="relative z-10 text-[14px] sm:text-[15px] text-muted group-hover:text-ink group-active:text-ink leading-relaxed font-body transition-colors duration-300">
                     {m.label}
                   </p>
                 </motion.div>

@@ -11,7 +11,7 @@ function RegicoreIllustration() {
       viewBox="0 0 1100 420"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      style={{ width: "100%", height: "100%", display: "block" }}
+      className="w-full h-full block"
       preserveAspectRatio="xMidYMid meet"
     >
       <defs>
@@ -145,24 +145,13 @@ function RegicoreIllustration() {
 export default function Hero() {
   return (
     <section
-      className="bg-midnight flex flex-col"
-      style={{
-        minHeight: "100svh",
-      }}
+      className="bg-midnight flex flex-col justify-between min-h-screen pt-28 sm:pt-36 pb-6 md:pb-10"
     >
-      {/* Copy block — ~38% of hero */}
-      <div
-        className="flex flex-col items-center justify-end px-5 text-center"
-        style={{ flex: "0 0 auto", paddingTop: "clamp(80px, 10vh, 120px)", paddingBottom: "clamp(12px, 2vh, 20px)" }}
-      >
+      {/* Copy block — refined spacing for top header clearance & mobile responsiveness */}
+      <div className="flex flex-col items-center px-5 text-center max-w-4xl mx-auto w-full">
         {/* Headline */}
         <h1
-          className="font-display font-medium text-ink text-balance leading-[1.02] tracking-[-0.025em] mx-auto"
-          style={{
-            fontSize: "clamp(28px, 3.5vw, 52px)",
-            maxWidth: "840px",
-            marginBottom: "clamp(10px, 1.4vh, 16px)",
-          }}
+          className="font-display font-medium text-ink text-balance leading-[1.06] sm:leading-[1.02] tracking-[-0.025em] mx-auto text-[32px] sm:text-[44px] md:text-[54px] mb-4 sm:mb-5"
         >
           Give your lawyers their{" "}
           <em className="not-italic italic text-teal">time back.</em>
@@ -170,62 +159,36 @@ export default function Hero() {
 
         {/* Supporting copy */}
         <p
-          className="text-muted text-pretty mx-auto"
-          style={{
-            fontSize: "clamp(13px, 1vw, 15px)",
-            lineHeight: "1.45",
-            maxWidth: "680px",
-            marginBottom: "clamp(14px, 2vh, 20px)",
-          }}
+          className="text-muted text-pretty mx-auto text-[14px] sm:text-[15.5px] leading-relaxed max-w-xl mb-6 sm:mb-7"
         >
           Regicore builds private, custom AI systems that automate intake, document review, research, and admin so your firm scales without hiring more associates.
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-wrap gap-3 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center items-stretch sm:items-center mb-5">
           <a
             href="#book"
-            className="bg-soft-white text-midnight font-semibold uppercase tracking-[0.08em] shadow-md hover:bg-sand transition-colors duration-300"
-            style={{ fontSize: "clamp(11px, 0.85vw, 13px)", padding: "14px 28px" }}
+            className="bg-soft-white text-midnight font-semibold uppercase tracking-[0.08em] shadow-md hover:bg-sand transition-colors duration-300 text-[12px] sm:text-[13px] px-7 py-3.5 sm:py-4 text-center"
           >
             Book a free firm audit
           </a>
           <a
             href="#book"
-            className="border border-soft-white/80 text-soft-white font-medium uppercase tracking-[0.08em] hover:bg-teal/10 hover:border-teal transition-colors duration-300"
-            style={{ fontSize: "clamp(11px, 0.85vw, 13px)", padding: "14px 28px" }}
+            className="border border-soft-white/80 text-soft-white font-medium uppercase tracking-[0.08em] hover:bg-teal/10 hover:border-teal transition-colors duration-300 text-[12px] sm:text-[13px] px-7 py-3.5 sm:py-4 text-center"
           >
             See legal use cases
           </a>
         </div>
 
         {/* Trust line */}
-        <p className="text-muted/70 text-[11px] sm:text-[12px] mt-3.5 tracking-wide text-center">
+        <p className="text-muted/75 text-[11px] sm:text-[12.5px] tracking-wide text-center leading-normal max-w-lg">
           Private deployments &middot; Client data stays in your environment &middot; First systems live in weeks.
         </p>
       </div>
 
-      {/* Illustration block — clean 50px+ gap below trust line */}
-      <div
-        className="flex items-end justify-center w-full"
-        style={{
-          flex: "1 1 auto",
-          minHeight: 0,
-          marginTop: "clamp(40px, 5vh, 60px)",
-          paddingLeft: "clamp(8px, 3vw, 40px)",
-          paddingRight: "clamp(8px, 3vw, 40px)",
-          paddingBottom: "clamp(12px, 2vh, 28px)",
-        }}
-      >
-        <div
-          style={{
-            width: "min(1180px, 92vw)",
-            maxHeight: "clamp(220px, 30vh, 320px)",
-            display: "flex",
-            alignItems: "flex-end",
-            transform: "translateY(clamp(30px, 4vh, 60px))",
-          }}
-        >
+      {/* Illustration block — prominent & larger on mobile */}
+      <div className="flex items-end justify-center w-full mt-6 sm:mt-10 px-2 sm:px-6">
+        <div className="w-full max-w-[1180px] h-[220px] sm:h-[280px] md:h-[340px] flex items-end justify-center transform translate-y-3 sm:translate-y-6">
           <RegicoreIllustration />
         </div>
       </div>

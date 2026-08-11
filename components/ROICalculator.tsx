@@ -40,19 +40,19 @@ export default function ROICalculator() {
           <p className="section-label">Estimate your upside</p>
         </div>
 
-        <div className="grid xl:grid-cols-[1fr_1.15fr] gap-14 items-start">
+        <div className="grid xl:grid-cols-[1fr_1.15fr] gap-12 lg:gap-14 items-start">
           <div className="reveal">
             <h2 className="font-display text-[28px] sm:text-[40px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance mb-5">
               What Is Manual Work Actually Costing You?
             </h2>
-            <p className="text-[15px] leading-relaxed text-muted max-w-md text-pretty mb-12">
+            <p className="text-[15px] leading-relaxed text-muted max-w-md text-pretty mb-10">
               Drag the sliders below. This is what your firm could save per year by automating the work your team is doing by hand right now.
             </p>
 
             {/* Sliders */}
-            <div className="space-y-10">
+            <div className="space-y-8 sm:space-y-10">
               <div>
-                <div className="flex justify-between items-baseline mb-4">
+                <div className="flex justify-between items-baseline mb-3">
                   <label className="text-[15px] font-medium text-ink" htmlFor="slider-team">
                     Team members affected
                   </label>
@@ -73,7 +73,7 @@ export default function ROICalculator() {
               </div>
 
               <div>
-                <div className="flex justify-between items-baseline mb-4">
+                <div className="flex justify-between items-baseline mb-3">
                   <label className="text-[15px] font-medium text-ink" htmlFor="slider-hours">
                     Hours saved per person / week
                   </label>
@@ -94,7 +94,7 @@ export default function ROICalculator() {
               </div>
 
               <div>
-                <div className="flex justify-between items-baseline mb-4">
+                <div className="flex justify-between items-baseline mb-3">
                   <label className="text-[15px] font-medium text-ink" htmlFor="slider-rate">
                     Average fully-loaded hourly rate
                   </label>
@@ -116,29 +116,31 @@ export default function ROICalculator() {
             </div>
           </div>
 
-          {/* Result panel */}
-          <div className="reveal bg-navy-elevated border border-line p-8 md:p-10 flex flex-col justify-between xl:min-h-[480px] xl:sticky xl:top-24">
+          {/* Result panel — compact spacing without huge empty white space */}
+          <div className="reveal bg-navy-elevated border border-line p-7 sm:p-9 flex flex-col justify-between h-auto xl:sticky xl:top-24 shadow-xs rounded-xs">
             <div>
-              <p className="section-label text-muted mb-8">Estimated annual savings</p>
+              <p className="section-label text-muted mb-4 uppercase tracking-widest font-mono text-xs">
+                ESTIMATED ANNUAL SAVINGS
+              </p>
               <div
-                className="font-display text-[48px] md:text-[64px] font-medium text-ink leading-none tracking-[-0.03em] transition-all duration-300"
+                className="font-display text-[48px] sm:text-[58px] font-semibold text-ink leading-none tracking-[-0.03em] transition-all duration-300"
                 aria-live="polite"
                 aria-label={`Estimated annual savings: ${formatMoney(savings)}${isCapped ? " or more" : ""}`}
               >
                 {formatMoney(savings)}
                 {isCapped && <span className="text-coral">+</span>}
               </div>
-              <p className="text-muted/80 text-[13px] mt-6 max-w-[260px] leading-relaxed">
+              <p className="text-muted/80 text-[13.5px] mt-4 max-w-[300px] leading-relaxed font-body">
                 {isCapped
                   ? "Capped display. Actual savings may be higher."
                   : "Estimated, based on hours saved multiplied by rate over 52 weeks."}
               </p>
             </div>
 
-            <div className="mt-10">
-              <div className="relative tooltip-trigger inline-block mb-6">
+            <div className="mt-8 pt-4">
+              <div className="relative tooltip-trigger inline-block mb-4">
                 <button
-                  className="text-muted hover:text-ink text-xs underline underline-offset-4 transition-colors"
+                  className="text-muted hover:text-ink text-xs underline underline-offset-4 transition-colors font-body"
                   tabIndex={0}
                   aria-label="How we calculate this estimate"
                 >
@@ -154,7 +156,7 @@ export default function ROICalculator() {
 
               <a
                 href="#book"
-                className="block w-full text-center bg-soft-white text-midnight font-semibold text-[13px] uppercase tracking-[0.08em] py-4 hover:bg-sand transition-colors duration-300"
+                className="block w-full text-center bg-soft-white text-midnight font-semibold text-[13px] uppercase tracking-[0.08em] py-3.5 hover:bg-sand transition-colors duration-300 shadow-xs"
               >
                 Get a precise audit
               </a>

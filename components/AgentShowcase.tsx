@@ -63,16 +63,6 @@ export default function AgentShowcase() {
     if (e.key === "ArrowUp") { e.preventDefault(); stopTimer(); switchAgent((i - 1 + agents.length) % agents.length); }
   };
 
-  const handlePrev = () => {
-    stopTimer();
-    switchAgent((active - 1 + agents.length) % agents.length);
-  };
-
-  const handleNext = () => {
-    stopTimer();
-    switchAgent((active + 1) % agents.length);
-  };
-
   return (
     <section id="agents" className="py-16 md:py-24 px-5 border-t border-line" ref={sectionRef}>
       <div className="max-w-6xl mx-auto">
@@ -152,28 +142,6 @@ export default function AgentShowcase() {
                   </button>
                 );
               })}
-            </div>
-
-            {/* Bottom Arrow Navigation Controls (< >) */}
-            <div className="pt-6 flex items-center gap-2">
-              <button
-                onClick={handlePrev}
-                aria-label="Previous agent"
-                className="w-9 h-9 rounded-full border border-slate-300/70 bg-white/80 flex items-center justify-center text-slate-600 hover:text-slate-900 hover:border-slate-400 hover:bg-white transition-all shadow-xs"
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button
-                onClick={handleNext}
-                aria-label="Next agent"
-                className="w-9 h-9 rounded-full border border-slate-300/70 bg-white/80 flex items-center justify-center text-slate-600 hover:text-slate-900 hover:border-slate-400 hover:bg-white transition-all shadow-xs"
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
             </div>
           </div>
 
