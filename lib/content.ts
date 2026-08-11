@@ -91,7 +91,7 @@ export const metrics = [
 export const plans = [
   {
     name: "Starter",
-    price: "From $1.5k",
+    price: "From $2.4k",
     period: "/month · 90-day minimum",
     featured: false,
     badge: null,
