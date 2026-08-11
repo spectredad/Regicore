@@ -71,19 +71,14 @@ export default function Footer() {
         </div>
 
         {/* Legal line */}
-        <div className="flex flex-col sm:flex-row justify-between gap-3 border-t border-line mt-16 pt-6">
-          <p className="text-[12px] text-muted">
-            &copy; 2026 Regicore. Custom AI, engineered for ROI.
-          </p>
-          <p className="text-[12px] text-muted">
-            Boutique AI agentic studio
-          </p>
+        <div className="border-t border-line mt-16 pt-6">
+          <p className="text-[12px] text-muted">&copy; 2026 Regicore.</p>
         </div>
       </div>
 
       {/* Giant wordmark, printed below and clipped at the baseline */}
       <div className="relative select-none" aria-hidden="true">
-        <p className="footer-wordmark text-center translate-y-[0.14em] opacity-[0.08]">
+        <p className="footer-wordmark text-center translate-y-[0.14em] opacity-[0.16]">
           Regicore
         </p>
       </div>
