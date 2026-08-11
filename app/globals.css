@@ -367,10 +367,10 @@ input[type="range"]::-moz-range-thumb {
 /* ─── Footer wordmark ───────────────────────────────────── */
 .footer-wordmark {
   font-family: var(--font-fraunces), Georgia, serif;
-  font-size: clamp(72px, 16.5vw, 260px);
-  line-height: 0.82;
-  letter-spacing: -0.03em;
-  font-weight: 500;
+  font-size: clamp(96px, 24vw, 420px);
+  line-height: 0.78;
+  letter-spacing: -0.045em;
+  font-weight: 600;
   color: var(--color-teal);
   user-select: none;
   white-space: nowrap;

@@ -78,7 +78,7 @@ export default function Footer() {
 
       {/* Giant wordmark, printed below and clipped at the baseline */}
       <div className="relative select-none" aria-hidden="true">
-        <p className="footer-wordmark text-center translate-y-[0.14em] opacity-[0.16]">
+        <p className="footer-wordmark text-center translate-y-[0.14em] opacity-100">
           Regicore
         </p>
       </div>
