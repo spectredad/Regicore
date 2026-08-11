@@ -7,29 +7,29 @@ import { plans } from "@/lib/content";
 
 function StarterIllustration() {
   return (
-    <div className="w-full h-40 sm:h-44 bg-[#e5e4dc] border border-black/10 rounded-xs flex items-center justify-center relative overflow-hidden my-4 group-hover:border-[#1d635e]/40 transition-colors">
-      <svg className="w-full h-full p-4 text-[#1d635e]" viewBox="0 0 240 140" fill="none">
+    <div className="w-full h-56 sm:h-64 md:h-72 bg-[#e5e4dc] border border-black/10 rounded-xs flex items-center justify-center relative overflow-hidden my-5 group-hover:border-[#1d635e]/40 transition-colors">
+      <svg className="w-full h-full p-6 text-[#1d635e]" viewBox="0 0 240 180" fill="none">
         {/* Grid Pattern */}
-        <pattern id="grid-starter" width="16" height="16" patternUnits="userSpaceOnUse">
-          <path d="M 16 0 L 0 0 0 16" fill="none" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.18" />
+        <pattern id="grid-starter" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.2" />
         </pattern>
         <rect width="100%" height="100%" fill="url(#grid-starter)" />
 
         {/* Central Core & Nodes */}
-        <circle cx="120" cy="70" r="32" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 2" />
-        <circle cx="120" cy="70" r="18" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="120" cy="70" r="6" fill="currentColor" />
+        <circle cx="120" cy="90" r="42" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 2" />
+        <circle cx="120" cy="90" r="24" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeWidth="1.5" />
+        <circle cx="120" cy="90" r="8" fill="currentColor" />
 
         {/* Connections */}
-        <path d="M 40 70 L 102 70 M 138 70 L 200 70 M 120 20 L 120 52 M 120 88 L 120 120" stroke="currentColor" strokeWidth="1.2" />
+        <path d="M 30 90 L 96 90 M 144 90 L 210 90 M 120 20 L 120 66 M 120 114 L 120 160" stroke="currentColor" strokeWidth="1.5" />
         
-        <circle cx="40" cy="70" r="4" fill="currentColor" />
-        <circle cx="200" cy="70" r="4" fill="currentColor" />
-        <circle cx="120" cy="20" r="4" fill="currentColor" />
-        <circle cx="120" cy="120" r="4" fill="currentColor" />
+        <circle cx="30" cy="90" r="5" fill="currentColor" />
+        <circle cx="210" cy="90" r="5" fill="currentColor" />
+        <circle cx="120" cy="20" r="5" fill="currentColor" />
+        <circle cx="120" cy="160" r="5" fill="currentColor" />
 
         {/* Framing Corners */}
-        <path d="M 15 25 L 15 15 L 25 15 M 225 25 L 225 15 L 215 15 M 15 115 L 15 125 L 25 125 M 225 115 L 225 125 L 215 125" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M 15 25 L 15 15 L 25 15 M 225 25 L 225 15 L 215 15 M 15 155 L 15 165 L 25 165 M 225 155 L 225 165 L 215 165" stroke="currentColor" strokeWidth="1.5" />
       </svg>
     </div>
   );
@@ -37,30 +37,30 @@ function StarterIllustration() {
 
 function GrowthIllustration() {
   return (
-    <div className="w-full h-40 sm:h-44 bg-white/12 border border-white/25 rounded-xs flex items-center justify-center relative overflow-hidden my-4">
-      <svg className="w-full h-full p-4 text-white" viewBox="0 0 240 140" fill="none">
+    <div className="w-full h-56 sm:h-64 md:h-72 bg-white/12 border border-white/25 rounded-xs flex items-center justify-center relative overflow-hidden my-5">
+      <svg className="w-full h-full p-6 text-white" viewBox="0 0 240 180" fill="none">
         {/* Grid Pattern */}
-        <pattern id="grid-growth" width="16" height="16" patternUnits="userSpaceOnUse">
-          <path d="M 16 0 L 0 0 0 16" fill="none" stroke="white" strokeWidth="0.5" strokeOpacity="0.25" />
+        <pattern id="grid-growth" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" strokeWidth="0.5" strokeOpacity="0.25" />
         </pattern>
         <rect width="100%" height="100%" fill="url(#grid-growth)" />
 
         {/* Multi-Agent Swarm Constellation */}
-        <polygon points="120,25 180,60 160,115 80,115 60,60" fill="none" stroke="white" strokeWidth="1.2" strokeDasharray="3 3" />
+        <polygon points="120,25 190,65 165,145 75,145 50,65" fill="none" stroke="white" strokeWidth="1.5" strokeDasharray="4 3" />
         
-        <line x1="120" y1="25" x2="160" y2="115" stroke="white" strokeWidth="1" strokeOpacity="0.6" />
-        <line x1="180" y1="60" x2="80" y2="115" stroke="white" strokeWidth="1" strokeOpacity="0.6" />
-        <line x1="60" y1="60" x2="160" y2="115" stroke="white" strokeWidth="1" strokeOpacity="0.6" />
+        <line x1="120" y1="25" x2="165" y2="145" stroke="white" strokeWidth="1.2" strokeOpacity="0.6" />
+        <line x1="190" y1="65" x2="75" y2="145" stroke="white" strokeWidth="1.2" strokeOpacity="0.6" />
+        <line x1="50" y1="65" x2="165" y2="145" stroke="white" strokeWidth="1.2" strokeOpacity="0.6" />
 
-        <circle cx="120" cy="70" r="16" fill="white" fillOpacity="0.25" stroke="white" strokeWidth="1.5" />
-        <circle cx="120" cy="70" r="6" fill="white" />
+        <circle cx="120" cy="90" r="20" fill="white" fillOpacity="0.25" stroke="white" strokeWidth="1.5" />
+        <circle cx="120" cy="90" r="7" fill="white" />
 
         {/* Swarm Nodes */}
-        <circle cx="120" cy="25" r="5" fill="white" />
-        <circle cx="180" cy="60" r="5" fill="white" />
-        <circle cx="160" cy="115" r="5" fill="white" />
-        <circle cx="80" cy="115" r="5" fill="white" />
-        <circle cx="60" cy="60" r="5" fill="white" />
+        <circle cx="120" cy="25" r="6" fill="white" />
+        <circle cx="190" cy="65" r="6" fill="white" />
+        <circle cx="165" cy="145" r="6" fill="white" />
+        <circle cx="75" cy="145" r="6" fill="white" />
+        <circle cx="50" cy="65" r="6" fill="white" />
       </svg>
     </div>
   );
@@ -68,25 +68,25 @@ function GrowthIllustration() {
 
 function EnterpriseIllustration() {
   return (
-    <div className="w-full h-40 sm:h-44 bg-[#e5e4dc] border border-black/10 rounded-xs flex items-center justify-center relative overflow-hidden my-4 group-hover:border-[#0f172a]/40 transition-colors">
-      <svg className="w-full h-full p-4 text-[#0f172a]" viewBox="0 0 240 140" fill="none">
+    <div className="w-full h-56 sm:h-64 md:h-72 bg-[#e5e4dc] border border-black/10 rounded-xs flex items-center justify-center relative overflow-hidden my-5 group-hover:border-[#0f172a]/40 transition-colors">
+      <svg className="w-full h-full p-6 text-[#0f172a]" viewBox="0 0 240 180" fill="none">
         {/* Grid Pattern */}
-        <pattern id="grid-enterprise" width="16" height="16" patternUnits="userSpaceOnUse">
-          <path d="M 16 0 L 0 0 0 16" fill="none" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.18" />
+        <pattern id="grid-enterprise" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.2" />
         </pattern>
         <rect width="100%" height="100%" fill="url(#grid-enterprise)" />
 
         {/* Isometric Enterprise Platform */}
-        <polygon points="120,20 190,55 120,90 50,55" fill="currentColor" fillOpacity="0.08" stroke="currentColor" strokeWidth="1.5" />
-        <polygon points="120,40 190,75 120,110 50,75" fill="currentColor" fillOpacity="0.14" stroke="currentColor" strokeWidth="1.5" />
+        <polygon points="120,25 195,65 120,105 45,65" fill="currentColor" fillOpacity="0.08" stroke="currentColor" strokeWidth="1.5" />
+        <polygon points="120,55 195,95 120,135 45,95" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeWidth="1.5" />
         
         {/* Structural Pillars */}
-        <line x1="50" y1="55" x2="50" y2="75" stroke="currentColor" strokeWidth="1.5" />
-        <line x1="190" y1="55" x2="190" y2="75" stroke="currentColor" strokeWidth="1.5" />
-        <line x1="120" y1="90" x2="120" y2="110" stroke="currentColor" strokeWidth="1.5" />
+        <line x1="45" y1="65" x2="45" y2="95" stroke="currentColor" strokeWidth="1.5" />
+        <line x1="195" y1="65" x2="195" y2="95" stroke="currentColor" strokeWidth="1.5" />
+        <line x1="120" y1="105" x2="120" y2="135" stroke="currentColor" strokeWidth="1.5" />
 
-        <circle cx="120" cy="55" r="7" fill="currentColor" />
-        <path d="M 15 25 L 15 15 L 25 15 M 225 25 L 225 15 L 215 15 M 15 115 L 15 125 L 25 125 M 225 115 L 225 125 L 215 125" stroke="currentColor" strokeWidth="1.5" />
+        <circle cx="120" cy="65" r="8" fill="currentColor" />
+        <path d="M 15 25 L 15 15 L 25 15 M 225 25 L 225 15 L 215 15 M 15 155 L 15 165 L 25 165 M 225 155 L 225 165 L 215 165" stroke="currentColor" strokeWidth="1.5" />
       </svg>
     </div>
   );
@@ -98,14 +98,14 @@ function PriceDisplay({ price, isPopular }: { price: string; isPopular?: boolean
     return (
       <div className="flex items-baseline gap-2">
         <span className={`text-[13px] font-mono ${isPopular ? "text-white/80" : "text-slate-600"}`}>From</span>
-        <span className={`font-display text-[44px] sm:text-[50px] font-semibold leading-none tracking-tight ${isPopular ? "text-white" : "text-[#0f172a]"}`}>
+        <span className={`font-display text-[46px] sm:text-[54px] font-semibold leading-none tracking-tight ${isPopular ? "text-white" : "text-[#0f172a]"}`}>
           {value}
         </span>
       </div>
     );
   }
   return (
-    <div className={`font-display text-[44px] sm:text-[50px] font-semibold leading-none tracking-tight ${isPopular ? "text-white" : "text-[#0f172a]"}`}>
+    <div className={`font-display text-[46px] sm:text-[54px] font-semibold leading-none tracking-tight ${isPopular ? "text-white" : "text-[#0f172a]"}`}>
       {price}
     </div>
   );
@@ -126,8 +126,8 @@ export default function Pricing() {
   const illustrations = [StarterIllustration, GrowthIllustration, EnterpriseIllustration];
 
   return (
-    <section id="pricing" className="py-16 md:py-24 px-5 border-t border-line" ref={sectionRef}>
-      <div className="max-w-6xl mx-auto">
+    <section id="pricing" className="py-16 md:py-24 px-4 sm:px-6 md:px-10 border-t border-line" ref={sectionRef}>
+      <div className="max-w-[1380px] mx-auto">
         {/* Section header */}
         <div className="reveal flex items-baseline gap-4 border-b border-line pb-4 mb-12 md:mb-16">
           <span className="index-num text-[15px]">06</span>
@@ -135,7 +135,7 @@ export default function Pricing() {
         </div>
 
         <div className="max-w-2xl mb-14 reveal">
-          <h2 className="font-display text-[28px] sm:text-[40px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance">
+          <h2 className="font-display text-[30px] sm:text-[44px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance">
             Pick The Level Of Help You Actually Need.
           </h2>
           <p className="text-muted mt-5 text-[15px] leading-relaxed text-pretty">
@@ -143,8 +143,8 @@ export default function Pricing() {
           </p>
         </div>
 
-        {/* Pricing Cards — Clean Light Horizontal Grid matching Reference Image */}
-        <div className="grid md:grid-cols-3 gap-6 items-stretch">
+        {/* Pricing Cards — Expansive Wide Layout matching Reference Screenshot */}
+        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {plans.map((plan, i) => {
             const isPopular = plan.featured;
             const IllustrationComp = illustrations[i];
@@ -152,9 +152,9 @@ export default function Pricing() {
             return (
               <motion.div
                 key={plan.name}
-                className={`reveal group relative flex flex-col justify-between p-6 sm:p-7 border transition-all duration-300 ${
+                className={`reveal group relative flex flex-col justify-between p-6 sm:p-8 border transition-all duration-300 ${
                   isPopular
-                    ? "bg-[#1d635e] border-[#1d635e] text-white shadow-xl scale-[1.02] z-10"
+                    ? "bg-[#1d635e] border-[#1d635e] text-white shadow-2xl lg:scale-[1.02] z-10"
                     : "bg-[#f0efe9] border-black/10 hover:border-black/25 text-[#0f172a] shadow-xs"
                 }`}
                 initial={{ opacity: 0, y: 30 }}
@@ -183,7 +183,7 @@ export default function Pricing() {
                   </div>
 
                   {/* Pricing Display */}
-                  <div className="mt-4 mb-1">
+                  <div className="mt-4 mb-2">
                     <PriceDisplay price={plan.price} isPopular={isPopular} />
                     <p
                       className={`font-mono text-[11px] uppercase tracking-wider mt-2 ${
@@ -194,12 +194,12 @@ export default function Pricing() {
                     </p>
                   </div>
 
-                  {/* Top Distinctive Tech / Halftone Illustration Area */}
+                  {/* Large Prominent Tech / Halftone Illustration Block */}
                   <IllustrationComp />
 
                   {/* Plan Description */}
                   <p
-                    className={`text-[13px] leading-relaxed mb-6 font-body ${
+                    className={`text-[14px] leading-relaxed mb-6 font-body ${
                       isPopular ? "text-white/90" : "text-slate-700"
                     }`}
                   >
@@ -207,11 +207,11 @@ export default function Pricing() {
                   </p>
 
                   {/* Features Bullet List */}
-                  <ul className="space-y-2.5 border-t border-current/15 pt-5 mb-8">
+                  <ul className="space-y-3 border-t border-current/15 pt-6 mb-8">
                     {plan.features.map((f) => (
                       <li
                         key={f}
-                        className={`flex items-start gap-2.5 text-[13px] leading-relaxed font-body ${
+                        className={`flex items-start gap-2.5 text-[13.5px] leading-relaxed font-body ${
                           isPopular ? "text-white" : "text-slate-800"
                         }`}
                       >
@@ -232,7 +232,7 @@ export default function Pricing() {
                 {/* Bottom CTA Button */}
                 <a
                   href="#book"
-                  className={`block w-full text-center font-mono text-[12px] font-semibold uppercase tracking-widest py-3.5 px-4 transition-all duration-300 border ${
+                  className={`block w-full text-center font-mono text-[13px] font-semibold uppercase tracking-widest py-4 px-4 transition-all duration-300 border ${
                     isPopular
                       ? "bg-white text-[#1d635e] border-white hover:bg-white/90 shadow-md"
                       : "bg-[#0f172a] text-white border-[#0f172a] hover:bg-[#1d635e] hover:border-[#1d635e] shadow-xs"
@@ -246,7 +246,7 @@ export default function Pricing() {
         </div>
 
         {/* Footer Disclaimer */}
-        <p className="text-center text-muted text-[13px] mt-10 reveal leading-relaxed max-w-2xl mx-auto">
+        <p className="text-center text-muted text-[13px] mt-12 reveal leading-relaxed max-w-2xl mx-auto">
           Ownership and licensing terms are defined in the service agreement. Client data remains client-owned; proprietary systems and internal frameworks are licensed during the engagement.
         </p>
       </div>
