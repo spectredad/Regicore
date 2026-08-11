@@ -98,17 +98,17 @@ export default function WhoIsThisFor() {
             />
 
             {/* Panel label */}
-            <p className="relative z-10 font-mono text-[10px] uppercase tracking-[0.18em] text-white/40 mb-5">
+            <p className="relative z-10 font-mono text-[10px] uppercase tracking-[0.18em] text-[#ffffff]/80 mb-5">
               BAD FIT
             </p>
 
             {/* Panel title */}
-            <h3 className="relative z-10 font-display text-[36px] sm:text-[44px] font-medium text-white leading-[1.05] tracking-[-0.02em] mb-10">
+            <h3 className="relative z-10 font-display text-[36px] sm:text-[44px] font-medium text-[#ffffff] leading-[1.05] tracking-[-0.02em] mb-10">
               Bad fit
             </h3>
 
             {/* List */}
-            <ul className="relative z-10 space-y-0 divide-y divide-white/10">
+            <ul className="relative z-10 space-y-0 divide-y divide-[#ffffff]/20">
               {badFit.map((item, i) => (
                 <motion.li
                   key={i}
@@ -118,13 +118,13 @@ export default function WhoIsThisFor() {
                   transition={{ delay: i * 0.06, duration: 0.45, ease: "easeOut" }}
                   viewport={{ once: true }}
                 >
-                  {/* Coral / red-tinted cross accent */}
-                  <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-coral/20 flex items-center justify-center">
-                    <svg className="w-3 h-3 text-coral" viewBox="0 0 12 12" fill="none">
+                  {/* Bright orange cross accent for contrast */}
+                  <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#ff7a59]/20 flex items-center justify-center">
+                    <svg className="w-3 h-3 text-[#ff7a59]" viewBox="0 0 12 12" fill="none">
                       <path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                     </svg>
                   </span>
-                  <span className="text-[14.5px] text-white/85 leading-relaxed font-body">
+                  <span className="text-[14.5px] text-[#ffffff]/95 leading-relaxed font-body">
                     {item}
                   </span>
                 </motion.li>
