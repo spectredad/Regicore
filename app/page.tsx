@@ -5,6 +5,7 @@ import AgentShowcase from "@/components/AgentShowcase";
 import Services from "@/components/Services";
 import Metrics from "@/components/Metrics";
 import ROICalculator from "@/components/ROICalculator";
+import WhoIsThisFor from "@/components/WhoIsThisFor";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import BookCTA from "@/components/BookCTA";
@@ -19,6 +20,7 @@ export default function Home() {
       <AgentShowcase />
       <Services />
       <Metrics />
+      <WhoIsThisFor />
       <ROICalculator />
       <Pricing />
       <FAQ />
