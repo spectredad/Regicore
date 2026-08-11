@@ -4,7 +4,6 @@ import TrustExtras from "@/components/TrustExtras";
 import AgentShowcase from "@/components/AgentShowcase";
 import Services from "@/components/Services";
 import Metrics from "@/components/Metrics";
-import WhyRegicore from "@/components/WhyRegicore";
 import ROICalculator from "@/components/ROICalculator";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
@@ -20,7 +19,6 @@ export default function Home() {
       <AgentShowcase />
       <Services />
       <Metrics />
-      <WhyRegicore />
       <ROICalculator />
       <Pricing />
       <FAQ />
