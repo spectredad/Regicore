@@ -98,7 +98,7 @@ export default function WhoIsThisFor() {
             />
 
             {/* Panel label */}
-            <p className="relative z-10 font-mono text-[10px] uppercase tracking-[0.18em] text-[#ffffff]/80 mb-5">
+            <p className="relative z-10 font-mono text-[10px] uppercase tracking-[0.18em] text-[#ffffff] mb-5">
               BAD FIT
             </p>
 
@@ -108,7 +108,7 @@ export default function WhoIsThisFor() {
             </h3>
 
             {/* List */}
-            <ul className="relative z-10 space-y-0 divide-y divide-[#ffffff]/20">
+            <ul className="relative z-10 space-y-0 divide-y divide-[#ffffff]/30">
               {badFit.map((item, i) => (
                 <motion.li
                   key={i}
@@ -119,12 +119,12 @@ export default function WhoIsThisFor() {
                   viewport={{ once: true }}
                 >
                   {/* Bright orange cross accent for contrast */}
-                  <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#ff7a59]/20 flex items-center justify-center">
+                  <span className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#ff7a59]/30 flex items-center justify-center">
                     <svg className="w-3 h-3 text-[#ff7a59]" viewBox="0 0 12 12" fill="none">
-                      <path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                      <path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
                     </svg>
                   </span>
-                  <span className="text-[14.5px] text-[#ffffff]/95 leading-relaxed font-body">
+                  <span className="text-[14.5px] text-[#ffffff] leading-relaxed font-body">
                     {item}
                   </span>
                 </motion.li>
