@@ -371,7 +371,7 @@ input[type="range"]::-moz-range-thumb {
   line-height: 0.82;
   letter-spacing: -0.03em;
   font-weight: 500;
-  color: var(--color-low-line);
+  color: var(--color-teal);
   user-select: none;
   white-space: nowrap;
 }
