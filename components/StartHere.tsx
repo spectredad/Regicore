@@ -56,18 +56,7 @@ export default function StartHere() {
               Tell us the bottleneck. If there&apos;s a fit, we&apos;ll run a free AI opportunity audit and scope exactly what to build, no obligation to move forward after.
             </p>
 
-            <div className="mt-10 border-t border-line">
-              {[
-                ["Response time", "Within 24 hours"],
-                ["First call", "30 minutes, no pitch"],
-                ["Audit", "Free, yours to keep"],
-              ].map(([k, v]) => (
-                <div key={k} className="flex justify-between items-baseline py-4 border-b border-line text-[14px]">
-                  <span className="text-muted">{k}</span>
-                  <span className="text-ink font-medium">{v}</span>
-                </div>
-              ))}
-            </div>
+
           </div>
 
           <div className="reveal">
