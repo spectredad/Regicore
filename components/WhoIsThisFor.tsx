@@ -98,12 +98,12 @@ export default function WhoIsThisFor() {
             />
 
             {/* Panel label */}
-            <p className="relative z-10 font-mono text-[10px] uppercase tracking-[0.18em] text-[#ffffff] mb-5">
+            <p className="relative z-10 font-mono text-[10px] uppercase tracking-[0.18em] !text-white mb-5" style={{ color: '#ffffff' }}>
               BAD FIT
             </p>
 
             {/* Panel title */}
-            <h3 className="relative z-10 font-display text-[36px] sm:text-[44px] font-medium text-[#ffffff] leading-[1.05] tracking-[-0.02em] mb-10">
+            <h3 className="relative z-10 font-display text-[36px] sm:text-[44px] font-medium !text-white leading-[1.05] tracking-[-0.02em] mb-10" style={{ color: '#ffffff' }}>
               Bad fit
             </h3>
 
