@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 export default function StartHere() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -22,15 +23,30 @@ export default function StartHere() {
     e.preventDefault();
     setStatus("loading");
     try {
-      const res = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error("Failed");
+      if (!supabase) {
+        throw new Error("Supabase client is not initialized (missing NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY)");
+      }
+      
+      const { error } = await supabase
+        .from("leads")
+        .insert([
+          {
+            full_name: form.name,
+            work_email: form.email,
+            firm_or_website: form.company,
+            automation_goal: form.message,
+          },
+        ]);
+
+      if (error) {
+        console.error("Supabase insert error:", error);
+        throw error;
+      }
+
       setStatus("success");
       setForm({ name: "", email: "", company: "", message: "" });
-    } catch {
+    } catch (err) {
+      console.error("Form submission failed:", err);
       setStatus("error");
     }
   };
