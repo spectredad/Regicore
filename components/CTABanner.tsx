@@ -62,7 +62,7 @@ export default function CTABanner() {
               transition={{ delay: 0.1, duration: 0.55, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              Get paid for your taste
+              Deliver faster, error-free estate execution at scale
             </motion.h2>
 
             <motion.p
@@ -73,7 +73,7 @@ export default function CTABanner() {
               transition={{ delay: 0.18, duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              Your feedback fuels the future. Stay current, speak your mind, and shape smarter tools.
+              Empower your legal team with intelligent automation that streamlines complex trust administration while maintaining your firm’s high standard of care.
             </motion.p>
 
             <motion.div
@@ -86,7 +86,7 @@ export default function CTABanner() {
                 href="/start"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#0f172a] text-[14px] font-semibold tracking-[0.02em] hover:bg-[#f0efe9] transition-colors duration-250 shadow-lg shadow-black/20"
               >
-                Join the network
+                Book a Call Now
               </Link>
             </motion.div>
           </div>
