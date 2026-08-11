@@ -241,70 +241,7 @@ function ArtifactWebsite() {
   );
 }
 
-function ArtifactSoftware() {
-  const { ref, isVisible } = useScrollReveal();
-  const [codeLines, setCodeLines] = useState<number[]>([]);
-  const [showComment, setShowComment] = useState(false);
-  const [playCount, setPlayCount] = useState(0);
 
-  useEffect(() => {
-    if (!isVisible) return;
-    // Show final state without looping animation
-    setCodeLines([0, 1, 2]);
-    setShowComment(true);
-  }, [isVisible]);
-
-  return (
-    <div ref={ref} className="artifact-frame">
-      <div className="border-b border-line px-4 py-2 flex justify-between items-center">
-        <span className="font-mono text-[10px] uppercase tracking-widest text-muted">workflow.ts</span>
-      </div>
-      <pre className="px-4 py-3 font-mono text-[11px] leading-[1.9] text-muted overflow-hidden min-h-[100px]">
-        <code key={playCount}>
-          {codeLines.includes(0) && (
-            <motion.div
-              initial={{ opacity: 0, x: -8 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-            >
-              <span className="text-teal">const</span> quote = <span className="text-teal">await</span> pricing
-            </motion.div>
-          )}
-          {codeLines.includes(1) && (
-            <motion.div
-              initial={{ opacity: 0, x: -8 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-            >
-              {"  "}.fromSpec(upload)
-            </motion.div>
-          )}
-          {codeLines.includes(2) && (
-            <motion.div
-              initial={{ opacity: 0, x: -8 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-            >
-              {"  "}.applyRules(client.tier)
-            </motion.div>
-          )}
-          {showComment && (
-            <>
-              <div>{"\n"}</div>
-              <motion.div
-                initial={{ opacity: 0, x: -8 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.35, ease: "easeOut" }}
-              >
-                <span className="text-muted">// 4 days of quoting → 40 sec</span>
-              </motion.div>
-            </>
-          )}
-        </code>
-      </pre>
-    </div>
-  );
-}
 
 function ArtifactCRM() {
   const { ref, isVisible } = useScrollReveal();
@@ -354,128 +291,23 @@ function ArtifactCRM() {
   );
 }
 
-function ArtifactMarketing() {
-  const { ref, isVisible } = useScrollReveal();
-  const steps = ["Signup", "Day 2 email", "Opened?", "Nudge → Demo"];
-  const [activeSteps, setActiveSteps] = useState<number[]>([]);
 
-  useEffect(() => {
-    if (!isVisible) return;
-    // Show all steps without looping animation
-    setActiveSteps([0, 1, 2, 3]);
-  }, [isVisible]);
-
-  return (
-    <div ref={ref} className="artifact-frame">
-      <div className="border-b border-line px-4 py-2 flex justify-between items-center">
-        <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Lifecycle flow</span>
-      </div>
-      <div className="px-4 py-3 flex flex-col gap-0">
-        {steps.map((s, i) => {
-          const isActive = activeSteps.includes(i);
-          const isLast = i === steps.length - 1;
-          return (
-            <div
-              key={s}
-              className="flex items-center gap-3"
-              style={{
-                animation: isActive ? "slideIn 0.3s ease-out forwards" : "none",
-                opacity: isActive ? 1 : 0,
-              }}
-            >
-              <div className="flex flex-col items-center">
-                <span
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    isLast && isActive ? "bg-coral" : "border border-line bg-surface"
-                  }`}
-                  style={{
-                    animation: isLast && isActive ? "pulse 1.5s ease-in-out infinite" : "none",
-                  }}
-                />
-                {i < steps.length - 1 && <span className="w-px h-4 bg-line" />}
-              </div>
-              <span className={`text-[12px] ${isLast ? "text-coral" : "text-ink"} leading-none pb-4 last:pb-0`}>
-                {s}
-              </span>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-function ArtifactLeadGen() {
-  const { ref, isVisible } = useScrollReveal();
-  const leads = [
-    { name: "Acme Freight", score: 92 },
-    { name: "Northline Co.", score: 87 },
-    { name: "Bolt Supply", score: 74 },
-  ];
-  const [scores, setScores] = useState<number[]>([0,0,0]);
-  const [totalLeads, setTotalLeads] = useState(0);
-  const [playCount, setPlayCount] = useState(0);
-
-  useEffect(() => {
-    if (!isVisible) return;
-    // Show final state without looping animation
-    setScores([92, 87, 74]);
-    setTotalLeads(31);
-  }, [isVisible]);
-
-  return (
-    <div ref={ref} className="artifact-frame">
-      <div className="border-b border-line px-4 py-2 flex items-center justify-between">
-        <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Leads sourced today</span>
-        <span className="font-mono text-[10px] text-teal">+{totalLeads}</span>
-      </div>
-      <div key={playCount}>
-        {leads.map((l, idx) => (
-          <motion.div
-            key={l.name}
-            className="flex items-center justify-between px-4 py-2 border-b border-line last:border-b-0"
-            initial={{ opacity: 0, x: -12 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -12 }}
-            transition={{
-              delay: idx * 0.12,
-              duration: 0.4,
-              type: "spring",
-              stiffness: 200,
-              damping: 22,
-            }}
-          >
-            <span className="text-[12px] text-ink">{l.name}</span>
-            <span className="font-mono text-[10px] text-muted">
-              score <span className="text-teal">{scores[idx]}</span>
-            </span>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 const artifacts = [
   ArtifactAgents,
   ArtifactEmail,
   ArtifactVoice,
   ArtifactWebsite,
-  ArtifactSoftware,
   ArtifactCRM,
-  ArtifactMarketing,
-  ArtifactLeadGen,
 ];
 
-/* Bento spans: 2 featured, 4 standard, 2 featured — balanced editorial grid */
+/* Bento spans: tailored for 5 items to leave no gaps */
 const spans = [
-  "lg:col-span-2",
-  "lg:col-span-2",
-  "lg:col-span-1",
-  "lg:col-span-1",
-  "lg:col-span-1",
-  "lg:col-span-1",
-  "lg:col-span-2",
-  "lg:col-span-2",
+  "sm:col-span-1 lg:col-span-2",
+  "sm:col-span-1 lg:col-span-2",
+  "sm:col-span-1 lg:col-span-2",
+  "sm:col-span-1 lg:col-span-1",
+  "sm:col-span-2 lg:col-span-1",
 ];
 
 export default function Services() {

@@ -12,10 +12,7 @@ export const services = [
   { icon: "02", title: "AI Email Outreach", desc: "Every inquiry gets a personalized reply within minutes, not three days later when the prospect's already called someone else." },
   { icon: "03", title: "AI Voice Callers", desc: "Every call gets answered, qualified, and booked, 24/7, including the 9pm call from a family that just lost someone." },
   { icon: "04", title: "Booking & Conversion Systems", desc: "Website visitors turn into booked consults instead of quiet exits, with pages built around how people actually decide to hire a trust attorney." },
-  { icon: "05", title: "Custom Software & Apps", desc: "Software that fits how your firm already works, instead of a team adapting itself to fit the software." },
   { icon: "06", title: "Custom CRM", desc: "Every case tracked from intake through administration through closing, so nothing gets lost between paralegal and partner." },
-  { icon: "07", title: "Marketing Automation", desc: "Prospects who aren't ready yet stay warm automatically, so your firm's still top of mind whenever they are." },
-  { icon: "08", title: "Lead-Gen Systems", desc: "A calendar full of the exact client profile your firm wants, not just anyone who clicked an ad." },
 ];
 
 export const agents = [
