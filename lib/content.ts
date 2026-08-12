@@ -92,8 +92,8 @@ export const metrics = [
 export const plans = [
   {
     name: "Starter",
-    price: "From 2,400 dollars per month",
-    period: "90 day minimum",
+    price: "From $2.4k",
+    period: "/month  90-day minimum",
     featured: false,
     badge: null,
     desc: "One system built correctly. For firms that want to prove results on a single bottleneck first.",
@@ -110,8 +110,8 @@ export const plans = [
   },
   {
     name: "Growth",
-    price: "From 3,300 dollars per month",
-    period: "90 day minimum",
+    price: "From $3.3k",
+    period: "/month  90-day minimum",
     featured: true,
     badge: "Most Popular",
     desc: "For firms ready to connect leads, intake, and follow up so the whole front end of the practice runs cleaner.",
@@ -129,8 +129,8 @@ export const plans = [
   },
   {
     name: "Enterprise Partner",
-    price: "Custom, from 12,000 dollars per month",
-    period: "",
+    price: "Custom",
+    period: "from $12k / month",
     featured: false,
     badge: null,
     desc: "For firms that want Regicore embedded as the ongoing systems partner across the full practice.",
