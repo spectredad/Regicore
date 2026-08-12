@@ -145,43 +145,43 @@ function RegicoreIllustration() {
 export default function Hero() {
   return (
     <section
-      className="bg-midnight flex flex-col justify-between min-h-screen pt-28 sm:pt-36 pb-6 md:pb-10"
+      className="bg-midnight flex flex-col justify-between min-h-screen lg:min-h-svh pt-20 sm:pt-24 lg:pt-28 pb-2 sm:pb-4 overflow-hidden"
     >
       {/* Copy block — refined spacing for top header clearance & mobile responsiveness */}
-      <div className="flex flex-col items-center px-5 text-center max-w-4xl mx-auto w-full">
+      <div className="flex flex-col items-center px-4 sm:px-6 text-center max-w-4xl mx-auto w-full shrink-0">
         {/* Headline */}
         <h1
-          className="font-display font-medium text-ink text-balance leading-[1.06] sm:leading-[1.02] tracking-[-0.025em] mx-auto text-[32px] sm:text-[44px] md:text-[54px] mb-4 sm:mb-5"
+          className="font-display font-medium text-ink text-balance leading-[1.08] sm:leading-[1.04] tracking-[-0.025em] mx-auto text-[28px] sm:text-[38px] md:text-[46px] lg:text-[50px] mb-3 sm:mb-4"
         >
           Your firm can take on more matters without hiring another associate.
         </h1>
 
         {/* Supporting copy */}
         <p
-          className="text-muted text-pretty mx-auto text-[14px] sm:text-[15.5px] leading-relaxed max-w-xl mb-6 sm:mb-7"
+          className="text-muted text-pretty mx-auto text-[13.5px] sm:text-[15px] leading-relaxed max-w-xl mb-4 sm:mb-5"
         >
           Regicore builds private AI systems that handle intake, document review, research, and admin work. Your lawyers stay on high value work. Your firm grows without the payroll and risk that usually come with growth.
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center items-stretch sm:items-center mb-5">
+        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center items-stretch sm:items-center mb-3 sm:mb-4">
           <a
             href="https://regicore.com/start"
-            className="bg-soft-white text-midnight font-semibold uppercase tracking-[0.08em] shadow-md hover:bg-sand transition-colors duration-300 text-[12px] sm:text-[13px] px-7 py-3.5 sm:py-4 text-center"
+            className="bg-soft-white text-midnight font-semibold uppercase tracking-[0.08em] shadow-md hover:bg-sand transition-colors duration-300 text-[12px] sm:text-[13px] px-7 py-3 sm:py-3.5 text-center"
           >
             Book a free firm audit
           </a>
         </div>
 
         {/* Trust line */}
-        <p className="text-muted/75 text-[11px] sm:text-[12.5px] tracking-wide text-center leading-normal max-w-lg">
+        <p className="text-muted/75 text-[11px] sm:text-[12px] tracking-wide text-center leading-normal max-w-lg">
           Private deployments. Client data never leaves your environment. First systems live in two weeks.
         </p>
       </div>
 
-      {/* Illustration block — prominent & larger on mobile */}
-      <div className="flex items-end justify-center w-full mt-6 sm:mt-10 px-2 sm:px-6">
-        <div className="w-full max-w-[1180px] h-[220px] sm:h-[280px] md:h-[340px] flex items-end justify-center transform translate-y-3 sm:translate-y-6">
+      {/* Illustration block — flexible height to fit Desktop, Laptop, & Mobile viewports */}
+      <div className="flex items-end justify-center w-full mt-3 sm:mt-6 px-2 sm:px-6 grow min-h-0">
+        <div className="w-full max-w-[1050px] h-[170px] sm:h-[220px] md:h-[260px] lg:h-[300px] max-h-[36vh] flex items-end justify-center">
           <RegicoreIllustration />
         </div>
       </div>
