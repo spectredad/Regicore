@@ -151,7 +151,7 @@ export default function Hero() {
       <div className="flex flex-col items-center px-4 sm:px-6 text-center max-w-4xl mx-auto w-full shrink-0">
         {/* Headline */}
         <h1
-          className="font-display font-medium text-ink text-balance leading-[1.08] sm:leading-[1.04] tracking-[-0.025em] mx-auto text-[28px] sm:text-[38px] md:text-[46px] lg:text-[50px] mb-3 sm:mb-4"
+          className="font-display font-medium text-ink text-balance leading-[1.16] sm:leading-[1.12] tracking-[-0.02em] mx-auto text-[25px] sm:text-[34px] md:text-[41px] lg:text-[44px] mb-3 sm:mb-4"
         >
           Your firm can take on more matters without hiring another associate.
         </h1>
