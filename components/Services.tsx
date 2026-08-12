@@ -291,7 +291,21 @@ function ArtifactCRM() {
   );
 }
 
-
+function ArtifactSEO() {
+  const { ref, isVisible } = useScrollReveal();
+  return (
+    <div ref={ref} className="artifact-frame">
+      <div className="flex items-center gap-2 border-b border-line px-4 py-2">
+        <span className={`w-2 h-2 rounded-full bg-teal ${isVisible ? "animate-pulse" : ""}`} />
+        <span className="font-mono text-[10px] uppercase tracking-widest text-muted">Google Maps Top 3</span>
+      </div>
+      <div className="px-4 py-3 font-mono text-[11px] leading-[1.9] text-muted min-h-[100px]" style={{ contain: "layout style paint" }}>
+        <p className="text-teal">Rank 1 Local Law Firm</p>
+        <p className="text-ink mt-2">✓ Guaranteed 90 day positioning</p>
+      </div>
+    </div>
+  );
+}
 
 const artifacts = [
   ArtifactAgents,
@@ -299,15 +313,17 @@ const artifacts = [
   ArtifactVoice,
   ArtifactWebsite,
   ArtifactCRM,
+  ArtifactSEO,
 ];
 
-/* Bento spans: tailored for 5 items to leave no gaps */
+/* Bento spans: tailored for 6 items in a clean grid */
 const spans = [
   "sm:col-span-1 lg:col-span-2",
   "sm:col-span-1 lg:col-span-2",
   "sm:col-span-1 lg:col-span-2",
-  "sm:col-span-1 lg:col-span-1",
-  "sm:col-span-2 lg:col-span-1",
+  "sm:col-span-1 lg:col-span-2",
+  "sm:col-span-1 lg:col-span-2",
+  "sm:col-span-1 lg:col-span-2",
 ];
 
 export default function Services() {
@@ -336,7 +352,7 @@ export default function Services() {
             We do not sell a package. We build the exact system that is currently costing your firm money.
           </h2>
           <p className="text-muted mt-5 text-[15px] leading-relaxed text-pretty">
-            Some firms lose hours and leads at intake. Others lose partner time on document work that should never reach a lawyer’s desk. Others lose cases because follow-up is slow. We map the real bottleneck and fix only that.
+            Some firms lose hours and leads at intake. Others lose partner time on document work that should never reach a lawyer’s desk. Others lose cases because follow up is slow. We map the real bottleneck and fix only that.
           </p>
         </div>
 
@@ -350,7 +366,7 @@ export default function Services() {
                 className={`bg-surface p-6 md:p-7 flex flex-col gap-6 reveal ${spans[i]}`}
                 style={{ transitionDelay: `${(i % 4) * 60}ms` }}
               >
-                <Artifact />
+                {Artifact && <Artifact />}
                 <div className="flex items-start gap-4 mt-auto">
                   <span className="index-num text-[13px] pt-1">{s.icon}</span>
                   <div>

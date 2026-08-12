@@ -96,7 +96,7 @@ export default function ROICalculator() {
               <div>
                 <div className="flex justify-between items-baseline mb-3">
                   <label className="text-[15px] font-medium text-ink" htmlFor="slider-rate">
-                    Average fully-loaded hourly rate
+                    Average fully loaded hourly rate
                   </label>
                   <span className="font-display text-[20px] font-medium text-teal">${rate}</span>
                 </div>

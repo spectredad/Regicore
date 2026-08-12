@@ -160,7 +160,7 @@ export default function Hero() {
         <p
           className="text-muted text-pretty mx-auto text-[14px] sm:text-[15.5px] leading-relaxed max-w-xl mb-6 sm:mb-7"
         >
-          Regicore builds private AI systems that handle intake, document review, research, and admin work. Your lawyers stay on high-value work. Your firm grows without the payroll and risk that usually come with growth.
+          Regicore builds private AI systems that handle intake, document review, research, and admin work. Your lawyers stay on high value work. Your firm grows without the payroll and risk that usually come with growth.
         </p>
 
         {/* CTAs */}
@@ -175,7 +175,7 @@ export default function Hero() {
 
         {/* Trust line */}
         <p className="text-muted/75 text-[11px] sm:text-[12.5px] tracking-wide text-center leading-normal max-w-lg">
-          Private deployments &middot; Client data never leaves your environment &middot; First systems live in two weeks.
+          Private deployments. Client data never leaves your environment. First systems live in two weeks.
         </p>
       </div>
 

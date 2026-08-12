@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const goodFit = [
-  "Mid-to-large estate planning or trust administration firm",
+  "Mid to large estate planning or trust administration firm",
   "High volume of document generation, probate cases, and client intake",
   "Budget already set aside for operational upgrades",
   "Wants to increase caseload capacity without matching headcount growth",
@@ -11,8 +11,8 @@ const goodFit = [
 ];
 
 const badFit = [
-  "Solo or early-stage boutique",
-  "Low volume of purely custom, non-standard work",
+  "Solo or early stage boutique",
+  "Low volume of purely custom, non standard work",
   "No budget for technology improvements",
   "Satisfied with current manual overhead and legacy systems",
   "Not looking to grow capacity or onboard new systems soon",
