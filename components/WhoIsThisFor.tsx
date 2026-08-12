@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const goodFit = [
-  "Mid to large estate planning or trust administration firm",
+  "Mid to Large Law firms",
   "High volume of document generation, probate cases, and client intake",
   "Budget already set aside for operational upgrades",
   "Wants to increase caseload capacity without matching headcount growth",
