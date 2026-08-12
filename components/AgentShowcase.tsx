@@ -77,13 +77,12 @@ export default function AgentShowcase() {
         <div className="grid lg:grid-cols-12 gap-6 lg:gap-12 mb-14 reveal items-start">
           <div className="lg:col-span-7">
             <h2 className="font-display text-[30px] sm:text-[42px] font-medium text-ink leading-[1.08] tracking-[-0.02em] text-balance">
-              AI agents that cut cost and risk inside law firms
+              AI agents that remove cost and risk from the work your firm already pays for.
             </h2>
           </div>
           <div className="lg:col-span-5 lg:pt-1.5">
             <p className="text-muted text-[15px] sm:text-[16px] leading-relaxed text-pretty">
-              These systems take repetitive work off your lawyers so the firm spends less, bills
-              more, and carries less risk.
+              These systems take the repetitive load off your lawyers. The firm spends less on overhead, bills more hours, and carries fewer missed deadlines and process errors.
             </p>
           </div>
         </div>

@@ -153,15 +153,14 @@ export default function Hero() {
         <h1
           className="font-display font-medium text-ink text-balance leading-[1.06] sm:leading-[1.02] tracking-[-0.025em] mx-auto text-[32px] sm:text-[44px] md:text-[54px] mb-4 sm:mb-5"
         >
-          Give your lawyers their{" "}
-          <em className="not-italic italic text-teal">time back.</em>
+          Your firm can take on more matters without hiring another associate.
         </h1>
 
         {/* Supporting copy */}
         <p
           className="text-muted text-pretty mx-auto text-[14px] sm:text-[15.5px] leading-relaxed max-w-xl mb-6 sm:mb-7"
         >
-          Regicore builds private, custom AI systems that automate intake, document review, research, and admin so your firm scales without hiring more associates.
+          Regicore builds private AI systems that handle intake, document review, research, and admin work. Your lawyers stay on high-value work. Your firm grows without the payroll and risk that usually come with growth.
         </p>
 
         {/* CTAs */}
@@ -176,7 +175,7 @@ export default function Hero() {
 
         {/* Trust line */}
         <p className="text-muted/75 text-[11px] sm:text-[12.5px] tracking-wide text-center leading-normal max-w-lg">
-          Private deployments &middot; Client data stays in your environment &middot; First systems live in weeks.
+          Private deployments &middot; Client data never leaves your environment &middot; First systems live in two weeks.
         </p>
       </div>
 

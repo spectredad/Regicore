@@ -8,49 +8,49 @@ export const nav = [
 ];
 
 export const services = [
-  { icon: "01", title: "Custom AI Systems & Agents", desc: "Trust documents and probate filings get processed automatically. Extracted, reviewed, routed to the right person, without an associate touching them first." },
-  { icon: "02", title: "AI Email Outreach", desc: "Every inquiry gets a personalized reply within minutes, not three days later when the prospect's already called someone else." },
-  { icon: "03", title: "AI Voice Callers", desc: "Every call gets answered, qualified, and booked, 24/7, including the 9pm call from a family that just lost someone." },
-  { icon: "04", title: "Booking & Conversion Systems", desc: "Website visitors turn into booked consults instead of quiet exits, with pages built around how people actually decide to hire a trust attorney." },
-  { icon: "06", title: "Custom CRM", desc: "Every case tracked from intake through administration through closing, so nothing gets lost between paralegal and partner." },
+  { icon: "01", title: "Custom AI Systems and Agents", desc: "Trust documents and probate filings move through extraction, review, and routing without an associate touching them first." },
+  { icon: "02", title: "AI Email Outreach", desc: "Every inquiry gets a personalized reply in minutes instead of days later when the prospect has already moved on." },
+  { icon: "03", title: "AI Voice Callers", desc: "Every call is answered, qualified, and booked around the clock, including the late call from a family that just lost someone." },
+  { icon: "04", title: "Booking and Conversion Systems", desc: "Website visitors become booked consults. Pages are built around how people actually decide to hire a trust attorney." },
+  { icon: "05", title: "Custom CRM", desc: "Every case is tracked from intake through administration to closing so nothing falls between paralegal and partner." },
 ];
 
 export const agents = [
   {
     name: "Intake Agent",
-    cardTitle: "Promise to pay",
-    tag: "Collection",
-    big: "$1,250",
-    rowKey: "Due date",
-    rowVal: "Sept 5, 2026",
-    desc: "Qualifies new matters. Collects documents. Sends only the strong files to partners. Stops your team from wasting time on bad leads.",
+    cardTitle: "Lead qualified",
+    tag: "Intake",
+    big: "98% clean",
+    rowKey: "Quality score",
+    rowVal: "High",
+    desc: "Opens more matters cleanly and faster so fewer leads die in the queue.",
   },
   {
     name: "Document Review Agent",
-    cardTitle: "Sequence sent",
-    tag: "Email",
-    big: "842 sends",
-    rowKey: "Reply rate",
-    rowVal: "+62%",
-    desc: "Reviews contracts and discovery at scale. Flags risk. Pulls key terms. Gives your lawyers clean summaries they can trust.",
+    cardTitle: "Document processed",
+    tag: "Review",
+    big: "450 pgs/hr",
+    rowKey: "Risk flag",
+    rowVal: "Low",
+    desc: "Processes high-volume documents so associates stop burning hours on first-pass review.",
   },
   {
     name: "Research Agent",
-    cardTitle: "Call completed",
-    tag: "Voice",
-    big: "3m 12s",
-    rowKey: "Outcome",
-    rowVal: "Booked",
-    desc: "Runs first pass research and memo drafts. Uses the authorities your firm already trusts. Gives associates their time back.",
+    cardTitle: "Memo generated",
+    tag: "Research",
+    big: "15 mins",
+    rowKey: "Authority count",
+    rowVal: "14 cited",
+    desc: "Delivers the research your team needs without the billable time drain.",
   },
   {
     name: "Collections Agent",
-    cardTitle: "Lead enriched",
-    tag: "Pipeline",
-    big: "3.1x",
-    rowKey: "Stage",
-    rowVal: "Qualified",
-    desc: "Follows up on unpaid invoices and payment plans. Improves recovery without adding headcount.",
+    cardTitle: "Invoice recovered",
+    tag: "Collections",
+    big: "$3,400",
+    rowKey: "Status",
+    rowVal: "Paid",
+    desc: "Keeps receivables moving so cash does not sit uncollected.",
   },
   {
     name: "Operations Agent",
@@ -82,8 +82,8 @@ export const steps = [
 ];
 
 export const metrics = [
-  { value: "2", suffix: " wks", label: "to first deployment" },
-  { value: "100", suffix: "%", label: "private, your environment" },
+  { value: "2", suffix: " weeks", label: "to first deployment" },
+  { value: "100", suffix: "%", label: "private, running in your environment" },
   { value: "0", suffix: "", label: "long-term contracts required" },
   { value: "Fixed", suffix: "", label: "scope agreed before we start" },
 ];
@@ -91,59 +91,56 @@ export const metrics = [
 export const plans = [
   {
     name: "Starter",
-    price: "From $2.4k",
-    period: "/month · 90-day minimum",
+    price: "From $2,400",
+    period: "per month · 90-day minimum",
     featured: false,
     badge: null,
-    desc: "One system, done right. Built for firms who want to prove it works on a single bottleneck before going further.",
+    desc: "One system built correctly. For firms that want to prove results on a single bottleneck first.",
     features: [
-      "First deployment live in week 2",
-      "Measurable results within 30 days",
+      "First system live in week 2",
+      "Measurable results inside 30 days",
       "One AI workflow or agent",
-      "One core integration with your existing stack",
-      "Ongoing tuning and iteration",
-      "Monthly performance review",
-      "Your data stays yours; our proprietary systems and frameworks remain ours"
+      "One core integration",
+      "Ongoing tuning and monthly performance review",
+      "Your data stays yours"
     ],
     cta: "Start with Starter",
   },
   {
     name: "Growth",
-    price: "From $3.3k",
-    period: "/month · 90-day minimum",
+    price: "From $3,300",
+    period: "per month · 90-day minimum",
     featured: true,
     badge: "Most Popular",
-    desc: "For firms ready to put AI to work across more than one part of the business, not just one workflow, but how leads, intake, and follow up connect.",
+    desc: "For firms ready to connect leads, intake, and follow-up so the whole front end of the practice runs cleaner.",
     features: [
-      "First deployment live in week 2",
-      "Measurable results within 30 days",
-      "Up to 3 connected workflows or agents",
-      "Voice, email, and ops layers as needed",
-      "Up to 2 core integrations",
-      "Continuous optimisation and experiments",
-      "Monthly strategy call + async updates",
-      "Your data stays yours; our proprietary systems and frameworks remain ours"
+      "First system live in week 2",
+      "Measurable results inside 30 days",
+      "Up to three connected workflows or agents",
+      "Voice, email, and operations layers as needed",
+      "Up to two core integrations",
+      "Continuous optimization plus monthly strategy call",
+      "Your data stays yours"
     ],
-    cta: "Book a Call",
+    cta: "Book a call",
   },
   {
     name: "Enterprise Partner",
     price: "Custom",
-    period: "/from $12k per month",
+    period: "from $12,000 per month",
     featured: false,
     badge: null,
-    desc: "For firms that want us embedded as an ongoing systems partner, deploying, improving, and expanding automation across the whole practice, every month.",
+    desc: "For firms that want Regicore embedded as the ongoing systems partner across the full practice.",
     features: [
-      "First deployment live in week 2",
-      "Measurable results within 30 days",
+      "First system live in week 2",
+      "Measurable results inside 30 days",
       "Multi-team or multi-workflow rollout",
-      "Priority support and faster delivery cadence",
-      "Shared Slack and planning rhythm",
-      "Custom integrations and system design",
-      "Quarterly roadmap reviews",
-      "Your data stays yours; our proprietary systems and frameworks remain ours"
+      "Priority support and faster delivery",
+      "Shared planning rhythm",
+      "Custom integrations and quarterly roadmap reviews",
+      "Your data stays yours"
     ],
-    cta: "Talk to Us",
+    cta: "Talk to us",
   },
 ];
 
@@ -211,26 +208,27 @@ export const whyPoints = [
 export const faqs = [
   {
     q: "How fast do we actually see something working?",
-    a: "First system live in week 2. Not a demo, not a mockup, an actual agent running on your real workflow. We don't believe in 3-month discovery phases before you see anything.",
+    a: "First system is live in week 2. Measurable results are expected inside 30 days.",
   },
   {
     q: "Who owns the code and the data?",
-    a: "Your client data stays yours, full stop, it never leaves your environment. The underlying systems and frameworks we build with stay ours, the same way a law firm doesn't hand over its internal templates and processes to every client. Full terms are spelled out in the service agreement before anyone signs anything.",
+    a: "Your data stays in your environment. You own your data. Our systems and frameworks stay ours.",
   },
   {
     q: "What happens if the agent gets something wrong?",
-    a: "Every system we build has a human checkpoint before anything client-facing goes out, the agent drafts, extracts, or flags, it doesn't have final say on anything that touches your clients' estate or trust matters without your team reviewing it first. This isn't a black box making decisions your firm didn't sign off on.",
+    a: "Every system is built with human review points on high-risk steps. Errors are caught and corrected inside the workflow, not after the fact.",
   },
   {
     q: "Will this actually work with what we already use?",
-    a: "We build around your existing case management and practice tools, not instead of them. If you're on Clio, PracticePanther, or something else, tell us during the audit and we'll tell you exactly what connects and what doesn't, before you commit to anything.",
+    a: "Yes. We integrate with the tools you already run. We do not force a new stack.",
   },
   {
-    q: "How do you measure whether it's working?",
-    a: "We agree on what success looks like before we start, hours saved, response time, whatever the actual bottleneck is you're trying to fix, and report against it the whole way through. You're not left guessing whether it's doing anything.",
+    q: "How do you measure whether it is working?",
+    a: "We set clear hour and throughput targets before we start. Monthly reviews track the actual numbers against those targets.",
   },
   {
     q: "What does an engagement actually cost?",
-    a: "Starter begins at $1.5k/month, Growth at $3.3k/month, both on a 90-day minimum so there's enough runway to actually see results, not judge it after two weeks. Enterprise is custom based on scope. Exact pricing depends on what we find in the audit, which is free.",
+    a: "Starter begins at $2,400 per month. Growth begins at $3,300 per month. Both have a 90-day minimum so both sides can measure real results. Enterprise is scoped after the audit.",
   },
 ];
+

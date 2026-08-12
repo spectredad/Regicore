@@ -62,7 +62,7 @@ export default function CTABanner() {
               transition={{ delay: 0.1, duration: 0.55, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              Deliver faster, error-free estate execution at scale
+              Stop paying for hours that no longer need to be human hours.
             </motion.h2>
 
             <motion.p
@@ -73,7 +73,7 @@ export default function CTABanner() {
               transition={{ delay: 0.18, duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              Empower your legal team with intelligent automation that streamlines complex trust administration while maintaining your firm’s high standard of care.
+              Your firm can handle more matters, lower overhead, and reduce process risk without adding headcount. The free firm audit shows exactly where the money is currently leaking and what the first system should fix.
             </motion.p>
 
             <motion.div
@@ -83,10 +83,10 @@ export default function CTABanner() {
               viewport={{ once: true }}
             >
               <Link
-                href="/start"
+                href="https://regicore.com/start"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#0f172a] text-[14px] font-semibold tracking-[0.02em] hover:bg-[#f0efe9] transition-colors duration-250 shadow-lg shadow-black/20"
               >
-                Book a Call Now
+                Book a free firm audit
               </Link>
             </motion.div>
           </div>

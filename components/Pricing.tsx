@@ -136,10 +136,10 @@ export default function Pricing() {
 
         <div className="max-w-2xl mb-14 reveal">
           <h2 className="font-display text-[30px] sm:text-[44px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance">
-            Pick The Level Of Help You Actually Need.
+            Choose the level of help that matches the size of the problem.
           </h2>
           <p className="text-muted mt-5 text-[15px] leading-relaxed text-pretty">
-            Every engagement starts live in week 2. No 6-month build cycles, no &apos;we&apos;ll get to it next quarter.&apos;
+            Every engagement starts live in week 2. No six-month builds. No waiting until next quarter.
           </p>
         </div>
 

@@ -94,14 +94,20 @@ export default function Metrics() {
     <section className="py-16 md:py-24 px-5 border-t border-line" ref={sectionRef}>
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
-        <div className="reveal flex items-baseline justify-between gap-4 border-b border-line pb-4 mb-12 md:mb-16">
+        <div className="reveal flex items-baseline justify-between gap-4 border-b border-line pb-4 mb-8">
           <div className="flex items-baseline gap-4">
             <span className="index-num text-[15px]">03</span>
             <p className="section-label uppercase tracking-widest font-mono text-xs">HOW WE OPERATE</p>
           </div>
           <p className="section-label uppercase tracking-widest font-mono text-xs hidden sm:block text-muted/70">
-            NOTHING HERE IS A PROJECTION
+            Nothing here is a projection. These are the operating rules.
           </p>
+        </div>
+
+        <div className="reveal mb-10 max-w-2xl">
+          <h2 className="font-display text-[28px] sm:text-[40px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance">
+            You get results without the usual vendor risk.
+          </h2>
         </div>
 
         {/* Soft rounded container matching the multi-card reference UI */}

@@ -3,21 +3,19 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const goodFit = [
-  "Mid-to-large sized estate planning or trust administration firm",
-  "Handles a high volume of document generation, probate cases, and client intake",
-  "Has a dedicated budget set aside for operational upgrades and AI automation",
-  "Values a streamlined user experience (UX) for their clients and internal team",
-  "Looking to scale caseload capacity without proportionately increasing headcount",
-  "Wants to start implementing systems within the next 14 to 30 days",
+  "Mid-to-large estate planning or trust administration firm",
+  "High volume of document generation, probate cases, and client intake",
+  "Budget already set aside for operational upgrades",
+  "Wants to increase caseload capacity without matching headcount growth",
+  "Ready to start implementation in the next 14 to 30 days",
 ];
 
 const badFit = [
-  "Solo practitioner or early-stage boutique firm",
-  "Low volume of cases that require purely bespoke, non-standardized drafting",
-  "No budget set aside for software or technological improvements",
-  "Content with current manual administrative overhead and legacy systems",
-  "Not actively looking to grow the firm's capacity or client base",
-  "Not looking to onboard new systems for another few months",
+  "Solo or early-stage boutique",
+  "Low volume of purely custom, non-standard work",
+  "No budget for technology improvements",
+  "Satisfied with current manual overhead and legacy systems",
+  "Not looking to grow capacity or onboard new systems soon",
 ];
 
 export default function WhoIsThisFor() {

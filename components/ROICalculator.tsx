@@ -43,10 +43,10 @@ export default function ROICalculator() {
         <div className="grid xl:grid-cols-[1fr_1.15fr] gap-12 lg:gap-14 items-start">
           <div className="reveal">
             <h2 className="font-display text-[28px] sm:text-[40px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance mb-5">
-              What Is Manual Work Actually Costing You?
+              What is the manual work actually costing your firm right now?
             </h2>
             <p className="text-[15px] leading-relaxed text-muted max-w-md text-pretty mb-10">
-              Drag the sliders below. This is what your firm could save per year by automating the work your team is doing by hand right now.
+              Use the calculator. It shows the annual cost of the hours your team is already spending on work that does not need to stay manual.
             </p>
 
             {/* Sliders */}
@@ -130,10 +130,8 @@ export default function ROICalculator() {
                 {formatMoney(savings)}
                 {isCapped && <span className="text-coral">+</span>}
               </div>
-              <p className="text-muted/80 text-[13.5px] mt-4 max-w-[300px] leading-relaxed font-body">
-                {isCapped
-                  ? "Capped display. Actual savings may be higher."
-                  : "Estimated, based on hours saved multiplied by rate over 52 weeks."}
+              <p className="text-muted/80 text-[13.5px] mt-4 max-w-[320px] leading-relaxed font-body">
+                That is money the firm is already paying. The free audit replaces this estimate with numbers from your actual workflows.
               </p>
             </div>
 

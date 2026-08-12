@@ -333,10 +333,10 @@ export default function Services() {
 
         <div className="reveal mb-12 md:mb-16 max-w-2xl">
           <h2 className="font-display text-[28px] sm:text-[40px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance">
-            Every Firm's Bottleneck Is Different. So Is Our Fix.
+            We do not sell a package. We build the exact system that is currently costing your firm money.
           </h2>
           <p className="text-muted mt-5 text-[15px] leading-relaxed text-pretty">
-            Some firms lose hours to intake. Others lose leads to slow follow up. Others lose partners' time to document review that a paralegal shouldn't have to do by hand either. We don't sell a package, we build the specific system that fixes what's actually costing you money. Here's what that can look like.
+            Some firms lose hours and leads at intake. Others lose partner time on document work that should never reach a lawyer’s desk. Others lose cases because follow-up is slow. We map the real bottleneck and fix only that.
           </p>
         </div>
 
