@@ -7,6 +7,13 @@ const footerColumns = [
       { label: "Instagram", href: "https://www.instagram.com/regicorex/", external: true },
     ],
   },
+  {
+    heading: "Legal",
+    links: [
+      { label: "Terms of service", href: "/terms-of-service" },
+      { label: "Compliance", href: "/compliance" },
+    ],
+  },
 ];
 
 export default function Footer() {
