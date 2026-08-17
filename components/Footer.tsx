@@ -1,27 +1,10 @@
 const footerColumns = [
   {
-    heading: "Explore",
-    links: [
-      { label: "Agents", href: "/#agents" },
-      { label: "Services", href: "/#services" },
-      { label: "Pricing", href: "/#pricing" },
-      { label: "FAQ", href: "/#faq" },
-    ],
-  },
-  {
     heading: "Company",
     links: [
       { label: "About", href: "/company" },
-      { label: "Book a call", href: "https://regicore.com/start" },
-      { label: "ROI calculator", href: "/#roi" },
-    ],
-  },
-  {
-    heading: "Connect",
-    links: [
       { label: "LinkedIn", href: "https://linkedin.com/company/regicore", external: true },
       { label: "Instagram", href: "https://www.instagram.com/regicorex/", external: true },
-      { label: "hello@regicore.com", href: "mailto:hello@regicore.com" },
     ],
   },
 ];
@@ -33,17 +16,10 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-5 pt-16 md:pt-24 pb-12">
         <div className="grid lg:grid-cols-[1.4fr_1fr] gap-14 items-start">
           <div>
-            <p className="section-label text-muted mb-6">One last thing</p>
             <p className="font-display text-[24px] sm:text-[32px] font-medium leading-[1.15] tracking-[-0.02em] text-ink text-balance max-w-lg">
               The best time to automate was last quarter.
               <span className="text-teal"> The second best is now.</span>
             </p>
-            <a
-              href="https://regicore.com/start"
-              className="inline-block mt-8 bg-soft-white text-midnight font-semibold text-[13px] uppercase tracking-[0.08em] px-7 py-4 hover:bg-sand transition-colors duration-300"
-            >
-              Book a call
-            </a>
           </div>
 
           <nav className="grid grid-cols-2 sm:grid-cols-3 gap-8" aria-label="Footer">
@@ -72,7 +48,9 @@ export default function Footer() {
 
         {/* Legal line */}
         <div className="border-t border-line mt-16 pt-6">
-          <p className="text-[12px] text-muted">&copy; 2026 Regicore.</p>
+          <p className="text-[12px] text-muted">
+            &copy; 2026 Regicore. All rights reserved by Regicore. Legal information upon request at varun@regicorehq.com.
+          </p>
         </div>
       </div>
 
