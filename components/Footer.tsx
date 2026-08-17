@@ -52,7 +52,6 @@ export default function Footer() {
             ))}
 
             <div className="sm:justify-self-end">
-              <p className="section-label text-muted mb-5">NAP</p>
               <address className="not-italic text-[14px] text-muted leading-6">
                 <span className="block">Regicore</span>
                 <span className="block">3rd cross, New thippsandra,</span>
