@@ -7,6 +7,13 @@ const footerColumns = [
       { label: "Instagram", href: "https://www.instagram.com/regicorex/", external: true },
     ],
   },
+  {
+    heading: "Legal",
+    links: [
+      { label: "Terms of Service", href: "/terms" },
+      { label: "Compliance", href: "/compliance" },
+    ],
+  },
 ];
 
 export default function Footer() {
@@ -26,7 +33,7 @@ export default function Footer() {
             {footerColumns.map((col) => (
               <div key={col.heading}>
                 <p className="section-label text-muted mb-5">{col.heading}</p>
-                <ul className="space-y-3">
+                <ul className="flex flex-col gap-3">
                   {col.links.map((link) => (
                     <li key={link.label}>
                       <a
@@ -41,18 +48,20 @@ export default function Footer() {
                     </li>
                   ))}
                 </ul>
-                {col.heading === "Company" && (
-                  <address className="not-italic text-[14px] text-muted leading-6 mt-6">
-                    <span className="block">Regicore</span>
-                    <span className="block">3rd cross, New thippsandra,</span>
-                    <span className="block">Bangalore, India.</span>
-                    <a className="block mt-2 hover:text-ink transition-colors duration-300" href="tel:+919739690421">
-                      91 9739690421
-                    </a>
-                  </address>
-                )}
               </div>
             ))}
+
+            <div className="sm:justify-self-end">
+              <p className="section-label text-muted mb-5">NAP</p>
+              <address className="not-italic text-[14px] text-muted leading-6">
+                <span className="block">Regicore</span>
+                <span className="block">3rd cross, New thippsandra,</span>
+                <span className="block">Bangalore, India.</span>
+                <a className="block mt-2 hover:text-ink transition-colors duration-300" href="tel:+919739690421">
+                  91 9739690421
+                </a>
+              </address>
+            </div>
           </nav>
         </div>
 
