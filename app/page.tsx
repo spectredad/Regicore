@@ -1,8 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TrustExtras from "@/components/TrustExtras";
-import AgentShowcase from "@/components/AgentShowcase";
-import Services from "@/components/Services";
 import Metrics from "@/components/Metrics";
 import WhoIsThisFor from "@/components/WhoIsThisFor";
 import ROICalculator from "@/components/ROICalculator";
@@ -17,8 +15,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <TrustExtras />
-      <AgentShowcase />
-      <Services />
       <Metrics />
       <WhoIsThisFor />
       <ROICalculator />
