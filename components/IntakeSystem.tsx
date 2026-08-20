@@ -280,46 +280,6 @@ export default function IntakeSystem() {
           })}
         </div>
 
-        {/* Safeguards & Governance: Hard Limits & Where your data sits */}
-        <div className="mt-14 sm:mt-18 pt-10 border-t border-line-low grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {/* Hard Limits */}
-          <div className="reveal rounded-2xl border border-line-low bg-surface-elevated p-6 sm:p-7 shadow-[0_2px_14px_rgba(15,23,42,0.04)]">
-            <div className="flex items-center gap-3 mb-3.5">
-              <div className="flex size-9 items-center justify-center rounded-xl bg-coral-accent/10 text-coral-accent">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" />
-                </svg>
-              </div>
-              <h3 className="font-sans text-lg font-semibold text-ink">Hard limits</h3>
-            </div>
-            <p className="text-sm leading-relaxed text-muted">
-              The script forbids legal advice, fee quotes, and predictions about outcomes. The assistant identifies itself as automated on every call. Access stops at the intake line, with no connection to your matter files or case management system unless you request that integration.
-            </p>
-          </div>
-
-          {/* Where your data sits */}
-          <div className="reveal rounded-2xl border border-line-low bg-surface-elevated p-6 sm:p-7 shadow-[0_2px_14px_rgba(15,23,42,0.04)]">
-            <div className="flex items-center gap-3 mb-3.5">
-              <div className="flex size-9 items-center justify-center rounded-xl bg-teal/10 text-teal">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                </svg>
-              </div>
-              <h3 className="font-sans text-lg font-semibold text-ink">Where your data sits</h3>
-            </div>
-            <p className="text-sm leading-relaxed text-muted">
-              Deployments are private. Call recordings and transcripts stay in your environment, on infrastructure held to healthcare grade security standards, and nothing feeds public model training. You receive an AI use policy and client disclosure templates on day one, written against your bar's advertising and confidentiality rules.
-            </p>
-          </div>
-        </div>
-
-        {/* Closing Line */}
-        <div className="reveal mt-10 sm:mt-12 text-center">
-          <p className="text-sm sm:text-[15px] font-medium text-ink/80 leading-relaxed max-w-3xl mx-auto">
-            Every call script is approved by you. Every word published under your name is approved by you. You can listen to any call, any time.
-          </p>
-        </div>
-
       </div>
     </section>
   );
