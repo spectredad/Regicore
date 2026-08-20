@@ -33,7 +33,7 @@ export default function TrustExtras() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-navy text-ink px-5 py-20 sm:py-28 lg:py-36">
+    <section ref={sectionRef} className="bg-navy text-ink px-5 pt-16 pb-14 sm:pt-24 sm:pb-20 lg:pt-28 lg:pb-24">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center reveal">
           <p className="section-label text-ink/55">The cost of being overlooked</p>
@@ -45,23 +45,19 @@ export default function TrustExtras() {
           </p>
         </div>
 
-        <div className="mt-14 overflow-hidden rounded-2xl border border-midnight/10 bg-navy-elevated reveal sm:mt-20">
+        <div className="mt-14 overflow-hidden rounded-2xl border border-midnight/10 bg-navy-elevated reveal sm:mt-18">
           <div className="grid md:grid-cols-3">
             {leakCards.map((card, index) => (
-              <article key={card.number} className={`flex min-h-[360px] flex-col justify-between p-7 sm:p-9 lg:min-h-[410px] lg:p-10 ${index > 0 ? "border-t border-midnight/10 md:border-l md:border-t-0" : ""}`}>
+              <article key={card.number} className={`flex min-h-[340px] flex-col justify-between p-7 sm:p-9 lg:min-h-[380px] lg:p-10 ${index > 0 ? "border-t border-midnight/10 md:border-l md:border-t-0" : ""}`}>
                 <div>
                   <p className="font-display text-5xl font-medium tracking-[-0.05em] text-ink sm:text-6xl">{card.number}</p>
-                  <h3 className="mt-10 max-w-[15rem] font-display text-2xl font-medium leading-tight tracking-[-0.02em] sm:text-3xl">{card.title}</h3>
+                  <h3 className="mt-8 max-w-[15rem] font-display text-2xl font-medium leading-tight tracking-[-0.02em] sm:text-3xl">{card.title}</h3>
                 </div>
                 <p className="max-w-sm text-sm leading-relaxed text-ink/65 sm:text-[15px]">{card.body}</p>
               </article>
             ))}
           </div>
         </div>
-
-        <p className="mx-auto mt-10 max-w-2xl border-y border-midnight/15 py-6 text-center font-display text-lg leading-relaxed tracking-[-0.01em] sm:text-xl reveal">
-          Every one of these leaks sends a client to the firm one position above you.
-        </p>
       </div>
     </section>
   );
