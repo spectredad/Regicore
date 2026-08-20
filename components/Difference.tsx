@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 
-const mapImage = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-hWHjErXBDXpesmnjzg4t6Ah2qDP1EB.png";
-
 const beforeMetrics = [
   ["Average Rank", "86"],
   ["Market Coverage", "1%"],
@@ -77,11 +75,11 @@ export default function Difference() {
             </div>
 
             <div className="rounded-2xl bg-surface p-3 sm:p-4">
-              <div className="relative min-h-[380px] overflow-hidden rounded-xl bg-surface" style={{ backgroundImage: `url(${mapImage})`, backgroundPosition: "center", backgroundSize: "cover" }} aria-label="Illustrative city ranking grid">
-                <div className="absolute inset-0 bg-paper/10" aria-hidden="true" />
-                <div className="absolute inset-[8%] grid grid-cols-8 content-center justify-items-center gap-x-2 gap-y-2 sm:grid-cols-10 sm:gap-x-3 sm:gap-y-3">
+              <div className="relative min-h-[380px] overflow-hidden rounded-xl border border-line-low bg-paper px-5 py-6 sm:px-8" aria-label="Illustrative city ranking grid">
+                <div className="absolute inset-0 opacity-40" aria-hidden="true" style={{ backgroundImage: "linear-gradient(32deg, transparent 47%, var(--line-low) 48%, transparent 49%), linear-gradient(118deg, transparent 47%, var(--line-low) 48%, transparent 49%)", backgroundSize: "90px 76px" }} />
+                <div className="relative grid min-h-[330px] grid-cols-8 content-center justify-items-center gap-x-2 gap-y-3 sm:grid-cols-10 sm:gap-x-3 sm:gap-y-4">
                   {Array.from({ length: markerCount }).map((_, index) => (
-                    <span key={index} className={`flex size-7 items-center justify-center rounded-full border border-ink/80 text-[10px] font-bold shadow-sm sm:size-8 sm:text-xs ${isAfter ? "bg-lime-400 text-ink" : index === 0 ? "bg-lime-400 text-ink" : "bg-red-500 text-ink"}`}>
+                    <span key={index} className={`flex size-7 items-center justify-center rounded-full border border-ink/80 text-[10px] font-bold shadow-sm sm:size-8 sm:text-xs ${isAfter ? "bg-teal text-paper" : index === 0 ? "bg-teal text-paper" : "bg-coral-accent text-paper"}`}>
                       {isAfter ? "1" : index === 0 ? "3" : "20"}
                     </span>
                   ))}
