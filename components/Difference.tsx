@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 
-const mapImage = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-hWHjErXBDXpesmnjzg4t6Ah2qDP1EB.png";
-
 const beforeMetrics = [
   ["Average Rank", "86"],
   ["Market Coverage", "1%"],
@@ -23,12 +21,15 @@ const afterMetrics = [
 const beforeCaption = "One green pin outside your own front door. Everywhere else in the city, a competitor takes the call. A third of the few calls you do get go to voicemail.";
 const afterCaption = "Top three across the neighborhoods that actually send you work. Coverage thins at the city edge because Google ranks partly on distance, and no single office wins every pin. Every call answered in under 60 seconds, including nights and weekends.";
 
+const comparisonImages = {
+  before: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BEfore-BSIvpPlit17qgpO9EQJm6SeDzwj1pj.avif",
+  after: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/After.-TrmIyJhPws7LglZl0T5eGdquB2aSOI.avif",
+};
+
 export default function Difference() {
   const [isAfter, setIsAfter] = useState(false);
   const metrics = isAfter ? afterMetrics : beforeMetrics;
   const caption = isAfter ? afterCaption : beforeCaption;
-  const markerCount = isAfter ? 84 : 62;
-
   return (
     <section className="bg-paper px-5 py-20 text-ink sm:py-28 lg:py-36">
       <div className="mx-auto max-w-6xl">
@@ -77,15 +78,12 @@ export default function Difference() {
             </div>
 
             <div className="rounded-2xl bg-surface p-3 sm:p-4">
-              <div className="relative min-h-[380px] overflow-hidden rounded-xl bg-surface" style={{ backgroundImage: `url(${mapImage})`, backgroundPosition: "center", backgroundSize: "cover" }} aria-label="Illustrative city ranking grid">
-                <div className="absolute inset-0 bg-paper/10" aria-hidden="true" />
-                <div className="absolute inset-[8%] grid grid-cols-8 content-center justify-items-center gap-x-2 gap-y-2 sm:grid-cols-10 sm:gap-x-3 sm:gap-y-3">
-                  {Array.from({ length: markerCount }).map((_, index) => (
-                    <span key={index} className={`flex size-7 items-center justify-center rounded-full border border-ink/80 text-[10px] font-bold shadow-sm sm:size-8 sm:text-xs ${isAfter ? "bg-lime-400 text-ink" : index === 0 ? "bg-lime-400 text-ink" : "bg-red-500 text-ink"}`}>
-                      {isAfter ? "1" : index === 0 ? "3" : "20"}
-                    </span>
-                  ))}
-                </div>
+              <div className="overflow-hidden rounded-xl border border-line-low bg-paper" aria-label={`${isAfter ? "After" : "Before"} Regicore comparison result`}>
+                <img
+                  src={isAfter ? comparisonImages.after : comparisonImages.before}
+                  alt={`${isAfter ? "After" : "Before"} Regicore map ranking comparison`}
+                  className="block h-auto w-full object-cover"
+                />
               </div>
             </div>
           </div>
