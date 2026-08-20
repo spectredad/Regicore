@@ -48,12 +48,6 @@ export default function Pricing() {
           >
             APPLY NOW
           </a>
-          <a
-            href="#how-it-works"
-            className="rounded-xl border border-line-low bg-surface text-ink font-sans text-xs sm:text-sm font-medium py-3 px-6 hover:bg-surface-elevated transition-colors duration-200"
-          >
-            Learn more
-          </a>
         </div>
 
         {/* Main Pricing Card (Anthropic Claude Card Style) */}
@@ -83,11 +77,6 @@ export default function Pricing() {
               </div>
 
               <div className="py-3.5 flex items-center justify-between">
-                <span className="text-muted">Setup fee</span>
-                <span className="font-medium text-ink">$0</span>
-              </div>
-
-              <div className="py-3.5 flex items-center justify-between">
                 <span className="text-muted">Asset ownership</span>
                 <span className="font-medium text-ink text-right">You own website, content, reviews, and data</span>
               </div>
@@ -95,11 +84,6 @@ export default function Pricing() {
               <div className="py-3.5 flex items-center justify-between">
                 <span className="text-muted">Response speed</span>
                 <span className="font-medium text-ink">Under 60 seconds (24/7)</span>
-              </div>
-
-              <div className="py-3.5 flex items-center justify-between">
-                <span className="text-muted">Opt out</span>
-                <span className="font-medium text-ink">Thirty day opt out on first term</span>
               </div>
 
               <div className="py-3.5 flex items-center justify-between">
@@ -121,18 +105,6 @@ export default function Pricing() {
               </a>
             </div>
 
-          </div>
-        </div>
-
-        {/* Opt out & Exclusivity Footnotes */}
-        <div className="reveal mt-10 pt-8 border-t border-line-low grid grid-cols-1 md:grid-cols-2 gap-4 text-center md:text-left">
-          <div className="flex items-center gap-2.5 justify-center md:justify-start text-xs sm:text-sm text-muted">
-            <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-surface text-ink text-[11px] font-bold">✓</span>
-            <span>Thirty day opt out on your first term. Cancel and keep everything we built.</span>
-          </div>
-          <div className="flex items-center gap-2.5 justify-center md:justify-start text-xs sm:text-sm text-muted">
-            <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-surface text-ink text-[11px] font-bold">✓</span>
-            <span>One firm per practice area in each city. Once your city is taken, it stays taken.</span>
           </div>
         </div>
 
