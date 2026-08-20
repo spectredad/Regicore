@@ -6,6 +6,7 @@ import HowItWorks from "@/components/HowItWorks";
 import IntakeSystem from "@/components/IntakeSystem";
 import Pricing from "@/components/Pricing";
 import ROICalculator from "@/components/ROICalculator";
+import FAQ from "@/components/FAQ";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <IntakeSystem />
       <Pricing />
       <ROICalculator />
+      <FAQ />
       <CTABanner />
       <Footer />
     </main>
