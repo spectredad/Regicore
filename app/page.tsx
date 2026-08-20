@@ -5,6 +5,7 @@ import Difference from "@/components/Difference";
 import HowItWorks from "@/components/HowItWorks";
 import IntakeSystem from "@/components/IntakeSystem";
 import Pricing from "@/components/Pricing";
+import ROICalculator from "@/components/ROICalculator";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <HowItWorks />
       <IntakeSystem />
       <Pricing />
+      <ROICalculator />
       <CTABanner />
       <Footer />
     </main>

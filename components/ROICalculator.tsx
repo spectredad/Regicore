@@ -1,166 +1,223 @@
 "use client";
+
 import { useState, useEffect, useRef } from "react";
 
-const MAX_TEAM = 200;
-const MAX_HOURS = 40;
-const MAX_RATE = 500;
-const MAX_DISPLAY = 10_000_000;
-
-function formatMoney(n: number) {
-  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
-  if (n >= 1_000) return `$${Math.round(n / 1_000)}k`;
-  return `$${n}`;
+function formatCurrency(n: number) {
+  if (n >= 1_000_000) {
+    const formatted = (n / 1_000_000).toFixed(1);
+    return `$${formatted.endsWith(".0") ? formatted.slice(0, -2) : formatted}M`;
+  }
+  if (n >= 1_000) {
+    return `$${Math.round(n / 1_000)}k`;
+  }
+  return `$${Math.round(n).toLocaleString()}`;
 }
 
 export default function ROICalculator() {
-  const [team, setTeam] = useState(10);
-  const [hours, setHours] = useState(10);
-  const [rate, setRate] = useState(75);
+  const [calls, setCalls] = useState(60);
+  const [missedPercent, setMissedPercent] = useState(35);
+  const [signPercent, setSignPercent] = useState(20);
+  const [fee, setFee] = useState(6000);
+  const [showTooltip, setShowTooltip] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("in")),
-      { threshold: 0.1 }
+      { threshold: 0.08 }
     );
     sectionRef.current?.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
-  const rawSavings = team * hours * rate * 52;
-  const savings = Math.min(rawSavings, MAX_DISPLAY);
-  const isCapped = rawSavings > MAX_DISPLAY;
+  // Formula: calls * (missed% / 100) * (sign% / 100) * fee * 12
+  const annualLoss = calls * (missedPercent / 100) * (signPercent / 100) * fee * 12;
 
   return (
-    <section className="py-16 md:py-24 px-5 border-t border-line" ref={sectionRef} id="roi">
-      <div className="max-w-6xl mx-auto">
-        {/* Section header */}
-        <div className="reveal flex items-baseline gap-4 border-b border-line pb-4 mb-12 md:mb-16">
-          <span className="index-num text-[15px]">05</span>
-          <p className="section-label">Estimate your upside</p>
+    <section id="estimate" className="bg-paper px-5 py-20 sm:py-28 lg:py-36 text-ink border-t border-line-low" ref={sectionRef}>
+      <div className="mx-auto max-w-6xl">
+        
+        {/* Section Eyebrow */}
+        <div className="reveal mb-6">
+          <p className="section-label text-ink/55">07 ESTIMATE WHAT YOU ARE LOSING</p>
         </div>
 
-        <div className="grid xl:grid-cols-[1fr_1.15fr] gap-12 lg:gap-14 items-start">
-          <div className="reveal">
-            <h2 className="font-display text-[28px] sm:text-[40px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance mb-5">
-              What is the manual work actually costing your firm right now?
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          
+          {/* Left Column: Headline, Intro, Sliders */}
+          <div className="lg:col-span-7 reveal">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-[44px] font-medium leading-[1.12] tracking-[-0.03em] text-ink mb-4">
+              What are the calls you missed last month actually worth?
             </h2>
-            <p className="text-[15px] leading-relaxed text-muted max-w-md text-pretty mb-10">
-              Use the calculator. It shows the annual cost of the hours your team is already spending on work that does not need to stay manual.
+            <p className="text-base text-muted leading-relaxed max-w-xl mb-10">
+              Move the sliders. This is the fee revenue that went to the firm one position above you, based on your own numbers.
             </p>
 
-            {/* Sliders */}
-            <div className="space-y-8 sm:space-y-10">
+            {/* Sliders Container */}
+            <div className="space-y-7 sm:space-y-8">
+              
+              {/* Slider 1: Calls */}
               <div>
-                <div className="flex justify-between items-baseline mb-3">
-                  <label className="text-[15px] font-medium text-ink" htmlFor="slider-team">
-                    Team members affected
+                <div className="flex justify-between items-baseline mb-2">
+                  <label htmlFor="slider-calls" className="text-sm font-medium text-ink">
+                    Calls to your firm per month
                   </label>
-                  <span className="font-display text-[20px] font-medium text-teal">{team}</span>
+                  <span className="font-display text-lg font-semibold text-teal">
+                    {calls}
+                  </span>
                 </div>
                 <input
-                  id="slider-team"
+                  id="slider-calls"
                   type="range"
-                  min={1}
-                  max={MAX_TEAM}
-                  value={team}
-                  onChange={(e) => setTeam(Number(e.target.value))}
-                  aria-valuemin={1}
-                  aria-valuemax={MAX_TEAM}
-                  aria-valuenow={team}
+                  min={10}
+                  max={500}
+                  step={5}
+                  value={calls}
+                  onChange={(e) => setCalls(Number(e.target.value))}
+                  aria-label="Calls to your firm per month"
                 />
-                <div className="flex justify-between text-xs text-muted mt-2"><span>1</span><span>{MAX_TEAM}</span></div>
+                <div className="flex justify-between text-xs text-muted/70 mt-1.5">
+                  <span>10</span>
+                  <span>500</span>
+                </div>
               </div>
 
+              {/* Slider 2: Percent Unanswered */}
               <div>
-                <div className="flex justify-between items-baseline mb-3">
-                  <label className="text-[15px] font-medium text-ink" htmlFor="slider-hours">
-                    Hours saved per person / week
+                <div className="flex justify-between items-baseline mb-2">
+                  <label htmlFor="slider-missed" className="text-sm font-medium text-ink">
+                    Percent of calls that go unanswered
                   </label>
-                  <span className="font-display text-[20px] font-medium text-teal">{hours}h</span>
+                  <span className="font-display text-lg font-semibold text-teal">
+                    {missedPercent}%
+                  </span>
                 </div>
                 <input
-                  id="slider-hours"
+                  id="slider-missed"
                   type="range"
-                  min={1}
-                  max={MAX_HOURS}
-                  value={hours}
-                  onChange={(e) => setHours(Number(e.target.value))}
-                  aria-valuemin={1}
-                  aria-valuemax={MAX_HOURS}
-                  aria-valuenow={hours}
+                  min={0}
+                  max={60}
+                  step={1}
+                  value={missedPercent}
+                  onChange={(e) => setMissedPercent(Number(e.target.value))}
+                  aria-label="Percent of calls that go unanswered"
                 />
-                <div className="flex justify-between text-xs text-muted mt-2"><span>1h</span><span>{MAX_HOURS}h</span></div>
+                <div className="flex justify-between text-xs text-muted/70 mt-1.5">
+                  <span>0%</span>
+                  <span>60%</span>
+                </div>
               </div>
 
+              {/* Slider 3: Percent Sign */}
               <div>
-                <div className="flex justify-between items-baseline mb-3">
-                  <label className="text-[15px] font-medium text-ink" htmlFor="slider-rate">
-                    Average fully loaded hourly rate
+                <div className="flex justify-between items-baseline mb-2">
+                  <label htmlFor="slider-sign" className="text-sm font-medium text-ink">
+                    Percent of answered calls that sign
                   </label>
-                  <span className="font-display text-[20px] font-medium text-teal">${rate}</span>
+                  <span className="font-display text-lg font-semibold text-teal">
+                    {signPercent}%
+                  </span>
                 </div>
                 <input
-                  id="slider-rate"
+                  id="slider-sign"
                   type="range"
-                  min={15}
-                  max={MAX_RATE}
-                  value={rate}
-                  onChange={(e) => setRate(Number(e.target.value))}
-                  aria-valuemin={15}
-                  aria-valuemax={MAX_RATE}
-                  aria-valuenow={rate}
+                  min={1}
+                  max={40}
+                  step={1}
+                  value={signPercent}
+                  onChange={(e) => setSignPercent(Number(e.target.value))}
+                  aria-label="Percent of answered calls that sign"
                 />
-                <div className="flex justify-between text-xs text-muted mt-2"><span>$15</span><span>${MAX_RATE}</span></div>
+                <div className="flex justify-between text-xs text-muted/70 mt-1.5">
+                  <span>1%</span>
+                  <span>40%</span>
+                </div>
               </div>
+
+              {/* Slider 4: Average Fee */}
+              <div>
+                <div className="flex justify-between items-baseline mb-2">
+                  <label htmlFor="slider-fee" className="text-sm font-medium text-ink">
+                    Average fee per signed case
+                  </label>
+                  <span className="font-display text-lg font-semibold text-teal">
+                    ${fee.toLocaleString()}
+                  </span>
+                </div>
+                <input
+                  id="slider-fee"
+                  type="range"
+                  min={1000}
+                  max={50000}
+                  step={500}
+                  value={fee}
+                  onChange={(e) => setFee(Number(e.target.value))}
+                  aria-label="Average fee per signed case"
+                />
+                <div className="flex justify-between text-xs text-muted/70 mt-1.5">
+                  <span>$1,000</span>
+                  <span>$50,000</span>
+                </div>
+              </div>
+
             </div>
           </div>
 
-          {/* Result panel — compact spacing without huge empty white space */}
-          <div className="reveal bg-navy-elevated border border-line p-7 sm:p-9 flex flex-col justify-between h-auto xl:sticky xl:top-24 shadow-xs rounded-xs">
-            <div>
-              <p className="section-label text-muted mb-4 uppercase tracking-widest font-mono text-xs">
-                ESTIMATED ANNUAL SAVINGS
+          {/* Right Column: Result Card */}
+          <div className="lg:col-span-5 reveal lg:sticky lg:top-24">
+            <div className="rounded-3xl border border-line-low bg-surface-elevated p-7 sm:p-9 shadow-[0_4px_30px_rgba(15,23,42,0.05)]">
+              
+              <p className="text-[11px] font-mono font-bold text-muted uppercase tracking-widest mb-4">
+                ESTIMATED ANNUAL REVENUE LOST TO UNANSWERED CALLS
               </p>
-              <div
-                className="font-display text-[48px] sm:text-[58px] font-semibold text-ink leading-none tracking-[-0.03em] transition-all duration-300"
-                aria-live="polite"
-                aria-label={`Estimated annual savings: ${formatMoney(savings)}${isCapped ? " or more" : ""}`}
-              >
-                {formatMoney(savings)}
-                {isCapped && <span className="text-coral">+</span>}
-              </div>
-              <p className="text-muted/80 text-[13.5px] mt-4 max-w-[320px] leading-relaxed font-body">
-                That is money the firm is already paying. The free audit replaces this estimate with numbers from your actual workflows.
-              </p>
-            </div>
 
-            <div className="mt-8 pt-4">
-              <div className="relative tooltip-trigger inline-block mb-4">
+              <div
+                className="font-display text-5xl sm:text-6xl font-semibold text-ink tracking-tight leading-none mb-4"
+                aria-live="polite"
+              >
+                {formatCurrency(annualLoss)}
+              </div>
+
+              <p className="text-xs sm:text-sm text-muted leading-relaxed mb-6 font-body">
+                That is revenue you already paid to generate. The free market check replaces this estimate with your actual missed call rate, pulled from your own phone lines.
+              </p>
+
+              {/* How we calculate this tooltip */}
+              <div className="relative inline-block mb-6">
                 <button
-                  className="text-muted hover:text-ink text-xs underline underline-offset-4 transition-colors font-body"
-                  tabIndex={0}
-                  aria-label="How we calculate this estimate"
+                  type="button"
+                  onClick={() => setShowTooltip(!showTooltip)}
+                  onMouseEnter={() => setShowTooltip(true)}
+                  onMouseLeave={() => setShowTooltip(false)}
+                  className="text-xs text-muted hover:text-ink underline underline-offset-4 transition-colors font-body cursor-pointer"
+                  aria-expanded={showTooltip}
                 >
                   How we calculate this
                 </button>
-                <div className="tooltip-box" role="tooltip">
-                  <strong className="block mb-1">Formula</strong>
-                  Team x Hours/week x Hourly rate x 52 weeks = Annual labour cost freed.
-                  Assumes 100% of freed time is redeployable. Your actual ROI may include revenue
-                  impact and quality gains not captured here.
-                </div>
+                {showTooltip && (
+                  <div className="absolute bottom-full left-0 mb-2 w-72 rounded-xl bg-ink text-paper p-3.5 text-xs leading-relaxed shadow-xl z-30">
+                    <strong className="block mb-1 text-teal-300 font-semibold">Calculation Formula</strong>
+                    Calls per month × Missed call percent × Sign percent × Average fee × 12 months. Your free market check replaces these estimates with exact figures from your actual phone lines.
+                  </div>
+                )}
               </div>
 
-              <a
-                href="https://regicore.com/start"
-                className="block w-full text-center bg-soft-white text-midnight font-semibold text-[13px] uppercase tracking-[0.08em] py-3.5 hover:bg-sand transition-colors duration-300 shadow-xs"
-              >
-                Get a precise audit
-              </a>
+              {/* Action Button */}
+              <div>
+                <a
+                  href="https://regicore.com/start"
+                  className="flex items-center justify-center gap-2 w-full rounded-xl bg-ink text-paper font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider py-4 px-6 shadow hover:bg-teal transition-colors duration-200 text-center"
+                >
+                  <span>APPLY NOW</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+
             </div>
           </div>
+
         </div>
+
       </div>
     </section>
   );
