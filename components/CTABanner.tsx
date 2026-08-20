@@ -53,7 +53,7 @@ export default function CTABanner() {
           />
 
           {/* ── Content ── */}
-          <div className="relative z-10 max-w-xl mx-auto">
+          <div className="relative z-10 max-w-2xl mx-auto">
             <motion.h2
               className="font-display text-[32px] sm:text-[42px] md:text-[48px] font-medium leading-[1.08] tracking-[-0.025em] text-white mb-4"
               style={{ color: "#ffffff" }}
@@ -62,18 +62,18 @@ export default function CTABanner() {
               transition={{ delay: 0.1, duration: 0.55, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              Stop paying for hours that no longer need to be human hours.
+              Your city is either open or it is taken.
             </motion.h2>
 
             <motion.p
               className="text-[15px] sm:text-[16px] leading-relaxed mb-8"
-              style={{ color: "rgba(248,250,252,0.80)" }}
+              style={{ color: "rgba(248,250,252,0.85)" }}
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.18, duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              Your firm can handle more matters, lower overhead, and reduce process risk without adding headcount. The free firm audit shows exactly where the money is currently leaking and what the first system should fix.
+              Apply with your firm name, practice area, and city. Within 24 hours you get your ranking coverage across the city, what AI says when someone asks who to hire in your practice area, and how many calls slipped past you last week. Free, and yours to keep either way.
             </motion.p>
 
             <motion.div
@@ -84,10 +84,13 @@ export default function CTABanner() {
             >
               <Link
                 href="https://regicore.com/start"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-[#0f172a] text-[14px] font-semibold tracking-[0.02em] hover:bg-[#f0efe9] transition-colors duration-250 shadow-lg shadow-black/20"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#0f172a] text-[13px] sm:text-[14px] font-semibold uppercase tracking-wider hover:bg-[#f0efe9] transition-colors duration-200 shadow-lg shadow-black/20"
               >
-                Book a free firm audit
+                APPLY NOW
               </Link>
+              <p className="mt-4 text-xs sm:text-sm text-white/75 font-body">
+                One firm per practice area in each city. No setup fee. Thirty day opt out.
+              </p>
             </motion.div>
           </div>
         </motion.div>
