@@ -33,27 +33,27 @@ export default function TrustExtras() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-soft-white text-midnight px-5 py-20 sm:py-28 lg:py-36">
+    <section ref={sectionRef} className="bg-navy text-ink px-5 py-20 sm:py-28 lg:py-36">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center reveal">
-          <p className="section-label text-midnight/55">The cost of being overlooked</p>
+          <p className="section-label text-ink/55">The cost of being overlooked</p>
           <h2 className="mt-5 font-display text-balance text-4xl font-medium leading-[1.08] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
             You are paying for clients you never speak to.
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-midnight/65 sm:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-ink/65 sm:text-lg">
             Three things stand between a person needing a lawyer and your firm getting paid. Most firms lose at all three.
           </p>
         </div>
 
-        <div className="mt-14 overflow-hidden rounded-2xl border border-midnight/10 bg-soft-white reveal sm:mt-20">
+        <div className="mt-14 overflow-hidden rounded-2xl border border-midnight/10 bg-navy-elevated reveal sm:mt-20">
           <div className="grid md:grid-cols-3">
             {leakCards.map((card, index) => (
               <article key={card.number} className={`flex min-h-[360px] flex-col justify-between p-7 sm:p-9 lg:min-h-[410px] lg:p-10 ${index > 0 ? "border-t border-midnight/10 md:border-l md:border-t-0" : ""}`}>
                 <div>
-                  <p className="font-display text-5xl font-medium tracking-[-0.05em] text-midnight sm:text-6xl">{card.number}</p>
+                  <p className="font-display text-5xl font-medium tracking-[-0.05em] text-ink sm:text-6xl">{card.number}</p>
                   <h3 className="mt-10 max-w-[15rem] font-display text-2xl font-medium leading-tight tracking-[-0.02em] sm:text-3xl">{card.title}</h3>
                 </div>
-                <p className="max-w-sm text-sm leading-relaxed text-midnight/65 sm:text-[15px]">{card.body}</p>
+                <p className="max-w-sm text-sm leading-relaxed text-ink/65 sm:text-[15px]">{card.body}</p>
               </article>
             ))}
           </div>
