@@ -89,12 +89,7 @@ export default function Difference() {
           </div>
         </div>
 
-        <p className="mx-auto mt-10 max-w-3xl text-center font-display text-xl leading-relaxed tracking-[-0.02em] sm:text-2xl">
-          Rankings make the phone ring. The system answers it. Ninety days from now this is your grid, not an illustration.
-        </p>
-        <p className="mx-auto mt-5 max-w-2xl text-center text-xs leading-relaxed text-muted">
-          Illustrative figures for a single location firm. Your market check reports your actual grid, your actual AI visibility, and your actual missed call rate.
-        </p>
+
       </div>
     </section>
   );
