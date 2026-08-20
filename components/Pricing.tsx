@@ -16,152 +16,108 @@ export default function Pricing() {
 
   return (
     <section id="pricing" className="bg-paper px-5 py-20 sm:py-28 lg:py-36 text-ink border-t border-line-low" ref={sectionRef}>
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-4xl">
 
-        {/* Section Eyebrow & Header */}
-        <div className="reveal max-w-3xl mb-12 sm:mb-16">
-          <p className="section-label text-ink/55 mb-3">06 Pricing</p>
+        {/* Minimal Anthropic-style top sprout icon */}
+        <div className="reveal flex justify-center mb-6">
+          <svg className="w-9 h-9 text-ink/75" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M16 27V13M16 13C16 8.5 11 6.5 6.5 9.5C6.5 14.5 11.5 16.5 16 13ZM16 13C16 8.5 21 6.5 25.5 9.5C25.5 14.5 20.5 16.5 16 13Z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M11 27H21" />
+          </svg>
+        </div>
+
+        {/* Section Headline */}
+        <div className="reveal text-center mb-4">
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-[-0.035em] text-ink leading-[1.08]">
             One system. One price.
           </h2>
-          <p className="mt-4 sm:mt-5 text-base sm:text-lg text-muted leading-relaxed max-w-2xl">
+        </div>
+
+        {/* Intro line */}
+        <div className="reveal text-center mb-8 sm:mb-10 max-w-xl mx-auto">
+          <p className="text-base sm:text-lg text-muted leading-relaxed">
             Both halves of the problem, built and run by the same team.
           </p>
         </div>
 
-        {/* Main Grid: Left Elevated Card + Right Features & Guarantee Column */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        {/* Top Centered Action Buttons (Anthropic style) */}
+        <div className="reveal flex items-center justify-center gap-3 mb-12 sm:mb-16">
+          <a
+            href="https://regicore.com/start"
+            className="rounded-xl bg-ink text-paper font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider py-3 px-6 shadow hover:bg-teal transition-colors duration-200"
+          >
+            APPLY NOW
+          </a>
+          <a
+            href="#how-it-works"
+            className="rounded-xl border border-line-low bg-surface text-ink font-sans text-xs sm:text-sm font-medium py-3 px-6 hover:bg-surface-elevated transition-colors duration-200"
+          >
+            Learn more
+          </a>
+        </div>
 
-          {/* Left: Elevated Pricing Card (styled after the reference image) */}
-          <div className="lg:col-span-5 reveal">
-            <div className="rounded-3xl border border-line-low bg-surface-elevated p-7 sm:p-9 shadow-[0_20px_60px_rgba(15,23,42,0.07)] flex flex-col justify-between">
-              <div>
-                {/* Brand / Tier Header */}
-                <div className="flex items-center justify-between pb-6 border-b border-line-low">
-                  <h3 className="font-display text-2xl font-bold tracking-tight text-ink uppercase">
-                    REGICORE
-                  </h3>
-                  <span className="rounded-full bg-teal/10 text-teal font-mono text-[11px] font-semibold uppercase px-3 py-1 tracking-wider">
-                    Full System
-                  </span>
-                </div>
-
-                {/* Price Display Rows matching the reference card */}
-                <div className="py-6 border-b border-line-low space-y-4">
-                  <div className="flex items-baseline justify-between">
-                    <div>
-                      <span className="text-xs font-mono text-muted uppercase tracking-wider block mb-1">Price</span>
-                      <div className="flex items-baseline gap-1">
-                        <span className="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-ink">
-                          $3,500
-                        </span>
-                        <span className="text-xs font-mono text-muted uppercase">/ mo</span>
-                      </div>
-                    </div>
-                    <span className="text-xs font-medium text-muted/80">Monthly Retainer</span>
-                  </div>
-
-                  <div className="flex items-baseline justify-between pt-2 border-t border-line-low/60">
-                    <span className="font-display text-2xl sm:text-3xl font-medium tracking-tight text-ink">
-                      $0
-                    </span>
-                    <span className="text-xs font-medium text-muted/80">No Setup Fee</span>
-                  </div>
-                </div>
-
-                {/* Bullet Highlights */}
-                <ul className="py-6 space-y-3.5 text-[13.5px] leading-relaxed text-ink/85">
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-teal font-bold shrink-0 mt-0.5">✓</span>
-                    <span>Complete Google & AI Search Presence</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-teal font-bold shrink-0 mt-0.5">✓</span>
-                    <span>24/7 Intake & Instant Consultation Booking</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-teal font-bold shrink-0 mt-0.5">✓</span>
-                    <span>Automated Review Requests & Response Engine</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-teal font-bold shrink-0 mt-0.5">✓</span>
-                    <span>Unified Monthly Performance Report</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <span className="text-teal font-bold shrink-0 mt-0.5">✓</span>
-                    <span>You own the website, content, reviews & data</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Action Button */}
-              <div className="pt-2">
-                <a
-                  href="https://regicore.com/start"
-                  className="flex items-center justify-center gap-2 w-full rounded-2xl bg-ink text-paper font-sans text-sm font-semibold uppercase tracking-wider py-4 px-6 shadow-md hover:bg-teal transition-colors duration-200 text-center"
-                >
-                  <span>APPLY NOW</span>
-                  <span aria-hidden="true">→</span>
-                </a>
-                <p className="text-center text-[11.5px] text-muted mt-3">
-                  One firm per practice area in each city.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: In-depth Breakdown, One Report & Guarantee */}
-          <div className="lg:col-span-7 space-y-6">
-
-            {/* Feature 01: Get found */}
-            <div className="reveal rounded-2xl border border-line-low bg-surface-elevated p-6 sm:p-7 shadow-[0_2px_12px_rgba(15,23,42,0.03)]">
-              <div className="flex items-center gap-3 mb-2.5">
-                <div className="flex size-7 items-center justify-center rounded-lg bg-teal/10 text-teal text-xs font-mono font-bold">
-                  01
-                </div>
-                <h3 className="font-sans text-base font-semibold text-ink">Get found</h3>
+        {/* Main Pricing Card (Anthropic Claude Card Style) */}
+        <div className="reveal mx-auto max-w-2xl">
+          <div className="rounded-3xl border border-line-low bg-surface-elevated p-8 sm:p-10 shadow-[0_4px_30px_rgba(15,23,42,0.04)]">
+            
+            {/* Card Header & Price line */}
+            <div className="mb-6">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="font-display text-2xl sm:text-3xl font-medium tracking-tight text-ink">
+                  Full System
+                </h3>
+                <span className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-ink">
+                  $3,500 <span className="text-xs font-mono text-muted uppercase font-normal">/ month</span>
+                </span>
               </div>
               <p className="text-sm leading-relaxed text-muted">
-                Google Business Profile optimized and posted to every week. Citations built across the directories that feed Google and AI, including Avvo, Justia, and your state bar. A review engine that requests a review after every closed matter and handles the responses. Schema markup and content structured so AI engines can quote you. One or two practice area pages a month, written for your city, approved by you before publishing. Ranking coverage across your city tracked and reported monthly.
+                From $3,500 per month. No setup fee. You own the website, the content, the reviews, and the data.
               </p>
             </div>
 
-            {/* Feature 02: Never miss */}
-            <div className="reveal rounded-2xl border border-line-low bg-surface-elevated p-6 sm:p-7 shadow-[0_2px_12px_rgba(15,23,42,0.03)]">
-              <div className="flex items-center gap-3 mb-2.5">
-                <div className="flex size-7 items-center justify-center rounded-lg bg-teal/10 text-teal text-xs font-mono font-bold">
-                  02
-                </div>
-                <h3 className="font-sans text-base font-semibold text-ink">Never miss</h3>
+            {/* Spec Table Rows (Anthropic layout: label on left, value on right) */}
+            <div className="border-t border-line-low divide-y divide-line-low text-sm">
+              <div className="py-3.5 flex items-center justify-between">
+                <span className="text-muted">Price</span>
+                <span className="font-medium text-ink">From $3,500 per month</span>
               </div>
-              <p className="text-sm leading-relaxed text-muted">
-                Every call answered in under 60 seconds, day or night. The system qualifies the caller, books the consultation, and logs the matter type. Missed call text back fires within seconds on any dropped call. Automated follow up on every inquiry that does not book on first contact. Review requests sent after every closed matter.
-              </p>
-            </div>
 
-            {/* Feature 03: One report */}
-            <div className="reveal rounded-2xl border border-line-low bg-surface-elevated p-6 sm:p-7 shadow-[0_2px_12px_rgba(15,23,42,0.03)]">
-              <div className="flex items-center gap-3 mb-2.5">
-                <div className="flex size-7 items-center justify-center rounded-lg bg-teal/10 text-teal text-xs font-mono font-bold">
-                  03
-                </div>
-                <h3 className="font-sans text-base font-semibold text-ink">One report</h3>
+              <div className="py-3.5 flex items-center justify-between">
+                <span className="text-muted">Setup fee</span>
+                <span className="font-medium text-ink">$0</span>
               </div>
-              <p className="text-sm leading-relaxed text-muted">
-                Calls answered. Consultations booked. Cases signed. Rankings and AI mentions on the same page.
-              </p>
+
+              <div className="py-3.5 flex items-center justify-between">
+                <span className="text-muted">Asset ownership</span>
+                <span className="font-medium text-ink text-right">You own website, content, reviews, and data</span>
+              </div>
+
+              <div className="py-3.5 flex items-center justify-between">
+                <span className="text-muted">Response speed</span>
+                <span className="font-medium text-ink">Under 60 seconds (24/7)</span>
+              </div>
+
+              <div className="py-3.5 flex items-center justify-between">
+                <span className="text-muted">Opt out</span>
+                <span className="font-medium text-ink">Thirty day opt out on first term</span>
+              </div>
+
+              <div className="py-3.5 flex items-center justify-between">
+                <span className="text-muted">City exclusivity</span>
+                <span className="font-medium text-ink">One firm per practice area</span>
+              </div>
             </div>
 
             {/* Guarantee Box */}
-            <div className="reveal rounded-2xl border-2 border-coral-accent/30 bg-coral-accent/5 p-6 sm:p-7">
+            <div className="mt-8 rounded-2xl border border-line-low bg-surface p-5 sm:p-6">
               <div className="flex items-start gap-3.5">
-                <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-coral-accent text-paper mt-0.5">
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-teal/10 text-teal mt-0.5">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-sans text-base font-semibold text-ink mb-1">
+                  <h4 className="font-sans text-sm sm:text-base font-semibold text-ink mb-1">
                     Every call answered in under 60 seconds, day or night, or that month is free.
                   </h4>
                   <p className="text-xs sm:text-sm text-muted leading-relaxed">
@@ -171,18 +127,29 @@ export default function Pricing() {
               </div>
             </div>
 
+            {/* Bottom Actions */}
+            <div className="mt-8">
+              <a
+                href="https://regicore.com/start"
+                className="flex items-center justify-center gap-2 w-full rounded-xl bg-ink text-paper font-sans text-sm font-semibold uppercase tracking-wider py-4 px-6 shadow hover:bg-teal transition-colors duration-200 text-center"
+              >
+                <span>APPLY NOW</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
           </div>
         </div>
 
-        {/* Trust, Opt-Out & Exclusivity Footnotes */}
-        <div className="reveal mt-12 sm:mt-16 pt-8 border-t border-line-low grid grid-cols-1 md:grid-cols-2 gap-4 text-center md:text-left">
+        {/* Opt out & Exclusivity Footnotes */}
+        <div className="reveal mt-10 pt-8 border-t border-line-low grid grid-cols-1 md:grid-cols-2 gap-4 text-center md:text-left">
           <div className="flex items-center gap-2.5 justify-center md:justify-start text-xs sm:text-sm text-muted">
             <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-surface text-ink text-[11px] font-bold">✓</span>
-            <span><strong>Thirty day opt out</strong> on your first term. Cancel and keep everything we built.</span>
+            <span>Thirty day opt out on your first term. Cancel and keep everything we built.</span>
           </div>
           <div className="flex items-center gap-2.5 justify-center md:justify-start text-xs sm:text-sm text-muted">
             <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-surface text-ink text-[11px] font-bold">✓</span>
-            <span><strong>Exclusivity:</strong> One firm per practice area in each city. Once your city is taken, it stays taken.</span>
+            <span>One firm per practice area in each city. Once your city is taken, it stays taken.</span>
           </div>
         </div>
 
