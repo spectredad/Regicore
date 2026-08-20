@@ -18,9 +18,6 @@ const afterMetrics = [
   ["Signed Cases Per Month", "4–6"],
 ];
 
-const beforeCaption = "One green pin outside your own front door. Everywhere else in the city, a competitor takes the call. A third of the few calls you do get go to voicemail.";
-const afterCaption = "Top three across the neighborhoods that actually send you work. Coverage thins at the city edge because Google ranks partly on distance, and no single office wins every pin. Every call answered in under 60 seconds, including nights and weekends.";
-
 const comparisonImages = {
   before: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BEfore-BSIvpPlit17qgpO9EQJm6SeDzwj1pj.avif",
   after: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/After.-TrmIyJhPws7LglZl0T5eGdquB2aSOI.avif",
@@ -29,7 +26,7 @@ const comparisonImages = {
 export default function Difference() {
   const [isAfter, setIsAfter] = useState(false);
   const metrics = isAfter ? afterMetrics : beforeMetrics;
-  const caption = isAfter ? afterCaption : beforeCaption;
+
   return (
     <section className="bg-paper px-5 py-20 text-ink sm:py-28 lg:py-36">
       <div className="mx-auto max-w-6xl">
@@ -73,8 +70,6 @@ export default function Difference() {
                   </div>
                 ))}
               </div>
-
-              <p className="mt-7 text-sm leading-relaxed text-muted">{caption}</p>
             </div>
 
             <div className="rounded-2xl bg-surface p-3 sm:p-4">
@@ -88,7 +83,6 @@ export default function Difference() {
             </div>
           </div>
         </div>
-
 
       </div>
     </section>

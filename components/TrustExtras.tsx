@@ -7,12 +7,15 @@ const leakCards = [
     number: "01",
     title: "They cannot find you.",
     body: "Google puts three firms above everything else on a local search. Almost nobody scrolls past them. Fourth place means the people ready to hire today never see your name.",
-    // Electric Azure Blue mesh gradient matching Biograph screenshot 3
+    // Dark pastel slate-blue smoke
     gradientStyle: {
-      background: `
-        radial-gradient(circle at 85% 20%, rgba(191, 219, 254, 0.85) 0%, transparent 50%),
-        radial-gradient(circle at 15% 85%, rgba(30, 58, 138, 0.85) 0%, transparent 55%),
-        linear-gradient(135deg, #1d4ed8 0%, #3b82f6 45%, #2563eb 100%)
+      backgroundColor: "#3a5175",
+      backgroundImage: `
+        radial-gradient(ellipse 90% 70% at 85% 20%, rgba(205, 225, 250, 0.78) 0%, transparent 50%),
+        radial-gradient(circle 190px at 15% 85%, rgba(24, 36, 56, 0.92) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 50% at 45% 60%, rgba(140, 180, 230, 0.55) 0%, transparent 60%),
+        radial-gradient(circle 130px at 70% 80%, rgba(195, 220, 248, 0.45) 0%, transparent 50%),
+        linear-gradient(135deg, #3d557a 0%, #4e6c96 45%, #2b3e5a 100%)
       `,
     },
   },
@@ -20,12 +23,15 @@ const leakCards = [
     number: "02",
     title: "They cannot reach you.",
     body: "More than a third of calls to law firms go unanswered. Most callers who reach voicemail hang up without leaving a message and dial the next firm on the list. You already paid to make that phone ring.",
-    // Vivid Crimson Rose Pink mesh gradient matching Biograph screenshot 1
+    // Dark pastel rose-terracotta smoke
     gradientStyle: {
-      background: `
-        radial-gradient(circle at 85% 25%, rgba(254, 205, 211, 0.8) 0%, transparent 50%),
-        radial-gradient(circle at 15% 90%, rgba(136, 19, 55, 0.85) 0%, transparent 55%),
-        linear-gradient(135deg, #be123c 0%, #e11d48 45%, #f43f5e 100%)
+      backgroundColor: "#783847",
+      backgroundImage: `
+        radial-gradient(ellipse 90% 70% at 85% 20%, rgba(255, 210, 220, 0.78) 0%, transparent 50%),
+        radial-gradient(circle 190px at 15% 85%, rgba(65, 20, 30, 0.92) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 50% at 45% 60%, rgba(220, 130, 150, 0.55) 0%, transparent 60%),
+        radial-gradient(circle 130px at 70% 80%, rgba(250, 195, 210, 0.45) 0%, transparent 50%),
+        linear-gradient(135deg, #7c3a4a 0%, #984c60 45%, #592431 100%)
       `,
     },
   },
@@ -33,12 +39,15 @@ const leakCards = [
     number: "03",
     title: "They never hear your name.",
     body: "Clients ask AI which lawyer to hire, and AI returns one or two names rather than ten links. Firms outside that answer are not considered.",
-    // Fresh Chartreuse Lime Green mesh gradient matching Biograph screenshot 2
+    // Dark pastel olive-sage smoke
     gradientStyle: {
-      background: `
-        radial-gradient(circle at 85% 20%, rgba(217, 249, 157, 0.85) 0%, transparent 50%),
-        radial-gradient(circle at 15% 85%, rgba(20, 83, 45, 0.85) 0%, transparent 55%),
-        linear-gradient(135deg, #3f6212 0%, #65a30d 45%, #84cc16 100%)
+      backgroundColor: "#4c633c",
+      backgroundImage: `
+        radial-gradient(ellipse 90% 70% at 85% 20%, rgba(225, 245, 200, 0.78) 0%, transparent 50%),
+        radial-gradient(circle 190px at 15% 85%, rgba(32, 48, 22, 0.92) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 50% at 45% 60%, rgba(150, 185, 125, 0.55) 0%, transparent 60%),
+        radial-gradient(circle 130px at 70% 80%, rgba(215, 240, 185, 0.45) 0%, transparent 50%),
+        linear-gradient(135deg, #4f683f 0%, #638250 45%, #35472a 100%)
       `,
     },
   },
@@ -122,9 +131,9 @@ export default function TrustExtras() {
                     index > 0 ? "border-t border-midnight/10 md:border-l md:border-t-0" : ""
                   }`}
                 >
-                  {/* Colorful Mesh Aurora Gradient Overlay */}
+                  {/* Dark Pastel Smoky Aura Overlay */}
                   <div
-                    className={`absolute inset-0 transition-opacity duration-500 ease-out pointer-events-none ${
+                    className={`absolute inset-0 transition-opacity duration-600 ease-out pointer-events-none ${
                       isActive ? "opacity-100" : "opacity-0"
                     }`}
                     style={card.gradientStyle}

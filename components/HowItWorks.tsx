@@ -117,13 +117,6 @@ export default function HowItWorks() {
           ))}
         </div>
 
-        {/* Closing line */}
-        <div className="reveal mt-10 text-center">
-          <p className="text-sm text-muted/75 leading-relaxed">
-            Nothing gets published under your name without your approval. Your license stays yours.
-          </p>
-        </div>
-
       </div>
     </section>
   );
