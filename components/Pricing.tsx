@@ -36,7 +36,7 @@ export default function Pricing() {
         {/* Intro line */}
         <div className="reveal text-center mb-8 sm:mb-10 max-w-2xl mx-auto">
           <p className="text-base sm:text-lg text-muted leading-relaxed">
-            Rank on Google Maps, or run the full practice system — built and operated by the same people.
+            Rank on Google Maps, or run the full practice system, built and operated by the same people.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export default function Pricing() {
                 <div className="flex items-start gap-2.5">
                   <span className="text-teal font-bold shrink-0 mt-0.5">✓</span>
                   <span>
-                    Top 3 in Google Maps within 90 days — guaranteed. If we miss it, we work for free until you get there.
+                    Top 3 in Google Maps within 90 days, guaranteed. If we miss it, we work for free until you get there.
                   </span>
                 </div>
               </div>
@@ -143,6 +143,11 @@ export default function Pricing() {
                 </div>
 
                 <div className="py-3.5 flex items-center justify-between">
+                  <span className="text-muted">Focus</span>
+                  <span className="font-medium text-ink text-right">Lead intake system + local SEO</span>
+                </div>
+
+                <div className="py-3.5 flex items-center justify-between">
                   <span className="text-muted">Asset ownership</span>
                   <span className="font-medium text-ink text-right">You own website, content, reviews, and data</span>
                 </div>
@@ -153,7 +158,7 @@ export default function Pricing() {
                 </div>
 
                 <div className="py-3.5 flex items-center justify-between">
-                  <span className="text-muted">City exclusivity</span>
+                  <span className="text-muted">Exclusivity</span>
                   <span className="font-medium text-ink">One firm per practice area</span>
                 </div>
               </div>
