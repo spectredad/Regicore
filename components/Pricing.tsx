@@ -67,18 +67,8 @@ export default function Pricing() {
                   </span>
                 </div>
                 <p className="text-sm leading-relaxed text-muted">
-                  Top 3 in Google Maps. No setup fee.
+                  Top 3 in Google Maps within 90 days.<br />If not, we will work with you for free until we get you there.
                 </p>
-              </div>
-
-              {/* Highlighted Guarantee */}
-              <div className="mb-6 rounded-2xl border border-teal/20 bg-teal/5 p-4 text-xs sm:text-[13px] text-ink leading-relaxed">
-                <div className="flex items-start gap-2.5">
-                  <span className="text-teal font-bold shrink-0 mt-0.5">✓</span>
-                  <span>
-                    Top 3 in Google Maps within 90 days, guaranteed. If we miss it, we work for free until you get there.
-                  </span>
-                </div>
               </div>
 
               {/* Spec Table Rows */}
