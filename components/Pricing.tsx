@@ -121,7 +121,7 @@ export default function Pricing() {
                   </span>
                 </div>
                 <p className="text-sm leading-relaxed text-muted">
-                  From $3,500 per month. No setup fee. You own the website, the content, the reviews, and the data.
+                  From $3,500 per month. You own the website, the content, the reviews, and the data.
                 </p>
               </div>
 
