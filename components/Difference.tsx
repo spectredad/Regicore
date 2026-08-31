@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const beforeMetrics = [
-  ["Average Rank", "86"],
+  ["Average Rank", "20"],
   ["Market Coverage", "1%"],
   ["Calls Per Month", "5"],
   ["Missed Calls", "35%"],
