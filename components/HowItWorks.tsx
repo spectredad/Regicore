@@ -90,7 +90,7 @@ export default function HowItWorks() {
         <div className="reveal text-center mb-4">
           <h2 className="font-display text-4xl sm:text-5xl font-medium leading-[1.1] tracking-[-0.03em] text-ink">
             Four steps.{" "}
-            <em>One of them is yours.</em>
+            <em>It&apos;s pretty easy.</em>
           </h2>
         </div>
 

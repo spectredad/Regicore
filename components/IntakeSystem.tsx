@@ -228,6 +228,11 @@ export default function IntakeSystem() {
               <div
                 key={step.id}
                 onClick={() => setActiveStep(idx)}
+                onMouseEnter={() => setActiveStep(idx)}
+                onFocus={() => setActiveStep(idx)}
+                tabIndex={0}
+                role="button"
+                aria-pressed={isActive}
                 className={`reveal cursor-pointer select-none transition-all duration-200 group flex flex-col justify-between`}
                 style={{ transitionDelay: `${idx * 70}ms` }}
               >
