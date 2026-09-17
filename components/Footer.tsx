@@ -11,7 +11,6 @@ const footerColumns = [
     heading: "Legal",
     links: [
       { label: "Terms of Service", href: "/terms" },
-      { label: "Compliance", href: "/compliance" },
     ],
   },
 ];
