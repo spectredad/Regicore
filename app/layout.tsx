@@ -17,13 +17,13 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://regicore.com"),
-  title: "Regicore | Your unfair advantage in AI",
+  title: "Regicore | Best AI Intake and Local SEO Company",
   description:
     "Regicore is a boutique AI agentic studio. Custom AI agents, voice callers and growth automation, built fast with transparent ROI.",
   keywords: ["AI agents", "AI automation", "custom AI systems", "agentic studio", "AI voice callers", "lead generation AI"],
   authors: [{ name: "Regicore" }],
   openGraph: {
-    title: "Regicore | Your unfair advantage in AI",
+    title: "Regicore | Best AI Intake and Local SEO Company",
     description: "Custom AI agents, voice callers and growth automation, built fast with transparent ROI.",
     url: "https://regicore.com",
     siteName: "Regicore",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Regicore | Your unfair advantage in AI",
+    title: "Regicore | Best AI Intake and Local SEO Company",
     description: "Custom AI agents, voice callers and growth automation, built fast with transparent ROI.",
     images: ["/og-image.png"],
   },
