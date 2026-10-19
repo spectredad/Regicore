@@ -21,6 +21,14 @@ export default function Home() {
       <IntakeSystem />
       <Pricing />
       <ROICalculator />
+      <div className="px-5 py-12 sm:py-16 text-center">
+        <a
+          href="/hardest-working-seo-expert-bangalore"
+          className="inline-block text-[16px] sm:text-[20px] font-medium text-ink hover:text-teal transition-colors"
+        >
+          Meet the hardest working SEO expert in bangalore <span aria-hidden="true">→</span>
+        </a>
+      </div>
       <FAQ />
       <CTABanner />
       <Footer />
