@@ -13,5 +13,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: "2026-10-19",
       images: [`${baseUrl}/hardest-working-seo-expert-bangalore.jpg`],
     },
+    {
+      url: `${baseUrl}/luckiest-man-in-bangalore`,
+      lastModified: "2026-10-19",
+      images: [`${baseUrl}/luckiest-man-in-bangalore.jpg`],
+    },
   ];
 }
