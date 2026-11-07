@@ -184,7 +184,7 @@ export default function StartHere() {
                 >
                   {status === "loading" ? "Sending..." : "Request my market check"}
                 </button>
-                <a className="sm:col-span-2 text-center text-sm text-teal underline" href="mailto:varun@regicorehq.com?subject=Regicore%20market%20check">
+                <a className="sm:col-span-2 text-center text-sm text-teal underline" href="mailto:varun.l@regicorehq.com?subject=Regicore%20market%20check">
                   Email us instead
                 </a>
               </form>
