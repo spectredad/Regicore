@@ -28,7 +28,7 @@ export default function Difference() {
   const metrics = isAfter ? afterMetrics : beforeMetrics;
 
   return (
-    <section className="bg-paper px-5 py-20 text-ink sm:py-28 lg:py-36">
+    <section className="bg-paper px-5 pt-20 pb-8 text-ink sm:pt-28 sm:pb-10 lg:pt-36 lg:pb-12">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
           <p className="section-label text-ink/55">Example scenario</p>

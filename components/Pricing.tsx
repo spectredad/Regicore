@@ -15,8 +15,8 @@ export default function Pricing() {
   }, []);
 
   return (
-    <section id="pricing" className="scroll-mt-20 bg-paper px-5 py-20 sm:py-28 lg:py-36 text-ink border-t border-line-low" ref={sectionRef}>
-      <div className="mx-auto max-w-6xl">
+    <section id="pricing" className="scroll-mt-20 bg-paper px-5 pt-8 pb-20 sm:pt-10 sm:pb-28 lg:pt-12 lg:pb-36 text-ink border-t border-line-low" ref={sectionRef}>
+      <div className="mx-auto max-w-7xl">
 
         {/* Minimal Anthropic-style top sprout icon */}
         <div className="reveal flex justify-center mb-6">

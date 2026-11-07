@@ -201,8 +201,8 @@ export default function IntakeSystem() {
   }, []);
 
   return (
-    <section id="intake" className="scroll-mt-20 bg-paper px-5 py-20 sm:py-28 lg:py-36 text-ink border-t border-line-low" ref={sectionRef}>
-      <div className="mx-auto max-w-6xl">
+    <section id="intake" className="scroll-mt-20 bg-paper px-5 pt-20 pb-8 sm:pt-28 sm:pb-10 lg:pt-36 lg:pb-12 text-ink border-t border-line-low" ref={sectionRef}>
+      <div className="mx-auto max-w-7xl">
 
         {/* Section Header — Left-aligned matching reference image */}
         <div className="reveal max-w-3xl">
