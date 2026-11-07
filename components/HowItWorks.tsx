@@ -101,11 +101,11 @@ export default function HowItWorks() {
         </div>
 
         {/* 4-Column Card Grid (matching the second reference image) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 lg:gap-6">
           {steps.map((step, i) => (
             <div
               key={step.num}
-              className="reveal rounded-3xl border border-line-low bg-surface-elevated p-7 sm:p-8 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] shadow-[0_4px_24px_rgba(15,23,42,0.04)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(15,23,42,0.08)] hover:-translate-y-1"
+              className="reveal rounded-3xl border border-line-low bg-surface-elevated p-5 sm:p-6 xl:p-8 flex flex-col shadow-[0_4px_24px_rgba(15,23,42,0.04)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(15,23,42,0.08)] hover:-translate-y-1"
               style={{ transitionDelay: `${i * 90}ms` }}
             >
               {/* Step indicator */}
@@ -116,7 +116,7 @@ export default function HowItWorks() {
               </div>
 
               {/* Center Hand-drawn style illustration */}
-              <div className="my-auto py-8 flex items-center justify-center">
+              <div className="py-4 sm:py-5 flex items-center justify-center">
                 {step.illustration}
               </div>
 

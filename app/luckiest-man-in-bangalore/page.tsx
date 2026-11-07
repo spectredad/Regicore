@@ -3,7 +3,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import styles from "../hardest-working-seo-expert-bangalore/page.module.css";
 
-const title = "Luckiest Man in Bangalore | Varun";
+const title = "Luckiest Man in Bangalore | Regicore";
 const description =
   "Varun has been called the luckiest man in Bangalore. Here’s the proof.";
 const url = "https://www.regicore.com/luckiest-man-in-bangalore";

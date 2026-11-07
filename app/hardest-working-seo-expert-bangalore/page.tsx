@@ -3,7 +3,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import styles from "./page.module.css";
 
-const title = "Hardest Working SEO Expert in Bangalore | Varun";
+const title = "Hardest Working SEO Expert in Bangalore | Regicore";
 const description =
   "Varun has been called the hardest working SEO expert in Bangalore. Here’s the proof.";
 const url = "https://www.regicore.com/hardest-working-seo-expert-bangalore";

@@ -26,7 +26,7 @@ export default function WhatWeDo() {
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="scroll-mt-20 border-t border-line-low bg-surface px-5 py-12 text-ink sm:py-16"
+      className="scroll-mt-20 border-t border-line-low bg-paper px-5 py-12 text-ink sm:py-16"
     >
       <div className="mx-auto max-w-6xl">
         <h2
@@ -35,9 +35,9 @@ export default function WhatWeDo() {
         >
           What we do
         </h2>
-        <div className="grid grid-cols-2 items-start gap-3 sm:gap-4 lg:grid-cols-5">
+        <div className="grid grid-cols-2 items-start gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-5">
           {services.map(({ name, description }) => (
-            <details key={name} name="homepage-services" className="group rounded-2xl bg-paper">
+            <details key={name} name="homepage-services" className="group rounded-2xl border border-line-low bg-surface-elevated">
               <summary className="cursor-pointer list-none rounded-2xl px-4 py-5 transition-colors hover:text-teal sm:px-5 sm:py-6 [&::-webkit-details-marker]:hidden">
                 <span className="block text-lg font-semibold sm:text-xl">{name}</span>
                 <span className="mt-2 block text-sm text-muted group-open:hidden">

@@ -145,7 +145,7 @@ function RegicoreIllustration() {
 export default function Hero() {
   return (
     <section
-      className="bg-midnight flex flex-col justify-between min-h-screen lg:min-h-svh pt-20 sm:pt-24 lg:pt-28 pb-2 sm:pb-4 overflow-hidden"
+      className="bg-midnight flex flex-col pt-20 sm:pt-24 lg:pt-28 pb-2 sm:pb-4 overflow-hidden"
     >
       {/* Copy block — refined spacing for top header clearance & mobile responsiveness */}
       <div className="flex flex-col items-center px-4 sm:px-6 text-center max-w-4xl mx-auto w-full shrink-0">
@@ -167,7 +167,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center items-stretch sm:items-center mb-3 sm:mb-4">
           <a
             href="/start"
-            className="bg-soft-white text-midnight font-semibold uppercase tracking-[0.08em] shadow-md hover:bg-sand transition-colors duration-300 text-[12px] sm:text-[13px] px-7 py-3 sm:py-3.5 text-center"
+            className="inline-flex min-h-[44px] items-center justify-center bg-soft-white text-midnight font-semibold uppercase tracking-[0.08em] shadow-md hover:bg-sand transition-colors duration-300 text-[12px] sm:text-[13px] px-7 py-3 sm:py-3.5 text-center"
           >
             Get your free market check
           </a>
@@ -180,8 +180,8 @@ export default function Hero() {
       </div>
 
       {/* Illustration block — flexible height to fit Desktop, Laptop, & Mobile viewports */}
-      <div className="flex items-end justify-center w-full mt-3 sm:mt-6 px-2 sm:px-6 grow min-h-0">
-        <div className="w-full max-w-[1050px] h-[170px] sm:h-[220px] md:h-[260px] lg:h-[300px] max-h-[36vh] flex items-end justify-center">
+      <div className="flex justify-center w-full mt-4 sm:mt-8 lg:mt-12 px-2 sm:px-6">
+        <div className="w-full max-w-[1050px] aspect-[55/21] max-h-[300px]">
           <RegicoreIllustration />
         </div>
       </div>
