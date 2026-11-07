@@ -6,6 +6,7 @@ import Difference from "./_components/Difference";
 import HowItWorks from "./_components/HowItWorks";
 import IntakeSystem from "./_components/IntakeSystem";
 import Pricing from "./_components/Pricing";
+import WhatWeDo from "@/components/WhatWeDo";
 import ROICalculator from "./_components/ROICalculator";
 import FAQ from "./_components/FAQ";
 import CTABanner from "./_components/CTABanner";
@@ -26,6 +27,7 @@ export default function Home() {
       <HowItWorks />
       <IntakeSystem />
       <Pricing />
+      <WhatWeDo />
       <ROICalculator />
       <div className="px-5 py-12 sm:py-16 text-center">
         <a
