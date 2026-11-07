@@ -17,7 +17,7 @@ const description =
   "Get found on Google Maps and in AI answers. Regicore’s AI receptionist answers calls and books appointments day and night. Start with a free market check.";
 
 export const metadata: Metadata = {
-  title,
+  title: `Best ${title}`,
   description,
   alternates: { canonical: "/" },
   openGraph: {
