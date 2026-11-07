@@ -2,9 +2,11 @@
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
+const emptyForm = { name: "", email: "", company: "", practiceArea: "", city: "" };
+
 export default function StartHere() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
+  const [form, setForm] = useState(emptyForm);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -16,7 +18,7 @@ export default function StartHere() {
     return () => observer.disconnect();
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -31,10 +33,10 @@ export default function StartHere() {
         .from("leads")
         .insert([
           {
-            full_name: form.name,
-            work_email: form.email,
-            firm_or_website: form.company,
-            automation_goal: form.message,
+            full_name: form.name.trim(),
+            work_email: form.email.trim(),
+            firm_or_website: form.company.trim(),
+            automation_goal: `Market check\nPractice area: ${form.practiceArea.trim()}\nCity: ${form.city.trim()}`,
           },
         ]);
 
@@ -44,7 +46,7 @@ export default function StartHere() {
       }
 
       setStatus("success");
-      setForm({ name: "", email: "", company: "", message: "" });
+      setForm(emptyForm);
     } catch (err) {
       console.error("Form submission failed:", err);
       setStatus("error");
@@ -65,11 +67,11 @@ export default function StartHere() {
 
         <div className="grid lg:grid-cols-[1fr_1.3fr] gap-12 items-start">
           <div className="reveal">
-            <h2 className="font-display text-[28px] sm:text-[40px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance mb-5">
-              Let&apos;s Find Where You&apos;re Bleeding Time.
-            </h2>
+            <h1 className="font-display text-[28px] sm:text-[40px] font-medium leading-[1.05] tracking-[-0.02em] text-ink text-balance mb-5">
+              Request your free market check
+            </h1>
             <p className="text-[15px] leading-relaxed text-muted max-w-md text-pretty">
-              Tell us the bottleneck. If there&apos;s a fit, we&apos;ll run a free AI opportunity audit and scope exactly what to build, no obligation to move forward after.
+              Tell us where your firm works and what you practice. We&apos;ll check your market availability, your visibility on Google Maps and in AI answers, and how your firm handles calls after hours.
             </p>
 
 
@@ -77,20 +79,19 @@ export default function StartHere() {
 
           <div className="reveal">
             {status === "success" ? (
-              <div className="editorial-card p-10 md:p-14 text-center">
+              <div className="editorial-card p-10 md:p-14 text-center" role="status">
                 <p className="index-num text-[32px] mb-4" aria-hidden="true">&#10003;</p>
-                <h3 className="font-display text-[28px] font-medium text-ink mb-3 text-balance">
-                  We&apos;ll be in touch within 24 hours
-                </h3>
+                <h2 className="font-display text-[28px] font-medium text-ink mb-3 text-balance">
+                  We received your request
+                </h2>
                 <p className="text-muted text-[15px] leading-relaxed">
-                  In the meantime, feel free to explore the agents and services above.
+                  We&apos;ll be in touch within 24 hours about your market check.
                 </p>
               </div>
             ) : (
               <form
                 onSubmit={handleSubmit}
                 className="editorial-card p-6 sm:p-8 grid sm:grid-cols-2 gap-5 text-left"
-                noValidate
               >
                 <div className="flex flex-col gap-2">
                   <label htmlFor="name" className={labelClass}>Full name *</label>
@@ -98,7 +99,9 @@ export default function StartHere() {
                     id="name"
                     name="name"
                     type="text"
+                    autoComplete="name"
                     required
+                    pattern={".*\\S.*"}
                     value={form.name}
                     onChange={handleChange}
                     className={inputClass}
@@ -113,6 +116,7 @@ export default function StartHere() {
                     id="email"
                     name="email"
                     type="email"
+                    autoComplete="email"
                     required
                     value={form.email}
                     onChange={handleChange}
@@ -123,37 +127,53 @@ export default function StartHere() {
                 </div>
 
                 <div className="flex flex-col gap-2 sm:col-span-2">
-                  <label htmlFor="company" className={labelClass}>Firm Name / Website</label>
+                  <label htmlFor="company" className={labelClass}>Firm name *</label>
                   <input
                     id="company"
                     name="company"
                     type="text"
+                    autoComplete="organization"
+                    required
+                    pattern={".*\\S.*"}
                     value={form.company}
                     onChange={handleChange}
                     className={inputClass}
-                    placeholder="Smith &amp; Associates / smithlaw.com"
+                    placeholder="Smith &amp; Associates"
                     suppressHydrationWarning
                   />
                 </div>
 
-                <div className="flex flex-col gap-2 sm:col-span-2">
-                  <label htmlFor="message" className={labelClass}>What would you automate first? *</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="practiceArea" className={labelClass}>Practice area *</label>
+                  <input
+                    id="practiceArea"
+                    name="practiceArea"
                     required
-                    value={form.message}
+                    pattern={".*\\S.*"}
+                    value={form.practiceArea}
                     onChange={handleChange}
-                    className={`${inputClass} resize-none`}
-                    placeholder="e.g. Our associates spend 6 hrs/week manually processing intake forms"
-                    suppressHydrationWarning
+                    className={inputClass}
+                    placeholder="Estate planning"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="city" className={labelClass}>Target city and region *</label>
+                  <input
+                    id="city"
+                    name="city"
+                    required
+                    pattern={".*\\S.*"}
+                    value={form.city}
+                    onChange={handleChange}
+                    className={inputClass}
+                    placeholder="Austin, Texas"
                   />
                 </div>
 
                 {status === "error" && (
                   <p className="sm:col-span-2 text-coral text-sm" role="alert">
-                    Something went wrong. Please try again or email us directly.
+                    We couldn&apos;t send your request. Try again or use the email link below.
                   </p>
                 )}
 
@@ -162,8 +182,11 @@ export default function StartHere() {
                   disabled={status === "loading"}
                   className="bg-soft-white text-midnight font-semibold py-4 sm:col-span-2 hover:bg-sand transition-colors duration-300 disabled:opacity-60 text-[13px] uppercase tracking-[0.08em]"
                 >
-                  {status === "loading" ? "Sending..." : "Book my call"}
+                  {status === "loading" ? "Sending..." : "Request my market check"}
                 </button>
+                <a className="sm:col-span-2 text-center text-sm text-teal underline" href="mailto:varun@regicorehq.com?subject=Regicore%20market%20check">
+                  Email us instead
+                </a>
               </form>
             )}
           </div>

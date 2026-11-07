@@ -3,9 +3,10 @@ import Footer from "@/components/Footer";
 import StartHere from "@/components/StartHere";
 
 export const metadata = {
-  title: "Start Here — Regicore",
+  title: "Request a Free Law Firm Market Check | Regicore",
+  alternates: { canonical: "/start" },
   description:
-    "Tell us the bottleneck. We'll run a free AI opportunity audit and scope exactly what to build — no obligation to move forward.",
+    "See how your law firm shows up in local search and AI answers, and review how your calls are handled after hours.",
 };
 
 export default function StartPage() {

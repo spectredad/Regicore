@@ -111,10 +111,10 @@ export default function NotFound() {
                 Go Back Home
               </Link>
               <Link
-                href="/#book"
+                href="/start"
                 className="w-full sm:w-auto inline-block bg-transparent border border-white/30 hover:border-white text-white font-semibold text-xs uppercase tracking-widest px-6 py-3.5 rounded-none transition-all duration-300 text-center"
               >
-                Book a Call
+                Request a Market Check
               </Link>
             </div>
           </div>

@@ -16,33 +16,33 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://regicore.com"),
-  title: "Regicore | Best AI Intake and Local SEO Company",
+  metadataBase: new URL("https://www.regicore.com"),
+  title: "Local SEO & AI Intake for Law Firms | Regicore",
   description:
-    "Regicore is a boutique AI agentic studio. Custom AI agents, voice callers and growth automation, built fast with transparent ROI.",
+    "Regicore helps law firms get found in local search and answer more calls with AI intake. Start with a free market check.",
   keywords: ["AI agents", "AI automation", "custom AI systems", "agentic studio", "AI voice callers", "lead generation AI"],
   authors: [{ name: "Regicore" }],
   openGraph: {
-    title: "Regicore | Best AI Intake and Local SEO Company",
-    description: "Custom AI agents, voice callers and growth automation, built fast with transparent ROI.",
-    url: "https://regicore.com",
+    title: "Local SEO & AI Intake for Law Firms | Regicore",
+    description: "Regicore helps law firms get found in local search and answer more calls with AI intake. Start with a free market check.",
+    url: "https://www.regicore.com",
     siteName: "Regicore",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Regicore, a boutique AI agentic studio",
+        url: "/icon-512.png",
+        width: 512,
+        height: 512,
+        alt: "Regicore logo",
       },
     ],
     locale: "en_US",
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Regicore | Best AI Intake and Local SEO Company",
-    description: "Custom AI agents, voice callers and growth automation, built fast with transparent ROI.",
-    images: ["/og-image.png"],
+    card: "summary",
+    title: "Local SEO & AI Intake for Law Firms | Regicore",
+    description: "Regicore helps law firms get found in local search and answer more calls with AI intake. Start with a free market check.",
+    images: ["/icon-512.png"],
   },
   icons: {
     icon: [
@@ -64,9 +64,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Regicore",
-  url: "https://regicore.com",
+  url: "https://www.regicore.com",
   description:
-    "Boutique AI agentic studio delivering custom AI agents, voice callers and growth automation.",
+    "Local search and AI intake services for law firms.",
   sameAs: ["https://www.linkedin.com/company/regicore", "https://twitter.com/regicore"],
   contactPoint: {
     "@type": "ContactPoint",

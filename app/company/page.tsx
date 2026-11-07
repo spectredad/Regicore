@@ -4,6 +4,7 @@ import FounderTeam from "@/components/FounderTeam";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/company" },
   title: "About | Regicore",
 };
 

@@ -15,7 +15,7 @@ export default function Pricing() {
   }, []);
 
   return (
-    <section id="pricing" className="bg-paper px-5 py-20 sm:py-28 lg:py-36 text-ink border-t border-line-low" ref={sectionRef}>
+    <section id="pricing" className="scroll-mt-20 bg-paper px-5 py-20 sm:py-28 lg:py-36 text-ink border-t border-line-low" ref={sectionRef}>
       <div className="mx-auto max-w-6xl">
 
         {/* Minimal Anthropic-style top sprout icon */}
@@ -43,7 +43,7 @@ export default function Pricing() {
         {/* Top Centered Action Button */}
         <div className="reveal flex items-center justify-center gap-3 mb-12 sm:mb-16">
           <a
-            href="https://regicore.com/start"
+            href="/start"
             className="rounded-xl bg-ink text-paper font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider py-3 px-6 shadow hover:bg-teal transition-colors duration-200"
           >
             APPLY NOW
@@ -98,7 +98,7 @@ export default function Pricing() {
             {/* Bottom Action */}
             <div className="mt-8 pt-2">
               <a
-                href="https://regicore.com/start"
+                href="/start"
                 className="flex items-center justify-center gap-2 w-full rounded-xl bg-ink text-paper font-sans text-sm font-semibold uppercase tracking-wider py-4 px-6 shadow hover:bg-teal transition-colors duration-200 text-center"
               >
                 <span>APPLY NOW</span>
@@ -157,7 +157,7 @@ export default function Pricing() {
             {/* Bottom Action */}
             <div className="mt-8 pt-2">
               <a
-                href="https://regicore.com/start"
+                href="/start"
                 className="flex items-center justify-center gap-2 w-full rounded-xl bg-ink text-paper font-sans text-sm font-semibold uppercase tracking-wider py-4 px-6 shadow hover:bg-teal transition-colors duration-200 text-center"
               >
                 <span>APPLY NOW</span>

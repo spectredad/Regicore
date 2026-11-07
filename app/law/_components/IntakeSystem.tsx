@@ -201,7 +201,7 @@ export default function IntakeSystem() {
   }, []);
 
   return (
-    <section className="bg-paper px-5 py-20 sm:py-28 lg:py-36 text-ink border-t border-line-low" ref={sectionRef}>
+    <section id="intake" className="scroll-mt-20 bg-paper px-5 py-20 sm:py-28 lg:py-36 text-ink border-t border-line-low" ref={sectionRef}>
       <div className="mx-auto max-w-6xl">
 
         {/* Section Header — Left-aligned matching reference image */}

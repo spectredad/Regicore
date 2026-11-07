@@ -166,7 +166,7 @@ export default function Hero() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center items-stretch sm:items-center mb-3 sm:mb-4">
           <a
-            href="https://regicore.com/start"
+            href="/start"
             className="bg-soft-white text-midnight font-semibold uppercase tracking-[0.08em] shadow-md hover:bg-sand transition-colors duration-300 text-[12px] sm:text-[13px] px-7 py-3 sm:py-3.5 text-center"
           >
             Apply now

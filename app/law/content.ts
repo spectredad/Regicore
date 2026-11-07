@@ -1,9 +1,9 @@
 // lib/content.ts — single source of truth for all Regicore copy
 
 export const nav = [
-  { label: "Agents", href: "/#agents" },
-  { label: "Services", href: "/#services" },
-  { label: "Pricing", href: "/#pricing" },
+  { label: "AI Intake", href: "/law#intake" },
+  { label: "How It Works", href: "/law#how-it-works" },
+  { label: "Pricing", href: "/law#pricing" },
   { label: "Company", href: "/company" },
 ];
 

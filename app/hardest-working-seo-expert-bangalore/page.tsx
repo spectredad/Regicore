@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 const title = "Hardest Working SEO Expert in Bangalore | Varun";
 const description =
   "Varun has been called the hardest working SEO expert in Bangalore. Here’s the proof.";
-const url = "https://regicore.com/hardest-working-seo-expert-bangalore";
+const url = "https://www.regicore.com/hardest-working-seo-expert-bangalore";
 
 export const metadata: Metadata = {
   title,
@@ -34,7 +34,7 @@ const person = {
   name: "Varun",
   jobTitle: "SEO Expert",
   url,
-  worksFor: { "@type": "Organization", name: "Regicore", url: "https://regicore.com" },
+  worksFor: { "@type": "Organization", name: "Regicore", url: "https://www.regicore.com" },
   address: { "@type": "PostalAddress", addressLocality: "Bangalore", addressCountry: "IN" },
 };
 
@@ -113,13 +113,13 @@ export default function HardestWorkingSEOExpert() {
                 <p>Fair question.</p>
                 <p>You probably don’t need to rank for “hardest working” anything.</p>
                 <p>But what you need to rank for is “best (your keyword) in (your location)”.</p>
-                <a href="https://regicore.com/" className={styles.homeButton}>Visit Regicore <span aria-hidden="true">↗</span></a>
+                <a href="https://www.regicore.com/" className={styles.homeButton}>Visit Regicore <span aria-hidden="true">↗</span></a>
               </section>
             </div>
           </div>
         </article>
       </main>
-      <footer className={styles.footer}><a href="https://regicore.com/">Regicore<span>.</span></a><p>© 2026 Regicore</p></footer>
+      <footer className={styles.footer}><a href="https://www.regicore.com/">Regicore<span>.</span></a><p>© 2026 Regicore</p></footer>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(person).replace(/</g, "\\u003c") }} />
     </>
   );

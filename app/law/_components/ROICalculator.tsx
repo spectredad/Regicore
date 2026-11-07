@@ -47,10 +47,10 @@ export default function ROICalculator() {
           {/* Left Column: Headline, Intro, Sliders */}
           <div className="lg:col-span-7 reveal">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-[44px] font-medium leading-[1.12] tracking-[-0.03em] text-ink mb-4">
-              What are the calls you missed last month actually worth?
+              What could missed calls be worth to your firm?
             </h2>
             <p className="text-base text-muted leading-relaxed max-w-xl mb-10">
-              Move the sliders. This is the fee revenue that went to the firm one position above you, based on your own numbers.
+              Replace the example values with your firm’s numbers to estimate the potential value of missed calls.
             </p>
 
             {/* Sliders Container */}
@@ -168,7 +168,7 @@ export default function ROICalculator() {
             <div className="rounded-3xl border border-line-low bg-surface-elevated p-7 sm:p-9 shadow-[0_4px_30px_rgba(15,23,42,0.05)]">
               
               <p className="text-[11px] font-mono font-bold text-muted uppercase tracking-widest mb-4">
-                ESTIMATED ANNUAL REVENUE LOST TO UNANSWERED CALLS
+                ESTIMATED ANNUAL VALUE OF MISSED CALLS
               </p>
 
               <div
@@ -179,7 +179,7 @@ export default function ROICalculator() {
               </div>
 
               <p className="text-xs sm:text-sm text-muted leading-relaxed mb-6 font-body">
-                That is revenue you already paid to generate. The free market check replaces this estimate with your actual missed call rate, pulled from your own phone lines.
+                The estimate assumes missed calls would become clients at the same rate as answered calls.
               </p>
 
               {/* How we calculate this tooltip */}
@@ -197,7 +197,7 @@ export default function ROICalculator() {
                 {showTooltip && (
                   <div className="absolute bottom-full left-0 mb-2 w-72 rounded-xl bg-ink text-paper p-3.5 text-xs leading-relaxed shadow-xl z-30">
                     <strong className="block mb-1 text-teal-300 font-semibold">Calculation Formula</strong>
-                    Calls per month × Missed call percent × Sign percent × Average fee × 12 months. Your free market check replaces these estimates with exact figures from your actual phone lines.
+                    Calls per month × Missed call percent × Sign percent × Average fee × 12 months.
                   </div>
                 )}
               </div>
@@ -205,7 +205,7 @@ export default function ROICalculator() {
               {/* Action Button */}
               <div>
                 <a
-                  href="https://regicore.com/start"
+                  href="/start"
                   className="flex items-center justify-center gap-2 w-full rounded-xl bg-ink text-paper font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider py-4 px-6 shadow hover:bg-teal transition-colors duration-200 text-center"
                 >
                   <span>APPLY NOW</span>

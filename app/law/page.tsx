@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "./_components/Navbar";
 import Hero from "./_components/Hero";
 import TrustExtras from "./_components/TrustExtras";
@@ -9,6 +10,11 @@ import ROICalculator from "./_components/ROICalculator";
 import FAQ from "./_components/FAQ";
 import CTABanner from "./_components/CTABanner";
 import Footer from "./_components/Footer";
+
+// Keep the campaign copy accessible and consolidate duplicate search signals.
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (

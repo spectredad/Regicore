@@ -73,7 +73,7 @@ export default function HowItWorks() {
   }, []);
 
   return (
-    <section id="how-it-works" className="bg-paper px-5 py-20 sm:py-28 lg:py-36 border-t border-line-low" ref={sectionRef}>
+    <section id="how-it-works" className="scroll-mt-20 bg-paper px-5 py-20 sm:py-28 lg:py-36 border-t border-line-low" ref={sectionRef}>
       <div className="mx-auto max-w-7xl">
 
         {/* Section eyebrow pill */}

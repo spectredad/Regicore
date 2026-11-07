@@ -88,7 +88,7 @@ export default function FAQ() {
             <div className="text-sm text-muted">
               <p className="mb-1">Can't find the answer here?</p>
               <a
-                href="https://regicore.com/start"
+                href="/start"
                 className="font-medium text-ink underline underline-offset-4 hover:text-teal transition-colors"
               >
                 Get your free market check

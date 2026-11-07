@@ -31,19 +31,19 @@ export default function Difference() {
     <section className="bg-paper px-5 py-20 text-ink sm:py-28 lg:py-36">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="section-label text-ink/55">Before / After</p>
+          <p className="section-label text-ink/55">Example scenario</p>
           <h2 className="mt-5 font-display text-balance text-4xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
             The <em>Difference</em>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-ink/65 sm:text-lg">
-            The difference between fourth place and top three.
+            An example of how search visibility and call handling can affect a law firm. The figures are illustrative.
           </p>
         </div>
 
         <div className="mt-12 rounded-[1.25rem] border border-line-low bg-surface-elevated p-5 shadow-[0_24px_70px_rgba(15,23,42,0.08)] sm:mt-16 sm:p-7 lg:p-9">
           <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12">
             <div className="flex flex-col">
-              <div className="inline-flex w-fit rounded-xl bg-surface p-1.5" role="group" aria-label="Compare results">
+              <div className="inline-flex w-fit rounded-xl bg-surface p-1.5" role="group" aria-label="Compare example figures">
                 <button type="button" onClick={() => setIsAfter(false)} aria-pressed={!isAfter} className={`rounded-lg px-5 py-2.5 text-sm font-medium transition ${!isAfter ? "bg-surface-elevated text-ink shadow-sm" : "text-muted hover:text-ink"}`}>
                   Before Regicore
                 </button>

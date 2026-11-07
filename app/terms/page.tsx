@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/terms" },
   title: "Terms of Service & Compliance | Regicore",
   description: "Terms of Service and Compliance rules governing access to the Regicore website and services.",
 };
