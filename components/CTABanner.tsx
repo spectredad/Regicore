@@ -62,7 +62,7 @@ export default function CTABanner() {
               transition={{ delay: 0.1, duration: 0.55, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              Your city is either open or it is taken.
+              See who shows up when someone needs what you do.
             </motion.h2>
 
             <motion.p
@@ -73,7 +73,7 @@ export default function CTABanner() {
               transition={{ delay: 0.18, duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              Apply with your firm name, practice area, and city. Within 24 hours you get your ranking coverage across the city, what AI says when someone asks who to hire in your practice area, and how many calls slipped past you last week. Free, and yours to keep either way.
+              We’ll show you where you rank on Maps and who comes up when someone asks AI for your service. We’ll also check what happens when a customer calls after you close.<br /><br />If your market is open, you’ll have the check within 24 hours. Free. Yours to keep.
             </motion.p>
 
             <motion.div
@@ -86,10 +86,10 @@ export default function CTABanner() {
                 href="/start"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#0f172a] text-[13px] sm:text-[14px] font-semibold uppercase tracking-wider hover:bg-[#f0efe9] transition-colors duration-200 shadow-lg shadow-black/20"
               >
-                APPLY NOW
+                Get your free market check
               </Link>
               <p className="mt-4 text-xs sm:text-sm text-white/75 font-body">
-                One firm per practice area in each city. No setup fee. Thirty day opt out.
+                One business per niche in each city. Full System includes no setup fee and a 30-day opt-out.
               </p>
             </motion.div>
           </div>

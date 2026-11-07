@@ -15,7 +15,7 @@ const footerColumns = [
   },
 ];
 
-export default function Footer() {
+export default function Footer({ tagline, taglineAccent }: { tagline?: string; taglineAccent?: string }) {
   return (
     <footer className="bg-midnight text-ink border-t border-line overflow-hidden">
       {/* Top: CTA line + link columns */}
@@ -23,8 +23,8 @@ export default function Footer() {
         <div className="grid lg:grid-cols-[1.4fr_1fr] gap-14 items-start">
           <div>
             <p className="font-display text-[24px] sm:text-[32px] font-medium leading-[1.15] tracking-[-0.02em] text-ink text-balance max-w-lg">
-              The best time to automate was last quarter.
-              <span className="text-teal"> The second best is now.</span>
+              {tagline ?? "The best time to automate was last quarter."}
+              <span className="text-teal"> {taglineAccent ?? "The second best is now."}</span>
             </p>
           </div>
 

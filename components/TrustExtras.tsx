@@ -5,8 +5,8 @@ import { useEffect, useRef, useState } from "react";
 const leakCards = [
   {
     number: "01",
-    title: "They cannot find you.",
-    body: "Google puts three firms above everything else on a local search. Almost nobody scrolls past them. Fourth place means the people ready to hire today never see your name.",
+    title: "They call whoever shows up.",
+    body: "Someone searches “emergency plumber near me.” Three businesses come up on the map. If the first one answers and has a slot today, how far down do you think that person scrolls?",
     // Dark pastel slate-blue smoke
     gradientStyle: {
       backgroundColor: "#3a5175",
@@ -21,8 +21,8 @@ const leakCards = [
   },
   {
     number: "02",
-    title: "They cannot reach you.",
-    body: "More than a third of calls to law firms go unanswered. Most callers who reach voicemail hang up without leaving a message and dial the next firm on the list. You already paid to make that phone ring.",
+    title: "They hear the beep.",
+    body: "It’s lunchtime. Your front desk is already on a call, and you’re with a customer. The person who wanted to book hangs up and tries the next number.",
     // Dark pastel rose-terracotta smoke
     gradientStyle: {
       backgroundColor: "#783847",
@@ -37,8 +37,8 @@ const leakCards = [
   },
   {
     number: "03",
-    title: "They never hear your name.",
-    body: "Clients ask AI which lawyer to hire, and AI returns one or two names rather than ten links. Firms outside that answer are not considered.",
+    title: "AI gives them somebody else’s name.",
+    body: "“Who installs heat pumps in Bristol?” That’s the whole question. If AI gives them another business to call, that business gets the shot.",
     // Dark pastel olive-sage smoke
     gradientStyle: {
       backgroundColor: "#4c633c",
@@ -101,12 +101,12 @@ export default function TrustExtras() {
     <section ref={sectionRef} className="bg-navy text-ink px-5 pt-16 pb-14 sm:pt-24 sm:pb-20 lg:pt-28 lg:pb-24">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center reveal">
-          <p className="section-label text-ink/55">The cost of being overlooked</p>
+          <p className="section-label text-ink/55">Where the calls go</p>
           <h2 className="mt-5 font-display text-balance text-4xl font-medium leading-[1.08] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
-            You are paying for clients you never speak to.
+            Fix voicemail before you buy another click.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-ink/65 sm:text-lg">
-            Three things stand between a person needing a lawyer and your firm getting paid. Most firms lose at all three.
+            You already paid to make the phone ring. What happens next?
           </p>
         </div>
 

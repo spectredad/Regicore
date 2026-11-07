@@ -13,26 +13,26 @@ const steps: StepData[] = [
   {
     id: 1,
     label: "01",
-    name: "Answers",
-    desc: "Every call picked up in under 60 seconds, day or night. It introduces itself as your firm's intake line and tells the caller they are speaking with an automated assistant.",
+    name: "An answer.",
+    desc: "The AI picks up in under 60 seconds, during business hours and after closing. It gives your business name and tells the caller they’re speaking with an AI assistant.",
   },
   {
     id: 2,
     label: "02",
-    name: "Qualifies",
-    desc: "It asks the intake questions you approve. Matter type, when it happened, whether another firm is involved, and anything else you want on the sheet before you spend time on a call.",
+    name: "A couple of questions.",
+    desc: "What do you need done? Where are you? You choose the questions that tell you whether it’s a job you take.",
   },
   {
     id: 3,
     label: "03",
-    name: "Books",
-    desc: "Qualified callers go straight into your calendar with a confirmation sent. Anyone who does not book gets followed up by text and email until they book or decline.",
+    name: "A time in the calendar.",
+    desc: "If the job fits, the AI offers a time you actually have free and sends a confirmation. If the caller leaves without booking, it follows up by text and email until they book or decline.",
   },
   {
     id: 4,
     label: "04",
-    name: "Hands off",
-    desc: "Anything urgent, unusual, or outside your practice areas routes to a human on your rules. Existing clients calling about live matters are transferred to your team.",
+    name: "A person when they need one.",
+    desc: "You decide who gets urgent calls and unusual requests. If a customer calls about work already underway, the AI sends them to your team.",
   },
 ];
 
@@ -208,10 +208,10 @@ export default function IntakeSystem() {
         <div className="reveal max-w-3xl">
           <p className="section-label text-ink/55 mb-3">05 The Intake System</p>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-[-0.035em] text-ink leading-[1.08]">
-            How the intake system works.
+            Get them booked while they’re on the phone.
           </h2>
           <p className="mt-4 sm:mt-5 text-base sm:text-lg text-muted leading-relaxed max-w-2xl">
-            It answers your phone, books your consultations, and stays inside the script you approve.
+            You approve what the AI says and which calls go to your team. Here’s what the caller gets.
           </p>
         </div>
 

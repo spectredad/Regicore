@@ -11,8 +11,24 @@ import FAQ from "@/components/FAQ";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 
+const title = "Local SEO & AI Receptionist for Local Businesses | Regicore";
+const description =
+  "Get found on Google Maps and in AI answers. Regicore’s AI receptionist answers calls and books appointments day and night. Start with a free market check.";
+
 export const metadata: Metadata = {
+  title,
+  description,
   alternates: { canonical: "/" },
+  openGraph: {
+    title,
+    description,
+    url: "/",
+    siteName: "Regicore",
+    images: [{ url: "/icon-512.png", width: 512, height: 512, alt: "Regicore logo" }],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: { card: "summary", title, description, images: ["/icon-512.png"] },
 };
 
 export default function Home() {
@@ -31,12 +47,12 @@ export default function Home() {
           href="/hardest-working-seo-expert-bangalore"
           className="inline-block text-[16px] sm:text-[20px] font-medium text-ink hover:text-teal transition-colors"
         >
-          Meet the hardest working SEO expert in bangalore <span aria-hidden="true">→</span>
+          Meet the SEO behind Regicore <span aria-hidden="true">→</span>
         </a>
       </div>
       <FAQ />
       <CTABanner />
-      <Footer />
+      <Footer tagline="Give them a time" taglineAccent="while you’ve got them on the phone." />
     </main>
   );
 }

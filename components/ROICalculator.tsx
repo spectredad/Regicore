@@ -39,7 +39,7 @@ export default function ROICalculator() {
         
         {/* Section Eyebrow */}
         <div className="reveal mb-6">
-          <p className="section-label text-ink/55">07 ESTIMATE WHAT YOU ARE LOSING</p>
+          <p className="section-label text-ink/55">07 MISSED CALL CALCULATOR</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
@@ -47,10 +47,10 @@ export default function ROICalculator() {
           {/* Left Column: Headline, Intro, Sliders */}
           <div className="lg:col-span-7 reveal">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-[44px] font-medium leading-[1.12] tracking-[-0.03em] text-ink mb-4">
-              What could missed calls be worth to your firm?
+              What were last month’s missed calls worth?
             </h2>
             <p className="text-base text-muted leading-relaxed max-w-xl mb-10">
-              Replace the example values with your firm’s numbers to estimate the potential value of missed calls.
+              Pull up your call log. Start with how many times the phone rang last month, then swap in your own numbers.
             </p>
 
             {/* Sliders Container */}
@@ -60,7 +60,7 @@ export default function ROICalculator() {
               <div>
                 <div className="flex justify-between items-baseline mb-2">
                   <label htmlFor="slider-calls" className="text-sm font-medium text-ink">
-                    Calls to your firm per month
+                    Calls per month
                   </label>
                   <span className="font-display text-lg font-semibold text-teal">
                     {calls}
@@ -74,7 +74,7 @@ export default function ROICalculator() {
                   step={5}
                   value={calls}
                   onChange={(e) => setCalls(Number(e.target.value))}
-                  aria-label="Calls to your firm per month"
+                  aria-label="Calls per month"
                 />
                 <div className="flex justify-between text-xs text-muted/70 mt-1.5">
                   <span>10</span>
@@ -86,7 +86,7 @@ export default function ROICalculator() {
               <div>
                 <div className="flex justify-between items-baseline mb-2">
                   <label htmlFor="slider-missed" className="text-sm font-medium text-ink">
-                    Percent of calls that go unanswered
+                    Calls you miss
                   </label>
                   <span className="font-display text-lg font-semibold text-teal">
                     {missedPercent}%
@@ -100,7 +100,7 @@ export default function ROICalculator() {
                   step={1}
                   value={missedPercent}
                   onChange={(e) => setMissedPercent(Number(e.target.value))}
-                  aria-label="Percent of calls that go unanswered"
+                  aria-label="Calls you miss"
                 />
                 <div className="flex justify-between text-xs text-muted/70 mt-1.5">
                   <span>0%</span>
@@ -112,7 +112,7 @@ export default function ROICalculator() {
               <div>
                 <div className="flex justify-between items-baseline mb-2">
                   <label htmlFor="slider-sign" className="text-sm font-medium text-ink">
-                    Percent of answered calls that sign
+                    Answered calls that become customers
                   </label>
                   <span className="font-display text-lg font-semibold text-teal">
                     {signPercent}%
@@ -126,7 +126,7 @@ export default function ROICalculator() {
                   step={1}
                   value={signPercent}
                   onChange={(e) => setSignPercent(Number(e.target.value))}
-                  aria-label="Percent of answered calls that sign"
+                  aria-label="Answered calls that become customers"
                 />
                 <div className="flex justify-between text-xs text-muted/70 mt-1.5">
                   <span>1%</span>
@@ -138,7 +138,7 @@ export default function ROICalculator() {
               <div>
                 <div className="flex justify-between items-baseline mb-2">
                   <label htmlFor="slider-fee" className="text-sm font-medium text-ink">
-                    Average fee per signed case
+                    Average revenue per new customer
                   </label>
                   <span className="font-display text-lg font-semibold text-teal">
                     ${fee.toLocaleString()}
@@ -152,7 +152,7 @@ export default function ROICalculator() {
                   step={500}
                   value={fee}
                   onChange={(e) => setFee(Number(e.target.value))}
-                  aria-label="Average fee per signed case"
+                  aria-label="Average revenue per new customer"
                 />
                 <div className="flex justify-between text-xs text-muted/70 mt-1.5">
                   <span>$1,000</span>
@@ -179,7 +179,7 @@ export default function ROICalculator() {
               </div>
 
               <p className="text-xs sm:text-sm text-muted leading-relaxed mb-6 font-body">
-                The estimate assumes missed calls would become clients at the same rate as answered calls.
+                This estimate uses the same customer conversion rate for missed calls as for calls you answered.
               </p>
 
               {/* How we calculate this tooltip */}
@@ -196,8 +196,8 @@ export default function ROICalculator() {
                 </button>
                 {showTooltip && (
                   <div className="absolute bottom-full left-0 mb-2 w-72 rounded-xl bg-ink text-paper p-3.5 text-xs leading-relaxed shadow-xl z-30">
-                    <strong className="block mb-1 text-teal-300 font-semibold">Calculation Formula</strong>
-                    Calls per month × Missed call percent × Sign percent × Average fee × 12 months.
+                    <strong className="block mb-1 text-teal-300 font-semibold">How the estimate works</strong>
+                    We multiply monthly calls by the share you miss and the share of answered calls that become customers. Then we multiply by your average revenue per new customer and by 12.
                   </div>
                 )}
               </div>
@@ -208,7 +208,7 @@ export default function ROICalculator() {
                   href="/start"
                   className="flex items-center justify-center gap-2 w-full rounded-xl bg-ink text-paper font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider py-4 px-6 shadow hover:bg-teal transition-colors duration-200 text-center"
                 >
-                  <span>APPLY NOW</span>
+                  <span>Get your free market check</span>
                   <span aria-hidden="true">→</span>
                 </a>
               </div>

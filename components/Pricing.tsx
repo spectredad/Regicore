@@ -29,14 +29,14 @@ export default function Pricing() {
         {/* Section Headline */}
         <div className="reveal text-center mb-4">
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-[-0.035em] text-ink leading-[1.08]">
-            Two offers. One team.
+            Google Maps or the full system?
           </h2>
         </div>
 
         {/* Intro line */}
         <div className="reveal text-center mb-8 sm:mb-10 max-w-2xl mx-auto">
           <p className="text-base sm:text-lg text-muted leading-relaxed">
-            Rank on Google Maps, or run the full practice system, built and operated by the same people.
+            If you need more people to find you, start with Maps Rank. If you need the phone answered and appointments booked too, get the Full System.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export default function Pricing() {
             href="/start"
             className="rounded-xl bg-ink text-paper font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider py-3 px-6 shadow hover:bg-teal transition-colors duration-200"
           >
-            APPLY NOW
+            Get your free market check
           </a>
         </div>
 
@@ -67,7 +67,7 @@ export default function Pricing() {
                   </span>
                 </div>
                 <p className="text-sm leading-relaxed text-muted">
-                  Top 3 in Google Maps within 90 days.<br />If not, we will work with you for free until we get you there.
+                  Get into the top 3 on Google Maps within 90 days, or we work for free until you do.<br />We agree on the search and location before we start. If we miss the target, we waive the monthly SEO fee until we hit it.
                 </p>
               </div>
 
@@ -80,17 +80,17 @@ export default function Pricing() {
 
                 <div className="py-3.5 flex items-center justify-between">
                   <span className="text-muted">Guarantee</span>
-                  <span className="font-medium text-ink text-right">Top 3 in 90 days or we work free</span>
+                  <span className="font-medium text-ink text-right">Top 3 in 90 days or we work for free</span>
                 </div>
 
                 <div className="py-3.5 flex items-center justify-between">
                   <span className="text-muted">Focus</span>
-                  <span className="font-medium text-ink">Google Maps / local pack</span>
+                  <span className="font-medium text-ink">Google Maps and local search</span>
                 </div>
 
                 <div className="py-3.5 flex items-center justify-between">
                   <span className="text-muted">Exclusivity</span>
-                  <span className="font-medium text-ink">One firm per practice area</span>
+                  <span className="font-medium text-ink">One business per niche in each city</span>
                 </div>
               </div>
             </div>
@@ -101,7 +101,7 @@ export default function Pricing() {
                 href="/start"
                 className="flex items-center justify-center gap-2 w-full rounded-xl bg-ink text-paper font-sans text-sm font-semibold uppercase tracking-wider py-4 px-6 shadow hover:bg-teal transition-colors duration-200 text-center"
               >
-                <span>APPLY NOW</span>
+                <span>Get your free market check</span>
                 <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -121,7 +121,7 @@ export default function Pricing() {
                   </span>
                 </div>
                 <p className="text-sm leading-relaxed text-muted">
-                  From $3,500 per month. You own the website, the content, the reviews, and the data.
+                  We work on getting you found on Maps and in AI answers. Your AI receptionist takes calls and books appointments. The website and content are yours, along with the reviews and data.
                 </p>
               </div>
 
@@ -134,22 +134,22 @@ export default function Pricing() {
 
                 <div className="py-3.5 flex items-center justify-between">
                   <span className="text-muted">Focus</span>
-                  <span className="font-medium text-ink text-right">Lead intake system + local SEO</span>
+                  <span className="font-medium text-ink text-right">AI intake and local SEO</span>
                 </div>
 
                 <div className="py-3.5 flex items-center justify-between">
-                  <span className="text-muted">Asset ownership</span>
-                  <span className="font-medium text-ink text-right">You own website, content, reviews, and data</span>
+                  <span className="text-muted">Ownership</span>
+                  <span className="font-medium text-ink text-right">Your website, content, reviews and data</span>
                 </div>
 
                 <div className="py-3.5 flex items-center justify-between">
-                  <span className="text-muted">Response speed</span>
+                  <span className="text-muted">Answer time</span>
                   <span className="font-medium text-ink">Under 60 seconds (24/7)</span>
                 </div>
 
                 <div className="py-3.5 flex items-center justify-between">
                   <span className="text-muted">Exclusivity</span>
-                  <span className="font-medium text-ink">One firm per practice area</span>
+                  <span className="font-medium text-ink">One business per niche in each city</span>
                 </div>
               </div>
             </div>
@@ -160,7 +160,7 @@ export default function Pricing() {
                 href="/start"
                 className="flex items-center justify-center gap-2 w-full rounded-xl bg-ink text-paper font-sans text-sm font-semibold uppercase tracking-wider py-4 px-6 shadow hover:bg-teal transition-colors duration-200 text-center"
               >
-                <span>APPLY NOW</span>
+                <span>Get your free market check</span>
                 <span aria-hidden="true">→</span>
               </a>
             </div>

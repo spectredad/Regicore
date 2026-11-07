@@ -3,19 +3,19 @@
 import { useState } from "react";
 
 const beforeMetrics = [
-  ["Average Rank", "20"],
+  ["Average Maps Rank", "20"],
   ["Market Coverage", "1%"],
   ["Calls Per Month", "5"],
   ["Missed Calls", "35%"],
-  ["Signed Cases Per Month", "1–2"],
+  ["New Customers Per Month", "1–2"],
 ];
 
 const afterMetrics = [
-  ["Average Rank", "3"],
+  ["Average Maps Rank", "3"],
   ["Market Coverage", "34%"],
   ["Calls Per Month", "42"],
   ["Missed Calls", "0%"],
-  ["Signed Cases Per Month", "4–6"],
+  ["New Customers Per Month", "4–6"],
 ];
 
 const comparisonImages = {
@@ -33,10 +33,10 @@ export default function Difference() {
         <div className="mx-auto max-w-3xl text-center">
           <p className="section-label text-ink/55">Example scenario</p>
           <h2 className="mt-5 font-display text-balance text-4xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
-            The <em>Difference</em>
+            What changes when you show up and <em>pick up?</em>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-ink/65 sm:text-lg">
-            An example of how search visibility and call handling can affect a law firm. The figures are illustrative.
+            Same example business, two scenarios. Switch tabs to see what happens to the numbers when it ranks higher and answers more calls.
           </p>
         </div>
 
@@ -45,10 +45,10 @@ export default function Difference() {
             <div className="flex flex-col">
               <div className="inline-flex w-fit rounded-xl bg-surface p-1.5" role="group" aria-label="Compare example figures">
                 <button type="button" onClick={() => setIsAfter(false)} aria-pressed={!isAfter} className={`rounded-lg px-5 py-2.5 text-sm font-medium transition ${!isAfter ? "bg-surface-elevated text-ink shadow-sm" : "text-muted hover:text-ink"}`}>
-                  Before Regicore
+                  Before
                 </button>
                 <button type="button" onClick={() => setIsAfter(true)} aria-pressed={isAfter} className={`rounded-lg px-5 py-2.5 text-sm font-medium transition ${isAfter ? "bg-surface-elevated text-ink shadow-sm ring-1 ring-ink" : "text-muted hover:text-ink"}`}>
-                  After Regicore
+                  After
                 </button>
               </div>
 
@@ -56,7 +56,7 @@ export default function Difference() {
                 <div className="flex items-center gap-4">
                   <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-ink font-display text-lg text-paper" aria-hidden="true">R</div>
                   <div>
-                    <h3 className="font-sans text-lg font-semibold text-ink">Your Firm</h3>
+                    <h3 className="font-sans text-lg font-semibold text-ink">Your Business</h3>
                     <p className="text-sm text-muted">Your City</p>
                   </div>
                 </div>

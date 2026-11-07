@@ -9,44 +9,44 @@ interface FAQItem {
 
 const faqList: FAQItem[] = [
   {
-    q: "What is the difference between this and Google Ads?",
-    a: "Ads stop the moment you stop paying, and personal injury clicks run past $150 each in major markets. Rankings and AI mentions keep working after the month ends. The answering system converts both, so firms already running ads see those leads convert better too.",
+    q: "How is this different from Google Ads?",
+    a: "Stop paying for ads and they come down. Maps and AI answers give people another way to find you. If you already buy ads, the AI picks up those calls too.",
   },
   {
-    q: "Which firms do you work with?",
-    a: "Small to mid sized firms that serve a city or metro area. Family, estate planning, immigration, bankruptcy, criminal defense, and personal injury. One firm per practice area in each city, so we cannot take you and your competitor.",
+    q: "What kinds of businesses do you work with?",
+    a: "Local service businesses that take calls and book appointments. Think of the plumber with both hands under a sink or the salon owner halfway through a cut. We take one business per niche in each city.",
   },
   {
-    q: "How much time will I need to invest?",
-    a: "One onboarding call in week one, then a few minutes to approve content before it publishes. We take access, build the system, and run it. Nothing goes out under your name without your approval.",
+    q: "How much of my time does this take?",
+    a: "One onboarding call in week one. After that, set aside a few minutes to approve content before it goes live. We handle setup and run the system.",
   },
   {
-    q: "How fast will I see results?",
-    a: "Two timelines. The answering system starts booking consultations within days of going live. Map rankings move over 60 to 90 days, and AI mentions follow over 60 to 120. Your first report shows calls answered and consultations booked while the ranking work builds.",
+    q: "How soon will I see results?",
+    a: "The AI starts booking within days of going live. With Maps Rank, we have 90 days to get you into the top 3 for the search and location we agreed on. Allow 60 to 120 days for AI mentions.",
   },
   {
-    q: "Is the AI compliant with my bar rules?",
-    a: "The assistant identifies itself as automated on every call, and the script forbids legal advice, fee quotes, and predictions about outcomes. You approve every script and every published word. You receive an AI use policy and client disclosure templates written against your bar's advertising and confidentiality rules.",
+    q: "What does the AI say to callers?",
+    a: "It tells them it’s an AI assistant answering for your business. You approve what it says, what it asks and when it hands the call to a person.",
   },
   {
-    q: "Where does my client data go?",
-    a: "Deployments are private. Call recordings and transcripts stay in your environment, on infrastructure held to healthcare grade security standards, and nothing feeds public model training. You can listen to any call, any time.",
+    q: "What happens to my call recordings?",
+    a: "Your data agreement spells out how we handle recordings and transcripts. You get access to recordings when you enable them. Your intake data stays out of public AI model training.",
   },
   {
     q: "What if I already have a receptionist?",
-    a: "The system covers overflow, lunch hours, evenings, and weekends. Your receptionist keeps the calls they can take, and the system catches the rest. More than a third of calls to law firms go unanswered during hours firms consider covered.",
+    a: "Great. They take the calls they have time for. The AI picks up when they’re already on the phone, out to lunch or home for the night.",
   },
   {
     q: "What are the contract terms?",
-    a: "From $3,500 a month with no setup fee. Thirty day opt out on your first term, and you keep everything we built if you leave. Every call answered in under 60 seconds or that month is free. You own the website, the content, the reviews, and the data.",
+    a: "The Full System starts at $3,500 a month with no setup fee and a 30-day opt-out on your first term. Calls are answered in under 60 seconds or that month is free. If you leave, you keep the website and content, along with the reviews and data.",
   },
   {
     q: "Do I need a new website?",
-    a: "Only if yours blocks results, and the market check tells us either way. A conversion upgrade is included in your first month. If a full rebuild is needed, the fee is waived on a twelve month term.",
+    a: "We check the one you have first. Month one includes fixes that make it easier for people to get in touch. If you need a full rebuild, we waive the fee on a 12-month term.",
   },
   {
-    q: "How do we get started?",
-    a: "Apply with your firm name, practice area, and city. We check whether your market is open and send your market check within 24 hours: your ranking coverage, what AI says about your practice area, and how your calls are handled after hours.",
+    q: "How do I get started?",
+    a: "Send us your business name, service and city. If your market is open, we send your free check within 24 hours.",
   },
 ];
 
@@ -82,11 +82,11 @@ export default function FAQ() {
           {/* Left Column (Sticky Title & Support link) */}
           <div className="lg:col-span-4 reveal lg:sticky lg:top-24">
             <h2 className="font-display text-4xl sm:text-5xl font-medium tracking-tight text-ink leading-[1.08] mb-6">
-              Questions <br className="hidden sm:block" />
-              and answers
+              A few things <br className="hidden sm:block" />
+              you’ll want to know
             </h2>
             <div className="text-sm text-muted">
-              <p className="mb-1">Can't find the answer here?</p>
+              <p className="mb-1">Still have a question?</p>
               <a
                 href="/start"
                 className="font-medium text-ink underline underline-offset-4 hover:text-teal transition-colors"

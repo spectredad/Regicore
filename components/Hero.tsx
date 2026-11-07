@@ -153,14 +153,14 @@ export default function Hero() {
         <h1
           className="font-display font-medium text-ink text-balance leading-[1.16] sm:leading-[1.12] tracking-[-0.02em] mx-auto text-[25px] sm:text-[34px] md:text-[41px] lg:text-[44px] mb-3 sm:mb-4"
         >
-          Your next client called. You didn&apos;t answer.
+          Are customers finding you on Google Maps?
         </h1>
 
         {/* Supporting copy */}
         <p
           className="text-muted text-pretty mx-auto text-[13.5px] sm:text-[15px] leading-relaxed max-w-xl mb-4 sm:mb-5"
         >
-          Regicore puts your firm in the top three on Google Maps and inside AI search answers. Then we answer every call in under 60 seconds, day or night.
+          Regicore helps customers find you on Google Maps and in AI answers. When they call, your AI receptionist picks up in under 60 seconds and books qualified callers into your calendar. Even after you close.
         </p>
 
         {/* CTAs */}
@@ -169,13 +169,13 @@ export default function Hero() {
             href="/start"
             className="bg-soft-white text-midnight font-semibold uppercase tracking-[0.08em] shadow-md hover:bg-sand transition-colors duration-300 text-[12px] sm:text-[13px] px-7 py-3 sm:py-3.5 text-center"
           >
-            Apply now
+            Get your free market check
           </a>
         </div>
 
         {/* Trust line */}
         <p className="text-muted/75 text-[11px] sm:text-[12px] tracking-wide text-center leading-normal max-w-lg">
-          One firm per practice area in each city. Free market check before anything is signed. Client data never leaves your environment.
+          One business per niche in each city. We check your market for free before you sign anything.
         </p>
       </div>
 
