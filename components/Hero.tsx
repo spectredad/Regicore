@@ -153,7 +153,7 @@ export default function Hero() {
         <h1
           className="font-display font-medium text-ink text-balance leading-[1.16] sm:leading-[1.12] tracking-[-0.02em] mx-auto text-[25px] sm:text-[34px] md:text-[41px] lg:text-[44px] mb-3 sm:mb-4"
         >
-          Are customers finding you on Google Maps?
+          Are customers finding you on Google ?
         </h1>
 
         {/* Supporting copy */}
