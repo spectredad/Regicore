@@ -43,7 +43,7 @@ export default function Pricing() {
         {/* Top Centered Action Button */}
         <div className="reveal flex items-center justify-center gap-3 mb-12 sm:mb-16">
           <a
-            href="/start"
+            href="/law/start"
             className="rounded-xl bg-ink text-paper font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider py-3 px-6 shadow hover:bg-teal transition-colors duration-200"
           >
             APPLY NOW
@@ -94,7 +94,7 @@ export default function Pricing() {
             {/* Bottom Action */}
             <div className="mt-8 pt-2">
               <a
-                href="/start"
+                href="/law/start"
                 className="flex items-center justify-center gap-2 w-full rounded-xl bg-ink text-paper font-sans text-sm font-semibold uppercase tracking-wider py-4 px-6 shadow hover:bg-teal transition-colors duration-200 text-center"
               >
                 <span>Get your free market check</span>
@@ -153,7 +153,7 @@ export default function Pricing() {
             {/* Bottom Action */}
             <div className="mt-8 pt-2">
               <a
-                href="/start"
+                href="/law/start"
                 className="flex items-center justify-center gap-2 w-full rounded-xl bg-ink text-paper font-sans text-sm font-semibold uppercase tracking-wider py-4 px-6 shadow hover:bg-teal transition-colors duration-200 text-center"
               >
                 <span>APPLY NOW</span>

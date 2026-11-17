@@ -21,7 +21,7 @@ const steps = [
   {
     stepLabel: "Step 2",
     num: "02",
-    title: "We see what your customers see.",
+    title: "We check your market.",
     illustration: (
       <svg viewBox="0 0 100 80" className="w-24 h-20 text-ink/75 stroke-current" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M48 20L48 10" />
@@ -30,12 +30,12 @@ const steps = [
         <path d="M50 30L35 65L45 55L55 70L60 67L50 52L62 52Z" />
       </svg>
     ),
-    body: "We look up your service across town on Google Maps and ask AI who it would call. Then we check where your calls go after closing. We’ll walk you through what we find on a free call.",
+    body: "We check where your business appears on Google Maps and what AI says when people search for your service. We’ll walk you through the findings for free.",
   },
   {
     stepLabel: "Step 3",
     num: "03",
-    title: "We set up your phone and calendar.",
+    title: "We agree on a keyword and area.",
     illustration: (
       <svg viewBox="0 0 100 80" className="w-24 h-20 text-ink/75 stroke-current" fill="none" strokeWidth="1.5">
         <ellipse cx="50" cy="40" rx="36" ry="26" />
@@ -44,19 +44,19 @@ const steps = [
         <circle cx="50" cy="40" r="3" fill="currentColor" />
       </svg>
     ),
-    body: "One onboarding call. We spend the week working on your Google Business Profile and setting up your AI receptionist. You get the first month’s content to approve before it goes live.",
+    body: "Together, we choose one keyword and location and agree on the Google Maps target before the work starts.",
   },
   {
     stepLabel: "Step 4",
     num: "04",
-    title: "You see what got booked.",
+    title: "We work and report each month.",
     illustration: (
       <svg viewBox="0 0 100 80" className="w-24 h-20 text-ink/75 stroke-current" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20 62C40 62 48 45 58 35C66 26 75 24 85 24" />
         <path d="M76 18L86 24L77 30" />
       </svg>
     ),
-    body: "Appointments start going into your calendar in the first few days. Each month you see how many calls got answered and how many became bookings or paying customers.",
+    body: "We work on your Google presence and local search visibility, then report on your progress each month. If you choose the Full System, we also set up your AI receptionist.",
   },
 ];
 
@@ -89,14 +89,14 @@ export default function HowItWorks() {
         {/* Headline */}
         <div className="reveal text-center mb-4">
           <h2 className="font-display text-4xl sm:text-5xl font-medium leading-[1.1] tracking-[-0.03em] text-ink">
-            From application to <em>answered calls</em>
+            From market check to <em>monthly results</em>
           </h2>
         </div>
 
         {/* Intro line */}
         <div className="reveal text-center mb-14 sm:mb-16">
           <p className="text-base sm:text-lg text-muted leading-relaxed max-w-xl mx-auto">
-            Your intake goes live in under two weeks.
+            Here’s how Maps Rank works.
           </p>
         </div>
 

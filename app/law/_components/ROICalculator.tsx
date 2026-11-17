@@ -205,7 +205,7 @@ export default function ROICalculator() {
               {/* Action Button */}
               <div>
                 <a
-                  href="/start"
+                  href="/law/start"
                   className="flex items-center justify-center gap-2 w-full rounded-xl bg-ink text-paper font-sans text-xs sm:text-sm font-semibold uppercase tracking-wider py-4 px-6 shadow hover:bg-teal transition-colors duration-200 text-center"
                 >
                   <span>APPLY NOW</span>

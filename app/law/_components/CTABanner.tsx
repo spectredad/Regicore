@@ -83,7 +83,7 @@ export default function CTABanner() {
               viewport={{ once: true }}
             >
               <Link
-                href="/start"
+                href="/law/start"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#0f172a] text-[13px] sm:text-[14px] font-semibold uppercase tracking-wider hover:bg-[#f0efe9] transition-colors duration-200 shadow-lg shadow-black/20"
               >
                 APPLY NOW

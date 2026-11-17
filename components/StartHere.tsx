@@ -4,7 +4,7 @@ import { supabase } from "@/lib/supabase";
 
 const emptyForm = { name: "", email: "", company: "", practiceArea: "", city: "" };
 
-export default function StartHere() {
+export default function StartHere({ law = false }: { law?: boolean }) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [form, setForm] = useState(emptyForm);
   const sectionRef = useRef<HTMLElement>(null);
@@ -36,7 +36,7 @@ export default function StartHere() {
             full_name: form.name.trim(),
             work_email: form.email.trim(),
             firm_or_website: form.company.trim(),
-            automation_goal: `Market check\nPractice area: ${form.practiceArea.trim()}\nCity: ${form.city.trim()}`,
+            automation_goal: `Market check\n${law ? "Practice area" : "Service"}: ${form.practiceArea.trim()}\nCity: ${form.city.trim()}`,
           },
         ]);
 
@@ -71,7 +71,7 @@ export default function StartHere() {
               Request your free market check
             </h1>
             <p className="text-[15px] leading-relaxed text-muted max-w-md text-pretty">
-              Tell us where your firm works and what you practice. We&apos;ll check your market availability, your visibility on Google Maps and in AI answers, and how your firm handles calls after hours.
+              {law ? "Tell us where your firm works and what you practice. We’ll check your market availability, your visibility on Google Maps and in AI answers, and how your firm handles calls after hours." : "Tell us what your business does and where you work. We’ll check your market availability and visibility on Google Maps and in AI answers."}
             </p>
 
 
@@ -127,7 +127,7 @@ export default function StartHere() {
                 </div>
 
                 <div className="flex flex-col gap-2 sm:col-span-2">
-                  <label htmlFor="company" className={labelClass}>Firm name *</label>
+                  <label htmlFor="company" className={labelClass}>{law ? "Firm name *" : "Business name *"}</label>
                   <input
                     id="company"
                     name="company"
@@ -138,13 +138,13 @@ export default function StartHere() {
                     value={form.company}
                     onChange={handleChange}
                     className={inputClass}
-                    placeholder="Smith &amp; Associates"
+                    placeholder={law ? "Smith & Associates" : "Your business name"}
                     suppressHydrationWarning
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="practiceArea" className={labelClass}>Practice area *</label>
+                  <label htmlFor="practiceArea" className={labelClass}>{law ? "Practice area *" : "Service *"}</label>
                   <input
                     id="practiceArea"
                     name="practiceArea"
@@ -153,7 +153,7 @@ export default function StartHere() {
                     value={form.practiceArea}
                     onChange={handleChange}
                     className={inputClass}
-                    placeholder="Estate planning"
+                    placeholder={law ? "Estate planning" : "Your main service"}
                   />
                 </div>
 
@@ -184,7 +184,7 @@ export default function StartHere() {
                 >
                   {status === "loading" ? "Sending..." : "Request my market check"}
                 </button>
-                <a className="sm:col-span-2 text-center text-sm text-teal underline" href="mailto:varun.l@regicorehq.com?subject=Regicore%20market%20check">
+                <a className="sm:col-span-2 text-center text-sm text-teal underline" href={`mailto:varun.l@regicorehq.com?subject=Regicore%20market%20check&body=${encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n${law ? "Firm" : "Business"}: ${form.company}\n${law ? "Practice area" : "Service"}: ${form.practiceArea}\nCity and region: ${form.city}`)}`}>
                   Email us instead
                 </a>
               </form>
