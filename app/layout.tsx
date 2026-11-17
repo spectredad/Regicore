@@ -68,7 +68,7 @@ const jsonLd = {
   image: "https://www.regicore.com/icon-512.png",
   logo: "https://www.regicore.com/icon-512.png",
   priceRange: "From USD 750 per month",
-  address: { "@type": "PostalAddress", streetAddress: "3rd Cross, New Thippasandra", addressLocality: "Bangalore", addressCountry: "IN" },
+  address: { "@type": "PostalAddress", streetAddress: "3rd Cross, New Thippasandra", addressLocality: "Bangalore", postalCode: "560075", addressCountry: "IN" },
   name: "Regicore",
   url: "https://www.regicore.com",
   description:

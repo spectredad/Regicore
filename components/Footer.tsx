@@ -56,7 +56,7 @@ export default function Footer({ tagline, taglineAccent }: { tagline?: string; t
               <address className="not-italic text-[14px] text-muted leading-6">
                 <span className="block">Regicore</span>
                 <span className="block">3rd cross, New thippsandra,</span>
-                <span className="block">Bangalore, India.</span>
+                <span className="block">Bangalore 560075, India.</span>
                 <a className="block mt-2 hover:text-ink transition-colors duration-300" href="tel:+919739690421">
                   91 9739690421
                 </a>
