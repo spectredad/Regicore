@@ -22,7 +22,7 @@ const faqList: FAQItem[] = [
   },
   {
     q: "How soon will I see results?",
-    a: "The AI starts booking within days of going live. With Maps Rank, we have 90 days to get you into the top 3 for the search and location we agreed on. Allow 60 to 120 days for AI mentions.",
+    a: "The AI starts booking within days of going live. With Maps Rank, we agree on a Google Maps target before we start. If we miss it after 90 days, we continue the agreed SEO work free for up to 40 additional days. Allow 60 to 120 days for AI mentions.",
   },
   {
     q: "What does the AI say to callers?",

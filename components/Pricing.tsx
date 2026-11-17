@@ -63,11 +63,17 @@ export default function Pricing() {
                     Maps Rank
                   </h3>
                   <span className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-ink">
-                    $900 <span className="text-xs font-mono text-muted uppercase font-normal">/ MONTH</span>
+                    $750 <span className="text-xs font-mono text-muted uppercase font-normal">/ MONTH</span>
                   </span>
                 </div>
+                <p className="text-sm font-semibold leading-relaxed text-ink mb-3">
+                  Get your business found by more local customers.
+                </p>
+                <p className="text-sm leading-relaxed text-muted mb-3">
+                  We help your business show up on Google Maps and make it easier for AI search tools to find accurate information about you.
+                </p>
                 <p className="text-sm leading-relaxed text-muted">
-                  Get into the top 3 on Google Maps within 90 days, or we work for free until you do.<br />We agree on the search and location before we start. If we miss the target, we waive the monthly SEO fee until we hit it.
+                  We’ll agree on a Google Maps target before we start. If we miss it after 90 days, we’ll continue the agreed SEO work free for up to 40 additional days.
                 </p>
               </div>
 
@@ -75,22 +81,22 @@ export default function Pricing() {
               <div className="border-t border-line-low divide-y divide-line-low text-sm">
                 <div className="py-3.5 flex items-center justify-between gap-3">
                   <span className="text-muted">Price</span>
-                  <span className="font-medium text-ink">$900 per month</span>
+                  <span className="font-medium text-ink">$750 per month</span>
                 </div>
 
                 <div className="py-3.5 flex items-center justify-between gap-3">
                   <span className="text-muted">Guarantee</span>
-                  <span className="font-medium text-ink text-right">Top 3 in 90 days or we work for free</span>
+                  <span className="font-medium text-ink text-right">Up to 40 days of free SEO work if we miss the agreed target</span>
                 </div>
 
                 <div className="py-3.5 flex items-center justify-between gap-3">
                   <span className="text-muted">Focus</span>
-                  <span className="font-medium text-ink">Google Maps and local search</span>
+                  <span className="font-medium text-ink text-right">Google Maps, local search and basic AI visibility</span>
                 </div>
 
                 <div className="py-3.5 flex items-center justify-between gap-3">
                   <span className="text-muted">Exclusivity</span>
-                  <span className="font-medium text-ink">One business per niche in each city</span>
+                  <span className="font-medium text-ink text-right">One business, one keyword, per niche in each city</span>
                 </div>
               </div>
             </div>
