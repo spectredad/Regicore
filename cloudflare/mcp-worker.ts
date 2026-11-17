@@ -1,0 +1,1 @@
+import {handleMcp} from '../lib/mcp';export default {fetch(request:Request){return new URL(request.url).pathname==='/mcp'?handleMcp(request):new Response('Not found',{status:404});}};

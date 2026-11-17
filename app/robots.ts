@@ -1,8 +1,1 @@
-import type { MetadataRoute } from "next";
-
-export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: { userAgent: "*", allow: "/" },
-    sitemap: "https://www.regicore.com/sitemap.xml",
-  };
-}
+import type {MetadataRoute} from 'next';export default function robots():MetadataRoute.Robots{return {rules:[{userAgent:'*',allow:'/'},{userAgent:['OAI-SearchBot','ChatGPT-User','Claude-SearchBot','Claude-User'],allow:'/'}],sitemap:'https://www.regicore.com/sitemap.xml'};}

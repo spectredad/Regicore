@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
@@ -17,14 +18,14 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.regicore.com"),
-  title: "Local SEO & AI Intake for Law Firms | Regicore",
+  title: "Marketing & AI Services for Local Businesses | Regicore",
   description:
-    "Regicore helps law firms get found in local search and answer more calls with AI intake. Start with a free market check.",
+    "Regicore helps local businesses get found in local search and answer more calls with AI intake. Start with a free market check.",
   keywords: ["AI agents", "AI automation", "custom AI systems", "agentic studio", "AI voice callers", "lead generation AI"],
   authors: [{ name: "Regicore" }],
   openGraph: {
-    title: "Local SEO & AI Intake for Law Firms | Regicore",
-    description: "Regicore helps law firms get found in local search and answer more calls with AI intake. Start with a free market check.",
+    title: "Marketing & AI Services for Local Businesses | Regicore",
+    description: "Regicore helps local businesses get found in local search and answer more calls with AI intake. Start with a free market check.",
     url: "https://www.regicore.com",
     siteName: "Regicore",
     images: [
@@ -40,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Local SEO & AI Intake for Law Firms | Regicore",
-    description: "Regicore helps law firms get found in local search and answer more calls with AI intake. Start with a free market check.",
+    title: "Marketing & AI Services for Local Businesses | Regicore",
+    description: "Regicore helps local businesses get found in local search and answer more calls with AI intake. Start with a free market check.",
     images: ["/icon-512.png"],
   },
   icons: {
@@ -61,7 +62,10 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "ProfessionalService",
+  "@id": "https://www.regicore.com/#business",
+  telephone: "+919739690421",
+  address: { "@type": "PostalAddress", streetAddress: "3rd Cross, New Thippasandra", addressLocality: "Bangalore", addressCountry: "IN" },
   name: "Regicore",
   url: "https://www.regicore.com",
   description:
@@ -83,6 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="font-body antialiased">
         {children}
+        <Script src="/webmcp.js" strategy="afterInteractive" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}

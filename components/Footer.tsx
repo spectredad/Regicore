@@ -3,6 +3,8 @@ const footerColumns = [
     heading: "Company",
     links: [
       { label: "About", href: "/company" },
+      { label: "Services", href: "/services" },
+      { label: "FAQs", href: "/faq" },
       { label: "LinkedIn", href: "https://linkedin.com/company/regicore", external: true },
       { label: "Instagram", href: "https://instagram.com/regicore2", external: true },
     ],

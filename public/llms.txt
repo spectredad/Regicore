@@ -1,0 +1,9 @@
+# Regicore
+
+Marketing and AI services for local businesses, based in Bangalore, India.
+
+- [Business](https://www.regicore.com/company)
+- [Services](https://www.regicore.com/services)
+- [FAQs](https://www.regicore.com/faq)
+- [Quote request: user submission required](https://www.regicore.com/start)
+- [MCP endpoint](https://www.regicore.com/mcp): Streamable HTTP POST, protocol 2025-03-26.
