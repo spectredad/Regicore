@@ -90,10 +90,10 @@ export default function LuckiestManInBangalore() {
               <section id="client-result" className={styles.result}>
                 <p className={styles.resultLabel}>A client result</p>
                 <h2>Rising Sun Clocks and Gifts</h2>
-                <p>I ranked Rising Sun Clocks and Gifts in the top 3 on Google Maps for “clock shop in Bangalore” for over 4 months.</p>
+                <p>I ranked Rising Sun Clocks and Gifts in the top 3 on Google Maps for “clocks in Bangalore” for over 7 months.</p>
                 <div className={styles.resultFacts} aria-hidden="true">
                   <div><strong>Top 3</strong><span>Google Maps</span></div>
-                  <div><strong>4+ months</strong><span>For “clock shop in Bangalore”</span></div>
+                  <div><strong>7+ months</strong><span>For “clocks in Bangalore”</span></div>
                 </div>
               </section>
 

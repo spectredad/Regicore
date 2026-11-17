@@ -6,6 +6,7 @@ import Difference from "@/components/Difference";
 import HowItWorks from "@/components/HowItWorks";
 import IntakeSystem from "@/components/IntakeSystem";
 import Pricing from "@/components/Pricing";
+import RisingSunShowcase from "@/components/RisingSunShowcase";
 import WhatWeDo from "@/components/WhatWeDo";
 import ROICalculator from "@/components/ROICalculator";
 import FAQ from "@/components/FAQ";
@@ -41,6 +42,7 @@ export default function Home() {
       <Difference />
       <HowItWorks />
       <IntakeSystem />
+      <RisingSunShowcase />
       <Pricing />
       <WhatWeDo />
       <ROICalculator />

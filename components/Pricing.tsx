@@ -50,11 +50,11 @@ export default function Pricing() {
           </a>
         </div>
 
-        <p className="reveal mx-auto mb-6 max-w-2xl text-center text-sm text-muted">Rising Sun Clocks and Gifts reached the top 3 on Google Maps for “clock shop in Bangalore” for over 4 months. <a className="underline underline-offset-4 hover:text-teal" href="/hardest-working-seo-expert-bangalore#client-result">Read the case study</a>.</p>
+
 
         {/* Two Side-by-Side Pricing Cards */}
         <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-          
+
           {/* LEFT CARD — Maps Rank */}
           <div className="rounded-3xl border border-line-low bg-surface-elevated p-5 sm:p-7 lg:p-9 shadow-[0_4px_30px_rgba(15,23,42,0.04)] flex flex-col justify-between h-full">
             <div>
