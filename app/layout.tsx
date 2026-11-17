@@ -65,12 +65,12 @@ const jsonLd = {
   name: "Regicore",
   url: "https://www.regicore.com",
   description:
-    "Local search and AI intake services for law firms.",
-  sameAs: ["https://www.linkedin.com/company/regicore", "https://twitter.com/regicore"],
+    "Local search and AI intake services for local businesses.",
+  sameAs: ["https://www.linkedin.com/company/regicore", "https://instagram.com/regicore2"],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
-    email: "hello@regicore.com",
+    email: "varun.l@regicorehq.com",
   },
 };
 

@@ -73,7 +73,7 @@ export default function CTABanner() {
               transition={{ delay: 0.18, duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              Apply with your firm name, practice area, and city. Within 24 hours you get your ranking coverage across the city, what AI says when someone asks who to hire in your practice area, and how many calls slipped past you last week. Free, and yours to keep either way.
+              Apply with your firm name, practice area, and city. Within 24 hours you get your ranking coverage across the city, what AI says when someone asks who to hire in your practice area, and how your calls are handled after hours. Free, and yours to keep either way.
             </motion.p>
 
             <motion.div
