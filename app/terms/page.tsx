@@ -74,14 +74,14 @@ export default function TermsPage() {
           <section>
             <h2 className="font-display text-2xl text-ink">3. Local SEO Promise</h2>
             <p className="mt-3">
-              Maps Rank costs $750 per month. The service covers Google Maps, local search and basic AI visibility. Before work starts, Regicore and the Client will agree on a Google Maps target, one keyword and a location in the proposal or order form.
+              Maps Rank costs $750 per month. The service covers Google Maps, local search and basic AI visibility. Regicore will work to place the Client in the top 3 on Google Maps for one agreed keyword and location within 90 days. The keyword and location will be agreed in the proposal or order form before work starts.
             </p>
             <p className="mt-3">
-              If the agreed Google Maps target is missed after 90 days, Regicore will continue the agreed SEO work free for up to 40 additional days.
+              If the top 3 target is missed after 90 days, Regicore will continue the agreed SEO work free for up to 40 additional days.
             </p>
             <p className="mt-3">This promise applies only when all of the following conditions are satisfied:</p>
             <ol className="mt-3 list-decimal list-inside space-y-2 pl-2">
-              <li>The Google Maps target, keyword and location are written in the proposal or order form.</li>
+              <li>The agreed keyword and location are written in the proposal or order form.</li>
               <li>The Client provides timely access to its website, business profile, listings, analytics, and other required accounts.</li>
               <li>The Client provides accurate information and implements reasonable recommendations without unnecessary delay.</li>
               <li>The Client maintains a genuine, verified, eligible, and policy compliant business profile.</li>

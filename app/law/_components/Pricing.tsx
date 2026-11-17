@@ -58,45 +58,35 @@ export default function Pricing() {
             <div>
               {/* Header & Price */}
               <div className="mb-6">
-                <div className="flex items-center justify-between mb-2">
+                <div className="flex flex-wrap items-baseline justify-between gap-3 mb-2">
                   <h3 className="font-display text-2xl sm:text-3xl font-medium tracking-tight text-ink">
-                    Maps Rank
+                    Top 3 on Google Maps in 90 Days
                   </h3>
                   <span className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-ink">
                     $750 <span className="text-xs font-mono text-muted uppercase font-normal">/ MONTH</span>
                   </span>
                 </div>
-                <p className="text-sm font-semibold leading-relaxed text-ink mb-3">
-                  Get your business found by more local customers.
-                </p>
                 <p className="text-sm leading-relaxed text-muted mb-3">
-                  We help your business show up on Google Maps and make it easier for AI search tools to find accurate information about you.
+                  Get your business into the top 3 on Google Maps for an agreed keyword and location within 90 days.
                 </p>
                 <p className="text-sm leading-relaxed text-muted">
-                  We’ll agree on a Google Maps target before we start. If we miss it after 90 days, we’ll continue the agreed SEO work free for up to 40 additional days.
+                  If we miss the target, we’ll continue the agreed SEO work free for up to 40 additional days.
                 </p>
               </div>
 
               {/* Spec Table Rows */}
               <div className="border-t border-line-low divide-y divide-line-low text-sm">
-                <div className="py-3.5 flex items-center justify-between">
-                  <span className="text-muted">Price</span>
-                  <span className="font-medium text-ink">$750 per month</span>
+                <div className="py-3.5 flex items-center justify-between gap-3">
+                  <span className="text-muted">Includes</span>
+                  <span className="font-medium text-ink text-right">Local SEO and basic AI visibility</span>
                 </div>
-
-                <div className="py-3.5 flex items-center justify-between">
-                  <span className="text-muted">Guarantee</span>
-                  <span className="font-medium text-ink text-right">Up to 40 days of free SEO work if we miss the agreed target</span>
+                <div className="py-3.5 flex items-center justify-between gap-3">
+                  <span className="text-muted">Keyword</span>
+                  <span className="font-medium text-ink text-right">One agreed keyword</span>
                 </div>
-
-                <div className="py-3.5 flex items-center justify-between">
-                  <span className="text-muted">Focus</span>
-                  <span className="font-medium text-ink text-right">Google Maps, local search and basic AI visibility</span>
-                </div>
-
-                <div className="py-3.5 flex items-center justify-between">
+                <div className="py-3.5 flex items-center justify-between gap-3">
                   <span className="text-muted">Exclusivity</span>
-                  <span className="font-medium text-ink text-right">One business, one keyword, per niche in each city</span>
+                  <span className="font-medium text-ink text-right">One business per niche in each city</span>
                 </div>
               </div>
             </div>
