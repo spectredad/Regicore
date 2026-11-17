@@ -1,13 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+const supabaseUrl = "https://arpahgkedggeybrpoquc.supabase.co";
+const supabaseAnonKey = "sb_publishable_bOTwRDK4LpRAWTmsBGVhCA_Yj72shm_";
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.warn("Supabase credentials missing. Please set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in your environment.");
-}
-
-export const supabase = supabaseUrl && supabaseAnonKey
-  ? createClient(supabaseUrl, supabaseAnonKey)
-  : null;
-
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
