@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { supabase } from "@/lib/supabase";
 
 const emptyForm = { name: "", email: "", company: "", practiceArea: "", city: "" };
 
@@ -25,24 +24,19 @@ export default function StartHere({ law = false }: { law?: boolean }) {
     e.preventDefault();
     setStatus("loading");
     try {
-      if (!supabase) {
-        throw new Error("Supabase client is not initialized (missing NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY)");
-      }
-      
-      const { error } = await supabase
-        .from("leads")
-        .insert([
-          {
+      const response = await fetch("https://regicore-lead-handler.carbonfinter44.workers.dev/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
             full_name: form.name.trim(),
             work_email: form.email.trim(),
             firm_or_website: form.company.trim(),
             automation_goal: `Market check\n${law ? "Practice area" : "Service"}: ${form.practiceArea.trim()}\nCity: ${form.city.trim()}`,
-          },
-        ]);
+        }),
+      });
 
-      if (error) {
-        console.error("Supabase insert error:", error);
-        throw error;
+      if (!response.ok) {
+        throw new Error(`Lead submission failed (${response.status})`);
       }
 
       setStatus("success");
