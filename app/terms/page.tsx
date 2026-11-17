@@ -17,7 +17,7 @@ export default function TermsPage() {
         <h1 className="mt-5 font-display text-4xl sm:text-5xl leading-tight tracking-tight text-ink">
           Terms of Service and Compliance
         </h1>
-        <p className="mt-4 text-sm text-muted">Effective date: 5th July 2026</p>
+        <p className="mt-4 text-sm text-muted">Effective date: 5th July 2026 · Updated: 17th November 2026</p>
 
         <div className="mt-10 flex flex-col gap-10 text-base leading-7 text-muted">
           <section className="bg-sand/40 border border-line rounded-xl p-6">
@@ -74,14 +74,14 @@ export default function TermsPage() {
           <section>
             <h2 className="font-display text-2xl text-ink">3. Local SEO Promise</h2>
             <p className="mt-3">
-              Where a purchased plan expressly includes the Regicore ranking promise, Regicore will work toward placing the Client within the top three local search results for the agreed search term and location within ninety days.
+              Maps Rank costs $750 per month. The service covers Google Maps, local search and basic AI visibility. Before work starts, Regicore and the Client will agree on a Google Maps target, one keyword and a location in the proposal or order form.
             </p>
             <p className="mt-3">
-              If the agreed result is not achieved within ninety days, Regicore will continue providing the affected monthly SEO service without an additional monthly service fee until the agreed result is achieved.
+              If the agreed Google Maps target is missed after 90 days, Regicore will continue the agreed SEO work free for up to 40 additional days.
             </p>
             <p className="mt-3">This promise applies only when all of the following conditions are satisfied:</p>
             <ol className="mt-3 list-decimal list-inside space-y-2 pl-2">
-              <li>The target search terms and locations are written in the proposal or order form.</li>
+              <li>The Google Maps target, keyword and location are written in the proposal or order form.</li>
               <li>The Client provides timely access to its website, business profile, listings, analytics, and other required accounts.</li>
               <li>The Client provides accurate information and implements reasonable recommendations without unnecessary delay.</li>
               <li>The Client maintains a genuine, verified, eligible, and policy compliant business profile.</li>
@@ -89,10 +89,10 @@ export default function TermsPage() {
               <li>The Client pays all fees due for the initial ninety day service period and all approved outside expenses.</li>
             </ol>
             <p className="mt-3">
-              The phrase <em>work for free</em> means that Regicore will waive the future recurring service fee for the affected campaign until the agreed result is achieved. It does not mean that previous payments will be refunded. It does not include advertising expenses, software expenses, listing fees, telecommunications expenses, or other third party charges.
+              During the additional period, Regicore will waive the SEO service fee for the agreed work for up to 40 days. Previous payments are not refunded. Advertising, software, listing, telecommunications and other third party charges are not included.
             </p>
             <p className="mt-3">
-              Search engines control their own rankings, algorithms, suspensions, and displayed results. Regicore does not claim to control any search engine or to have a special relationship with one. Regicore does not promise that a ranking will remain unchanged after it is achieved.
+              Regicore accepts one business per niche in each city for one keyword under Maps Rank. Search engines control their own rankings, algorithms, suspensions, and displayed results. Regicore does not claim to control any search engine or to have a special relationship with one. Regicore does not promise that a ranking will remain unchanged after it is achieved.
             </p>
           </section>
 
