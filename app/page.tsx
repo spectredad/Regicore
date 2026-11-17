@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TrustExtras from "@/components/TrustExtras";
@@ -38,6 +39,14 @@ export default function Home() {
     <main id="main">
       <Navbar />
       <Hero />
+      <section aria-label="Working with" className="border-t border-line-low bg-paper px-5 py-8 sm:py-10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 sm:flex-row sm:gap-12">
+          <p className="text-sm text-muted">Working with...</p>
+          <a href="#rising-sun-heading" aria-label="Read the Rising Sun Clocks and Gifts result" className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal">
+            <Image src="/rising-sun-logo.jpg" alt="Rising Sun Clocks and Gifts" width={177} height={70} className="h-auto w-36 mix-blend-multiply sm:w-40" />
+          </a>
+        </div>
+      </section>
       <TrustExtras />
       <Difference />
       <HowItWorks />
