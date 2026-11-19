@@ -12,9 +12,23 @@ import FAQ from "./_components/FAQ";
 import CTABanner from "./_components/CTABanner";
 import Footer from "./_components/Footer";
 
-// Keep the campaign copy accessible and consolidate duplicate search signals.
+const title = "Local SEO & AI Receptionist for Law Firms | Regicore";
+const description =
+  "Help prospective clients find your firm on Google Maps and in AI answers. Regicore also helps answer calls and book consultations, including after hours.";
+
 export const metadata: Metadata = {
-  alternates: { canonical: "/" },
+  title,
+  description,
+  alternates: { canonical: "/law" },
+  openGraph: {
+    title,
+    description,
+    url: "/law",
+    siteName: "Regicore",
+    images: ["/icon-512.png"],
+    type: "website",
+  },
+  twitter: { card: "summary", title, description, images: ["/icon-512.png"] },
 };
 
 export default function Home() {
