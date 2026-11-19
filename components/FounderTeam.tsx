@@ -22,14 +22,14 @@ export default function FounderTeam() {
         {/* Section header */}
         <div className="reveal flex items-baseline gap-4 border-b border-line pb-4 mb-12 md:mb-16">
           <span className="index-num text-[15px]">01</span>
-          <p className="section-label">The people</p>
+          <h1 className="section-label">About Regicore</h1>
         </div>
 
         {/* Founder card */}
         <div className="bg-navy-elevated border border-line p-8 sm:p-12 reveal">
           <div className="flex flex-col gap-5 max-w-2xl">
             <div>
-              <h3 className="font-display text-[26px] font-medium text-ink">{founder.name}</h3>
+              <h2 className="font-display text-[26px] font-medium text-ink">{founder.name}</h2>
               <p className="text-teal text-xs uppercase tracking-[0.12em] font-semibold mt-1">{founder.role}</p>
             </div>
             {founder.bio && <p className="text-muted text-[15px] leading-relaxed">{founder.bio}</p>}
